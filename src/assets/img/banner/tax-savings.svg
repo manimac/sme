@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="405.046" height="234" viewBox="0 0 405.046 234">
+  <defs>
+    <filter id="Path_610" x="0" y="0" width="405.046" height="234" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.051"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_1623" data-name="Group 1623" transform="translate(9 6)">
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Path_610)">
+      <g id="Path_610-2" data-name="Path 610" transform="translate(9 6)" fill="#fff">
+        <path d="M 381.5635070800781 215.5 L 5.482257843017578 215.5 C 2.735057592391968 215.5 0.500007688999176 213.2649536132812 0.500007688999176 210.5177612304688 L 0.500007688999176 5.482257843017578 C 0.500007688999176 2.735057592391968 2.735057592391968 0.5000076293945312 5.482257843017578 0.5000076293945312 L 381.5635070800781 0.5000076293945312 C 384.3106994628906 0.5000076293945312 386.5457153320312 2.735057592391968 386.5457153320312 5.482257843017578 L 386.5457153320312 210.5177612304688 C 386.5457153320312 213.2649536132812 384.3106994628906 215.5 381.5635070800781 215.5 Z" stroke="none"/>
+        <path d="M 5.482208251953125 1.000015258789062 C 3.010711669921875 1.000015258789062 1 3.010757446289062 1 5.482254028320312 L 1 210.5177612304688 C 1 212.9892578125 3.010711669921875 215 5.482208251953125 215 L 381.5634460449219 215 C 384.0349426269531 215 386.0457153320312 212.9892578125 386.0457153320312 210.5177612304688 L 386.0457153320312 5.482254028320312 C 386.0457153320312 3.010757446289062 384.0349426269531 1.000015258789062 381.5634460449219 1.000015258789062 L 5.482208251953125 1.000015258789062 M 5.482208251953125 1.52587890625e-05 L 381.5634460449219 1.52587890625e-05 C 384.5912170410156 1.52587890625e-05 387.0457153320312 2.454452514648438 387.0457153320312 5.482254028320312 L 387.0457153320312 210.5177612304688 C 387.0457153320312 213.5455017089844 384.5912170410156 216 381.5634460449219 216 L 5.482208251953125 216 C 2.4544677734375 216 0 213.5455017089844 0 210.5177612304688 L 0 5.482254028320312 C 0 2.454452514648438 2.4544677734375 1.52587890625e-05 5.482208251953125 1.52587890625e-05 Z" stroke="none" fill="#e2e2e2"/>
+      </g>
+    </g>
+    <text id="Tax_Saving_Solution" data-name="Tax Saving Solution" transform="translate(30.68 77)" fill="#3e593c" font-size="23" font-family="PFHandbookPro-Bold, PF Handbook Pro" font-weight="700"><tspan x="0" y="0">Tax Saving Solution</tspan></text>
+    <text id="These_schemes_seek_to_invest_your_money_to_provide_regular_income" data-name="These schemes seek to invest your money to provide regular income" transform="translate(29.68 92)" fill="#6c7174" font-size="17" font-family="PFHandbookPro-Regular, PF Handbook Pro"><tspan x="0" y="13">These schemes seek to invest your money to </tspan><tspan x="0" y="31">provide regular income</tspan></text>
+    <g id="Group_1569" data-name="Group 1569" transform="translate(2.193 2.193)">
+      <ellipse id="Ellipse_451" data-name="Ellipse 451" cx="2.5" cy="3" rx="2.5" ry="3" transform="translate(0.487 -0.193)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_452" data-name="Ellipse 452" cx="2.5" cy="3.5" rx="2.5" ry="3.5" transform="translate(0.487 9.807)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_453" data-name="Ellipse 453" cx="2.5" cy="3" rx="2.5" ry="3" transform="translate(0.487 20.807)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_454" data-name="Ellipse 454" cx="2.5" cy="3.5" rx="2.5" ry="3.5" transform="translate(0.487 31.807)" fill="#e8e8e8"/>
+      <circle id="Ellipse_455" data-name="Ellipse 455" cx="2.5" cy="2.5" r="2.5" transform="translate(0.487 42.807)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_456" data-name="Ellipse 456" cx="3.5" cy="3" rx="3.5" ry="3" transform="translate(9.487 -0.193)" fill="#e8e8e8"/>
+      <circle id="Ellipse_457" data-name="Ellipse 457" cx="3.5" cy="3.5" r="3.5" transform="translate(9.487 9.807)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_458" data-name="Ellipse 458" cx="3.5" cy="3" rx="3.5" ry="3" transform="translate(9.487 20.807)" fill="#e8e8e8"/>
+      <circle id="Ellipse_459" data-name="Ellipse 459" cx="3.5" cy="3.5" r="3.5" transform="translate(9.487 31.807)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_460" data-name="Ellipse 460" cx="3.5" cy="2.5" rx="3.5" ry="2.5" transform="translate(9.487 42.807)" fill="#e8e8e8"/>
+      <circle id="Ellipse_461" data-name="Ellipse 461" cx="3" cy="3" r="3" transform="translate(21.487 -0.193)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_462" data-name="Ellipse 462" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(21.487 9.807)" fill="#e8e8e8"/>
+      <circle id="Ellipse_463" data-name="Ellipse 463" cx="3" cy="3" r="3" transform="translate(21.487 20.807)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_464" data-name="Ellipse 464" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(21.487 31.807)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_465" data-name="Ellipse 465" cx="3" cy="2.5" rx="3" ry="2.5" transform="translate(21.487 42.807)" fill="#e8e8e8"/>
+      <circle id="Ellipse_466" data-name="Ellipse 466" cx="3" cy="3" r="3" transform="translate(32.487 -0.193)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_467" data-name="Ellipse 467" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(32.487 9.807)" fill="#e8e8e8"/>
+      <circle id="Ellipse_468" data-name="Ellipse 468" cx="3" cy="3" r="3" transform="translate(32.487 20.807)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_469" data-name="Ellipse 469" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(32.487 31.807)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_470" data-name="Ellipse 470" cx="3" cy="2.5" rx="3" ry="2.5" transform="translate(32.487 42.807)" fill="#e8e8e8"/>
+      <circle id="Ellipse_471" data-name="Ellipse 471" cx="3" cy="3" r="3" transform="translate(44.487 -0.193)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_472" data-name="Ellipse 472" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(44.487 9.807)" fill="#e8e8e8"/>
+      <circle id="Ellipse_473" data-name="Ellipse 473" cx="3" cy="3" r="3" transform="translate(44.487 20.807)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_474" data-name="Ellipse 474" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(44.487 31.807)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_475" data-name="Ellipse 475" cx="3" cy="2.5" rx="3" ry="2.5" transform="translate(44.487 42.807)" fill="#e8e8e8"/>
+    </g>
+    <g id="returns" transform="translate(301.071 18.64)">
+      <circle id="Oval" cx="8.502" cy="8.502" r="8.502" transform="translate(47.609 20.404)" fill="none" stroke="#ddd" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"/>
+      <circle id="Oval-2" data-name="Oval" cx="8.502" cy="8.502" r="8.502" transform="translate(20.404)" fill="none" stroke="#ddd" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"/>
+      <path id="Shape" d="M42.427,13.6H61.212c9.58,0,10.2,6.8,10.2,6.8L31.405,35.792a10.2,10.2,0,0,1-8.226-.4L0,23.8V0H3.4c3.758,0,13.283,1.489,17,6.8h10.2a13.6,13.6,0,0,1,13.6,13.6H20.4" transform="translate(0 37.407)" fill="none" stroke="#ddd" stroke-miterlimit="10" stroke-width="4"/>
+    </g>
+    <g id="Group_1570" data-name="Group 1570" transform="translate(30.701 146.924)">
+      <rect id="Rectangle_1157" data-name="Rectangle 1157" width="102" height="36" transform="translate(-0.021 0.076)" fill="#3e593c"/>
+      <text id="Invest_Now" data-name="Invest Now" transform="translate(15.979 23.076)" fill="#fff" font-size="17" font-family="PFHandbookPro-Regular, PF Handbook Pro"><tspan x="0" y="0">Invest Now</tspan></text>
+    </g>
+  </g>
+</svg>

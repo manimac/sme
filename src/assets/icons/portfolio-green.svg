@@ -1,0 +1,12 @@
+<svg id="Group_1439" data-name="Group 1439" xmlns="http://www.w3.org/2000/svg" width="46" height="40" viewBox="0 0 46 40">
+  <g id="Rectangle_1110" data-name="Rectangle 1110" fill="none" stroke="#fff" stroke-width="1">
+    <rect width="46" height="40" stroke="none"/>
+    <rect x="0.5" y="0.5" width="45" height="39" fill="none"/>
+  </g>
+  <g id="Group_1428" data-name="Group 1428" transform="translate(5 1.993)">
+    <g id="noun_transactions_2496553" transform="translate(0 13.044) rotate(-31)">
+      <path id="Path_192" data-name="Path 192" d="M24.778,13.289a.549.549,0,0,0-.548.548A11.554,11.554,0,1,1,11.855,2.365l-.493.383a.562.562,0,0,0,.329,1.013.478.478,0,0,0,.329-.11l1.862-1.424a.585.585,0,0,0,.219-.465.518.518,0,0,0-.246-.438L11.992.092a.543.543,0,0,0-.767.164.543.543,0,0,0,.164.767l.383.246A12.638,12.638,0,1,0,25.325,13.864.573.573,0,0,0,24.778,13.289Z" transform="translate(0 0)" fill="#3e593c" stroke="#3e593c" stroke-width="1"/>
+    </g>
+    <path id="Path_191" data-name="Path 191" d="M23.423,1.5,21.837,3.441,21.379,4h.032A.591.591,0,0,1,22,4.593V24.556a8.083,8.083,0,0,0,1.8-1.365,8.681,8.681,0,0,0,1.042-1.27V4.593A.591.591,0,0,1,25.435,4h.032Zm-5.437,8.569V25.59h.039a8.1,8.1,0,0,0,2.793-.489V10.069Zm-4.024,4.955v9.485a7.975,7.975,0,0,0,2.833.986V15.025ZM10.309,20a8,8,0,0,0,1.965,3.211c.166.166.331.316.5.466V20h-2.47Z" transform="translate(-0.699 1.864)" fill="#3e593c"/>
+  </g>
+</svg>

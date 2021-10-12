@@ -1,0 +1,14 @@
+<svg id="Group_1431" data-name="Group 1431" xmlns="http://www.w3.org/2000/svg" width="46" height="40" viewBox="0 0 46 40">
+  <g id="Rectangle_1110" data-name="Rectangle 1110" fill="none" stroke="#fff" stroke-width="1">
+    <rect width="46" height="40" stroke="none"/>
+    <rect x="0.5" y="0.5" width="45" height="39" fill="none"/>
+  </g>
+  <g id="Group" transform="translate(10 8.668)">
+    <path id="Compound_Path" data-name="Compound Path" d="M30.176,11H9.2v7.6H4.7v11.26a3.1,3.1,0,0,0,3.1,3.1h18.72a3.66,3.66,0,0,0,3.66-3.66ZM9.2,29.861a1.408,1.408,0,0,1-2.815,0V20.29H9.2ZM28.487,29.3a1.971,1.971,0,0,1-1.971,1.971H10.555a3.068,3.068,0,0,0,.338-1.408V12.689H28.487Z" transform="translate(-4.7 -11)" fill="#cdcece"/>
+    <path id="Compound_Path-2" data-name="Compound Path" d="M39.693,23.5H33.5v5.912h6.193ZM38,27.723H35.189V25.189H38Z" transform="translate(-25.393 -19.981)" fill="#cdcece"/>
+    <rect id="Path" width="6.193" height="1.689" transform="translate(15.708 4.082)" fill="#cdcece"/>
+    <rect id="Path-2" data-name="Path" width="6.193" height="1.689" transform="translate(15.708 7.178)" fill="#cdcece"/>
+    <rect id="Path-3" data-name="Path" width="13.793" height="1.689" transform="translate(8.107 12.245)" fill="#cdcece"/>
+    <rect id="Path-4" data-name="Path" width="13.793" height="1.689" transform="translate(8.107 15.342)" fill="#cdcece"/>
+  </g>
+</svg>

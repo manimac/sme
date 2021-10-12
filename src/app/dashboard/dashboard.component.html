@@ -1,0 +1,448 @@
+  <!-- Content Placeholder Starts Here -->
+  <div class="content-wrapper" theme="clasic">
+    <div class="row">
+      <div class="col-md-6 col-xs-7">
+       <h2 class="username-txt">Hi Vijayaragavan,<br>
+        <span>Let’s start investing</span>
+      </h2>
+      </div>
+
+      <div class="col-md-6 col-xs-5">     
+        <table class="list-table">
+          <tr>
+            <td><a href="#">
+              <img class="m-right-10" src="assets/icons/bell-icon.svg">
+            </a></td>
+            <td> <a href="#">
+              <img src="assets/icons/get-alerts-whatsapp.svg">
+            </a></td>
+          </tr>
+        </table>
+       </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-4">
+       <app-portfolio-summary></app-portfolio-summary>
+      </div>
+
+      <div class="col-md-8">
+       <app-portfolio-performance></app-portfolio-performance>
+      </div>
+    </div>
+
+ <div class="row">
+  
+  <!-- <swiper [config]="config">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+    Add Pagination
+    <div class="swiper-pagination"></div>
+     Add Arrows 
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </swiper> -->
+</div> 
+    <!-- Quick Invest Mobile View -->
+    <div class="row visible-xs " style="display: none;"> 
+      <div class="col-md-12">
+        <div class="quick-invest-div">
+          <div class="quick-invest-div-r1">
+            <h3>Quick Invest</h3>
+          </div>
+          <div class="quick-invest-div-r2">
+            <table>
+              <tr>
+                <td class="w-30per">
+                  <img src="./assets/icons/sip-icon-quick-start.svg"/>
+                </td>
+                <td class="w-65per">
+                  <p>Start SIP Monthly</p>
+                  <label>Start your SIP with <strong>₹500</strong></label>
+                </td>
+                <td class="w-25per">
+                  <a href="#">
+                    <img src="./assets/icons/go-arrow.svg"/>
+                  </a>
+                </td>
+              </tr>
+            </table>
+            <div class="line"></div>
+            <table>
+              <tr>
+                <td class="w-30per">
+                  <img src="./assets/icons/invest-lumpsum-icon.svg"/>
+                </td>
+                <td class="w-65per">
+                  <p>Invest Lumpsum </p>
+                  <label>Start  your investment with <strong>₹2000</strong></label>
+                </td>
+                <td class="w-25per">
+                  <a href="#">
+                    <img src="./assets/icons/go-arrow.svg"/>
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+          </div>
+          
+        </div>
+      </div>
+    </div><!-- Quick Invest Mobile View -->
+
+
+    <!-- Liquid Fund Mobile View -->
+    <div class="row visible-xs" style="display: none;">
+      <div class="col-md-12">
+        <div class="liquid-fund-div">
+          <div class="quick-invest-div-r2">
+            <table>
+              <tr>
+                <td class="w-30per">
+                  <img src="./assets/icons/liquid-icon.svg"/>
+                </td>
+                <td class="w-65per">
+                  <p>Start to Invest in liquid fund</p>
+                  <label>Transfer money from 
+                    your Bank account in to a liquid fund</label>
+                </td>
+                <td class="w-25per">
+                  <a href="#">
+                    <img src="./assets/icons/go-arrow.svg"/>
+                  </a>
+                </td>
+              </tr>
+            </table>
+            
+
+          </div>
+        </div>
+      </div>
+    </div><!-- Liquid Fund Mobile View -->
+
+
+   
+
+
+    <!-- Transaction and NFO Starts Here -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="white-card">
+          <div class="row">
+            <div class="col-md-6">
+             
+              <div class="row">
+                <div class="col-md-9">
+                  <h2>Transaction Summary</h2>
+                </div>
+                <div class="col-md-3">
+                </div>
+              </div>
+              <div class="ltst-trans-div">
+                <div class="card-ribbon">
+                  <ul class="h-scroll nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Recent Transactions</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Upcoming Transactions</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <div class="tab-content"> 
+                    <!-- Tab content 1 Starts Here -->
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                      <ul class="transact-list">
+                        <li>
+                          <table>
+                            <tr>
+                              <td>
+                                <p>SIP</p>
+                                <label>Birla front line equity </label>
+                              </td>
+                              <td>
+                                <p class="flot-right">2,000.00</p><br>
+                                <label class="flot-right">7th Jan </label>
+                              </td>
+                            </tr>
+                          </table>
+                        </li>
+
+                        <li>
+                          <table>
+                            <tr>
+                              <td>
+                                <p>SIP</p>
+                                <label>Birla front line equity </label>
+                              </td>
+                              <td>
+                                <p class="flot-right">2,000.00</p><br>
+                                <label class="flot-right">7th Jan </label>
+                              </td>
+                            </tr>
+                          </table>
+                        </li>
+
+
+                        <li>
+                          <table>
+                            <tr>
+                              <td>
+                                <p>SIP</p>
+                                <label>Birla front line equity </label>
+                              </td>
+                              <td>
+                                <p class="flot-right">2,000.00</p><br>
+                                <label class="flot-right">7th Jan </label>
+                              </td>
+                            </tr>
+                          </table>
+                        </li>
+
+
+                        <li>
+                          <table>
+                            <tr>
+                              <td>
+                                <p>SIP</p>
+                                <label>Birla front line equity </label>
+                              </td>
+                              <td>
+                                <p class="flot-right">2,000.00</p><br>
+                                <label class="flot-right">7th Jan </label>
+                              </td>
+                            </tr>
+                          </table>
+                        </li>
+
+                        <li>
+                          <table>
+                            <tr>
+                              <td>
+                                <p>SIP</p>
+                                <label>Birla front line equity </label>
+                              </td>
+                              <td>
+                                <p class="flot-right">2,000.00</p><br>
+                                <label class="flot-right">7th Jan </label>
+                              </td>
+                            </tr>
+                          </table>
+                        </li>
+                      </ul>
+                      <div class="f-div">
+                        <a href="">VIEW ALL TRANSACTIONS</a>
+                      </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="profile">
+                      <ul class="transact-list">
+                        <li>
+                          <table>
+                            <tr>
+                              <td>
+                                <p>Lumpsum</p>
+                                <label>Birla front line equity </label>
+                              </td>
+                              <td>
+                                <p class="flot-right">2,000.00</p><br>
+                                <label class="flot-right">7th Jan </label>
+                              </td>
+                            </tr>
+                          </table>
+                        </li>
+
+                        <li>
+                          <table>
+                            <tr>
+                              <td>
+                                <p>lumpsum</p>
+                                <label>Birla front line equity </label>
+                              </td>
+                              <td>
+                                <p class="flot-right">2,000.00</p><br>
+                                <label class="flot-right">7th Jan </label>
+                              </td>
+                            </tr>
+                          </table>
+                        </li>
+
+
+                        <li>
+                          <table>
+                            <tr>
+                              <td>
+                                <p>SIP</p>
+                                <label>Birla front line equity </label>
+                              </td>
+                              <td>
+                                <p class="flot-right">2,000.00</p><br>
+                                <label class="flot-right">7th Jan </label>
+                              </td>
+                            </tr>
+                          </table>
+                        </li>
+
+
+                        <li>
+                          <table>
+                            <tr>
+                              <td>
+                                <p>SIP</p>
+                                <label>Birla front line equity </label>
+                              </td>
+                              <td>
+                                <p class="flot-right">2,000.00</p><br>
+                                <label class="flot-right">7th Jan </label>
+                              </td>
+                            </tr>
+                          </table>
+                        </li>
+
+                        <li>
+                          <table>
+                            <tr>
+                              <td>
+                                <p>SIP</p>
+                                <label>Birla front line equity </label>
+                              </td>
+                              <td>
+                                <p class="flot-right">2,000.00</p><br>
+                                <label class="flot-right">7th Jan </label>
+                              </td>
+                            </tr>
+                          </table>
+                        </li>
+                      </ul>
+                      <div class="f-div">
+                        <a href="">VIEW UPCOMING TRANSACTIONS</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+               
+              </div>
+              <div class="visible-xs">
+                <br><br>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <app-nbo-schemes></app-nbo-schemes>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- Transaction and NFO Ends Here -->
+
+
+    <div class="row">
+      <div class="col-md-6">
+<app-top-trending></app-top-trending>
+        <!-- Card Starts Here -->
+       <!-- Card Ends Here -->
+      </div>
+
+      <div class="col-md-6">
+       <app-placeholder-text></app-placeholder-text>
+      </div>
+    </div>
+<!-- <div class="row">
+  <swiper [config]="config">
+
+    <div class="swiper-wrapper">
+  
+      <div class="swiper-slide" *ngFor="let slide of slideData">
+        <img src="https://i.picsum.photos/id/{{slide.id}}/400/300.jpg" />
+        {{slide.name}}
+      </div>
+  
+    </div>
+  
+   
+    <div class="swiper-pagination"></div>
+  
+   
+    
+  
+  </swiper>
+</div> -->
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="white-card">
+          <div class="row">
+            <div class="col-md-9">
+              <h2>Recommended Solutions </h2>
+            </div>
+            <div class="col-md-3">
+              <div class="owl-nav">
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <!-- <div class="owl-carousel owl-theme">
+                <div class="item"><img src="/assets/img/banner/h-banner.svg"/>
+                </div>
+            </div> -->
+            <swiper [config]="config">
+
+              <div class="swiper-wrapper">
+            
+                <div class="swiper-slide" *ngFor="let slide of slideData">
+                  
+                 
+                    <div class="item"><img src="./assets/img/banner/{{slide.imgs}}"/></div>
+                   
+                
+                </div>
+                
+            
+              </div>
+            
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
+            
+              <!-- Add Arrows -->
+              
+            
+            </swiper>
+           
+         
+
+            </div>
+          </div>
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </div><!-- Content Placeholder Starts Here -->
+
+
+ 
+
+
+<!-- Begin Footer content -->

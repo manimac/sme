@@ -1,0 +1,254 @@
+<div class="div-outer">
+  <!-- Tab content 1 Starts Here -->
+  <div role="tabpanel" class="tab-pane active" id="home">
+    <!-- <div class="tab">
+      <button class="tablinks" >By Schemes</button>
+      <button class="tablinks" >By Folio</button>
+    </div> -->
+
+    <!-- By Scheme Content starts Here -->
+    <ngb-tabset type="pills">
+      <ngb-tab >
+          <ng-template ngbTabTitle><button class="tablinks" >By Schemes</button></ng-template>
+        <ng-template ngbTabContent>
+ <app-transact></app-transact>
+    </ng-template>
+    </ngb-tab>
+
+    <ngb-tab >
+      <ng-template ngbTabTitle><button class="tablinks" >By Folio</button></ng-template>
+    <ng-template ngbTabContent>
+    <!-- By Folio Content starts Here -->
+    <div id="by-folio" class=" by-folio-tab">
+      
+      <!-- Accordian Starts Here -->
+      <div class="accordian-Div"> 
+      
+      <div class="accordion panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                <p class="label-value"><label>Folio Number </label>:1234567 &nbsp;   | &nbsp; <label>Investor Name :</label>Vijayaragavan</p>
+                <i class="large material-icons">keyboard_arrow_down</i>
+              </a>
+            </h4>
+          </div><!-- /.panel-heading -->
+          <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+              
+    <app-transact></app-transact>
+
+            </div>
+          </div><!-- /#collapseOne -->
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                <p class="label-value"><label>Folio Number </label>:1234567 &nbsp;   | &nbsp; <label>Investor Name :</label>Vijayaragavan</p>
+                <i class="large material-icons">keyboard_arrow_down</i>
+              </a>
+            </h4>
+          </div><!-- /.panel-heading -->
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+              <!-- card Strip Starts Here -->
+     <div class="card-strip">
+      <div class="tab-activated-header">
+      <div class="tab-header-content">
+        <div class="col-md-4">
+          <p>Aditya Birla Sun Life Frontline Equity Fund</p>
+          <span>Direct</span> <span>Growth</span>
+          <div class="col-12 visible-xs">
+            <br>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Current Value</label>
+              <p>₹55,728.01</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Invested amount</label>
+              <p>₹51,999.80</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Nav</label>
+              <p>₹419.3500</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Unit</label>
+              <p>12.70</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Profit / Loss</label>
+              <p class="value-profit">₹1,000.00</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-12">
+            <div class="value-div border-none">
+              <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#dummy" aria-expanded="false" aria-controls="collapseExample">Transact <i class="large material-icons">keyboard_arrow_down</i></button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    
+    </div><!-- card Strip Ends Here -->
+
+    <!-- card Strip Starts Here -->
+    <div class="card-strip">
+      <div class="tab-activated-header">
+      <div class="tab-header-content">
+        <div class="col-md-4">
+          <p>Aditya Birla Sun Life Frontline Equity Fund</p>
+          <span>Direct</span> <span>Growth</span>
+          <div class="col-12 visible-xs">
+            <br>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Current Value</label>
+              <p>₹55,728.01</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Invested amount</label>
+              <p>₹51,999.80</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Nav</label>
+              <p>₹419.3500</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Unit</label>
+              <p>12.70</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Profit / Loss</label>
+              <p class="value-profit">₹1,000.00</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-12">
+            <div class="value-div border-none">
+              <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#dummy" aria-expanded="false" aria-controls="collapseExample">Transact <i class="large material-icons">keyboard_arrow_down</i></button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    
+    </div><!-- card Strip Ends Here -->
+
+
+
+            </div><!-- /.panel-body -->
+          </div><!-- /#collapseTwo -->
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                <p class="label-value"><label>Folio Number </label>:1234567 &nbsp;   | &nbsp; <label>Investor Name :</label>Vijayaragavan</p> 
+                <i class="large material-icons">keyboard_arrow_down</i>
+              </a>
+            </h4>
+          </div><!-- /.panel-heading -->
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+               <!-- card Strip Starts Here -->
+     <div class="card-strip">
+      <div class="tab-activated-header">
+      <div class="tab-header-content">
+        <div class="col-md-4">
+          <p>Aditya Birla Sun Life Frontline Equity Fund</p>
+          <span>Direct</span> <span>Growth</span>
+          <div class="col-12 visible-xs">
+            <br>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Current Value</label>
+              <p>₹55,728.01</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Invested amount</label>
+              <p>₹51,999.80</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Nav</label>
+              <p>₹419.3500</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Unit</label>
+              <p>12.70</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div">
+              <label>Profit / Loss</label>
+              <p class="value-profit">₹1,000.00</p>
+            </div>
+          </div>
+          <div class="col-md-2  col-xs-6">
+            <div class="value-div border-none">
+              <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#dummy" aria-expanded="false" aria-controls="collapseExample">Transact <i class="large material-icons">keyboard_arrow_down</i></button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    
+    </div><!-- card Strip Ends Here -->
+
+    
+            </div><!-- /.panel-body -->
+          </div><!-- /#collapseTwo -->
+        </div>
+      </div>
+
+    </div> <!-- Accordian Ends Here -->
+
+
+    
+  
+  </div><!-- By Folio Content End Here -->
+  </ng-template>
+  </ngb-tab>
+  </ngb-tabset>
+    </div><!-- Tab content 1  Ends Here-->
+    </div>

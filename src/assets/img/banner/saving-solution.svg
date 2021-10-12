@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="388" height="236" viewBox="0 0 388 236">
+  <defs>
+    <filter id="Rectangle_1152" x="0" y="0" width="388" height="236" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.043"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_1620" data-name="Group 1620" transform="translate(-17 -726)">
+    <g transform="matrix(1, 0, 0, 1, 17, 726)" filter="url(#Rectangle_1152)">
+      <g id="Rectangle_1152-2" data-name="Rectangle 1152" transform="translate(9 6)" fill="#fff" stroke="#e2e2e2" stroke-width="1">
+        <rect width="370" height="218" rx="5" stroke="none"/>
+        <rect x="0.5" y="0.5" width="369" height="217" rx="4.5" fill="none"/>
+      </g>
+    </g>
+    <g id="savings" transform="translate(294.386 750.262)">
+      <path id="Shape" d="M0,0H13.95" transform="translate(34.876 38.364)" fill="none" stroke="#ddd" stroke-linecap="square" stroke-miterlimit="10" stroke-width="5"/>
+      <circle id="Oval" cx="6.975" cy="6.975" r="6.975" transform="translate(34.876)" fill="none" stroke="#ddd" stroke-linecap="square" stroke-miterlimit="10" stroke-width="5"/>
+      <path id="Shape-2" data-name="Shape" d="M0,0V6.975" transform="translate(31.388 69.752)" fill="none" stroke="#ddd" stroke-linecap="square" stroke-miterlimit="10" stroke-width="5"/>
+      <path id="Shape-3" data-name="Shape" d="M0,0V6.975" transform="translate(52.314 69.752)" fill="none" stroke="#ddd" stroke-linecap="square" stroke-miterlimit="10" stroke-width="5"/>
+      <path id="Shape-4" data-name="Shape" d="M54.058,7.492H27.9C23.541-2.825,13.95.516,13.95.516L17.089,11.29A22.778,22.778,0,0,0,8.736,21.442H0V38.88H8.719A22.672,22.672,0,0,0,29.645,52.83H54.058a22.669,22.669,0,0,0,0-45.339Z" transform="translate(0 16.922)" fill="none" stroke="#ddd" stroke-linecap="square" stroke-miterlimit="10" stroke-width="5"/>
+    </g>
+    <text id="Savings_Solutions" data-name="Savings Solutions" transform="translate(60 810)" fill="#3e593c" font-size="23" font-family="PFHandbookPro-Bold, PF Handbook Pro" font-weight="700"><tspan x="0" y="0">Savings Solutions</tspan></text>
+    <g id="Group_1560" data-name="Group 1560" transform="translate(60.24 880.007)">
+      <rect id="Rectangle_1153" data-name="Rectangle 1153" width="103" height="36" transform="translate(-0.24 -0.007)" fill="#3e593c"/>
+      <text id="Invest_Now" data-name="Invest Now" transform="translate(16.76 22.993)" fill="#fff" font-size="17" font-family="PFHandbookPro-Regular, PF Handbook Pro"><tspan x="0" y="0">Invest Now</tspan></text>
+    </g>
+    <text id="These_schemes_are_aimed_at_preserving_your_money." data-name="These schemes are aimed at preserving your money." transform="translate(59 824)" fill="#6c7174" font-size="17" font-family="PFHandbookPro-Regular, PF Handbook Pro"><tspan x="0" y="13">These schemes are aimed at </tspan><tspan x="0" y="31">preserving your money.</tspan></text>
+    <g id="Group_1561" data-name="Group 1561" transform="translate(28.209 733.105)">
+      <circle id="Ellipse_376" data-name="Ellipse 376" cx="3" cy="3" r="3" transform="translate(-0.209 -0.104)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_377" data-name="Ellipse 377" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(-0.209 9.896)" fill="#e8e8e8"/>
+      <circle id="Ellipse_378" data-name="Ellipse 378" cx="3" cy="3" r="3" transform="translate(-0.209 20.896)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_379" data-name="Ellipse 379" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(-0.209 31.896)" fill="#e8e8e8"/>
+      <circle id="Ellipse_380" data-name="Ellipse 380" cx="3" cy="3" r="3" transform="translate(-0.209 42.896)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_381" data-name="Ellipse 381" cx="3.5" cy="3" rx="3.5" ry="3" transform="translate(9.791 -0.104)" fill="#e8e8e8"/>
+      <circle id="Ellipse_382" data-name="Ellipse 382" cx="3.5" cy="3.5" r="3.5" transform="translate(9.791 9.896)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_383" data-name="Ellipse 383" cx="3.5" cy="3" rx="3.5" ry="3" transform="translate(9.791 20.896)" fill="#e8e8e8"/>
+      <circle id="Ellipse_384" data-name="Ellipse 384" cx="3.5" cy="3.5" r="3.5" transform="translate(9.791 31.896)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_385" data-name="Ellipse 385" cx="3.5" cy="3" rx="3.5" ry="3" transform="translate(9.791 42.896)" fill="#e8e8e8"/>
+      <circle id="Ellipse_386" data-name="Ellipse 386" cx="3" cy="3" r="3" transform="translate(21.791 -0.104)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_387" data-name="Ellipse 387" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(21.791 9.896)" fill="#e8e8e8"/>
+      <circle id="Ellipse_388" data-name="Ellipse 388" cx="3" cy="3" r="3" transform="translate(21.791 20.896)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_389" data-name="Ellipse 389" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(21.791 31.896)" fill="#e8e8e8"/>
+      <circle id="Ellipse_390" data-name="Ellipse 390" cx="3" cy="3" r="3" transform="translate(21.791 42.896)" fill="#e8e8e8"/>
+      <circle id="Ellipse_391" data-name="Ellipse 391" cx="3" cy="3" r="3" transform="translate(32.791 -0.104)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_392" data-name="Ellipse 392" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(32.791 9.896)" fill="#e8e8e8"/>
+      <circle id="Ellipse_393" data-name="Ellipse 393" cx="3" cy="3" r="3" transform="translate(32.791 20.896)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_394" data-name="Ellipse 394" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(32.791 31.896)" fill="#e8e8e8"/>
+      <circle id="Ellipse_395" data-name="Ellipse 395" cx="3" cy="3" r="3" transform="translate(32.791 42.896)" fill="#e8e8e8"/>
+      <circle id="Ellipse_396" data-name="Ellipse 396" cx="3" cy="3" r="3" transform="translate(44.791 -0.104)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_397" data-name="Ellipse 397" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(44.791 9.896)" fill="#e8e8e8"/>
+      <circle id="Ellipse_398" data-name="Ellipse 398" cx="3" cy="3" r="3" transform="translate(44.791 20.896)" fill="#e8e8e8"/>
+      <ellipse id="Ellipse_399" data-name="Ellipse 399" cx="3" cy="3.5" rx="3" ry="3.5" transform="translate(44.791 31.896)" fill="#e8e8e8"/>
+      <circle id="Ellipse_400" data-name="Ellipse 400" cx="3" cy="3" r="3" transform="translate(44.791 42.896)" fill="#e8e8e8"/>
+    </g>
+  </g>
+</svg>

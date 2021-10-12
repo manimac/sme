@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="Group_1414" data-name="Group 1414" transform="translate(14633 12752)">
+    <g id="Rectangle_1104" data-name="Rectangle 1104" transform="translate(-14633 -12752)" fill="none" stroke="#fff" stroke-width="1">
+      <rect width="48" height="48" stroke="none"/>
+      <rect x="0.5" y="0.5" width="47" height="47" fill="none"/>
+    </g>
+    <g id="tax_savings" data-name="tax savings" transform="translate(-14624 -12744)">
+      <path id="Path" d="M0,15.661V0" transform="translate(15.372 16.073)" fill="none" stroke="#6a7c55" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Shape" d="M0,9.4H0A9.4,9.4,0,0,1,9.4,0h3.132a9.4,9.4,0,0,1-9.4,9.4Z" transform="translate(13.518 22.337)" fill="none" stroke="#6a7c55" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Shape-2" data-name="Shape" d="M12.528,9.4h0A9.4,9.4,0,0,0,3.132,0H0A9.4,9.4,0,0,0,9.4,9.4Z" transform="translate(4.698 20.771)" fill="none" stroke="#6a7c55" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Rectangle-path" d="M0,0H30.745V18.793H0Z" fill="none" stroke="#6a7c55" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Oval" d="M6.648,0A6.648,6.648,0,1,1,0,6.648,6.648,6.648,0,0,1,6.648,0Z" transform="translate(8.402 3.139)" fill="none" stroke="#6a7c55" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+      <g id="noun_108177_cc" transform="translate(11.576 5.9)">
+        <path id="Shape-3" data-name="Shape" d="M6.575.856V0H0V.856H2.276A2.021,2.021,0,0,1,4.264,2.168H0v.856H4.264A2.021,2.021,0,0,1,2.276,4.335H0v.856H1.985L4.061,9.04l.811-.431-1.886-3.5A2.746,2.746,0,0,0,5.15,3.024H6.575V2.168H5.15A2.485,2.485,0,0,0,4.437.856H6.575Z" fill="#6a7c55" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="0.6"/>
+      </g>
+    </g>
+  </g>
+</svg>

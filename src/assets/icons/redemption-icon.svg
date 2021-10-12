@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="39.707" height="39.707" viewBox="0 0 39.707 39.707">
+  <g id="withdraw" transform="translate(1.25 1.25)">
+    <path id="Shape" d="M11.839,16.912H0V0H37.207V18.6" transform="translate(0 6.765)" fill="none" stroke="#3e593c" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.5"/>
+    <path id="Shape-2" data-name="Shape" d="M0,11.839v.846A12.685,12.685,0,0,0,12.684,25.368h0A12.685,12.685,0,0,0,25.368,12.684V0h0A6.765,6.765,0,0,0,18.6,6.765v3.382a6.765,6.765,0,0,0-6.765,6.765" transform="translate(6.765 11.839)" fill="none" stroke="#3e593c" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.5"/>
+    <path id="Oval" d="M1.691,0A1.691,1.691,0,1,1,0,1.691,1.691,1.691,0,0,1,1.691,0Z" transform="translate(16.912 13.53)" fill="none" stroke="#3e593c" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.5"/>
+    <path id="Oval-2" data-name="Oval" d="M1.691,0A1.691,1.691,0,1,1,0,1.691,1.691,1.691,0,0,1,1.691,0Z" transform="translate(16.912 13.53)" fill="#111" stroke="#3e593c" stroke-width="2.5"/>
+    <path id="Shape-3" data-name="Shape" d="M23.677,6.765V5.074A5.073,5.073,0,0,0,18.6,0H5.074A5.073,5.073,0,0,0,0,5.074V6.765" transform="translate(6.765)" fill="none" stroke="#3e593c" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.5"/>
+  </g>
+</svg>

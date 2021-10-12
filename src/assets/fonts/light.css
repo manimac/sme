@@ -1,0 +1,20 @@
+/* Webfont: PFHandbookPro-Light */
+
+
+
+@font-face {
+    font-family: 'pf_handbook_prolight';
+    src: url('pfhandbookpro-light.eot');
+    src: url('pfhandbookpro-light.eot?#iefix') format('embedded-opentype'),
+         url('pfhandbookpro-light.woff2') format('woff2'),
+         url('pfhandbookpro-light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+p {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}

@@ -1,0 +1,400 @@
+  
+                      <div class="asset-allocation-outer div-outer">
+                        <h1 class="page-heading">Asset Category</h1>
+
+                        <!-- Assets card Starts Here -->
+                       
+                        <div class="asset-allocation-card">
+                          <div class="progress-container">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="progress-bar-wrapper">
+                                <label>60%</label>
+                                <div class="progress-bard-div progress-bard-equity">
+                                  <p>Equity</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                          <div class="col-md-6">
+                            <p class="label-value m-top-5">Invested Funds :<label>6</label></p>
+                          </div>
+                          <div class="col-md-6">
+                            <button class="collps" type="button" (click)="isCollapsedone = !isCollapsedone" [attr.aria-expanded]="!isCollapsedone" aria-controls="collapseExample2">
+                              View Fund<i class="large material-icons">keyboard_arrow_down</i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="collapseExample2" [ngbCollapse]="isCollapsedone">
+                        <div >
+                          <!-- <ul class="nav nav-tabs">
+                            <li class="active"><a data-target="#menu1" data-toggle="tab">Large Cap 30%</a></li>
+                            <li><a data-target="#menu2" data-toggle="tab">Small Cap 15%</a></li>
+                            <li><a data-target="#menu3" data-toggle="tab">Mid Cap 15%</a></li>
+                          </ul> -->
+                        
+                          <!-- Card Starts Here -->
+                         
+                            <ngb-tabset [destroyOnHide]="false" >
+  
+                              <ngb-tab title="My Holdings">
+                                <ng-template ngbTabContent>
+                            <div  class="">
+
+                             <div class="asset-funds-div">
+                              <!-- List Grid Starts Gere -->
+                              <div class="list-view-gird">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <p>Aditya Birla Sun Life Frontline Equity Fund</p>
+                                  <span>Direct</span> <span>Growth</span>
+                                </div>
+                                <div class="col-xs-12 visible-xs">
+                                  <br>
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="row">
+                                  <div class="col-md-2 col-sm-6 col-xs-6">
+                                    <div class="value-div">
+                                      <label>Current Value</label>
+                                      <p>₹55,728.01</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2 col-sm-6 col-xs-6">
+                                    <div class="value-div">
+                                      <label>Invested amount</label>
+                                      <p>₹51,999.80</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2 col-sm-6 col-xs-6">
+                                    <div class="value-div">
+                                      <label>Nav</label>
+                                      <p>₹419.3500</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2 col-sm-6 col-xs-6">
+                                    <div class="value-div">
+                                      <label>Unit</label>
+                                      <p>12.70</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2 col-sm-6 col-xs-6">
+                                    <div class="value-div">
+                                      <label>Profit / Loss</label>
+                                      <p class="value-profit">₹1,000.00</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2 col-sm-6 col-xs-12">
+                                    <div class="value-div border-none">
+                                      <div>
+                                        <button type="button" class="btn btn-default"  data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Transactions <i class="large material-icons">keyboard_arrow_right</i></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
+                              </div>
+                              <div class="row collapse" id="collapseExample">
+                                <div class="col-md-12">
+                                 
+                        
+                                  <div class="expand-Div border-0">
+                                    <div class="row">
+                                      <div  class="col-md-12">
+                                        <div class="row">
+                                          <div align="center" class="col-md-2 col-sm-6 col-xs-6">
+                                          
+                                          <a class="mrgn-b-15px" href="#">
+                                            <img src="./assets/icons/invest-more.svg">
+                                            <label>INVEST MORE</label>
+                                          </a>
+                                          </div>
+                                          <div align="center" class="col-md-2 col-sm-6 col-xs-6">
+                                            <a class="mrgn-b-15px" href="#">
+                                              <img src="./assets/icons/start-sip.svg"><br>
+                                              <label>START SIP</label>
+                                            </a>
+                                          </div>
+                                          <div align="center" class="col-md-2 col-sm-6 col-xs-6">
+                                            <a class="mrgn-b-15px" href="#">
+                                              <img src="./assets/icons/redeem.svg"><br>
+                                              <label>REDEEM</label>
+                                            </a>
+                                          </div>
+                                          <div  align="center" class="col-md-2 col-sm-6 col-xs-6">
+                                            <a class="mrgn-b-15px" href="#">
+                                              <img src="./assets/icons/switch.svg"><br>
+                                              <label>SWITCH</label>
+                                            </a>
+                                          </div>
+                                          <div align="center" class="col-md-2 col-sm-6 col-xs-6">
+                                            <a class="mrgn-b-15px" href="#">
+                                              <img src="./assets/icons/start-stp.svg "><br>
+                                              <label>START STP</label>
+                                            </a>
+                                          </div>
+                                          <div align="center" class="col-md-2 col-sm-6 col-xs-6">
+                                            <a class="mrgn-b-15px" href="#">
+                                              <img src="./assets/icons/start-swp.svg"><br>
+                                              <label>START SWP</label>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-xs-12 visible-xs border-btm mrgn-b-20px">
+                                        <br>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="cancel-div"></div>
+                                        
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                             </div><!-- List Grid Ends Gere -->
+
+
+                            
+
+                             </div>
+
+
+                            </div>
+                            </ng-template>
+                            </ngb-tab>
+
+
+
+                            <ngb-tab title="Asset Location">
+                              <ng-template ngbTabContent>
+                            <div class="">
+                             
+                              
+                              <div class="asset-funds-div">
+                                <!-- List Grid Starts Gere -->
+                                <div class="list-view-gird">
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <p>Aditya Birla Sun Life Frontline Equity Fund</p>
+                                    <span>Direct</span> <span>Growth</span>
+                                  </div>
+                                  <div class="col-xs-12 visible-xs">
+                                    <br>
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="row">
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Current Value</label>
+                                        <p>₹55,728.01</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Invested amount</label>
+                                        <p>₹51,999.80</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Nav</label>
+                                        <p>₹419.3500</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Unit</label>
+                                        <p>12.70</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Profit / Loss</label>
+                                        <p class="value-profit">₹1,000.00</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                      <div class="value-div border-none">
+                                        <div>
+                                          <button type="button" class="btn btn-default">Transactions <i class="large material-icons">keyboard_arrow_right</i></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  </div>
+                                </div>
+                               </div><!-- List Grid Ends Gere -->
+
+  
+                               <!-- List Grid Starts Gere -->
+                               <div class="list-view-gird border-none">
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <p>Aditya Birla Sun Life Frontline Equity Fund</p>
+                                    <span>Direct</span> <span>Growth</span>
+                                  </div>
+                                  <div class="col-xs-12 visible-xs">
+                                    <br>
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="row">
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Current Value</label>
+                                        <p>₹55,728.01</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Invested amount</label>
+                                        <p>₹51,999.80</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Nav</label>
+                                        <p>₹419.3500</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Unit</label>
+                                        <p>12.70</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Profit / Loss</label>
+                                        <p class="value-profit">₹1,000.00</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                      <div class="value-div border-none">
+                                        <div>
+                                          <button type="button" class="btn btn-default">Transactions <i class="large material-icons">keyboard_arrow_right</i></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  </div>
+                                </div>
+                              </div><!-- List Grid Ends Gere -->
+  
+                               </div>
+
+
+
+
+                            </div>
+                            </ng-template>
+                            </ngb-tab>
+
+
+
+
+
+
+                            <ngb-tab title="Basic Setting2">
+                              <ng-template ngbTabContent>
+                            <div class="">
+                              <div class="asset-funds-div">
+                               
+
+  
+                               <!-- List Grid Starts Gere -->
+                               <div class="list-view-gird border-none">
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <p>Aditya Birla Sun Life Frontline Equity Fund</p>
+                                    <span>Direct</span> <span>Growth</span>
+                                  </div>
+                                  <div class="col-xs-12 visible-xs">
+                                    <br>
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="row">
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Current Value</label>
+                                        <p>₹55,728.01</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Invested amount</label>
+                                        <p>₹51,999.80</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Nav</label>
+                                        <p>₹419.3500</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Unit</label>
+                                        <p>12.70</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-6">
+                                      <div class="value-div">
+                                        <label>Profit / Loss</label>
+                                        <p class="value-profit">₹1,000.00</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                      <div class="value-div border-none">
+                                        <div>
+                                          <button type="button" class="btn btn-default">Transactions <i class="large material-icons">keyboard_arrow_right</i></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  </div>
+                                </div>
+                              </div><!-- List Grid Ends Gere -->
+  
+                               </div>
+
+
+                            </div>
+                            </ng-template>
+                            </ngb-tab>
+                            </ngb-tabset>
+                          
+
+
+                        </div>
+                        </div>
+                        </div><!-- Assets card Starts Here -->
+                    
+
+
+
+
+                     
+
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      </div>
+

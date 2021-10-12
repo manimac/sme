@@ -1,0 +1,513 @@
+
+  
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .content-wrapper{
+        padding-left: 10px !important;
+        padding-right:10px !important;
+    }
+
+    .username-txt span {
+    font-size: 18px;
+    color: #3E593C;
+    }
+    
+    .side-menu{
+        
+        display: none;
+    }
+
+    .trans-card-strip {
+        padding: 18px 18px;
+    }
+
+    .trans-card-strip .value-div {
+        padding-top: 10px;
+        
+    }
+
+    .value-div{
+        border: none !important;
+      }
+   
+      
+      .summary-value h4{
+        font-size: 15px;
+        margin: 0;
+        line-height: 0px;
+        font-weight: 600;
+        
+        }
+    
+    .summary-value label{
+        font-size:14px !important;
+        color: #6c7174 !important;
+        font-weight: 400;
+        margin-bottom: 0px;
+    }
+
+    .nfo-div-fund h3 {
+        margin: 0px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #3E593C;
+        padding: 0px;
+        margin-bottom: 5px;
+    }
+
+    .AUM-Nav-Div p {
+        color: #6c7174;
+        font-size: 14px;
+        margin: 0px;
+    }
+
+    .pad-25{
+        padding: 14px !important;
+    }
+
+    .white-card {
+       
+        padding: 17px;
+       
+    }
+
+
+    .h-scroll{
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        height: 57px;
+   }
+
+
+
+
+   .h-scroll-s{
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    
+}
+
+
+
+   .ltst-trans-div .text-align{
+    text-align: left;
+ }
+
+
+ .portfolio-card button{
+    
+    float: left;
+    margin-left: 4px;
+    margin-top: 4px;
+
+}
+
+.l-card-row-1 {
+    padding: 20px;
+}
+ 
+.l-card-row-3 {
+    padding: 20px;
+}
+
+.l-card-body{
+    padding: 10px 20px;
+    
+}
+.amount-buttons button {
+    width: 100%;
+    padding: 9px 2px;
+    font-size: 12px;
+}
+
+.amount-buttons button:hover {
+   
+    padding: 9px 2px;
+    font-size: 12px;
+}
+
+.amount-buttons button:active {
+   
+    padding: 9px 2px;
+    font-size: 12px;
+}
+
+.amount-buttons button:focus {
+   
+    padding: 9px 2px;
+    font-size: 12px;
+}
+
+
+
+.form-button-div .btn-alignment{
+    text-align: center;
+   
+}
+
+.form-button-div .btn-alignment button{
+    margin-bottom:8px !important;
+}
+
+
+.form-button-div p {
+    color: #3E593C;
+    font-size: 16px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+
+.fund-return ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 10px;
+    float: left;
+}
+
+.scheme-option {
+    padding: 20px;
+    border-top: 1px #cdcece solid;
+}
+
+    .card-ribbon .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        padding: 16px 22px;
+    }
+
+
+    .filter-submit-div button {
+        margin-bottom: 15px;
+        margin-top: 10px;
+        margin-right: 5px;
+    }
+
+    .folio-details-list li {
+        float: left;
+        font-size: 15px;
+        color: #000;
+        margin-right: 0px;
+    }
+
+    .list-table {
+        width: auto;
+        float: right;
+        margin-top: 21px;
+    }
+
+
+    .ltst-trans-div {
+        border: 0px #ccc solid;
+        border-radius: 4px;
+        padding: 0px !important;
+    }
+
+    .brdr-m{
+        border: 1px #ccc solid !important;
+    }
+
+    .pro-l-row-2 ul li {
+        float: left;
+        padding: 6px 11px;
+        background-color: #fff;
+        border: 1px #969F6E solid;
+        margin-right: 4px;
+        border-radius: 50px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+    .pro-category-div {
+        padding-top: 0px;
+        /* border-bottom: 1px #ccc solid; */
+        padding-bottom: 14px;
+    }
+
+    .txalign-m{
+        text-align:left !important;
+        margin-top: 10px;
+    }
+    
+    .cart-amount-txt{
+        text-align: left;
+    }
+
+    .cart-f-icon li {
+        float: left;
+        margin-left: 15px;
+    }
+
+    /*New Css Starts Here---------------------------*/
+
+    .l-card-row-1 p {
+        color: #3E593C;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+
+    .fund-return ul li {
+        float: left;
+        padding: 5px 17px;
+        background-color: #fff;
+        border: 1px #969F6E solid;
+        margin-right: 4px;
+        border-radius: 50px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+
+    .view-funds-div .value-div button {
+        margin-top: -5px;
+        width: 100%;
+        float: right;
+        border: none;
+        text-align: left;
+        padding-left: 0px;
+        font-size: 16px;
+    }
+
+    .view-funds-div .value-div button:hover {
+        background-color: #fff !important;
+        
+    }
+
+    .view-funds-div .value-div button:focus {
+        background-color: none !important;
+        box-shadow: none !important;
+    }
+
+
+    .payament-ststus-box p{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        color: #000;
+        margin-top: 10px;
+    }
+
+    .payament-ststus-box p span{
+        font-size: 18px !important;
+        font-weight: 600;
+        font-weight: 500;
+    }
+
+    .payament-ststus-box img{
+        height: 50px;
+    }
+
+    .txt-m-center{
+        text-align: center !important;
+    }
+
+
+    .switch-m-align{
+        float: left !important;
+    margin-top: -12px;
+    margin-bottom: 10px;
+    }
+
+    .l-card-inner{
+        padding: 20px;
+    }
+
+
+    .or-div img {
+        margin-top: 0px;
+        margin-bottom: 17px;
+    }
+
+
+.grey-c-div{
+    display: flex;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+
+
+.transact-banner{
+
+    padding: 18px 18px;
+    border-radius: 4px;
+}
+
+.transact-banner h2{
+    
+    line-height: 8px;
+    margin-top: 6px;
+    font-size: 16px;
+
+}
+
+        .transact-banner p {
+            font-size: 16px;
+            color: #6c7174;
+            }
+
+        .transact-banner button {
+        text-align:right;
+        margin-top: 10px;
+        float: left !important; 
+        }
+
+
+
+.button-align{
+    text-align: left;
+    
+}
+
+.folio-brdr{
+    border-right:none !important;
+    border-bottom: 1px #ccc dotted;
+    padding: 10px 10px;
+}
+
+
+
+
+  
+}
+
+
+
+/* @media (min-width: 768px)  {
+    .transact-banner{
+
+        padding: 18px 18px;
+        border-radius: 4px;
+    }
+
+    .transact-banner img{ 
+        margin-top: 6px;
+    }
+
+
+    .transact-banner h2{
+        margin-left: 20px;
+    }
+
+    .transact-banner p{
+
+        margin-right: 30px;
+        margin-left: 20px;
+    }
+
+
+} */
+
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    
+    .content-wrapper{
+        padding-left:10px;
+        padding-right:16px !important;
+    }
+
+    .side-menu{
+        display: none;
+    }
+
+
+    .list-table {
+        width: auto;
+        float: right;
+        margin-top: 21px;
+    }
+
+    .m-align-left{
+        float: left !important;
+    }
+
+  
+    
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .content-wrapper{
+        padding-left:124px;
+    
+    }
+
+    .side-menu{
+        
+        display: block;
+    }
+    
+    .value-div{
+        width: 100%;
+        padding-top: 6px;
+        border-right: 1px #ccc dotted;
+      }
+
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    .content-wrapper{
+        padding-left:124px;
+    
+    }
+
+    .side-menu{
+        
+        display: block;
+    }
+    .value-div{
+        width: 100%;
+        padding-top: 6px;
+        border-right: 1px #ccc dotted;
+      }
+    
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    
+    .content-wrapper{
+        padding-left:124px;
+    
+    }
+
+    .side-menu{
+        
+        display: block;
+    }
+
+    .value-div{
+        width: 100%;
+        padding-top: 6px;
+        border-right: 1px #ccc dotted;
+      }
+    
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+
+    <!-- Side Menu Starts Here -->
+    <div class="side-menu">
+   
+  
+        <div class="menu-box" routerLinkActive="menu-box-activ">
+          <a routerLink="/dashboard" routerLinkActive="active" #rla0="routerLinkActive" [routerLinkActiveOptions]="{exact: true}">
+            
+            <img src="./assets/icons/dashboard-grey.svg" *ngIf="!rla0.isActive">
+            <img src="./assets/icons/dashboard-green.svg" *ngIf="rla0.isActive"><br>
+            <label>Dashboard</label>
+          </a>
+        </div>
+  
+  
+        <div class="menu-box" routerLinkActive="menu-box-activ">
+          <a routerLink="/explore-funds" routerLinkActive="active" #rla1="routerLinkActive" [routerLinkActiveOptions]="{exact: true}">
+           
+            <img  src="./assets/icons/explore-funds-grey.svg" *ngIf="!rla1.isActive">
+            <img  src="./assets/icons/explore-funds-green.svg" *ngIf="rla1.isActive"><br>
+            <label>Explore Funds</label>
+          </a>
+        </div>
+  
+  
+        <div class="menu-box"  routerLinkActive="menu-box-activ">
+          <a routerLink="/transaction-summary" routerLinkActive="active" #rla2="routerLinkActive" [routerLinkActiveOptions]="{exact: true}">
+            <img src="./assets/icons/transact-grey.svg" *ngIf="!rla2.isActive">
+            <img  src="./assets/icons/transact-green.svg"  *ngIf="rla2.isActive"><br>
+            <label>Transact Now</label>
+          </a>
+        </div>
+  
+  
+  
+        <div class="menu-box " routerLinkActive="menu-box-activ">
+          <a routerLink="/portfolio" routerLinkActive="active" #rla3="routerLinkActive" [routerLinkActiveOptions]="{exact: true}">
+            <img src="./assets/icons/portfolio-grey.svg" *ngIf="!rla3.isActive">
+            <img src="./assets/icons/portfolio-green.svg"  *ngIf="!rla3.isActive"><br>
+            <label>Portfolio</label>
+          </a>
+        </div>
+  
+  
+  
+        <!-- <div class="menu-box" routerLinkActive="menu-box-activ">
+          <a  routerLink="" routerLinkActive="active" #rla4="routerLinkActive" [routerLinkActiveOptions]="{exact: true}">
+            <img src="./assets/icons/transaction-summary-grey.svg" *ngIf="!rla4.isActive"> -->
+            <!-- <img src="./assets/icons/transaction-summary-green.svg"  *ngIf="rla4.isActive"><br>
+            <label>Transaction
+              Summary</label>
+          </a>
+        </div> -->
+  
+  
+  
+        <div class="menu-box">
+          <a href="#">
+            <img src="./assets/icons/transaction-summary-grey.svg"><br>
+            <label>Our Services</label>
+          </a>
+        </div>
+  
+  
+  
+  
+  
+  
+      </div><!-- Side Menu Starts Here -->
+  
+  

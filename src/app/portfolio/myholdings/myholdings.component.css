@@ -1,0 +1,9 @@
+.card-strip div.tab-header-activated {
+    background-color: #F1F3F6;
+}
+.activated{
+background-color: #F1F3F6;
+}
+.show::before div{
+    background-color: #000;   position: absolute;
+}

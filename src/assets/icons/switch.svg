@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="Group_1416" data-name="Group 1416" transform="translate(14476 12752)">
+    <g id="Rectangle_1107" data-name="Rectangle 1107" transform="translate(-14476 -12752)" fill="none" stroke="#fff" stroke-width="1">
+      <rect width="48" height="48" stroke="none"/>
+      <rect x="0.5" y="0.5" width="47" height="47" fill="none"/>
+    </g>
+    <g id="Group_1413" data-name="Group 1413" transform="translate(-14466 -12747)">
+      <g id="noun_date_1272092" transform="translate(0 24.798)">
+        <g id="noun_transfer_2458037" transform="translate(0 0)">
+          <g id="Group_296" data-name="Group 296">
+            <path id="Path_140" data-name="Path 140" d="M20.823,8.079a1.13,1.13,0,0,0-.249-1.232h0l-4.52-4.519a1.131,1.131,0,1,0-1.593,1.6l2.6,2.587H-5.868A1.13,1.13,0,0,0-7,7.649a1.13,1.13,0,0,0,1.13,1.13H17.061l-2.587,2.587a1.13,1.13,0,1,0,1.593,1.593l4.52-4.519h0A1.13,1.13,0,0,0,20.823,8.079Z" transform="translate(6.998 -1.999)" fill="#6a7c55"/>
+          </g>
+        </g>
+      </g>
+      <g id="noun_date_1272092-2" data-name="noun_date_1272092" transform="translate(0 2)">
+        <g id="noun_transfer_2458037-2" data-name="noun_transfer_2458037">
+          <g id="Group_296-2" data-name="Group 296">
+            <path id="Path_140-2" data-name="Path 140" d="M-2.913,8.079a1.13,1.13,0,0,1,.249-1.232h0l4.52-4.519a1.131,1.131,0,1,1,1.593,1.6L.85,6.52H23.778a1.13,1.13,0,1,1,0,2.26H.85l2.587,2.587A1.13,1.13,0,1,1,1.844,12.96L-2.675,8.44h0A1.13,1.13,0,0,1-2.913,8.079Z" transform="translate(2.998 -1.999)" fill="#6a7c55"/>
+          </g>
+        </g>
+      </g>
+      <path id="Shape" d="M9.261,1.206V0H0V1.206H3.206a2.847,2.847,0,0,1,2.8,1.847H0V4.259H6.007a2.847,2.847,0,0,1-2.8,1.847H0V7.313H2.8L5.72,12.734l1.142-.607L4.206,7.2A3.868,3.868,0,0,0,7.254,4.259H9.261V3.053H7.254a3.5,3.5,0,0,0-1-1.847H9.261Z" transform="translate(9.813 13.977)" fill="#6a7c55" stroke="#6a7c55" stroke-miterlimit="10" stroke-width="0.6"/>
+    </g>
+  </g>
+</svg>

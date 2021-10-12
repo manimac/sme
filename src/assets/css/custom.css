@@ -1,0 +1,41 @@
+.by-scheme-tc .card-strip, .by-folio-tab .card-strip {
+  padding: 0; }
+  .by-scheme-tc .card-strip .tab-header-content, .by-folio-tab .card-strip .tab-header-content {
+    padding: 18px 0;
+    display: flex;
+    width: 100%; }
+    .by-scheme-tc .card-strip .tab-header-content .value-div .btn:focus, .by-scheme-tc .card-strip .tab-header-content .value-div .btn:hover, .by-folio-tab .card-strip .tab-header-content .value-div .btn:focus, .by-folio-tab .card-strip .tab-header-content .value-div .btn:hover {
+      border: 1px solid #cccccc;
+      outline: none;
+      background-color: #ffffff; }
+    .by-scheme-tc .card-strip .tab-header-content.tab-header-activated, .by-folio-tab .card-strip .tab-header-content.tab-header-activated {
+      background-color: #F1F3F6; }
+      .by-scheme-tc .card-strip .tab-header-content.tab-header-activated span, .by-folio-tab .card-strip .tab-header-content.tab-header-activated span {
+        background-color: #ffffff; }
+      .by-scheme-tc .card-strip .tab-header-content.tab-header-activated .value-div .active-btn, .by-folio-tab .card-strip .tab-header-content.tab-header-activated .value-div .active-btn {
+        background-color: #6C7174;
+        border-color: #6C7174;
+        color: #ffffff; }
+  .by-scheme-tc .card-strip .expand-Div a label, .by-folio-tab .card-strip .expand-Div a label {
+    display: block; }
+  @media (max-width: 768px) {
+    .by-scheme-tc .card-strip .tab-header-content, .by-folio-tab .card-strip .tab-header-content {
+      display: block; } }
+
+.by-folio-tab .accordian-Div .accordion .panel-default .panel-heading .panel-title a {
+  position: relative; }
+  .by-folio-tab .accordian-Div .accordion .panel-default .panel-heading .panel-title a i.material-icons {
+    position: absolute;
+    right: 0;
+    top: 0; }
+
+.asset-allocation-container .nav-tabs {
+  background: #F1F3F6;
+  border-bottom: none;
+  border-top: 1px solid #dddddd;
+  padding: 0 15px; }
+  .asset-allocation-container .nav-tabs li a {
+    cursor: pointer; }
+
+.asset-allocation-container .tab-content {
+  padding: 0 15px; }

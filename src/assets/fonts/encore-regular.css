@@ -1,0 +1,20 @@
+/* Webfont: PFEncoreSansPro-Regular */
+
+
+
+@font-face {
+    font-family: 'pf_encore_sans_proregular';
+    src: url('pfencoresanspro-reg.eot');
+    src: url('pfencoresanspro-reg.eot?#iefix') format('embedded-opentype'),
+         url('pfencoresanspro-reg.woff2') format('woff2'),
+         url('pfencoresanspro-reg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+p {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}

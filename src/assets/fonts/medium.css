@@ -1,0 +1,20 @@
+/* Webfont: PFHandbookPro-Medium */
+
+
+
+@font-face {
+    font-family: 'pf_handbook_promedium';
+    src: url('pfhandbookpro-medium.eot');
+    src: url('pfhandbookpro-medium.eot?#iefix') format('embedded-opentype'),
+         url('pfhandbookpro-medium.woff2') format('woff2'),
+         url('pfhandbookpro-medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+p {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
