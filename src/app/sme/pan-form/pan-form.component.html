@@ -1,0 +1,94 @@
+
+    <div class="card-div">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-pannel">
+                    <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p>
+                </div>
+
+                <div class="card-value">
+                    <div class="max-width-800-div">
+                        <div class="row">
+
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div class="value-b-div">
+                                    <label>Current Value</label>
+                                    <p>₹ 20,000.00</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div class="value-b-div">
+                                    <label>Total Investement</label>
+                                    <p class="value-secondary">₹ 18,000.00</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div class="value-b-div">
+                                    <label>Profit/loss</label>
+                                    <p class="value-profit">₹ 2,000.00</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                <div class="value-b-div">
+                                    <label style="display:none">XIRR: 2.53%</label>
+                                    <label>Absolute : 11.11%</label>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="card-ribbon">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">My Holdings</a></li>
+              <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Asset Allocation</a></li>
+             
+            </ul>
+          </div> -->
+
+                <!-- Nav tabs -->
+
+
+                <!-- Tab panes -->
+
+
+                <div class="tab-content">
+                    <ngb-tabset [destroyOnHide]="false" class="card-ribbon">
+
+                        <ngb-tab title="My Holdings">
+                            <ng-template ngbTabContent>
+                                <app-myholdings></app-myholdings>
+                            </ng-template>
+                        </ngb-tab>
+
+                        <ngb-tab>
+                            <ng-template ngbTabTitle>Asset Allocation</ng-template>
+                            <ng-template ngbTabContent>
+
+
+                                <!-- Tab content 2 Starts Here-->
+                                <div role="tabpanel" class="tab-pane asset-allocation-container" id="profile">
+
+                                    <app-assetallocation></app-assetallocation>
+
+
+
+                                </div><!-- Tab content 2 Ends Here -->
+                            </ng-template>
+                        </ngb-tab>
+
+
+                    </ngb-tabset>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <br><br><br>

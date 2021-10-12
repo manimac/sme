@@ -19,6 +19,7 @@ import { AccountStatementComponent } from './account-statement/account-statement
 import { FolioLinkDelinkComponent } from './folio-link-delink/folio-link-delink.component';
 import { SwitchComponent } from './switch/switch.component';
 import { SwpComponent } from './swp/swp.component';
+import { SmeModule } from './sme/sme.module';
 
 // import { PortfolioComponent } from './portfolio/portfolio.component';
 // import { MyholdingsComponent } from './portfolio/myholdings/myholdings.component';
@@ -45,7 +46,8 @@ import { SwpComponent } from './swp/swp.component';
     DashboardModule,
     TransactionSummaryModule,
     HighchartsChartModule,
-    NgbModule
+    NgbModule,
+    SmeModule
   ],
   providers: [StyleService],
   bootstrap: [AppComponent]
