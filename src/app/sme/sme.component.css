@@ -1,0 +1,51 @@
+.content-wrapper {
+    padding-top: 62px;
+    padding-bottom: 62px;
+}
+.progress-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+.progress-img {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #969F6E;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    position: relative;
+}
+
+.progress-img img {
+    max-width: 15px;
+}
+.progress-item {
+    padding: 0 30px;
+    width: 150px;
+}
+.progress-img:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -90px;
+    width: 75px;
+    transform: translate(0, -50%);
+    border-bottom: 1px dashed #969F6E;
+}
+.progress-item:last-child .progress-img:before {
+    display: none;
+}
+
+.progress-item p {
+    /* font-family: PF Handbook Pro; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: #000000;
+}

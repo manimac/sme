@@ -1,0 +1,23 @@
+.notes-msg {
+    background-color: #F2F3F6;
+    padding: 20px;
+    border-radius: 6px;
+}
+.notes-msg p {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.notes-msg p img {
+    max-width: 22px;
+}
+.notes-msg p span {
+    padding-left: 10px;
+    /* font-family: PF Handbook Pro; */
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.018em;
+    color: #000000;
+}

@@ -1,44 +1,27 @@
 
-    <div class="card-div">
+    <div class="card-div custom-card-div mb-5">
         <div class="row">
             <div class="col-md-12">
                 <div class="card-pannel">
-                    <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p>
+                    <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
+                    <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
                 </div>
 
                 <div class="card-value">
-                    <div class="max-width-800-div">
-                        <div class="row">
-
-                            <div class="col-md-3 col-sm-6 col-xs-6">
-                                <div class="value-b-div">
-                                    <label>Current Value</label>
-                                    <p>₹ 20,000.00</p>
-                                </div>
+                    <div class="custom-card-body">
+                        <div class="row m-0">
+                            <div class="col-sm-6 col-md-4 col-lg-3 p-0 form-field">
+                                <label>Pan</label>
+                                <input type="text" id="pan" placeholder="Enter PAN" class="form-control w-100">
                             </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-6">
-                                <div class="value-b-div">
-                                    <label>Total Investement</label>
-                                    <p class="value-secondary">₹ 18,000.00</p>
-                                </div>
+                        </div>
+                        <div class="row mx-0 custom-btn-block">
+                            <div class="col-sm-6 col-md-4 col-lg-3 p-0">
+                                <button class="btn btn-link">Go Back</button>
                             </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-6">
-                                <div class="value-b-div">
-                                    <label>Profit/loss</label>
-                                    <p class="value-profit">₹ 2,000.00</p>
-                                </div>
+                            <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
+                                <button class="btn btn-primary disabled">Verify</button>
                             </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-6">
-                                <div class="value-b-div">
-                                    <label style="display:none">XIRR: 2.53%</label>
-                                    <label>Absolute : 11.11%</label>
-
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -91,4 +74,36 @@
 
         </div>
     </div>
-    <br><br><br>
+
+    <div class="card-div custom-card-div">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-pannel">
+                    <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
+                    <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
+                </div>
+
+                <div class="card-value">
+                    <div class="custom-card-body">
+                        <div class="row m-0 mb-3">
+                            <div class="col-sm-6 col-md-4 col-lg-3 p-0 form-field">
+                                <label>Pan</label>
+                                <input type="text" id="pan" placeholder="Enter PAN" class="form-control w-100">
+                            </div>
+                        </div>
+                        <div class="notes-msg">
+                            <p class="m-0">
+                                <img src="../../../assets/img/common/alert.svg" alt="Alert Icon" class="w-100">
+                                <span>Entered PAN is not KYC compliant. Click to proceed with Online KYC.</span>
+                            </p>
+                        </div>
+                        <div class="row mx-0 custom-btn-block">
+                            <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
+                                <button class="btn btn-primary">Proceed for KYC</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
