@@ -65,11 +65,11 @@
             <div class="card-value">
                 <div class="custom-card-body">
                     <div class="row m-0 mb-3">
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Pan</label>
+                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                            <label>PAN</label>
                             <input type="text" id="pan" placeholder="Enter PAN" class="form-control w-100">
                         </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Date of Incorporation</label>
                             <input type="text" id="date-of-incorporation" placeholder="Select date" class="form-control w-100 date">
                         </div>
@@ -98,23 +98,40 @@
 
             <div class="card-value">
                 <div class="custom-card-body">
+                    <ul class="m-0 mb-5 details-list user">
+                        <li>
+                            <label>PAN:</label>
+                            <span>ENQC77693A</span>
+                        </li>
+                        <li>
+                            <label>Name:</label>
+                            <span>Aditya Birla Sun Life AMC Ltd</span>
+                        </li>
+                        <li>
+                            <label>Date of Incorporation:</label>
+                            <span>26-Jan-1999</span>
+                        </li>
+                    </ul>
                     <div class="row m-0 mb-3">
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Mobile Number</label>
                             <input type="text" id="mobilenum" placeholder="Enter Mobile Number" class="form-control w-100">
                         </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Email ID</label>
                             <input type="text" id="emailId" placeholder="Enter Email ID" class="form-control w-100">
                         </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Tax Status</label>
-                            <select class="form-control w-100">
-                                <option value="">Partnership</option>
-                                <option value="">Partnership</option>
-                                <option value="">Partnership</option>
-                                <option value="">Partnership</option>
-                            </select>
+                            
+                            <div class="select-wrapper">
+                                <select class="form-control w-100">
+                                    <option value="">Partnership</option>
+                                    <option value="">Partnership</option>
+                                    <option value="">Partnership</option>
+                                    <option value="">Partnership</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
@@ -123,6 +140,133 @@
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
                             <button class="btn btn-primary disabled">Generate OTP</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card-div custom-card-div mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-pannel">
+                <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
+                <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
+            </div>
+
+            <div class="card-value">
+                <div class="custom-card-body">
+                    <ul class="m-0 mb-5 details-list user readonly">
+                        <li>
+                            <label>PAN:</label>
+                            <span>ENQC77693A</span>
+                        </li>
+                        <li>
+                            <label>Name:</label>
+                            <span>Aditya Birla Sun Life AMC Ltd</span>
+                        </li>
+                        <li>
+                            <label>Date of Incorporation:</label>
+                            <span>26-Jan-1999</span>
+                        </li>
+                    </ul>
+                    <div class="row m-0 mb-3">
+                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                            <label>Mobile Number</label>
+                            <input type="text" id="mobilenum" placeholder="Enter Mobile Number" value="9042216985" class="form-control w-100" readonly>
+                        </div>
+                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                            <label>Email ID</label>
+                            <input type="text" id="emailId" placeholder="Enter Email ID" value="janedoe@gmail.com" class="form-control w-100" readonly>
+                        </div>
+                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                            <label>Tax Status</label>
+                            <div class="select-wrapper readonly">
+                                <select class="form-control w-100" readonly>
+                                    <option value="">Partnership</option>
+                                    <option value="">Partnership</option>
+                                    <option value="">Partnership</option>
+                                    <option value="">Partnership</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 seperator"></div>
+                        <div class="col-sm-6 col-md-8 p-0 pr-sm-3 pr-lg-4 form-field">
+                            <label>Please enter the OTP sent on the registered mobile number and Email ID.</label>
+                            <input type="text" id="otp" placeholder="Enter OTP" class="form-control w-100">
+                        </div>
+                        <div class="col-12 p-0 m-0 mt-2 note-text">
+                            <span>OTP will expire in 8m 50s</span>
+                            <button class="btn btn-link">Resend OTP</button>
+                        </div>
+                    </div>
+                    <div class="row mx-0 custom-btn-block">
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0">
+                            <button class="btn btn-link">Go Back</button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
+                            <button class="btn btn-primary disabled">Submit OTP</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card-div custom-card-div mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-pannel">
+                <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
+                <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
+            </div>
+
+            <div class="card-value">
+                <div class="custom-card-body">
+                    <ul class="m-0 mb-5 details-list user readonly">
+                        <li>
+                            <label>PAN:</label>
+                            <span>ENQC77693A</span>
+                        </li>
+                        <li>
+                            <label>Mobile No.:</label>
+                            <span>9753108462</span>
+                        </li>
+                        <li>
+                            <label>Date of Incorporation:</label>
+                            <span>26-Jan-1999</span>
+                        </li>
+                        <li>
+                            <label>Name:</label>
+                            <span>Aditya Birla Sun Life AMC Ltd</span>
+                        </li>
+                        <li>
+                            <label>Email ID:</label>
+                            <span>janedoe@gmail.com</span>
+                        </li>
+                        <li>
+                            <label>Tax Status:</label>
+                            <span>Partnership</span>
+                        </li>
+                    </ul>
+                    <div class="row m-0 mb-3">
+                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                            <label>Mobile Number</label>
+                            <input type="text" id="mobilenum" placeholder="Enter Mobile Number" value="9042216985" class="form-control w-100" readonly>
+                        </div>
+                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                            <label>Email ID</label>
+                            <input type="text" id="emailId" placeholder="Enter Email ID" value="janedoe@gmail.com" class="form-control w-100" readonly>
+                        </div>
+                    </div>
+                    <div class="row mx-0 custom-btn-block">
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0">
+                            <button class="btn btn-link">Go Back</button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
+                            <button class="btn btn-primary disabled">Submit OTP</button>
                         </div>
                     </div>
                 </div>

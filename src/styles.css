@@ -179,12 +179,13 @@ background: #869791;
     line-height: 22px;
     letter-spacing: 0.018em;
     color: #000000;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin-bottom: 12px;
 }
 .form-field .form-control {
     border: 1px solid #CDCECE;
     height: 44px;
+    background-color: transparent;
 }
 .custom-btn-block {
     margin-top: 35px !important;
@@ -222,5 +223,32 @@ background: #869791;
     background-color: #CDCECE;
     border-color: #CDCECE;
     color: #fff;
+}
+.seperator {
+    margin: 30px 0;
+    border-bottom: 1px solid #CDCECE;
+}
+.form-field select.form-control {
+    padding-right: 35px;
+    appearance: none;
+    position: relative;
+    z-index: 1;
+}
+.select-wrapper {
+    position: relative;
+}
+.select-wrapper:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    background: url(../src/assets/img/common/arrow-down.svg) no-repeat;
+    background-size: 100%;
+    transform: translate(0, -50%);
+    width: 12px;
+    height: 6px;
+}
+.readonly.select-wrapper:after {
+    z-index: 2;
 }
 /*Common CSS*/
