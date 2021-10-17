@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Validators, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-pan-form',
@@ -7,9 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanFormComponent implements OnInit {
 
+  @Output() showKYC = new EventEmitter<number>();
+  panForm: FormGroup;
+  submitted: boolean = false;
+  showPanForm: boolean = true;
+  showProceedKYC: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+    this.panForm = new FormGroup({
+      pan: new FormControl('', Validators.required)
+    });
+  }
+
+  get panFormControl() {
+    return this.panForm.controls;
+  }
+
+  verifyPan() {
+    this.submitted = true;
+    if (this.panForm.valid) {
+      this.submitted = false;
+      this.showPanForm = false;
+      this.showProceedKYC = true;
+    }
+  }
+
+  proceedKYC(){
+    this.showKYC.emit();
   }
 
 }

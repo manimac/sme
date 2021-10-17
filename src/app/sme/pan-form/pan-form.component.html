@@ -1,109 +1,39 @@
-
-    <div class="card-div custom-card-div mb-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card-pannel">
-                    <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                    <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
-                </div>
-
-                <div class="card-value">
-                    <div class="custom-card-body">
-                        <div class="row m-0">
-                            <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
-                                <label>PAN</label>
-                                <input type="text" id="pan" placeholder="Enter PAN" class="form-control w-100">
-                            </div>
-                        </div>
-                        <div class="row mx-0 custom-btn-block">
-                            <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                                <button class="btn btn-link">Go Back</button>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                                <button class="btn btn-primary disabled">Verify</button>
-                            </div>
+<div class="card-div custom-card-div mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-pannel">
+                <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
+            </div>
+            <div class="card-value">
+                <div class="custom-card-body" [formGroup]="panForm">
+                    <div class="row m-0" [ngClass]="{'mb-3': showProceedKYC}">
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
+                            <label>PAN</label>
+                            <input type="text" id="pan" formControlName="pan" placeholder="Enter PAN"
+                                class="form-control w-100"
+                                [ngClass]="{ 'is-invalid': panFormControl.pan.touched && panFormControl.pan.errors }">
                         </div>
                     </div>
-                </div>
-
-                <!-- <div class="card-ribbon">
-            <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">My Holdings</a></li>
-              <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Asset Allocation</a></li>
-             
-            </ul>
-          </div> -->
-
-                <!-- Nav tabs -->
-
-
-                <!-- Tab panes -->
-
-
-                <div class="tab-content">
-                    <ngb-tabset [destroyOnHide]="false" class="card-ribbon">
-
-                        <ngb-tab title="My Holdings">
-                            <ng-template ngbTabContent>
-                                <app-myholdings></app-myholdings>
-                            </ng-template>
-                        </ngb-tab>
-
-                        <ngb-tab>
-                            <ng-template ngbTabTitle>Asset Allocation</ng-template>
-                            <ng-template ngbTabContent>
-
-
-                                <!-- Tab content 2 Starts Here-->
-                                <div role="tabpanel" class="tab-pane asset-allocation-container" id="profile">
-
-                                    <app-assetallocation></app-assetallocation>
-
-
-
-                                </div><!-- Tab content 2 Ends Here -->
-                            </ng-template>
-                        </ngb-tab>
-
-
-                    </ngb-tabset>
-                </div>
-            </div>
-
-
-
-        </div>
-    </div>
-
-    <div class="card-div custom-card-div">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card-pannel">
-                    <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                    <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
-                </div>
-
-                <div class="card-value">
-                    <div class="custom-card-body">
-                        <div class="row m-0 mb-3">
-                            <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
-                                <label>PAN</label>
-                                <input type="text" id="pan" placeholder="Enter PAN" class="form-control w-100">
-                            </div>
+                    <div class="notes-msg" *ngIf="showProceedKYC">
+                        <p class="m-0">
+                            <img src="../../../assets/img/common/alert.svg" alt="Alert Icon" class="w-100">
+                            <span>Entered PAN is not KYC compliant. Click to proceed with Online KYC.</span>
+                        </p>
+                    </div>
+                    <div class="row mx-0 custom-btn-block">
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0" *ngIf="showPanForm">
+                            <button class="btn btn-link">Go Back</button>
                         </div>
-                        <div class="notes-msg">
-                            <p class="m-0">
-                                <img src="../../../assets/img/common/alert.svg" alt="Alert Icon" class="w-100">
-                                <span>Entered PAN is not KYC compliant. Click to proceed with Online KYC.</span>
-                            </p>
-                        </div>
-                        <div class="row mx-0 custom-btn-block">
-                            <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                                <button class="btn btn-primary">Proceed for KYC</button>
-                            </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
+                            <button class="btn btn-primary" [ngClass]="{'disabled': panForm.invalid}"
+                                [disabled]="panForm.invalid" (click)="verifyPan()" *ngIf="showPanForm">Verify</button>
+                            <button class="btn btn-primary" [ngClass]="{'disabled': panForm.invalid}"
+                                [disabled]="panForm.invalid" (click)="proceedKYC()" *ngIf="showProceedKYC">Proceed for
+                                KYC</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

@@ -39,9 +39,9 @@
           <p class="m-0 text-center">Payment</p>
         </div>
       </div>
+      <app-pan-form *ngIf="showPanForm" (showKYC)="showKYC()"></app-pan-form>
+      <app-kyc-form *ngIf="showKYCForm" (showPan)="showPan()"></app-kyc-form>
       
-      <app-kyc-form></app-kyc-form>
-      <app-pan-form></app-pan-form>
       <!-- <div class="row">
         <div class="col-md-12">
          <h1 class="page-heading">SME</h1>

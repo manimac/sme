@@ -2,11 +2,10 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
-                <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
                 <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
             </div>
 
-            <div class="card-value">
+            <div class="card-value" *ngIf="showSteps">
                 <div class="custom-card-body">
                     <h4 class="m-0 mb-4 common-page-title">Steps to Complete eKYC</h4>
                     <ul class="m-0 p-0 kyc-process-list">
@@ -43,26 +42,15 @@
                     </ul>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link">Go Back</button>
+                            <button class="btn btn-link" (click)="showPanForm()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                            <button class="btn btn-primary disabled">Next</button>
+                            <button class="btn btn-primary" (click)="showDateOfIncorporationForm()">Next</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="card-div custom-card-div mb-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card-pannel">
-                <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
-            </div>
-
-            <div class="card-value">
+            <div class="card-value" *ngIf="showDateOfIncorporation">
                 <div class="custom-card-body">
                     <div class="row m-0 mb-3">
                         <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
@@ -76,27 +64,15 @@
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link">Go Back</button>
+                            <button class="btn btn-link" (click)="showStepsForm()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                            <button class="btn btn-primary disabled">Next</button>
+                            <button class="btn btn-primary disabled" (click)="showTaxStatusForm()">Next</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="card-div custom-card-div mb-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card-pannel">
-                <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
-            </div>
-
-            <div class="card-value">
+            <div class="card-value" *ngIf="showTaxStatus">
                 <div class="custom-card-body">
                     <ul class="m-0 mb-5 details-list user">
                         <li>
@@ -136,26 +112,15 @@
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link">Go Back</button>
+                            <button class="btn btn-link" (click)="showDateOfIncorporationForm()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                            <button class="btn btn-primary disabled">Generate OTP</button>
+                            <button class="btn btn-primary" (click)="showVerifyOTPForm()">Generate OTP</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="card-div custom-card-div mb-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card-pannel">
-                <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
-            </div>
-
-            <div class="card-value">
+            <div class="card-value" *ngIf="showVerifyOTP">
                 <div class="custom-card-body">
                     <ul class="m-0 mb-5 details-list user readonly">
                         <li>
@@ -203,27 +168,15 @@
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link">Go Back</button>
+                            <button class="btn btn-link" (click)="showTaxStatusForm()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                            <button class="btn btn-primary disabled">Submit OTP</button>
+                            <button class="btn btn-primary disabled" (click)="showPanForm()">Submit OTP</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="card-div custom-card-div mb-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card-pannel">
-                <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
-            </div>
-
-            <div class="card-value">
+            <!-- <div class="card-value" *ngIf="showSubmitOTP">
                 <div class="custom-card-body">
                     <ul class="m-0 mb-5 details-list user readonly">
                         <li>
@@ -263,94 +216,14 @@
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link">Go Back</button>
+                            <button class="btn btn-link" (click)="showVerifyOTPForm()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                            <button class="btn btn-primary disabled">Submit OTP</button>
+                            <button class="btn btn-primary disabled" (click)="showPanForm()">Submit OTP</button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
-
-
-<!--  <div class="card-div">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card-pannel">
-                    <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; KYC Form</p>
-                </div>
-
-                <div class="card-value">
-                    <div class="max-width-800-div">
-                        <div class="row">
-
-                            <div class="col-md-3 col-sm-6 col-xs-6">
-                                <div class="value-b-div">
-                                    <label>Current Value</label>
-                                    <p>₹ 20,000.00</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-6">
-                                <div class="value-b-div">
-                                    <label>Total Investement</label>
-                                    <p class="value-secondary">₹ 18,000.00</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-6">
-                                <div class="value-b-div">
-                                    <label>Profit/loss</label>
-                                    <p class="value-profit">₹ 2,000.00</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-6">
-                                <div class="value-b-div">
-                                    <label style="display:none">XIRR: 2.53%</label>
-                                    <label>Absolute : 11.11%</label>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="tab-content">
-                    <ngb-tabset [destroyOnHide]="false" class="card-ribbon">
-
-                        <ngb-tab title="My Holdings">
-                            <ng-template ngbTabContent>
-                                <app-myholdings></app-myholdings>
-                            </ng-template>
-                        </ngb-tab>
-
-                        <ngb-tab>
-                            <ng-template ngbTabTitle>Asset Allocation</ng-template>
-                            <ng-template ngbTabContent>
-
-                                <div role="tabpanel" class="tab-pane asset-allocation-container" id="profile">
-
-                                    <app-assetallocation></app-assetallocation>
-
-
-
-                                </div>
-                            </ng-template>
-                        </ngb-tab>
-
-
-                    </ngb-tabset>
-                </div>
-            </div>
-
-
-
-        </div>
-    </div>
-    <br><br><br> -->
