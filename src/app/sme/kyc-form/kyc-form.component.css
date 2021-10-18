@@ -52,52 +52,6 @@
     background-size: 22px;
     background-position: center right 10px;
 }
-.details-list {
-    padding-left: 50px;
-}
-.details-list.user {
-    background: url(../../../assets/img/kyc/user.svg) no-repeat;
-    background-size: 26px;
-    background-position: left center;
-}
-.details-list li {
-    list-style: none;
-    display: inline-block;
-    width: calc(100% / 3);
-}
-.details-list li > * {
-    display: inline-block;
-    vertical-align: middle;
-}
-.details-list li label {
-    /* font-family: PF Handbook Pro; */
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0.02em;
-    color: #000000;
-}
-.details-list li span {
-    /* font-family: F Handbook Pro; */
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0.02em;
-    color: #000000;
-    padding-left: 20px;
-}
-
-.readonly {
-    background-color: #f2f3f666 !important;
-}
-.details-list.user.readonly {
-    padding: 25px;
-    padding-left: 80px;
-    border-radius: 6px;
-    background-position: left 35px center;
-}
 .note-text span {
     /* font-family: PF Handbook Pro; */
     font-style: normal;
