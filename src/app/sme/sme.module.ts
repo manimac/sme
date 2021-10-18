@@ -14,13 +14,16 @@ import { UltimateBeneficiaryOwnerComponent } from './ultimate-beneficiary-owner/
 import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
 import { SummaryComponent } from './summary/summary.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [PanFormComponent, KycFormComponent, SmeComponent, CityCountryComponent, AdditionalDetailsComponent, FactaCrsDetailsComponent, PartAComponent, PartBComponent, UltimateBeneficiaryOwnerComponent, BankDetailsComponent, UploadDocumentsComponent, SummaryComponent],
   imports: [
     CommonModule,
-    SmeRoutingModule
+    SmeRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SmeModule { }

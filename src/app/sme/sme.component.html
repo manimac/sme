@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
     <!-- Content Placeholder Starts Here -->
     <div class="content-wrapper">
       <div class="progress-list">
@@ -39,9 +32,8 @@
           <p class="m-0 text-center">Payment</p>
         </div>
       </div>
-      
-      <!-- <app-kyc-form></app-kyc-form>
-      <app-pan-form></app-pan-form> -->
+      <app-pan-form *ngIf="showPanForm" (showKYC)="showKYC()"></app-pan-form>
+      <app-kyc-form *ngIf="showKYCForm" (showPan)="showPan()"></app-kyc-form>
 
       <app-additional-details></app-additional-details>
       <!-- <div class="row">
