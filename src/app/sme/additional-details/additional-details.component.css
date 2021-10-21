@@ -46,6 +46,7 @@
     height: 100px;
     padding: 20px 75px 20px 20px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     position: relative;
     width: 85%;
@@ -77,10 +78,40 @@
     content: "";
     position: absolute;
     top: 50%;
-    right: 25px;
-    width: 30px;
-    height: 30px;
+    right: 36px;
+    width: 18px;
+    height: 18px;
     background: url(../../../assets/img/common/upload.svg) no-repeat;
-    background-size: 22px;
+    background-size: 18px;
     transform: translate(0, -50%);
+}
+
+.with-doc .upload-wrapper span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    color: #6C7174;
+}
+.with-doc .upload-wrapper:before {
+    background-color: #6A7C55;
+}
+.with-doc .upload-wrapper:after {
+    background: url(../../../assets/img/common/white-tick.svg) no-repeat;
+    background-size: 18px;
+    background-position: center;
+}
+.with-doc .upload-wrapper > * {
+    flex: 1 0 100%;
+    max-width: 100%;
+}
+.with-doc .upload-wrapper p {
+    /* font-family: PF Handbook Pro; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.018em;
+    color: #000000;
 }

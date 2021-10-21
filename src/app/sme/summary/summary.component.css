@@ -1,0 +1,134 @@
+.edit .details-list.readonly.bg-green li {
+    width: calc(100% / 3);
+}
+.bank-name label {
+    /* font-family: PF Handbook Pro; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #3E593C;
+}
+
+.bank-name label b {
+    padding-right: 15px;
+    color: #000;
+    opacity: 0.85;
+}
+.edit .custom-card-div .card-pannel {
+    background-color: #6A7C55;
+    border-color: #6A7C55;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.edit .custom-card-div .card-pannel * {
+    color: #fff;
+}
+
+.edit .custom-card-div .card-pannel h4 span {
+    margin-left: auto;
+    /* font-family: PF Handbook Pro; */
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+    padding-left: 30px;
+    background: url(../../../assets/img/common/edit.svg) no-repeat;
+    background-size: 16px;
+    background-position: left 4px center;
+    text-transform: none;
+}
+
+.edit .custom-card-div .card-pannel h4 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.edit .form-field {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.edit .form-field label {
+    /* font-family: PF Handbook Pro; */
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    color: #6C7174;
+    flex: 1 0 48%;
+    max-width: 48%;
+}
+
+.field-value {
+    /* font-family: PF Handbook Pro; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    color: #000000;
+    flex: 1 0 48%;
+    max-width: 48%;
+    margin-left: auto;
+}
+
+.edit .form-field {
+    margin-bottom: 15px;
+}
+.edit .form-field:last-child:not(.split), .edit .form-field:last-child > * {
+    margin-bottom: 0;
+}
+.value-list li {
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle;
+    /* font-family: PF Handbook Pro; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #000000;
+    padding: 4px 14px;
+    background-color: #F2F3F6;
+    border-radius: 50px;
+    margin-right: 8px;
+}
+
+.value-list li:last-child {
+    margin: 0;
+}
+
+.split h6 {
+    flex: 1 0 100%;
+    max-width: 100%;
+    /* font-family: PF Handbook Pro; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.018em;
+    color: #3E593C;
+    margin-bottom: 10px !important;
+}
+.split > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px !important;
+}
+.split > div:last-child {
+    margin-bottom: 0 !important;
+}
+.split label {
+    margin: 0 !important;
+}
