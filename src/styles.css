@@ -278,6 +278,13 @@ background: #869791;
 .list-company.max .radio-wrapper {
     max-width: 70%;
 }
+.list-company.full-width .radio-wrapper {
+    max-width: 100%;
+}
+.list-company.full-width .radio-wrapper .radio-item {
+    width: 100%;
+    margin-bottom: 15px;
+}
 .list-company .radio-item {
     margin: 0;
 }
@@ -403,6 +410,78 @@ background: #869791;
 .input-wrapper .input-item input {
     position: static;
     opacity: 1;
+}
+.checkbox-wrapper.terms > div {
+    max-width: 100%;
+    align-items: flex-start;
+}
+
+.checkbox-content {
+    max-width: calc(100% - 24px);
+    flex: 1 0 calc(100% - 24px);
+    padding-left: 20px;
+}
+
+.checkbox-content label {
+    /* font-family: PF Handbook Pro; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.018em;
+    color: #000000;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.checkbox-content h6,.checkbox-content p {
+    /* font-family: PF Handbook Pro; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.018em;
+    color: #6C7174;
+}
+
+.checkbox-content h6 {
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.terms .checkbox-item span.custom-checkbox {
+    margin-top: 7px;
+}
+.seperator.sm {
+    margin: 15px 0;
+}
+.checkbox-content a {
+    color: #6A7C55 !important;
+    font-weight: 500;
+    text-decoration: underline !important;
+}
+.form-field .form-control.date {
+    padding-right: 45px;
+    background: url(./assets/img/kyc/date.svg) no-repeat;
+    background-size: 22px;
+    background-position: center right 10px;
+}
+.input-group-text {
+    background-color: #6A7C55 !important;
+    color: #fff !important;
+}
+.custom-btn-block .btn-primary.btn-link {
+    background-color: transparent;
+    color: #3E593C;
+    border: 0;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-btn-block .btn-primary.btn-link span {
+    font-size: inherit;
 }
 /*Common CSS*/
 

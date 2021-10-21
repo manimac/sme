@@ -46,12 +46,6 @@
     color: #000000;
     padding: 0;
 }
-.form-field .form-control.date {
-    padding-right: 45px;
-    background: url(../../../assets/img/kyc/date.svg) no-repeat;
-    background-size: 22px;
-    background-position: center right 10px;
-}
 .note-text span {
     /* font-family: PF Handbook Pro; */
     font-style: normal;
