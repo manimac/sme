@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-additional-details',
@@ -7,9 +8,254 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdditionalDetailsComponent implements OnInit {
 
+  @Output() showKyc = new EventEmitter<number>();
+  @Output() showSummary = new EventEmitter<number>();
+  showStep1: boolean = true;
+  showStep2: boolean = false;
+  showStep3: boolean = false;
+  showStep4: boolean = false;
+  showStep5: boolean = false;
+  showStep6: boolean = false;
+  showStep7: boolean = false;
+  step1Form: FormGroup;
+  step2Form: FormGroup;
+  step2FormData: any = [
+    {
+      country: '',
+      taxIdentificationNUmber: '',
+      identificationType: ''
+    }
+  ];
+  step3Form: FormGroup;
+  step4Form: FormGroup;
+  step5FormData: any = [
+    {
+      nameOfUBO: '',
+      taxId: '',
+      taxIdType: '',
+      typeCode: '',
+      addressType: 'Residential',
+      country: '',
+      state: '',
+      address: '',
+      pan: '',
+      countryOfBirth: '',
+      cityOfBirth: '',
+      occupationType: 'Business',
+      nationality: '',
+      dob: '',
+      gender: 'Male',
+      holding: '30%'
+    }
+  ];
+  step5Form: FormGroup;
+  step6Form: FormGroup;
+  step7Form: FormGroup;
+  services: any = [
+    {
+      name: 'Foreign Exchange',
+      isChecked: false
+    },
+    {
+      name: 'Money Charger Services',
+      isChecked: false
+    },
+    {
+      name: 'Money Landing',
+      isChecked: false
+    },
+    {
+      name: 'Pawning',
+      isChecked: false
+    },
+    {
+      name: 'Gaming',
+      isChecked: false
+    },
+    {
+      name: 'Gambling',
+      isChecked: false
+    },
+    {
+      name: 'Lottery',
+      isChecked: false
+    },
+    {
+      name: 'Casino Service',
+      isChecked: false
+    },
+    {
+      name: 'None of these',
+      isChecked: false
+    }
+  ]
+  validate: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+    this.step1Form = new FormGroup({
+      isListedCompany: new FormControl('Yes', Validators.required),
+      networth: new FormControl('', Validators.required),
+      networthDate: new FormControl('', Validators.required),
+      pep: new FormControl('Not Applicable', Validators.required)
+    });
+    this.step2Form = new FormGroup({
+      taxResidant: new FormControl('No', Validators.required)
+    });
+    this.step3Form = new FormGroup({
+      entityType: new FormControl('Financial Institution', Validators.required),
+      gin: new FormControl(''),
+      sponserName: new FormControl(''),
+      sponserGin: new FormControl(''),
+      ginNotApplicable: new FormControl(''),
+      twoDigits1: new FormControl(''),
+      twoDigits2: new FormControl('')
+    });
+    this.step4Form = new FormGroup({
+      entityType: new FormControl('Entity is a Public Traded Company', Validators.required),
+      stockExchange: new FormControl('Bombay Stock Exchange (BSE)'),
+      nameOfListedCompany: new FormControl(''),
+      natureOfRelation: new FormControl('Bombay Stock Exchange (BSE)'),
+      stockExchange2: new FormControl('Subsidiary of listed Company')
+    });
+    this.step5Form = new FormGroup({
+      category: new FormControl('Unlisted Company', Validators.required),
+      factaAndCrsDeclaration: new FormControl('', Validators.required),
+      termsAndConditions: new FormControl('', Validators.required)
+    });
+    this.step6Form = new FormGroup({
+      ifsc: new FormControl('UTBI0000207', Validators.required),
+      nameOfBank: new FormControl('Azis Bank', Validators.required),
+      branchName: new FormControl('Jankpuri(Delhi)', Validators.required),
+      branchAddress: new FormControl('C-31, Jankpuri', Validators.required),
+      city: new FormControl('Delhi', Validators.required),
+      accountNumber: new FormControl('', Validators.required),
+      confirmAccountNumber: new FormControl('', Validators.required),
+      accountType: new FormControl('Current Account', Validators.required),
+      validate: new FormControl('', Validators.required),
+      uploadedFile: new FormControl(''),
+    });
+    this.step7Form = new FormGroup({
+      // boardResolution: new FormControl('', Validators.required),
+      // memorandum: new FormControl('', Validators.required),
+      // authorisedSignatories: new FormControl('', Validators.required)
+    });
+  }
+
+  get step1FormControls() {
+    return this.step1Form.controls;
+  }
+
+  get step2FormControls() {
+    return this.step2Form.controls;
+  }
+
+  get step3FormControls() {
+    return this.step3Form.controls;
+  }
+
+  get step4FormControls() {
+    return this.step4Form.controls;
+  }
+
+  get step5FormControls() {
+    return this.step5Form.controls;
+  }
+
+  get step6FormControls() {
+    return this.step6Form.controls;
+  }
+
+  get step7FormControls() {
+    return this.step7Form.controls;
+  }
+
+  showKycForm(){
+    this.showKyc.emit();
+  }
+
+  showStep1Form(){
+    this.showStep1 = true;
+    this.showStep2 = false;
+  }
+
+  showStep2Form(){
+    this.showStep1 = false;
+    this.showStep2 = true;
+    this.showStep3 = false;
+  }
+
+  showStep3Form(){
+    this.showStep2 = false;
+    this.showStep3 = true;
+    this.showStep4 = false;
+  }
+
+  showStep4Form(){
+    this.showStep3 = false;
+    this.showStep4 = true;
+    this.showStep5 = false;
+  }
+
+  showStep5Form(){
+    this.showStep4 = false;
+    this.showStep5 = true;
+    this.showStep6 = false;
+  }
+
+  showStep6Form(){
+    this.showStep5 = false;
+    this.showStep6 = true;
+    this.showStep7 = false;
+  }
+
+  showStep7Form(){
+    this.showStep6 = false;
+    this.showStep7 = true;
+  }
+
+  showSummaryForm(){
+    this.showStep7 = false;
+    this.showSummary.emit();
+  }
+
+  addCountry(){
+    let obj = {
+      country: '',
+      taxIdentificationNUmber: '',
+      identificationType: ''
+    };
+    this.step2FormData.push(obj);
+  }
+
+  deleteCountry(index){
+    this.step2FormData.splice(index, 1);
+  }
+
+  addUBO(){
+    let obj = {
+      nameOfUBO: '',
+      taxId: '',
+      taxIdType: '',
+      typeCode: '',
+      addressType: 'Residential',
+      country: '',
+      state: '',
+      address: '',
+      pan: '',
+      countryOfBirth: '',
+      cityOfBirth: '',
+      occupationType: 'Business',
+      nationality: '',
+      dob: '',
+      gender: 'Male',
+      holding: '30%'
+    };
+    this.step5FormData.push(obj);
+  }
+
+  deleteUBO(index){
+    this.step5FormData.splice(index, 1);
   }
 
 }

@@ -33,11 +33,11 @@
         </div>
       </div>
       <app-pan-form *ngIf="showPanForm" (showKYC)="showKYC()"></app-pan-form>
-      <app-kyc-form *ngIf="showKYCForm" (showPan)="showPan()"></app-kyc-form>
+      <app-kyc-form *ngIf="showKYCForm" (showPan)="showPan()" (showAdditional)="showAdditional()"></app-kyc-form>
 
-      <app-additional-details></app-additional-details>
+      <app-additional-details *ngIf="showAdditionalForm" (showKYC)="showKYC()" (showSummary)="showSummary()"></app-additional-details>
 
-      <app-summary></app-summary>
+      <app-summary *ngIf="showSummaryForm"></app-summary>
       <!-- <div class="row">
         <div class="col-md-12">
          <h1 class="page-heading">SME</h1>
