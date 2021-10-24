@@ -16,7 +16,7 @@
         <span>26-Jan-1999</span>
     </li>
 </ul>
-<div class="card-div custom-card-div mb-5">
+<div class="card-div custom-card-div mb-5" *ngIf="showStep1">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -25,19 +25,24 @@
             </div>
 
             <div class="card-value">
-                <div class="custom-card-body">
+                <div class="custom-card-body" [formGroup]="step1Form">
                     <div class="row m-0 mb-4 pb-2">
                         <div class="col-12 p-0 form-field list-company">
-                            <label class="m-0">Is the entity a listed company? / Subsidiary of listed company? / Controlled by a listed company? <img src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
-                            
+                            <label class="m-0">Is the entity a listed company? / Subsidiary of listed company? /
+                                Controlled by a listed company? <img src="../../../assets/img/additional/info.svg"
+                                    alt="Info Icon"></label>
                             <div class="radio-wrapper">
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="" checked>
+                                    <input type="radio" value="Yes" name="isListedCompany"
+                                        formControlName="isListedCompany"
+                                        [ngClass]="{ 'is-invalid': step1FormControls.isListedCompany.touched && step1FormControls.isListedCompany.errors }">
                                     <span class="custom-radio"></span>
                                     <label>Yes</label>
                                 </div>
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="">
+                                    <input type="radio" value="No" name="isListedCompany"
+                                        formControlName="isListedCompany"
+                                        [ngClass]="{ 'is-invalid': step1FormControls.isListedCompany.touched && step1FormControls.isListedCompany.errors }">
                                     <span class="custom-radio"></span>
                                     <label>No</label>
                                 </div>
@@ -47,87 +52,55 @@
                     <div class="row m-0 mb-4">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Net worth</label>
-                            <input type="text" id="net_worth" placeholder="Enter Amount" class="form-control w-100">
+                            <input type="text" id="net_worth" placeholder="Enter Amount" class="form-control w-100"
+                                formControlName="networth"
+                                [ngClass]="{ 'is-invalid': step1FormControls.networth.touched && step1FormControls.networth.errors }">
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Net worth date (as on date)</label>
-                            <input type="text" id="net_worth" placeholder="Enter Amount" class="form-control w-100 date">
+                            <input type="date" id="net_worth" placeholder="Enter Amount" class="form-control w-100 date"
+                                formControlName="networthDate"
+                                [ngClass]="{ 'is-invalid': step1FormControls.networthDate.touched && step1FormControls.networthDate.errors }">
                         </div>
                     </div>
                     <div class="row m-0 mb-4">
                         <div class="col-sm-12 col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>PEP: Politically Exposed Person <img src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
-                            
+                            <label>PEP: Politically Exposed Person <img src="../../../assets/img/additional/info.svg"
+                                    alt="Info Icon"></label>
+
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">I am a politically exposed person</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
+                                <select class="form-control w-100" formControlName="pep"
+                                    [ngClass]="{ 'is-invalid': step1FormControls.pep.touched && step1FormControls.pep.errors }">
+                                    <option value="I am a politically exposed person">I am a politically exposed person
+                                    </option>
+                                    <option value="PEP 2">PEP 2</option>
+                                    <option value="PEP 3">PEP 3</option>
+                                    <option value="Not Applicable">Not Applicable</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row m-0">
                         <div class="col-12 p-0 form-field">
                             <label>Is the investor involved providing any of the mentioned services?</label>
-                            
+
                             <div class="checkbox-wrapper">
-                                <div class="checkbox-item">
-                                    <input type="checkbox" name="" id="">
+                                <div class="checkbox-item" *ngFor="let service of services; let i = index">
+                                    <input type="checkbox" id="i" name="service" value="{{service.name}}">
                                     <span class="custom-checkbox"></span>
-                                    <label>Foreign Exchange</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" name="" id="">
-                                    <span class="custom-checkbox"></span>
-                                    <label>Foreign Exchange</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" name="" id="">
-                                    <span class="custom-checkbox"></span>
-                                    <label>Foreign Exchange</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" name="" id="">
-                                    <span class="custom-checkbox"></span>
-                                    <label>Foreign Exchange</label>
-                                </div>
-                                <div class="checkbox-item disabled">
-                                    <input type="checkbox" name="" id="">
-                                    <span class="custom-checkbox"></span>
-                                    <label>Foreign Exchange</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" name="" id="">
-                                    <span class="custom-checkbox"></span>
-                                    <label>Foreign Exchange</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" name="" id="">
-                                    <span class="custom-checkbox"></span>
-                                    <label>Foreign Exchange</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" name="" id="">
-                                    <span class="custom-checkbox"></span>
-                                    <label>Foreign Exchange</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" name="" id="">
-                                    <span class="custom-checkbox"></span>
-                                    <label>Foreign Exchange</label>
+                                    <label for="i">{{service.name}}</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link">Go Back</button>
+                            <button class="btn btn-link" (click)="showKycForm()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                            <button class="btn btn-primary disabled">Next</button>
+                            <button class="btn btn-primary" [ngClass]="{'disabled': step1Form.invalid}"
+                                [disabled]="step1Form.invalid" (click)="showStep2Form()">Next</button>
                         </div>
                     </div>
                 </div>
@@ -135,7 +108,7 @@
         </div>
     </div>
 </div>
-<div class="card-div custom-card-div mb-5">
+<div class="card-div custom-card-div mb-5" *ngIf="showStep2">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -144,80 +117,71 @@
             </div>
 
             <div class="card-value">
-                <div class="custom-card-body">
+                <div class="custom-card-body" [formGroup]="step2Form">
                     <div class="row m-0">
                         <div class="col-12 p-0 form-field list-company">
-                            <label class="m-0">Is the entity a tax resident of any country other than India? <img src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
-                            
+                            <label class="m-0">Is the entity a tax resident of any country other than India? <img
+                                    src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
                             <div class="radio-wrapper">
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="" checked>
+                                    <input type="radio" value="Yes" name="taxResidant" formControlName="taxResidant"
+                                        [ngClass]="{ 'is-invalid': step2FormControls.taxResidant.touched && step2FormControls.taxResidant.errors }">
                                     <span class="custom-radio"></span>
                                     <label>Yes</label>
                                 </div>
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="">
+                                    <input type="radio" value="No" name="taxResidant" formControlName="taxResidant"
+                                        [ngClass]="{ 'is-invalid': step2FormControls.taxResidant.touched && step2FormControls.taxResidant.errors }">
                                     <span class="custom-radio"></span>
-                                    <label>Now</label>
+                                    <label>No</label>
                                 </div>
                             </div>
-                        </div>                        
-                        <div class="col-12 seperator"></div>
-                    </div>                    
-                    <h4 class="m-0 mb-3 common-page-title">First Country</h4>
-                    <div class="row m-0 mb-4">
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Country of Tax Residency</label>
-                            <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                </select>
-                            </div>
                         </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Tax Identification Number <img src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
-                            <input type="text" id="tax_id_no" placeholder="Enter ID Number" class="form-control w-100">
-                        </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Identification type <img src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
-                            <input type="text" id="net_worth" placeholder="Enter identification type" class="form-control w-100">
-                        </div>
+                        <div class="col-12 seperator" *ngIf="step2FormControls.taxResidant.value=='Yes'"></div>
                     </div>
-                    <div class="row mx-0 seperator"></div>
-                    <h4 class="m-0 mb-3 common-page-title">Second Country<img src="../../../assets/img/common/delete.svg" alt="Delete Icon"></h4>
-                    <div class="row m-0 mb-4">
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Country of Tax Residency</label>
-                            <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                </select>
+                    <div *ngIf="step2FormControls.taxResidant.value=='Yes'">
+                        <div *ngFor="let data of step2FormData;let i=index;">
+                            <h4 class="m-0 mb-3 common-page-title">{{i+1}}. Country<img
+                                    src="../../../assets/img/common/delete.svg" alt="Delete Icon" *ngIf="i!=0"
+                                    (click)="deleteCountry(i)"></h4>
+                            <div class="row m-0 mb-4">
+                                <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                    <label>Country of Tax Residency</label>
+                                    <div class="select-wrapper">
+                                        <select class="form-control w-100" [(ngModel)]="data.country">
+                                            <option value="">Select Country</option>
+                                            <option value="India">India</option>
+                                            <option value="Country 2">Country 2</option>
+                                            <option value="Country 3">Country 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                    <label>Tax Identification Number <img src="../../../assets/img/additional/info.svg"
+                                            alt="Info Icon"></label>
+                                    <input type="text" [(ngModel)]="data.taxIdentificationNUmber" id="tax_id_no"
+                                        placeholder="Enter ID Number" class="form-control w-100">
+                                </div>
+                                <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                    <label>Identification type <img src="../../../assets/img/additional/info.svg"
+                                            alt="Info Icon"></label>
+                                    <input type="text" [(ngModel)]="data.identificationType" id="net_worth"
+                                        placeholder="Enter identification type" class="form-control w-100">
+                                </div>
                             </div>
+                            <div class="row mx-0 seperator"></div>
                         </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Tax Identification Number <img src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
-                            <input type="text" id="tax_id_no" placeholder="Enter ID Number" class="form-control w-100">
-                        </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Identification type <img src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
-                            <input type="text" id="net_worth" placeholder="Enter identification type" class="form-control w-100">
-                        </div>
-                        <div class="col-12 p-0 mt-3">                            
-                            <button class="btn btn-primary grey">+ Another Country</button>
+                        <div class="col-12 p-0 mt-3">
+                            <button class="btn btn-primary grey" (click)="addCountry()">+ Another Country</button>
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link">Go Back</button>
+                            <button class="btn btn-link" (click)="showStep1Form()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                            <button class="btn btn-primary disabled">Next</button>
+                            <button class="btn btn-primary" [ngClass]="{'disabled': step2Form.invalid}"
+                                [disabled]="step2Form.invalid" (click)="showStep3Form()">Next</button>
                         </div>
                     </div>
                 </div>
@@ -226,7 +190,7 @@
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5">
+<div class="card-div custom-card-div mb-5" *ngIf="showStep3">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -235,100 +199,123 @@
             </div>
 
             <div class="card-value">
-                <div class="custom-card-body">
+                <div class="custom-card-body" [formGroup]="step3Form">
                     <div class="row m-0">
                         <div class="col-12 p-0 form-field list-company max">
-                            <label class="m-0">Entity type <img src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
-                            
+                            <label class="m-0">Entity type <img src="../../../assets/img/additional/info.svg"
+                                    alt="Info Icon"></label>
+
                             <div class="radio-wrapper">
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="" checked>
+                                    <input type="radio" value="Financial Institution" name="entityType"
+                                        formControlName="entityType"
+                                        [ngClass]="{ 'is-invalid': step3FormControls.entityType.touched && step3FormControls.entityType.errors }">
                                     <span class="custom-radio"></span>
                                     <label>Financial Institution</label>
                                 </div>
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="">
+                                    <input type="radio" value="Direct Reporting NFE" name="entityType"
+                                        formControlName="entityType"
+                                        [ngClass]="{ 'is-invalid': step3FormControls.entityType.touched && step3FormControls.entityType.errors }">
                                     <span class="custom-radio"></span>
                                     <label>Direct Reporting NFE</label>
                                 </div>
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="">
+                                    <input type="radio" value="Not Applicable" name="entityType"
+                                        formControlName="entityType"
+                                        [ngClass]="{ 'is-invalid': step3FormControls.entityType.touched && step3FormControls.entityType.errors }">
                                     <span class="custom-radio"></span>
                                     <label>Not Applicable</label>
                                 </div>
                             </div>
-                        </div>                        
-                        <div class="col-12 seperator"></div>
+                        </div>
+                        <div class="col-12 seperator" *ngIf="(step3FormControls.entityType.value!='Not Applicable')">
+                        </div>
                     </div>
-                    <div class="row m-0">
+                    <div class="row m-0"
+                        *ngIf="((step3FormControls.entityType.value=='Financial Institution')||(step3FormControls.entityType.value=='Direct Reporting NFE'))">
                         <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>GIIN (Global Intermediary Identification Number)</label>
                             <input type="text" id="net_worth" placeholder="Enter GIIN" class="form-control w-100">
                         </div>
                     </div>
-                    <div class="row m-0 or-seperator">
+                    <div class="row m-0 or-seperator"
+                        *ngIf="(step3FormControls.entityType.value=='Financial Institution')">
                         <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field">
                             <h6 class="m-0 text-center">OR</h6>
                         </div>
                     </div>
-                    <div class="row m-0 mb-4">
+                    <div class="row m-0 mb-4" *ngIf="(step3FormControls.entityType.value=='Financial Institution')">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Sponsor’s Name</label>
-                            <input type="text" id="net_worth" placeholder="Enter Sponsor’s Name" class="form-control w-100">
+                            <input type="text" id="net_worth" placeholder="Enter Sponsor’s Name"
+                                class="form-control w-100">
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Sponsor’s GIIN</label>
-                            <input type="text" id="net_worth" placeholder="Enter Sponsor’s GIIN" class="form-control w-100">
+                            <input type="text" id="net_worth" placeholder="Enter Sponsor’s GIIN"
+                                class="form-control w-100">
                         </div>
                     </div>
-                    <div class="row m-0 or-seperator">
+                    <div class="row m-0 or-seperator"
+                        *ngIf="(step3FormControls.entityType.value=='Financial Institution')">
                         <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field">
                             <h6 class="m-0 text-center">OR</h6>
                         </div>
                     </div>
-                    <div class="row m-0 mb-4">
+                    <div class="row m-0 mb-4" *ngIf="(step3FormControls.entityType.value=='Financial Institution')">
                         <div class="col-12 p-0 form-field">
                             <label>GIIN Not Applicable:</label>
                             <div class="radio-wrapper">
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="" checked>
+                                    <input type="radio" value="Applied For" name="ginNotApplicable"
+                                        formControlName="ginNotApplicable"
+                                        [ngClass]="{ 'is-invalid': step3FormControls.ginNotApplicable.touched && step3FormControls.ginNotApplicable.errors }">
                                     <span class="custom-radio"></span>
                                     <label>Applied For</label>
                                 </div>
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="">
+                                    <input type="radio" value="Not required to apply for" name="ginNotApplicable"
+                                        formControlName="ginNotApplicable"
+                                        [ngClass]="{ 'is-invalid': step3FormControls.ginNotApplicable.touched && step3FormControls.ginNotApplicable.errors }">
                                     <span class="custom-radio"></span>
                                     <label>Not required to apply for</label>
                                 </div>
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="">
+                                    <input type="radio" value="Not Obtained" name="ginNotApplicable"
+                                        formControlName="ginNotApplicable"
+                                        [ngClass]="{ 'is-invalid': step3FormControls.ginNotApplicable.touched && step3FormControls.ginNotApplicable.errors }">
                                     <span class="custom-radio"></span>
                                     <label>Not Obtained</label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row mx-0 seperator"></div>
-                    <div class="row m-0">
+                    <div class="row m-0"
+                        *ngIf="(step3FormControls.ginNotApplicable.value=='Not required to apply for')">
                         <div class="col-12 p-0 form-field list-company max">
-                            <label class="m-0">Please specify the two-digits sub-category <img src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
-                            
+                            <label class="m-0">Please specify the two-digits sub-category <img
+                                    src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
+
                             <div class="ml-4 input-wrapper">
                                 <div class="input-item">
-                                    <input type="text" name="" id="" class="form-control w-100">
+                                    <input type="text" name="twoDigits1" formControlName="twoDigits1"
+                                        class="form-control w-100">
                                 </div>
                                 <div class="input-item">
-                                    <input type="text" name="" id="" class="form-control w-100">
+                                    <input type="text" name="twoDigits2" formControlName="twoDigits2"
+                                        class="form-control w-100">
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link">Go Back</button>
+                            <button class="btn btn-link" (click)="showStep2Form()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                            <button class="btn btn-primary disabled">Next</button>
+                            <button class="btn btn-primary" [ngClass]="{'disabled': step3Form.invalid}"
+                                [disabled]="step3Form.invalid" (click)="showStep4Form()">Next</button>
                         </div>
                     </div>
                 </div>
@@ -337,7 +324,7 @@
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5">
+<div class="card-div custom-card-div mb-5" *ngIf="showStep4">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -346,73 +333,89 @@
             </div>
 
             <div class="card-value">
-                <div class="custom-card-body">
+                <div class="custom-card-body" [formGroup]="step4Form">
                     <div class="row m-0 mb-4">
                         <div class="col-12 p-0 form-field list-company full-width">
-                            <!-- <label class="m-0">Entity type <img src="../../../assets/img/additional/info.svg" alt="Info Icon"></label> -->
-                            
+
                             <div class="radio-wrapper">
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="" checked>
+                                    <input type="radio" value="Entity is a Public Traded Company" name="entityType"
+                                        formControlName="entityType"
+                                        [ngClass]="{ 'is-invalid': step4FormControls.entityType.touched && step4FormControls.entityType.errors }">
                                     <span class="custom-radio"></span>
-                                    <label>Financial Institution</label>
+                                    <label>Entity is a Public Traded Company</label>
                                 </div>
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="">
+                                    <input type="radio" value="Entity is related entity of a Public Traded Company"
+                                        name="entityType" formControlName="entityType"
+                                        [ngClass]="{ 'is-invalid': step4FormControls.entityType.touched && step4FormControls.entityType.errors }">
                                     <span class="custom-radio"></span>
-                                    <label>Direct Reporting NFE</label>
+                                    <label>Entity is related entity of a Public Traded Company</label>
                                 </div>
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="">
+                                    <input type="radio" value="Not Applicable" name="entityType"
+                                        formControlName="entityType"
+                                        [ngClass]="{ 'is-invalid': step4FormControls.entityType.touched && step4FormControls.entityType.errors }">
                                     <span class="custom-radio"></span>
                                     <label>Not Applicable</label>
                                 </div>
                             </div>
-                        </div>                        
-                        <div class="col-12 seperator"></div>
-                        <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field">
+                        </div>
+                        <div class="col-12 seperator" *ngIf="step4FormControls.entityType.value!='Not Applicable'">
+                        </div>
+                        <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field"
+                            *ngIf="step4FormControls.entityType.value=='Entity is a Public Traded Company'">
                             <label>Name of Stock Exchange</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
+                                <select class="form-control w-100" name="stockExchange" formControlName="stockExchange">
+                                    <option value="Bombay Stock Exchange (BSE)">Bombay Stock Exchange (BSE)</option>
+                                    <option value="Bombay Stock Exchange (BSE) 2">Bombay Stock Exchange (BSE) 2</option>
+                                    <option value="Bombay Stock Exchange (BSE) 3">Bombay Stock Exchange (BSE) 3</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field"
+                            *ngIf="step4FormControls.entityType.value=='Entity is related entity of a Public Traded Company'">
                             <label>Name of the listed company</label>
-                            <input type="text" id="net_worth" placeholder="Enter name of company" class="form-control w-100">
+                            <input type="text" id="net_worth" name="nameOfListedCompany"
+                                formControlName="nameOfListedCompany" placeholder="Enter name here"
+                                class="form-control w-100">
                         </div>
                     </div>
-                    <div class="row m-0 mb-4">
+                    <div class="row m-0 mb-4"
+                        *ngIf="step4FormControls.entityType.value=='Entity is related entity of a Public Traded Company'">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Name of Stock Exchange</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
+                                <select class="form-control w-100" name="natureOfRelation"
+                                    formControlName="natureOfRelation">
+                                    <option value="Bombay Stock Exchange (BSE)">Bombay Stock Exchange (BSE)</option>
+                                    <option value="Bombay Stock Exchange (BSE) 2">Bombay Stock Exchange (BSE) 2</option>
+                                    <option value="Bombay Stock Exchange (BSE) 3">Bombay Stock Exchange (BSE) 3</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Nature of relation</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
+                                <select class="form-control w-100" name="stockExchange2"
+                                    formControlName="stockExchange2">
+                                    <option value="Subsidiary of listed Company">Subsidiary of listed Company</option>
+                                    <option value="Subsidiary of listed Company 2">Subsidiary of listed Company 2
+                                    </option>
+                                    <option value="Subsidiary of listed Company 3">Subsidiary of listed Company 3
+                                    </option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link">Go Back</button>
+                            <button class="btn btn-link" (click)="showStep3Form()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                            <button class="btn btn-primary disabled">Next</button>
+                            <button class="btn btn-primary" [ngClass]="{'disabled': step4Form.invalid}"
+                                [disabled]="step4Form.invalid" (click)="showStep5Form()">Next</button>
                         </div>
                     </div>
                 </div>
@@ -421,158 +424,165 @@
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5">
+<div class="card-div custom-card-div mb-5" *ngIf="showStep5">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
-                <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
+                <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p>  -->
                 <h4 class="m-0 custom-card-title">STEP 5/7: Ultimate Beneficiary Owner (UBO)</h4>
             </div>
 
             <div class="card-value">
-                <div class="custom-card-body">
+                <div class="custom-card-body" [formGroup]="step5Form">
                     <div class="row m-0 mb-4">
                         <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Category</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
+                                <select class="form-control w-100" formControlName="category">
+                                    <option value="Unlisted Company">Unlisted Company</option>
+                                        <option value="Unlisted Company 2">Unlisted Company 2</option>
+                                        <option value="Unlisted Company 3">Unlisted Company 3</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="row mx-0 seperator"></div>
-                    <h4 class="m-0 mb-3 common-page-title">First UBO Details</h4>
-                    <div class="row m-0 mb-4">
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Address type</label>
-                            <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                </select>
+                    <div *ngFor="let data of step5FormData;let i=index;">
+                        <h4 class="m-0 mb-3 common-page-title">{{i+1}}. UBO Details <img
+                            src="../../../assets/img/common/delete.svg" alt="Delete Icon" *ngIf="i!=0"
+                            (click)="deleteUBO(i)"></h4>
+                        <div class="row m-0 mb-4">
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>Address type</label>
+                                <div class="select-wrapper">
+                                    <select class="form-control w-100">
+                                        <option value="Residential">Residential</option>
+                                        <option value="Residential 2">Residential 2</option>
+                                        <option value="Residential 3">Residential 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>Name of UBO</label>
+                                <input type="text" id="net_worth" placeholder="Enter UBO name" class="form-control w-100">
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Name of UBO</label>
-                            <input type="text" id="net_worth" placeholder="Enter UBO name" class="form-control w-100">
+                        <div class="row m-0 mb-4">
+                            <div class="col-sm-6 col-md-8 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>Address</label>
+                                <input type="text" id="net_worth" placeholder="Enter Address" class="form-control w-100">
+                            </div>
+                        </div>
+                        <div class="row m-0 mb-4">
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>Country</label>
+                                <div class="select-wrapper">
+                                    <select class="form-control w-100" placeholder="Select country here">
+                                        <option value="">Select country here</option>
+                                        <option value="India">India</option>
+                                        <option value="Country 2">Country 2</option>
+                                        <option value="Country 3">Country 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>State</label>
+                                <div class="select-wrapper">
+                                    <select class="form-control w-100" placeholder="Select State here">
+                                        <option value="">Select State here</option>
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="State 2">State 2</option>
+                                        <option value="State 3">State 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>PIN Code</label>
+                                <input type="text" id="net_worth" placeholder="Enter pin-code" class="form-control w-100">
+                            </div>
+                        </div>
+                        <div class="row m-0 mb-4">
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>Tax ID no.</label>
+                                <input type="text" id="net_worth" placeholder="Enter number here" class="form-control w-100">
+                            </div>
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>Tax ID type</label>
+                                <input type="text" id="net_worth" placeholder="Enter type here" class="form-control w-100">
+                            </div>
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>Type Code</label>
+                                <input type="text" id="net_worth" placeholder="Enter code here" class="form-control w-100">
+                            </div>
+                        </div>
+                        <div class="row mx-0 seperator"></div>
+                        <div class="row m-0 mb-4">
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>PAN</label>
+                                <input type="text" id="net_worth" placeholder="Enter number here" class="form-control w-100">
+                            </div>
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>Date of Birth</label>
+                                <input type="text" id="net_worth" placeholder="Enter ID type" class="form-control w-100 date">
+                            </div>
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>Gender</label>
+                                <div class="select-wrapper">
+                                    <select class="form-control w-100">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-0 mb-4">
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>City of Birth</label>
+                                <div class="select-wrapper">
+                                    <select class="form-control w-100" placeholder="Select City here">
+                                        <option value="">Select City here</option>
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="City 2">City 2</option>
+                                        <option value="City 3">City 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>Country of Birth</label>
+                                <div class="select-wrapper">
+                                    <select class="form-control w-100" placeholder="Select country here">
+                                        <option value="">Select country here</option>
+                                        <option value="India">India</option>
+                                        <option value="Country 2">Country 2</option>
+                                        <option value="Country 3">Country 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>Nationality</label>
+                                <input type="text" id="net_worth" placeholder="Enter ID type" class="form-control w-100">
+                            </div>
+                        </div>
+                        <div class="row m-0 mb-4">
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>Occupation type</label>
+                                <div class="select-wrapper">
+                                    <select class="form-control w-100">
+                                        <option value="Business">Business</option>
+                                        <option value="Business 2">Business 2</option>
+                                        <option value="Business 3">Business 3</option>
+                                    </select>
+                                </div>
+                            </div>                        
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>% of Holding</label>
+                                <input type="text" id="net_worth" placeholder="Enter type code" class="form-control w-100">
+                            </div>
                         </div>
                     </div>
-                    <div class="row m-0 mb-4">
-                        <div class="col-sm-6 col-md-8 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Address</label>
-                            <input type="text" id="net_worth" placeholder="Enter Address" class="form-control w-100">
-                        </div>
-                    </div>
-                    <div class="row m-0 mb-4">
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Country</label>
-                            <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>State</label>
-                            <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>PIN Code</label>
-                            <input type="text" id="net_worth" placeholder="Enter pin-code" class="form-control w-100">
-                        </div>
-                    </div>
-                    <div class="row m-0 mb-4">
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Tax ID</label>
-                            <input type="text" id="net_worth" placeholder="Enter ID number" class="form-control w-100">
-                        </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Tax ID type</label>
-                            <input type="text" id="net_worth" placeholder="Enter ID type" class="form-control w-100">
-                        </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Type Code</label>
-                            <input type="text" id="net_worth" placeholder="Enter type code" class="form-control w-100">
-                        </div>
-                    </div>
-                    <div class="row mx-0 seperator"></div>
-                    <div class="row m-0 mb-4">
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>PAN</label>
-                            <input type="text" id="net_worth" placeholder="Enter number here" class="form-control w-100">
-                        </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Date of Birth</label>
-                            <input type="text" id="net_worth" placeholder="Enter ID type" class="form-control w-100 date">
-                        </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Gender</label>
-                            <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row m-0 mb-4">
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>City of Birth</label>
-                            <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Country of Birth</label>
-                            <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Nationality</label>
-                            <input type="text" id="net_worth" placeholder="Enter ID type" class="form-control w-100">
-                        </div>
-                    </div>
-                    <div class="row m-0 mb-4">
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Occupation type</label>
-                            <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                </select>
-                            </div>
-                        </div>                        
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>% of Holding</label>
-                            <input type="text" id="net_worth" placeholder="Enter type code" class="form-control w-100">
-                        </div>
-                        
-                        <div class="col-12 p-0 mt-3">                            
-                            <button class="btn btn-primary grey">+ Another UBO Details</button>
-                        </div>
+                    
+                    <div class="col-12 p-0 mt-3">
+                        <button class="btn btn-primary grey" (click)="addUBO()">+ Another UBO Details</button>
                     </div>
                     <div class="row mx-0 seperator"></div>
                     <div class="row m-0 mb-4">
@@ -581,12 +591,16 @@
                             
                             <div class="checkbox-wrapper terms">
                                 <div class="checkbox-item">
-                                    <input type="checkbox" name="" id="">
+                                    <input type="checkbox" name="factaAndCrsDeclaration"
+                                        formControlName="factaAndCrsDeclaration">
                                     <span class="custom-checkbox"></span>
                                     <div class="checkbox-content">
                                         <label><b>FATCA and CRS Declaration</b></label>
                                         <h6>DECLARATION</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer magna erat, eleifend a hendrerit vitae, vehicula nec dui. Vivamus egestas molestie tellus, pretium mauris rutre at malesuada... <a href="javascript:void(0)">Read more</a></p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer magna erat,
+                                            eleifend a hendrerit vitae, vehicula nec dui. Vivamus egestas molestie
+                                            tellus, pretium mauris rutre at malesuada... <a
+                                                href="javascript:void(0)">Read more</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -595,12 +609,16 @@
                         <div class="col-12 p-0 form-field">
                             <div class="checkbox-wrapper terms">
                                 <div class="checkbox-item">
-                                    <input type="checkbox" name="" id="">
+                                    <input type="checkbox" name="termsAndConditions"
+                                        formControlName="termsAndConditions">
                                     <span class="custom-checkbox"></span>
                                     <div class="checkbox-content">
-                                        <label><b>FATCA and CRS Declaration</b></label>
-                                        <h6>DECLARATION</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer magna erat, eleifend a hendrerit vitae, vehicula nec dui. Vivamus egestas molestie tellus, pretium mauris rutre at malesuada... <a href="javascript:void(0)">Read more</a></p>
+                                        <label><b>Terms and Conditions</b></label>
+                                        <h6>1.AGREEMENT</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer magna erat,
+                                            eleifend a hendrerit vitae, vehicula nec dui. Vivamus egestas molestie
+                                            tellus, pretium mauris rutre at malesuada... <a
+                                                href="javascript:void(0)">Read more</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -609,10 +627,11 @@
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link">Go Back</button>
+                            <button class="btn btn-link" (click)="showStep4Form()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                            <button class="btn btn-primary disabled">Next</button>
+                            <button class="btn btn-primary" [ngClass]="{'disabled': step5Form.invalid}"
+                                [disabled]="step5Form.invalid" (click)="showStep6Form()">Next</button>
                         </div>
                     </div>
                 </div>
@@ -621,7 +640,7 @@
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5">
+<div class="card-div custom-card-div mb-5" *ngIf="showStep6">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -630,14 +649,15 @@
             </div>
 
             <div class="card-value">
-                <div class="custom-card-body">
+                <div class="custom-card-body" [formGroup]="step6Form">
                     <div class="p-0 mb-4 checkbox-content bank-name">
                         <label><b>Bank account holder name:</b> Aditya Birla Sun Life AMC Ltd</label>
                     </div>
                     <div class="row m-0 mb-4">
                         <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>IFSC</label>
-                            <input type="text" id="net_worth" placeholder="Enter IFSC" class="form-control w-100">
+                            <input type="text" id="net_worth" placeholder="Enter IFSC" class="form-control w-100"
+                                formControlName="ifsc" disabled>
                         </div>
                         <div class="col-sm-6 col-md-1 col-lg-1 p-0 pr-sm-3 pr-lg-4 or-seperator side">
                             <h6 class="m-0 text-center">OR</h6>
@@ -651,49 +671,54 @@
                     <div class="row m-0 mb-4">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Name of Bank*</label>
-                            <input type="text" id="net_worth" placeholder="Enter name of bank" class="form-control w-100">
+                            <input type="text" id="net_worth" placeholder="Enter name of bank"
+                                class="form-control w-100" formControlName="nameOfBank" disabled>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Branch Name*</label>
-                            <input type="text" id="net_worth" placeholder="Enter branch name" class="form-control w-100">
+                            <input type="text" id="net_worth" placeholder="Enter branch name" class="form-control w-100"
+                                formControlName="branchName" disabled>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Branch Address*</label>
-                            <input type="text" id="net_worth" placeholder="Enter branch address" class="form-control w-100">
+                            <input type="text" id="net_worth" placeholder="Enter branch address"
+                                class="form-control w-100" formControlName="branchAddress" disabled>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>City*</label>
-                            <input type="text" id="net_worth" placeholder="Enter City" class="form-control w-100">
+                            <input type="text" id="net_worth" placeholder="Enter City" class="form-control w-100"
+                                formControlName="city" disabled>
                         </div>
                     </div>
                     <div class="row m-0 mb-4">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Account Number*</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
+                                <select class="form-control w-100" formControlName="accountNumber">
+                                    <option value="">xxxxxxxxxxxx</option>
+                                    <option value="Account Number 1">Account Number 1</option>
+                                    <option value="Account Number 2">Account Number 2</option>
+                                    <option value="Account Number 3">Account Number 3</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Confirm Account Number*</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
+                                <select class="form-control w-100" formControlName="confirmAccountNumber">
+                                    <option value="">xxxxxxxxxxxx</option>
+                                    <option value="Account Number 1">Account Number 1</option>
+                                    <option value="Account Number 2">Account Number 2</option>
+                                    <option value="Account Number 3">Account Number 3</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Account Type*</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
-                                    <option value="">Bombay Stock Exchange (BSE)</option>
+                                <select class="form-control w-100" formControlName="accountType">
+                                    <option value="Current Account">Current Account</option>
+                                    <option value="Savings Account">Savings Account</option>
                                 </select>
                             </div>
                         </div>
@@ -706,13 +731,16 @@
                         <div class="col-lg-5 p-0 pr-sm-3 pr-lg-4 form-field">
                             <div class="radio-wrapper">
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="" checked>
+                                    <input type="radio" name="validate" value="Yes" formControlName="validate">
                                     <span class="custom-radio"></span>
                                     <label>Validate Online</label>
                                 </div>
                             </div>
                             <div class="p-0 checkbox-content">
-                                <p class="m-0">I authorise ABSLAMC to credit my account with Re 1/- for IMPS verification of my bank details. I hereby agree that incase of any mismatch the AMC shall be liable for lokking my further transactions in the folio until proof of correct bank details are provided and verified by AMC.</p>
+                                <p class="m-0">I authorise ABSLAMC to credit my account with Re 1/- for IMPS
+                                    verification of my bank details. I hereby agree that incase of any mismatch the AMC
+                                    shall be liable for lokking my further transactions in the folio until proof of
+                                    correct bank details are provided and verified by AMC.</p>
                             </div>
                         </div>
                         <div class="col-lg-2 p-0 pr-sm-3 pr-lg-4 or-seperator side">
@@ -723,7 +751,8 @@
                                 <div class="radio-item">
                                     <input type="radio" name="listed_company" id="" checked>
                                     <span class="custom-radio"></span>
-                                    <label>Upload Bank Proof<img src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
+                                    <label>Upload Bank Proof<img src="../../../assets/img/additional/info.svg"
+                                            alt="Info Icon"></label>
                                 </div>
                             </div>
                             <div class="input-group mb-3">
@@ -738,20 +767,19 @@
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
-                        <button class="btn btn-primary">Validate</button>
-                    </div>
-                    <div class="row mx-0 custom-btn-block">
-                        <button class="btn btn-primary btn-link">
+                        <button class="btn btn-primary" *ngIf="!validate" (click)="validate=true;">Validate</button>
+                        <button class="btn btn-primary btn-link" *ngIf="validate">
                             <img src="../../../assets/img/common/tick.svg" alt="Verified Icon">
                             <span class="ml-3">Bank Verified</span>
                         </button>
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link">Go Back</button>
+                            <button class="btn btn-link" (click)="showStep5Form()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                            <button class="btn btn-primary disabled">Next</button>
+                            <button class="btn btn-primary" [ngClass]="{'disabled': step6Form.invalid||!validate}"
+                                [disabled]="step6Form.invalid||!validate" (click)="showStep7Form()">Next</button>
                         </div>
                     </div>
                 </div>
@@ -760,7 +788,7 @@
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5">
+<div class="card-div custom-card-div mb-5" *ngIf="showStep7">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -771,7 +799,8 @@
             <div class="card-value">
                 <div class="custom-card-body">
                     <div class="p-0 checkbox-content bank-name">
-                        <label class="sm"><img src="../../../assets/img/common/warning.png" alt="Warning Icon"><b>File format should be: jpg, jpeg or png; Size limit is 1mb;</b></label>
+                        <label class="sm"><img src="../../../assets/img/common/warning.png" alt="Warning Icon"><b>File
+                                format should be: jpg, jpeg or png; Size limit is 1mb;</b></label>
                     </div>
                     <div class="seperator sm"></div>
                     <div class="upload-list">
@@ -783,72 +812,23 @@
                             </li>
                             <li>
                                 <div class="upload-wrapper">
-                                    <span>Memorandum & Article of Association</span>
+                                    <span>Board Resolution</span>
                                 </div>
                             </li>
-                            <li>
-                                <div class="upload-wrapper">
-                                    <span>List of Authorised Signatories</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="row mx-0 custom-btn-block">
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link">Go Back</button>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                            <button class="btn btn-primary disabled">Next</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="card-div custom-card-div mb-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card-pannel">
-                <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">STEP 7/7: UPLOAD DOCUMENTS</h4>
-            </div>
-
-            <div class="card-value">
-                <div class="custom-card-body">
-                    <div class="p-0 checkbox-content bank-name">
-                        <label class="sm"><img src="../../../assets/img/common/warning.png" alt="Warning Icon"><b>File format should be: jpg, jpeg or png; Size limit is 1mb;</b></label>
-                    </div>
-                    <div class="seperator sm"></div>
-                    <div class="upload-list with-doc">
-                        <ul class="m-0 p-0">
                             <li>
                                 <div class="upload-wrapper">
                                     <span>Board Resolution</span>
-                                    <p>address/docs-br.jpeg</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="upload-wrapper">
-                                    <span>Memorandum & Article of Association</span>
-                                    <p>address/docs-br.jpeg</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="upload-wrapper">
-                                    <span>List of Authorised Signatories</span>
-                                    <p>address/docs-br.jpeg</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link">Go Back</button>
+                            <button class="btn btn-link" (click)="showStep6Form()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
-                            <button class="btn btn-primary disabled">Next</button>
+                            <button class="btn btn-primary disabled" [ngClass]="{'disabled': step7Form.invalid}"
+                                [disabled]="step7Form.invalid" (click)="showSummaryForm()">Next</button>
                         </div>
                     </div>
                 </div>

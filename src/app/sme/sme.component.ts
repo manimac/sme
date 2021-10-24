@@ -9,6 +9,8 @@ export class SmeComponent implements OnInit {
 
   showPanForm: boolean = true;
   showKYCForm: boolean = false;
+  showAdditionalForm: boolean = false;
+  showSummaryForm: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -22,6 +24,16 @@ export class SmeComponent implements OnInit {
   showKYC(){
     this.showPanForm = false;
     this.showKYCForm = true;
+  }
+
+  showAdditional(){
+    this.showKYCForm = false;
+    this.showAdditionalForm = true;
+  }
+  
+  showSummary(){
+    this.showAdditionalForm = false;
+    this.showSummaryForm = true;
   }
 
 }

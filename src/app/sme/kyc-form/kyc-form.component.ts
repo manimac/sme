@@ -9,6 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class KycFormComponent implements OnInit {
 
   @Output() showPan = new EventEmitter<number>();
+  @Output() showAdditional = new EventEmitter<number>();
   showSteps: boolean = true;
   showDateOfIncorporation: boolean = false;
   showTaxStatus: boolean = false;
@@ -28,7 +29,7 @@ export class KycFormComponent implements OnInit {
     this.kycForm2 = new FormGroup({
       mobile: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      taxStatus: new FormControl('', Validators.required)
+      taxStatus: new FormControl('Partnership', Validators.required)
     });
     this.kycForm3 = new FormGroup({
       otp: new FormControl('', Validators.required)
@@ -77,6 +78,11 @@ export class KycFormComponent implements OnInit {
   showSubmitOTPForm(){
     this.showVerifyOTP = false;
     this.showSubmitOTP = true;
+  }
+
+  showAdditionalForm(){
+    this.showSubmitOTP = false;
+    this.showAdditional.emit();
   }
 
 }
