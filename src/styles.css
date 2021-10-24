@@ -491,6 +491,9 @@ background: #869791;
     font-size: 15px;
     color: #000;
 }
+.form-field.has-edit label > img {
+    max-width: 15px;
+}
 /*Common CSS*/
 
 /*User List CSS*/
