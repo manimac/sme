@@ -483,6 +483,14 @@ background: #869791;
 .custom-btn-block .btn-primary.btn-link span {
     font-size: inherit;
 }
+.list-company + .seperator.sm {
+    margin-top: 0;
+}
+
+.bank-name label.sm {
+    font-size: 15px;
+    color: #000;
+}
 /*Common CSS*/
 
 /*User List CSS*/

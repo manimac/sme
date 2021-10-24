@@ -132,3 +132,49 @@
 .split label {
     margin: 0 !important;
 }
+
+.docs .field-value, .edit .form-field.docs label {
+    flex: 1 0 100%;
+    max-width: 100%;
+}
+.docs .field-value {
+    margin: 10px 0 0;
+}
+.docs.split > div:not(.sm) {
+    margin-bottom: 0 !important;
+}
+
+.preview > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.preview span {
+    padding-right: 8px;
+}
+
+.preview img {
+    max-width: 15px;
+}
+
+.docs.split > div {
+    position: relative;
+}
+
+.docs.split .preview {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 0 10px;
+    z-index: 10;
+}
+.val {
+    /* font-family: PF Handbook Pro; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #3E593C;
+}
