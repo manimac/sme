@@ -44,7 +44,7 @@
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
                             <button class="btn btn-link" (click)="showPanForm()">Go Back</button>
                         </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
                             <button class="btn btn-primary" (click)="showDateOfIncorporationForm()">Next</button>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
                             <button class="btn btn-link" (click)="showStepsForm()">Go Back</button>
                         </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
                             <button class="btn btn-primary" [ngClass]="{'disabled': kycForm1.invalid}"
                             [disabled]="kycForm1.invalid" (click)="showTaxStatusForm()">Next</button>
                         </div>
@@ -115,7 +115,7 @@
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
                             <button class="btn btn-link" (click)="showDateOfIncorporationForm()">Go Back</button>
                         </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
                             <button class="btn btn-primary" [ngClass]="{'disabled': kycForm2.invalid}"
                             [disabled]="kycForm2.invalid" (click)="showVerifyOTPForm()">Generate OTP</button>
                         </div>
@@ -167,7 +167,7 @@
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
                             <button class="btn btn-link" (click)="showTaxStatusForm()">Go Back</button>
                         </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
                             <button class="btn btn-primary" [ngClass]="{'disabled': kycForm3.invalid}"
                             [disabled]="kycForm3.invalid" (click)="showSubmitOTPForm()">Submit OTP</button>
                         </div>
@@ -212,7 +212,7 @@
                             </div>
                         </div>
                         <div class="col-12 seperator"></div>
-                        <div class="col-sm-6 col-md-8 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 p-0 form-field">
                             <label>Please enter the OTP sent on the registered mobile number and Email ID.</label>
                             <input type="text" id="otp" placeholder="Enter OTP" class="form-control w-100" formControlName="otp" [ngClass]="{ 'is-invalid': kycForm3Controls.otp.touched && kycForm3Controls.pan.errors }">
                         </div>
@@ -225,7 +225,7 @@
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
                             <button class="btn btn-link" (click)="showTaxStatusForm()">Go Back</button>
                         </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
                             <button class="btn btn-primary" [ngClass]="{'disabled': kycForm3.invalid}"
                             [disabled]="kycForm3.invalid" (click)="showSubmitOTPForm()">Submit OTP</button>
                         </div>
@@ -274,7 +274,7 @@
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
                             <button class="btn btn-link" (click)="showVerifyOTPForm()">Go Back</button>
                         </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
                             <button class="btn btn-primary" (click)="showAdditionalForm()">Submit OTP</button>
                         </div>
                     </div>

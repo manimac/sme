@@ -34,10 +34,13 @@
 .upload-list ul {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 .upload-list ul li {
     list-style: none;
-    width: 33.3%;
+    flex: 1 0 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
 }
 
 .upload-wrapper {
@@ -49,7 +52,7 @@
     flex-wrap: wrap;
     align-items: center;
     position: relative;
-    width: 85%;
+    width: 65%;
 }
 
 .upload-wrapper span {

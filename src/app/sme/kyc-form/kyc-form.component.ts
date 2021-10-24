@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+declare var $: any;
+
 @Component({
   selector: 'app-kyc-form',
   templateUrl: './kyc-form.component.html',
@@ -33,6 +35,10 @@ export class KycFormComponent implements OnInit {
     });
     this.kycForm3 = new FormGroup({
       otp: new FormControl('', Validators.required)
+    });
+
+    $('#date-of-incorporation').datepicker({
+      uiLibrary: 'bootstrap4'
     });
   }
 
