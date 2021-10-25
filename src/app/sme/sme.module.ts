@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { CommonModule, registerLocaleData } from '@angular/common';
 
 import { SmeRoutingModule } from './sme-routing.module';
 import { PanFormComponent } from './pan-form/pan-form.component';
@@ -15,15 +15,26 @@ import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
 import { SummaryComponent } from './summary/summary.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
+import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import localeDECH from '@angular/common/locales/de-CH';
+registerLocaleData(localeDECH);
 @NgModule({
   declarations: [PanFormComponent, KycFormComponent, SmeComponent, CityCountryComponent, AdditionalDetailsComponent, FactaCrsDetailsComponent, PartAComponent, PartBComponent, UltimateBeneficiaryOwnerComponent, BankDetailsComponent, UploadDocumentsComponent, SummaryComponent],
   imports: [
     CommonModule,
     SmeRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BsDatepickerModule.forRoot(),
+    DatepickerModule.forRoot(),
+    BrowserAnimationsModule 
+  ],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'de-ch'
+    }
   ]
 })
 export class SmeModule { }
