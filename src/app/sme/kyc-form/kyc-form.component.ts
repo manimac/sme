@@ -1,8 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 declare var $: any;
-
 @Component({
   selector: 'app-kyc-form',
   templateUrl: './kyc-form.component.html',
@@ -21,7 +20,8 @@ export class KycFormComponent implements OnInit {
   kycForm2: FormGroup;
   kycForm3: FormGroup;
   submitted: boolean = false;
-  constructor() { }
+  constructor(private bsLocaleService: BsLocaleService) {
+   }
 
   ngOnInit(): void {
     this.kycForm1 = new FormGroup({
@@ -37,9 +37,9 @@ export class KycFormComponent implements OnInit {
       otp: new FormControl('', Validators.required)
     });
 
-    $('#date-of-incorporation').datepicker({
-      uiLibrary: 'bootstrap4'
-    });
+    // $('#date-of-incorporation').datepicker({
+    //   uiLibrary: 'bootstrap4'
+    // });
   }
 
   get kycForm1Controls() {
