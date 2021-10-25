@@ -53,11 +53,11 @@
             <div class="card-value" *ngIf="showDateOfIncorporation">
                 <div class="custom-card-body" [formGroup]="kycForm1">
                     <div class="row m-0 mb-3">
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>PAN</label>
                             <input type="text" id="pan" placeholder="Enter PAN" class="form-control w-100" formControlName="pan" [ngClass]="{ 'is-invalid': kycForm1Controls.pan.touched && kycForm1Controls.pan.errors }">
                         </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Date of Incorporation</label>
                             <input type="date" id="date-of-incorporation" placeholder="Select date" class="form-control w-100 date" formControlName="dateOfIncorporation" [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }">
                         </div>
@@ -90,15 +90,15 @@
                         </li>
                     </ul>
                     <div class="row m-0 mb-3">
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Mobile Number</label>
                             <input type="text" id="mobilenum" placeholder="Enter Mobile Number" class="form-control w-100" formControlName="mobile" [ngClass]="{ 'is-invalid': kycForm2Controls.mobile.touched && kycForm2Controls.mobile.errors }">
                         </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Email ID</label>
                             <input type="text" id="emailId" placeholder="Enter Email ID" class="form-control w-100" formControlName="email" [ngClass]="{ 'is-invalid': kycForm2Controls.email.touched && kycForm2Controls.email.errors }">
                         </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Tax Status</label>                            
                             <div class="select-wrapper">
                                 <select class="form-control w-100" formControlName="taxStatus" [ngClass]="{ 'is-invalid': kycForm2Controls.taxStatus.touched && kycForm2Controls.taxStatus.errors }">
@@ -143,15 +143,15 @@
                         <div class="col-12 p-0 form-field">
                             <label class="mb-4">Please verify the following contact details as per KRA Records:</label>
                         </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field has-edit">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field has-edit">
                             <label>Mobile Number <img class="ml-3" src="../../../assets/img/common/edit.svg" alt="Edit Icon"></label>
                             <p class="m-0 field-value">9753108462</p>
                         </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field has-edit">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field has-edit">
                             <label>Email ID <img class="ml-3" src="../../../assets/img/common/edit.svg" alt="Edit Icon"></label>
                             <p class="m-0 field-value">janedoe@gmail.com</p>
                         </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Tax Status</label>
                             <div class="select-wrapper">
                                 <select class="form-control w-100">
@@ -192,15 +192,15 @@
                         </li>
                     </ul>
                     <div class="row m-0 mb-3">
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Mobile Number</label>
                             <input type="text" id="mobilenum" placeholder="Enter Mobile Number" value="9042216985" class="form-control w-100" readonly>
                         </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Email ID</label>
                             <input type="text" id="emailId" placeholder="Enter Email ID" value="janedoe@gmail.com" class="form-control w-100" readonly>
                         </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Tax Status</label>
                             <div class="select-wrapper readonly">
                                 <select class="form-control w-100" disabled>
@@ -261,11 +261,11 @@
                         </li>
                     </ul>
                     <div class="row m-0 mb-3">
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>City of Incorporation</label>
                             <input type="text" id="mobilenum" placeholder="Enter City" class="form-control w-100">
                         </div>
-                        <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Country of Incorporation</label>
                             <input type="text" id="emailId" placeholder="Enter Country" value="India" class="form-control w-100" value readonly>
                         </div>
