@@ -63,7 +63,7 @@
                         <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Date of Incorporation</label>
                             <!-- <input type="date" id="date-of-incorporation" placeholder="Select date" class="form-control w-100 date" formControlName="dateOfIncorporation" [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }"> -->
-                            <input type="text" class="form-control" #dp="bsDatepicker" bsDatepicker>
+                            <input type="text" class="form-control w-100 date" formControlName="dateOfIncorporation" [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }" #dp="bsDatepicker" bsDatepicker>
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
