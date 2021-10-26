@@ -8,21 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class TransactComponent implements OnInit {
   flag: boolean = true;
 
-  constructor() {}
-  onClick(){
- 
-}
-  ngOnInit() {
-    
+  constructor() { }
+  onClickTransact() {
+
   }
-//   onCLick(){
-//   const myElement = (<HTMLElement>document.querySelector('#bx-pager'));
-//   if(myElement.getAttributeNames()){
-//   myElement.parentElement[2].classList.add('new-class');
-// }
-// else{
-//   myElement.parentElement[3].classList.remove('new-class');
-// }
-// }
+  ngOnInit() {
+
+  }
+  //   onCLick(){
+  //   const myElement = (<HTMLElement>document.querySelector('#bx-pager'));
+  //   if(myElement.getAttributeNames()){
+  //   myElement.parentElement[2].classList.add('new-class');
+  // }
+  // else{
+  //   myElement.parentElement[3].classList.remove('new-class');
+  // }
+  // }
 
 }

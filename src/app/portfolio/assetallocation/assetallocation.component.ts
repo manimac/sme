@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssetallocationComponent implements OnInit {
 
+  isCollapsedone: boolean = false;
   constructor() { }
 
   ngOnInit() {
