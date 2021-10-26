@@ -1,4 +1,4 @@
-<div class="w-100 edit">
+<div class="w-100 edit" *ngIf="summary">
     <ul class="m-0 mb-3 details-list user readonly bg-green">
         <li>
             <label>PAN:</label>
@@ -359,12 +359,12 @@
     </div>
     <div class="row mx-0 custom-btn-block">
         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-            <button class="btn btn-primary">Proceed</button>
+            <button class="btn btn-primary" (click)="showSuccessMessage()">Proceed</button>
         </div>
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5">
+<div class="card-div custom-card-div mb-5" *ngIf="successMessage">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -402,7 +402,7 @@
         </div>
     </div>
 </div>
-<div class="row mx-0 custom-btn-block">
+<div class="row mx-0 custom-btn-block proceed-bbtn" *ngIf="successMessage">
     <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
         <button class="btn btn-primary">Proceed to Invest</button>
     </div>
