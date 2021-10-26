@@ -56,14 +56,14 @@
                     <div class="row m-0 mb-3">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>PAN</label>
-                            <input type="text" id="pan" placeholder="Enter PAN" class="form-control w-100"
+                            <input type="text" id="pan" autocomplete="off" placeholder="Enter PAN" class="form-control w-100"
                                 formControlName="pan"
                                 [ngClass]="{ 'is-invalid': kycForm1Controls.pan.touched && kycForm1Controls.pan.errors }">
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Date of Incorporation</label>
                             <!-- <input type="date" id="date-of-incorporation" placeholder="Select date" class="form-control w-100 date" formControlName="dateOfIncorporation" [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }"> -->
-                            <input type="text" class="form-control w-100 date" formControlName="dateOfIncorporation" [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }" #dp="bsDatepicker" bsDatepicker>
+                            <input type="text" placeholder="Select date" class="form-control w-100 date" formControlName="dateOfIncorporation" [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }" #dp="bsDatepicker" bsDatepicker>
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
@@ -96,13 +96,13 @@
                     <div class="row m-0 mb-3">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Mobile Number</label>
-                            <input type="text" id="mobilenum" placeholder="Enter Mobile Number"
+                            <input type="text" id="mobilenum" placeholder="Enter Mobile Number" autocomplete="off"
                                 class="form-control w-100" formControlName="mobile"
                                 [ngClass]="{ 'is-invalid': kycForm2Controls.mobile.touched && kycForm2Controls.mobile.errors }">
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Email ID</label>
-                            <input type="text" id="emailId" placeholder="Enter Email ID" class="form-control w-100"
+                            <input type="text" id="emailId" placeholder="Enter Email ID" class="form-control w-100" autocomplete="off"
                                 formControlName="email"
                                 [ngClass]="{ 'is-invalid': kycForm2Controls.email.touched && kycForm2Controls.email.errors }">
                         </div>
@@ -226,8 +226,8 @@
                         <div class="col-12 col-md-10 col-lg-8 p-0 pr-md-3 pr-lg-4 form-field">
                             <label>Please enter the OTP sent on the registered mobile number and Email ID.</label>
                             <input type="text" id="otp" placeholder="Enter OTP" class="form-control w-100"
-                                formControlName="otp"
-                                [ngClass]="{ 'is-invalid': kycForm3Controls.otp.touched && kycForm3Controls.pan.errors }">
+                                formControlName="otp" autocomplete="off"
+                                [ngClass]="{ 'is-invalid': kycForm3Controls.otp.touched && kycForm3Controls.otp.errors }">
                         </div>
                         <div class="col-12 p-0 m-0 mt-2 note-text">
                             <span>OTP will expire in 8m 50s</span>
@@ -276,24 +276,29 @@
                     <div class="row m-0 mb-3">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>City of Incorporation</label>
-                            <input type="text" id="mobilenum" placeholder="Enter City" class="form-control w-100">
+                            <input type="text" id="mobilenum" placeholder="Enter City" class="form-control w-100" autocomplete="off">
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Country of Incorporation</label>
                             <input type="text" id="emailId" placeholder="Enter Country" value="India"
-                                class="form-control w-100" value readonly>
+                                class="form-control w-100" readonly>
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
                             <button class="btn btn-link" (click)="showVerifyOTPForm()">Go Back</button>
                         </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
+                        <!-- <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
                             <button class="btn btn-primary" (click)="showAdditionalForm()">Submit OTP</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-            </div>
+            </div>            
         </div>
+    </div>
+</div>
+<div class="row mx-0 custom-btn-block proceed-bbtn" *ngIf="showSubmitOTP">
+    <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
+        <button class="btn btn-primary" (click)="showAdditionalForm()">Proceed</button>
     </div>
 </div>

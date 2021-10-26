@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryComponent implements OnInit {
 
+  summary: boolean = true;
+  successMessage: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showSuccessMessage(){
+    this.summary = false;
+    this.successMessage = true;
   }
 
 }

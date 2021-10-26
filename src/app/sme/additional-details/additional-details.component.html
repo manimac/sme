@@ -21,7 +21,7 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">Step 1/7: Additional kyc details</h4>
+                <h4 class="m-0 custom-card-title">Step 1/8: Additional kyc details</h4>
             </div>
 
             <div class="card-value">
@@ -58,9 +58,7 @@
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Net worth date (as on date)</label>
-                            <input type="date" id="net_worth" placeholder="Enter Amount" class="form-control w-100 date"
-                                formControlName="networthDate"
-                                [ngClass]="{ 'is-invalid': step1FormControls.networthDate.touched && step1FormControls.networthDate.errors }">
+                            <input type="text" class="form-control w-100 date" placeholder="Select date" formControlName="networthDate" [ngClass]="{ 'is-invalid': step1FormControls.networthDate.touched && step1FormControls.networthDate.errors }" #dp="bsDatepicker" bsDatepicker>
                         </div>
                     </div>
                     <div class="row m-0 mb-4">
@@ -113,7 +111,7 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">STEP 2/7: FATCA AND CRS DETAILS</h4>
+                <h4 class="m-0 custom-card-title">STEP 2/8: FATCA AND CRS DETAILS</h4>
             </div>
 
             <div class="card-value">
@@ -149,7 +147,7 @@
                                     <label>Country of Tax Residency</label>
                                     <div class="select-wrapper">
                                         <select class="form-control w-100" [(ngModel)]="data.country">
-                                            <option value="">Select Country</option>
+                                            <option value="" disabled>Select Country</option>
                                             <option value="India">India</option>
                                             <option value="Country 2">Country 2</option>
                                             <option value="Country 3">Country 3</option>
@@ -195,7 +193,7 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">STEP 3/7: PART A </h4>
+                <h4 class="m-0 custom-card-title">STEP 3/8: PART A </h4>
             </div>
 
             <div class="card-value">
@@ -234,7 +232,7 @@
                     </div>
                     <div class="row m-0"
                         *ngIf="((step3FormControls.entityType.value=='Financial Institution')||(step3FormControls.entityType.value=='Direct Reporting NFE'))">
-                        <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field m-0">
                             <label>GIIN (Global Intermediary Identification Number)</label>
                             <input type="text" id="net_worth" placeholder="Enter GIIN" class="form-control w-100">
                         </div>
@@ -292,7 +290,7 @@
                         </div>
                     </div>
                     <div class="row m-0"
-                        *ngIf="(step3FormControls.ginNotApplicable.value=='Not required to apply for')">
+                        *ngIf="(step3FormControls.ginNotApplicable.value=='Not required to apply for')&&(step3FormControls.entityType.value=='Financial Institution')">
                         <div class="col-12 p-0 form-field list-company max">
                             <label class="m-0">Please specify the two-digits sub-category <img
                                     src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
@@ -329,7 +327,7 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">STEP 4/7: PART B</h4>
+                <h4 class="m-0 custom-card-title">STEP 4/8: PART B</h4>
             </div>
 
             <div class="card-value">
@@ -409,6 +407,60 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row mx-0 custom-btn-block">
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0">
+                            <button class="btn btn-link" (click)="showStep3Form()">Go Back</button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
+                            <button class="btn btn-primary" [ngClass]="{'disabled': step4Form.invalid}"
+                                [disabled]="step4Form.invalid" (click)="showStep4ExtraForm()">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card-div custom-card-div mb-5" *ngIf="showStep4extra">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-pannel">
+                <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
+                <h4 class="m-0 custom-card-title">STEP 5/8: PART B</h4>
+            </div>
+
+            <div class="card-value">
+                <div class="custom-card-body" [formGroup]="step4FormExtra">
+                    <div class="row m-0 mb-4">
+                        <div class="col-12 p-0 form-field full-width">
+
+                            <div class="radio-wrapper radio-inline">
+                                <div class="radio-item">
+                                    <input type="radio" value="Active NFE" name="entityTypeExtra"
+                                        formControlName="entityTypeExtra"
+                                        [ngClass]="{ 'is-invalid': step4FormExtraControls.entityTypeExtra.touched && step4FormExtraControls.entityTypeExtra.errors }">
+                                    <span class="custom-radio"></span>
+                                    <label>Active NFE</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" value="Passive NFE"
+                                        name="entityTypeExtra" formControlName="entityTypeExtra"
+                                        [ngClass]="{ 'is-invalid': step4FormExtraControls.entityTypeExtra.touched && step4FormExtraControls.entityTypeExtra.errors }">
+                                    <span class="custom-radio"></span>
+                                    <label>Passive NFE</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" value="Not Applicable" name="entityTypeExtra"
+                                        formControlName="entityTypeExtra"
+                                        [ngClass]="{ 'is-invalid': step4FormExtraControls.entityTypeExtra.touched && step4FormExtraControls.entityTypeExtra.errors }">
+                                    <span class="custom-radio"></span>
+                                    <label>Not Applicable</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 seperator" *ngIf="step4FormExtraControls.entityTypeExtra.value!='Not Applicable'">
+                        </div>
+                    </div>
                     <div class="row m-0 mb-4">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Nature of Business</label>
@@ -432,11 +484,11 @@
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link" (click)="showStep3Form()">Go Back</button>
+                            <button class="btn btn-link" (click)="showStep4Form()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-                            <button class="btn btn-primary" [ngClass]="{'disabled': step4Form.invalid}"
-                                [disabled]="step4Form.invalid" (click)="showStep5Form()">Next</button>
+                            <button class="btn btn-primary" [ngClass]="{'disabled': step4FormExtra.invalid}"
+                                [disabled]="step4FormExtra.invalid" (click)="showStep5Form()">Next</button>
                         </div>
                     </div>
                 </div>
@@ -450,7 +502,7 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p>  -->
-                <h4 class="m-0 custom-card-title">STEP 5/7: Ultimate Beneficiary Owner (UBO)</h4>
+                <h4 class="m-0 custom-card-title">STEP 6/8: Ultimate Beneficiary Owner (UBO)</h4>
             </div>
 
             <div class="card-value">
@@ -537,7 +589,7 @@
                             </div>
                         </div>
                         <div class="row mx-0 seperator"></div>
-                        <div class="row m-0 mb-4">
+                        <div class="row m-0 mb-4" *ngIf="step4FormExtraControls.entityTypeExtra.value=='Passive NFE'">
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                 <label>PAN</label>
                                 <input type="text" id="net_worth" placeholder="Enter number here" class="form-control w-100">
@@ -556,7 +608,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row m-0 mb-4">
+                        <div class="row m-0 mb-4" *ngIf="step4FormExtraControls.entityTypeExtra.value=='Passive NFE'">
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                 <label>City of Birth</label>
                                 <div class="select-wrapper">
@@ -584,7 +636,7 @@
                                 <input type="text" id="net_worth" placeholder="Enter ID type" class="form-control w-100">
                             </div>
                         </div>
-                        <div class="row m-0 mb-4">
+                        <div class="row m-0 mb-4" *ngIf="step4FormExtraControls.entityTypeExtra.value=='Passive NFE'">
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                 <label>Occupation type</label>
                                 <div class="select-wrapper">
@@ -648,7 +700,7 @@
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link" (click)="showStep4Form()">Go Back</button>
+                            <button class="btn btn-link" (click)="showStep4ExtraForm()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
                             <button class="btn btn-primary" [ngClass]="{'disabled': step5Form.invalid}"
@@ -666,7 +718,7 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">STEP 6/7: BANK DETAILS</h4>
+                <h4 class="m-0 custom-card-title">STEP 7/8: BANK DETAILS</h4>
             </div>
 
             <div class="card-value">
@@ -770,7 +822,7 @@
                         <div class="col-lg-5 p-0 pr-sm-3 pr-lg-4 form-field">
                             <div class="radio-wrapper">
                                 <div class="radio-item">
-                                    <input type="radio" name="listed_company" id="" checked>
+                                    <input type="radio" name="validate" id="">
                                     <span class="custom-radio"></span>
                                     <label>Upload Bank Proof<img src="../../../assets/img/additional/info.svg"
                                             alt="Info Icon"></label>
@@ -790,8 +842,7 @@
                     <div class="row mx-0 custom-btn-block">
                         <button class="btn btn-primary" *ngIf="!validate" (click)="validate=true;">Validate</button>
                         <button class="btn btn-primary btn-link" *ngIf="validate">
-                            <img src="../../../assets/img/common/tick.svg" alt="Verified Icon">
-                            <span class="ml-3">Bank Verified</span>
+                            <span class="ml-3">Validated Successfully!</span>
                         </button>
                     </div>
                     <div class="row mx-0 custom-btn-block">
@@ -814,7 +865,7 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">STEP 7/7: UPLOAD DOCUMENTS</h4>
+                <h4 class="m-0 custom-card-title">STEP 8/8: UPLOAD DOCUMENTS</h4>
             </div>
 
             <div class="card-value">

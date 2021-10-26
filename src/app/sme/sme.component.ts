@@ -24,11 +24,13 @@ export class SmeComponent implements OnInit {
   showKYC(){
     this.showPanForm = false;
     this.showKYCForm = true;
+    this.showAdditionalForm = false;
   }
 
   showAdditional(){
     this.showKYCForm = false;
     this.showAdditionalForm = true;
+    this.showSummaryForm = false;
   }
   
   showSummary(){

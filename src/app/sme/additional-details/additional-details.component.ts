@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 @Component({
   selector: 'app-additional-details',
   templateUrl: './additional-details.component.html',
@@ -8,12 +8,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AdditionalDetailsComponent implements OnInit {
 
-  @Output() showKyc = new EventEmitter<number>();
+  @Output() showKYC = new EventEmitter<number>();
   @Output() showSummary = new EventEmitter<number>();
   showStep1: boolean = true;
   showStep2: boolean = false;
   showStep3: boolean = false;
   showStep4: boolean = false;
+  showStep4extra: boolean = false;
   showStep5: boolean = false;
   showStep6: boolean = false;
   showStep7: boolean = false;
@@ -21,13 +22,14 @@ export class AdditionalDetailsComponent implements OnInit {
   step2Form: FormGroup;
   step2FormData: any = [
     {
-      country: '',
-      taxIdentificationNUmber: '',
-      identificationType: ''
+      country: "",
+      taxIdentificationNUmber: "",
+      identificationType: ""
     }
   ];
   step3Form: FormGroup;
   step4Form: FormGroup;
+  step4FormExtra: FormGroup;
   step5FormData: any = [
     {
       nameOfUBO: '',
@@ -53,35 +55,15 @@ export class AdditionalDetailsComponent implements OnInit {
   step7Form: FormGroup;
   services: any = [
     {
-      name: 'Foreign Exchange',
+      name: 'Foreign Exchange / Money Changer Services / Money Lending',
       isChecked: false
     },
     {
-      name: 'Money Charger Services',
+      name: 'Gaming / Gambling / Lottery Services / Casino Service',
       isChecked: false
     },
     {
-      name: 'Money Landing',
-      isChecked: false
-    },
-    {
-      name: 'Pawning',
-      isChecked: false
-    },
-    {
-      name: 'Gaming',
-      isChecked: false
-    },
-    {
-      name: 'Gambling',
-      isChecked: false
-    },
-    {
-      name: 'Lottery',
-      isChecked: false
-    },
-    {
-      name: 'Casino Service',
+      name: 'Money Laundering / Pawning',
       isChecked: false
     },
     {
@@ -90,7 +72,7 @@ export class AdditionalDetailsComponent implements OnInit {
     }
   ]
   validate: boolean = false;
-  constructor() { }
+  constructor(private bsLocaleService: BsLocaleService) { }
 
   ngOnInit(): void {
     this.step1Form = new FormGroup({
@@ -117,6 +99,9 @@ export class AdditionalDetailsComponent implements OnInit {
       nameOfListedCompany: new FormControl(''),
       natureOfRelation: new FormControl('Bombay Stock Exchange (BSE)'),
       stockExchange2: new FormControl('Subsidiary of listed Company')
+    });
+    this.step4FormExtra = new FormGroup({
+      entityTypeExtra: new FormControl('', Validators.required)
     });
     this.step5Form = new FormGroup({
       category: new FormControl('Unlisted Company', Validators.required),
@@ -158,6 +143,10 @@ export class AdditionalDetailsComponent implements OnInit {
     return this.step4Form.controls;
   }
 
+  get step4FormExtraControls() {
+    return this.step4FormExtra.controls;
+  }
+
   get step5FormControls() {
     return this.step5Form.controls;
   }
@@ -171,7 +160,7 @@ export class AdditionalDetailsComponent implements OnInit {
   }
 
   showKycForm(){
-    this.showKyc.emit();
+    this.showKYC.emit();
   }
 
   showStep1Form(){
@@ -197,8 +186,14 @@ export class AdditionalDetailsComponent implements OnInit {
     this.showStep5 = false;
   }
 
-  showStep5Form(){
+  showStep4ExtraForm(){
     this.showStep4 = false;
+    this.showStep4extra = true;
+    this.showStep5 = false;
+  }
+
+  showStep5Form(){
+    this.showStep4extra = false;
     this.showStep5 = true;
     this.showStep6 = false;
   }
