@@ -233,7 +233,7 @@ input.form-control:focus {
     border-color: #6A7C55;
     color: #fff;
 }
-.custom-btn-block .btn-primary:hover {
+.custom-btn-block .btn-primary:hover, .custom-btn-block .btn-link:focus {
     background-color: #fff;
     border-color: #6A7C55;
     color: #6A7C55;
@@ -304,11 +304,14 @@ input.form-control:focus {
     flex: 1 0 calc(100% - 175px);
 }
 .list-company.max > label {
-    max-width: 30%;
-    flex: 1 0 30%;
+    max-width: 45%;
+    flex: 1 0 45%;
 }
 .or-seperator {
-    padding: 15px 0;
+    padding: 10px 0;
+}
+.or-seperator .form-field {
+    margin: 0 !important;
 }
 .or-seperator h6 {
     /* font-family: PF Handbook Pro; */
@@ -529,14 +532,14 @@ input.form-control:focus {
     -webkit-appearance: none;
 } */
 
-.custom-card-body > .row {
+.custom-card-body > .row:not(.seperator) {
     margin: 0 !important;
 }
 
 .custom-card-body .row .form-field, .custom-card-body .row .side {
     margin-bottom: 15px;
 }
-.custom-card-body .custom-btn-block {
+.custom-card-body .row.custom-btn-block {
     margin-top: 25px !important;
 }
 .custom-card-body .custom-btn-block.bank-btn {
@@ -648,6 +651,13 @@ input.form-control:focus {
 }
 .theme-green .bs-datepicker-body table td.week span {
     color: #969f6e;
+}
+.theme-green .bs-datepicker-body table td span.selected, .theme-green .bs-datepicker-body table td.selected span, .theme-green .bs-datepicker-body table td span[class*="select-"]:after, .theme-green .bs-datepicker-body table td[class*="select-"] span:after {
+    background-color: #3E593C;
+}
+.note-text > * {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 @media only screen and (max-width: 1200px) {    
