@@ -79,7 +79,7 @@
             </div>
             <div class="card-value" *ngIf="showTaxStatus">
                 <div class="custom-card-body" [formGroup]="kycForm2">
-                    <ul class="m-0 mb-5 details-list user">
+                    <ul class="m-0 mb-5 details-list user green">
                         <li>
                             <label>PAN:</label>
                             <span>ENQC77693A</span>
@@ -186,7 +186,7 @@
 
             <div class="card-value" *ngIf="showVerifyOTP">
                 <div class="custom-card-body" [formGroup]="kycForm3">
-                    <ul class="m-0 mb-5 details-list user readonly">
+                    <ul class="m-0 mb-5 details-list user green-white readonly">
                         <li>
                             <label>PAN:</label>
                             <span>ENQC77693A</span>
@@ -223,7 +223,7 @@
                             </div>
                         </div>
                         <div class="col-12 seperator"></div>
-                        <div class="col-12 p-0 form-field">
+                        <div class="col-12 col-md-10 col-lg-8 p-0 pr-md-3 pr-lg-4 form-field">
                             <label>Please enter the OTP sent on the registered mobile number and Email ID.</label>
                             <input type="text" id="otp" placeholder="Enter OTP" class="form-control w-100"
                                 formControlName="otp"
@@ -247,7 +247,7 @@
             </div>
             <div class="card-value" *ngIf="showSubmitOTP">
                 <div class="custom-card-body">
-                    <ul class="m-0 mb-5 details-list user readonly">
+                    <ul class="m-0 mb-5 details-list user green readonly">
                         <li>
                             <label>PAN:</label>
                             <span>ENQC77693A</span>

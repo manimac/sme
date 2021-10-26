@@ -327,6 +327,10 @@ input.form-control:focus {
     position: relative;
     margin-bottom: 15px;
 }
+.checkbox-wrapper.w-item-100 > div {
+    flex: 1 0 100%;
+    max-width: 100%;
+}
 .radio-wrapper > div {
     flex: 1 0 auto;
     max-width: 100%;
@@ -392,7 +396,21 @@ input.form-control:focus {
 .common-page-title img {
     width: 14px;
     margin-left: 10px;
-    margin-top: -3px;
+    margin-top: -5px;
+}
+.radio-wrapper.radio-inline {
+    display: block;
+}
+
+.radio-wrapper.radio-inline .radio-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+.radio-wrapper.radio-inline .radio-item * {
+    display: inline-block;
+    vertical-align: middle;
 }
 .btn-primary.grey {
     background: rgba(242, 243, 246, 0.5);
@@ -450,7 +468,7 @@ input.form-control:focus {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 16px;
+    line-height: 20px;
     letter-spacing: 0.018em;
     color: #6C7174;
 }
@@ -531,15 +549,30 @@ input.form-control:focus {
 .details-list {
     padding-left: 50px;
 }
-.details-list.user {
-    background: url(./assets/img/kyc/user.svg) no-repeat;
+.details-list.user {    
+    padding: 20px 20px 20px 100px;
+    background-color: #969F6E !important;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.details-list.user:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;    
+    background: url(./assets/img/kyc/user-white.svg) no-repeat;
+    background-color: #6A7C55;
     background-size: 26px;
-    background-position: left center;
+    background-position: center;
 }
 .details-list li {
     list-style: none;
     display: inline-block;
     vertical-align: text-top;
+    line-height: normal;
     width: calc(100% / 3);
 }
 .details-list li > * {
@@ -584,12 +617,38 @@ input.form-control:focus {
     color: #fff !important;
 }
 .details-list.user.readonly {
-    padding: 25px;
-    padding-left: 80px;
+    padding: 20px 20px 20px 100px;
     border-radius: 6px;
     background-position: left 35px center;
 }
+.details-list.user.green li * {
+    color: #fff !important;
+}
+.details-list.user.green-white.readonly {
+    background-color: #fff !important;
+    border: 0.5px solid #969F6E;
+}
+.details-list.user.green.readonly {
+    padding-top: 15px;
+}
 /*User List CSS*/
+.step-5 .custom-card-body .row:not(.seperator) {
+    margin: 0 !important;
+}
+.edit {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.edit .custom-card-div {
+    width: 100%;
+}
+.theme-green .bs-datepicker-head {
+    background-color: #969f6e;
+}
+.theme-green .bs-datepicker-body table td.week span {
+    color: #969f6e;
+}
 
 @media only screen and (max-width: 1200px) {    
     .radio-wrapper > div {
@@ -639,6 +698,9 @@ input.form-control:focus {
     }
     .custom-card-body .custom-btn-block.bank-btn {
         margin-top: 0 !important;
+    }
+    .edit, .custom-card-div {
+        max-width: 100%;
     }
 }
 

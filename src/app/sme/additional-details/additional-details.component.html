@@ -85,7 +85,7 @@
                         <div class="col-12 p-0 form-field">
                             <label>Is the investor involved providing any of the mentioned services?</label>
 
-                            <div class="checkbox-wrapper">
+                            <div class="checkbox-wrapper w-item-100">
                                 <div class="checkbox-item" *ngFor="let service of services; let i = index">
                                     <input type="checkbox" id="i" name="service" value="{{service.name}}">
                                     <span class="custom-checkbox"></span>
@@ -266,7 +266,7 @@
                     <div class="row m-0 mb-4" *ngIf="(step3FormControls.entityType.value=='Financial Institution')">
                         <div class="col-12 p-0 form-field">
                             <label>GIIN Not Applicable:</label>
-                            <div class="radio-wrapper">
+                            <div class="radio-wrapper radio-inline">
                                 <div class="radio-item">
                                     <input type="radio" value="Applied For" name="ginNotApplicable"
                                         formControlName="ginNotApplicable"
@@ -445,7 +445,7 @@
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5" *ngIf="showStep5">
+<div class="card-div custom-card-div mb-5 step-5" *ngIf="showStep5">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
