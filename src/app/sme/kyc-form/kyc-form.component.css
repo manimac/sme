@@ -93,3 +93,6 @@
     width: 92%;
     margin: 0 auto;
 }
+select option:hover {
+    background: #3E593C !important;
+}
