@@ -8,9 +8,37 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import '~ngx-bootstrap/datepicker/bs-datepicker.css';
 @import"https://fonts.googleapis.com/icon?family=Material+Icons";
+
+@font-face {
+    font-family: 'PF Handbook Pro';
+    src: url('./assets/fonts/pfhandbookpro-light.eot');
+    src: url('./assets/fonts/pfhandbookpro-light.eot?#iefix') format('embedded-opentype'),
+         url('./assets/fonts/pfhandbookpro-light.woff2') format('woff2'),
+         url('./assets/fonts/pfhandbookpro-light.woff2') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PF Handbook Pro';
+    src: url('./assets/fonts/pfhandbookpro-medium.eot');
+    src: url('./assets/fonts/pfhandbookpro-medium.eot?#iefix') format('embedded-opentype'),
+         url('./assets/fonts/pfhandbookpro-medium.woff2') format('woff2'),
+         url('./assets/fonts/pfhandbookpro-medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PF Handbook Pro';
+    src: url('./assets/fonts/pfhandbookpro-bold.eot');
+    src: url('./assets/fonts/pfhandbookpro-bold.eot?#iefix') format('embedded-opentype'),
+         url('./assets/fonts/pfhandbookpro-bold.woff2') format('woff2'),
+         url('./assets/fonts/pfhandbookpro-bold.woff2') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
 body, html {
     height: 100%;
-    font-family: 'pf_handbook_proregular' !important;
+    font-family: 'PF Handbook Pro' !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -665,6 +693,42 @@ input.form-control:focus {
 }
 .seperator.md {
     margin: 20px 0;
+}
+
+.file-wrapper {
+    height: 44px;
+    border: 1px solid #CDCECE;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.file-wrapper label {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translate(0, -50%);
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.018em;
+    color: #6C7174;
+    margin: 0;
+}
+.file-wrapper input {
+    position: absolute !important;
+    width: 100% !important;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+.file-wrapper .input-group-append {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    margin: 0;
 }
 
 @media only screen and (max-width: 1200px) {    

@@ -56,14 +56,17 @@
                     <div class="row m-0 mb-3">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>PAN</label>
-                            <input type="text" id="pan" autocomplete="off" placeholder="Enter PAN" class="form-control w-100"
-                                formControlName="pan"
+                            <input type="text" id="pan" autocomplete="off" placeholder="Enter PAN"
+                                class="form-control w-100" formControlName="pan"
                                 [ngClass]="{ 'is-invalid': kycForm1Controls.pan.touched && kycForm1Controls.pan.errors }">
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Date of Incorporation</label>
                             <!-- <input type="date" id="date-of-incorporation" placeholder="Select date" class="form-control w-100 date" formControlName="dateOfIncorporation" [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }"> -->
-                            <input type="text" placeholder="Select date" class="form-control w-100 date" formControlName="dateOfIncorporation" [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }" #dp="bsDatepicker" bsDatepicker>
+                            <input type="text" placeholder="Select date" class="form-control w-100 date"
+                                formControlName="dateOfIncorporation"
+                                [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }"
+                                #dp="bsDatepicker" bsDatepicker>
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
@@ -102,12 +105,12 @@
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Email ID</label>
-                            <input type="text" id="emailId" placeholder="Enter Email ID" class="form-control w-100" autocomplete="off"
-                                formControlName="email"
+                            <input type="text" id="emailId" placeholder="Enter Email ID" class="form-control w-100"
+                                autocomplete="off" formControlName="email"
                                 [ngClass]="{ 'is-invalid': kycForm2Controls.email.touched && kycForm2Controls.email.errors }">
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Tax Status</label>                            
+                            <label>Tax Status</label>
                             <div class="select-wrapper">
                                 <select class="form-control w-100" formControlName="taxStatus"
                                     [ngClass]="{ 'is-invalid': kycForm2Controls.taxStatus.touched && kycForm2Controls.taxStatus.errors }">
@@ -276,7 +279,8 @@
                     <div class="row m-0 mb-3">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>City of Incorporation</label>
-                            <input type="text" id="mobilenum" placeholder="Enter City" class="form-control w-100" autocomplete="off">
+                            <input type="text" id="mobilenum" placeholder="Enter City" class="form-control w-100"
+                                autocomplete="off">
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Country of Incorporation</label>
@@ -293,7 +297,7 @@
                         </div> -->
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
     </div>
 </div>
