@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-summary',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryComponent implements OnInit {
 
+  @Output() showAdditional = new EventEmitter<number>();
   summary: boolean = true;
   successMessage: boolean = false;
   constructor() { }
@@ -17,6 +18,10 @@ export class SummaryComponent implements OnInit {
   showSuccessMessage(){
     this.summary = false;
     this.successMessage = true;
+  }
+
+  navigateSummary(form){
+    this.showAdditional.emit(form)
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 @Component({
@@ -10,6 +10,8 @@ export class AdditionalDetailsComponent implements OnInit {
 
   @Output() showKYC = new EventEmitter<number>();
   @Output() showSummary = new EventEmitter<number>();
+  @Input() currentForm: any;
+  today: any = new Date();
   showStep1: boolean = true;
   showStep2: boolean = false;
   showStep3: boolean = false;
@@ -37,6 +39,7 @@ export class AdditionalDetailsComponent implements OnInit {
       taxIdType: '',
       typeCode: '',
       addressType: 'Residential',
+      pinCode: '',
       country: '',
       state: '',
       address: '',
@@ -45,7 +48,7 @@ export class AdditionalDetailsComponent implements OnInit {
       cityOfBirth: '',
       occupationType: 'Business',
       nationality: '',
-      dob: '',
+      dob: this.today,
       gender: 'Male',
       holding: '30%'
     }
@@ -85,7 +88,7 @@ export class AdditionalDetailsComponent implements OnInit {
       taxResidant: new FormControl('No', Validators.required)
     });
     this.step3Form = new FormGroup({
-      entityType: new FormControl('Financial Institution', Validators.required),
+      entityType: new FormControl('Not Applicable', Validators.required),
       gin: new FormControl(''),
       sponserName: new FormControl(''),
       sponserGin: new FormControl(''),
@@ -101,12 +104,14 @@ export class AdditionalDetailsComponent implements OnInit {
       stockExchange2: new FormControl('Subsidiary of listed Company')
     });
     this.step4FormExtra = new FormGroup({
-      entityTypeExtra: new FormControl('', Validators.required)
+      entityTypeExtra: new FormControl('Active NFE', Validators.required),
+      twoDigits1: new FormControl(''),
+      twoDigits2: new FormControl('')
     });
     this.step5Form = new FormGroup({
       category: new FormControl('Unlisted Company', Validators.required),
-      factaAndCrsDeclaration: new FormControl('', Validators.required),
-      termsAndConditions: new FormControl('', Validators.required)
+      // factaAndCrsDeclaration: new FormControl('', Validators.required),
+      // termsAndConditions: new FormControl('', Validators.required)
     });
     this.step6Form = new FormGroup({
       ifsc: new FormControl('UTBI0000207', Validators.required),
@@ -125,6 +130,10 @@ export class AdditionalDetailsComponent implements OnInit {
       // memorandum: new FormControl('', Validators.required),
       // authorisedSignatories: new FormControl('', Validators.required)
     });
+    if(this.currentForm){
+      this[this.currentForm]();
+      this.currentForm = '';
+    }
   }
 
   get step1FormControls() {
@@ -159,75 +168,127 @@ export class AdditionalDetailsComponent implements OnInit {
     return this.step7Form.controls;
   }
 
-  showKycForm(){
+  showKycForm() {
     this.showKYC.emit();
   }
 
-  showStep1Form(){
+  showStep1Form() {
     this.showStep1 = true;
     this.showStep2 = false;
+    this.showStep3 = false;
+    this.showStep4 = false;
+    this.showStep4extra = false;
+    this.showStep5 = false;
+    this.showStep6 = false;
+    this.showStep7 = false;
   }
 
-  showStep2Form(){
+  showStep2Form() {
     this.showStep1 = false;
     this.showStep2 = true;
     this.showStep3 = false;
+    this.showStep4 = false;
+    this.showStep4extra = false;
+    this.showStep5 = false;
+    this.showStep6 = false;
+    this.showStep7 = false;
   }
 
-  showStep3Form(){
+  showStep3Form() {
+    this.showStep1 = false;
     this.showStep2 = false;
     this.showStep3 = true;
     this.showStep4 = false;
+    this.showStep4extra = false;
+    this.showStep5 = false;
+    this.showStep6 = false;
+    this.showStep7 = false;
   }
 
-  showStep4Form(){
+  showStep4Form() {
+    this.showStep1 = false;
+    this.showStep2 = false;
     this.showStep3 = false;
     this.showStep4 = true;
+    this.showStep4extra = false;
     this.showStep5 = false;
+    this.showStep6 = false;
+    this.showStep7 = false;
   }
 
-  showStep4ExtraForm(){
+  showStep4ExtraForm() {
+    this.showStep1 = false;
+    this.showStep2 = false;
+    this.showStep3 = false;
     this.showStep4 = false;
     this.showStep4extra = true;
     this.showStep5 = false;
+    this.showStep6 = false;
+    this.showStep7 = false;
   }
 
-  showStep5Form(){
+  showStep5Form() {
+    this.showStep1 = false;
+    this.showStep2 = false;
+    this.showStep3 = false;
+    this.showStep4 = false;
     this.showStep4extra = false;
     this.showStep5 = true;
     this.showStep6 = false;
+    this.showStep7 = false;
   }
 
-  showStep6Form(){
+  showStep6Form() {
+    this.showStep1 = false;
+    this.showStep2 = false;
+    this.showStep3 = false;
+    this.showStep4 = false;
+    this.showStep4extra = false;
     this.showStep5 = false;
     this.showStep6 = true;
     this.showStep7 = false;
   }
 
-  showStep7Form(){
+  showStep7Form() {
+    this.showStep1 = false;
+    this.showStep2 = false;
+    this.showStep3 = false;
+    this.showStep4 = false;
+    this.showStep4extra = false;
+    this.showStep5 = false;
     this.showStep6 = false;
     this.showStep7 = true;
   }
 
-  showSummaryForm(){
+  showSummaryForm() {
+    this.showStep1 = false;
+    this.showStep2 = false;
+    this.showStep3 = false;
+    this.showStep4 = false;
+    this.showStep4extra = false;
+    this.showStep5 = false;
+    this.showStep6 = false;
     this.showStep7 = false;
     this.showSummary.emit();
   }
 
-  addCountry(){
-    let obj = {
-      country: '',
-      taxIdentificationNUmber: '',
-      identificationType: ''
-    };
-    this.step2FormData.push(obj);
+  addCountry() {
+    let isNotValid: boolean = this.step2FormData.find(element => (!element.country || !element.taxIdentificationNUmber || !element.identificationType));
+    if(!isNotValid){
+      let obj = {
+        country: '',
+        taxIdentificationNUmber: '',
+        identificationType: ''
+      };
+      this.step2FormData.push(obj);
+    }    
   }
 
-  deleteCountry(index){
+  deleteCountry(index) {
     this.step2FormData.splice(index, 1);
   }
 
-  addUBO(){
+  addUBO() {
     let obj = {
       nameOfUBO: '',
       taxId: '',
@@ -249,8 +310,16 @@ export class AdditionalDetailsComponent implements OnInit {
     this.step5FormData.push(obj);
   }
 
-  deleteUBO(index){
+  deleteUBO(index) {
     this.step5FormData.splice(index, 1);
+  }
+
+  loadNumbers(n) {
+    let special = ['zeroth', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth', 'thirteenth', 'fourteenth', 'fifteenth', 'sixteenth', 'seventeenth', 'eighteenth', 'nineteenth'];
+    let deca = ['twent', 'thirt', 'fort', 'fift', 'sixt', 'sevent', 'eight', 'ninet'];
+    if (n < 20) return special[n];
+    if (n % 10 === 0) return deca[Math.floor(n / 10) - 2] + 'ieth';
+    return deca[Math.floor(n / 10) - 2] + 'y-' + special[n % 10];
   }
 
 }

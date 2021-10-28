@@ -35,7 +35,7 @@
             <div class="col-md-12 p-0">
                 <div class="card-pannel">
                     <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                    <h4 class="m-0 custom-card-title">1. Additional kyc details
+                    <h4 class="m-0 custom-card-title" (click)="navigateSummary('showStep1Form')">1. Additional kyc details
                         <span>Edit</span>
                     </h4>
                 </div>
@@ -76,7 +76,7 @@
             <div class="col-md-12 p-0">
                 <div class="card-pannel">
                     <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                    <h4 class="m-0 custom-card-title">2. FATCA AND CRS DETAILS
+                    <h4 class="m-0 custom-card-title" (click)="navigateSummary('showStep2Form')">2. FATCA AND CRS DETAILS
                         <span>Edit</span>
                     </h4>
                 </div>
@@ -130,7 +130,7 @@
             <div class="col-md-12 p-0">
                 <div class="card-pannel">
                     <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                    <h4 class="m-0 custom-card-title">3. PART A
+                    <h4 class="m-0 custom-card-title" (click)="navigateSummary('showStep3Form')">3. PART A
                         <span>Edit</span>
                     </h4>
                 </div>
@@ -166,7 +166,7 @@
             <div class="col-md-12 p-0">
                 <div class="card-pannel">
                     <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                    <h4 class="m-0 custom-card-title">4. PART B
+                    <h4 class="m-0 custom-card-title" (click)="navigateSummary('showStep4Form')">4. PART B
                         <span>Edit</span>
                     </h4>
                 </div>
@@ -200,7 +200,7 @@
             <div class="col-md-12 p-0">
                 <div class="card-pannel">
                     <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                    <h4 class="m-0 custom-card-title">5. Ultimate Beneficiary Owner (UBO)
+                    <h4 class="m-0 custom-card-title" (click)="navigateSummary('showStep5Form')">5. Ultimate Beneficiary Owner (UBO)
                         <span>Edit</span>
                     </h4>
                 </div>
@@ -259,7 +259,7 @@
             <div class="col-md-12 p-0">
                 <div class="card-pannel">
                     <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                    <h4 class="m-0 custom-card-title">6. Bank Details
+                    <h4 class="m-0 custom-card-title" (click)="navigateSummary('showStep6Form')">6. Bank Details
                         <span>Edit</span>
                     </h4>
                 </div>
@@ -315,7 +315,7 @@
             <div class="col-md-12 p-0">
                 <div class="card-pannel">
                     <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                    <h4 class="m-0 custom-card-title">7. Upload documents
+                    <h4 class="m-0 custom-card-title" (click)="navigateSummary('showStep7Form')">7. Upload documents
                         <span>Edit</span>
                     </h4>
                 </div>
@@ -327,7 +327,7 @@
                                 <div class="w-100">
                                     <label>Board Resolution</label>
                                     <p class="field-value">address/docs-br.jpeg</p>
-                                    <div class="preview"> 
+                                    <div class="preview">
                                         <span>Preview</span>
                                         <img src="../../../assets/img/common/eye.svg" alt="Preview Icon">
                                     </div>
@@ -336,7 +336,7 @@
                                 <div class="w-100">
                                     <label>Memorandum & Article of Association</label>
                                     <p class="field-value">address/docs-br.jpeg</p>
-                                    <div class="preview"> 
+                                    <div class="preview">
                                         <span>Preview</span>
                                         <img src="../../../assets/img/common/eye.svg" alt="Preview Icon">
                                     </div>
@@ -345,12 +345,64 @@
                                 <div class="w-100">
                                     <label>List of Authorised Signatories</label>
                                     <p class="field-value">address/docs-br.jpeg</p>
-                                    <div class="preview"> 
+                                    <div class="preview">
                                         <span>Preview</span>
                                         <img src="../../../assets/img/common/eye.svg" alt="Preview Icon">
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-div custom-card-div mb-5">
+        <div class="row m-0">
+            <div class="col-md-12 p-0">
+                <div class="card-value">
+                    <div class="custom-card-body">
+                        <div class="row m-0 mb-4">
+                            <div class="col-12 p-0 form-field">
+                                <label>I / We read and acknowledged</label>
+
+                                <div class="checkbox-wrapper terms">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" name="factaAndCrsDeclaration"
+                                            formControlName="factaAndCrsDeclaration">
+                                        <span class="custom-checkbox"></span>
+                                        <div class="checkbox-content">
+                                            <label><b>FATCA and CRS Declaration</b></label>
+                                            <h6>DECLARATION</h6>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer magna
+                                                erat,
+                                                eleifend a hendrerit vitae, vehicula nec dui. Vivamus egestas molestie
+                                                tellus, pretium mauris rutre at malesuada... <a
+                                                    href="javascript:void(0)">Read more</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 p-0 seperator sm"></div>
+                            <div class="col-12 p-0 form-field">
+                                <div class="checkbox-wrapper terms">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" name="termsAndConditions"
+                                            formControlName="termsAndConditions">
+                                        <span class="custom-checkbox"></span>
+                                        <div class="checkbox-content">
+                                            <label><b>Terms and Conditions</b></label>
+                                            <h6>1.AGREEMENT</h6>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer magna
+                                                erat,
+                                                eleifend a hendrerit vitae, vehicula nec dui. Vivamus egestas molestie
+                                                tellus, pretium mauris rutre at malesuada... <a
+                                                    href="javascript:void(0)">Read more</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 p-0 seperator sm"></div>
                         </div>
                     </div>
                 </div>
@@ -369,19 +421,21 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">Portfolio Crerated Successfully!</h4>
+                <h4 class="m-0 custom-card-title">KYC & Folio creation request submitted successfully!</h4>
             </div>
 
             <div class="card-value">
                 <div class="custom-card-body">
                     <div class="row m-0 mb-4">
                         <div class="col-12 p-0 form-field bank-name">
-                            <label class="mb-2 sm">Thank You for choosing Aditya Birla Sun Life Mutual Funds as your Investment Partner.</label>
+                            <label class="mb-2 sm">Thank You for choosing Aditya Birla Sun Life Mutual Funds as your
+                                Investment Partner.</label>
 
-                            <label class="mb-2 sm">Your request for online KYC and folio creation has been submitted successfully and the same is under verification.
-                               <br /> Your KYC reference number is : Exxxxxxxxxxxxxxxx</label>
-                                
-                            <label class="sm">Please note that folio creation is subject to your KYC request being approved.</label>
+                            <label class="mb-2 sm">Your request for online KYC and folio creation has been submitted
+                                successfully and the same is under verification.
+                                <br /> Your KYC reference number is : Exxxxxxxxxxxxxxxx</label>
+
+                            <label class="sm">Please note that Folio creation is subject to your KYC request being processed.</label>
                         </div>
                         <div class="col-12 p-0 seperator"></div>
                         <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">

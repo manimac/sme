@@ -58,7 +58,7 @@
                             <label>PAN</label>
                             <input type="text" id="pan" autocomplete="off" placeholder="Enter PAN"
                                 class="form-control w-100" formControlName="pan"
-                                [ngClass]="{ 'is-invalid': kycForm1Controls.pan.touched && kycForm1Controls.pan.errors }">
+                                [ngClass]="{ 'is-invalid': kycForm1Controls.pan.touched && kycForm1Controls.pan.errors }" disabled>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Date of Incorporation</label>
@@ -66,7 +66,7 @@
                             <input type="text" placeholder="Select date" class="form-control w-100 date"
                                 formControlName="dateOfIncorporation"
                                 [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }"
-                                #dp="bsDatepicker" bsDatepicker>
+                                #dp="bsDatepicker" bsDatepicker [maxDate]="today">
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">

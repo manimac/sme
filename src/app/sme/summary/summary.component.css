@@ -201,3 +201,6 @@
         margin-bottom: 10px !important;
     }
 }
+.custom-card-title{
+    cursor: pointer;
+}

@@ -11,6 +11,8 @@ export class SmeComponent implements OnInit {
   showKYCForm: boolean = false;
   showAdditionalForm: boolean = false;
   showSummaryForm: boolean = false;
+  currentPan: any = '';
+  currentForm: any = '';
   constructor() { }
 
   ngOnInit(): void {
@@ -21,10 +23,11 @@ export class SmeComponent implements OnInit {
     this.showKYCForm = false;
   }
 
-  showKYC(){
+  showKYC(ev){
     this.showPanForm = false;
     this.showKYCForm = true;
     this.showAdditionalForm = false;
+    this.currentPan = ev;
   }
 
   showAdditional(){
@@ -36,6 +39,11 @@ export class SmeComponent implements OnInit {
   showSummary(){
     this.showAdditionalForm = false;
     this.showSummaryForm = true;
+  }
+
+  showAdditionalNavigation(ev){
+    this.showAdditional();
+    this.currentForm = ev;
   }
 
 }

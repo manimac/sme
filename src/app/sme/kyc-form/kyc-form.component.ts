@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 declare var $: any;
@@ -11,6 +11,7 @@ export class KycFormComponent implements OnInit {
 
   @Output() showPan = new EventEmitter<number>();
   @Output() showAdditional = new EventEmitter<number>();
+  @Input() currentPan: any;
   showSteps: boolean = true;
   showDateOfIncorporation: boolean = false;
   showTaxStatus: boolean = false;
@@ -20,13 +21,14 @@ export class KycFormComponent implements OnInit {
   kycForm2: FormGroup;
   kycForm3: FormGroup;
   submitted: boolean = false;
+  today: any = new Date();
   constructor(private bsLocaleService: BsLocaleService) {
    }
 
   ngOnInit(): void {
     this.kycForm1 = new FormGroup({
       pan: new FormControl('', Validators.required),
-      dateOfIncorporation: new FormControl('', Validators.required),
+      dateOfIncorporation: new FormControl(this.today, Validators.required),
     });
     this.kycForm2 = new FormGroup({
       mobile: new FormControl('', Validators.required),
@@ -37,9 +39,7 @@ export class KycFormComponent implements OnInit {
       otp: new FormControl('', Validators.required)
     });
 
-    // $('#date-of-incorporation').datepicker({
-    //   uiLibrary: 'bootstrap4'
-    // });
+    this.kycForm1.patchValue({pan: this.currentPan});
   }
 
   get kycForm1Controls() {
