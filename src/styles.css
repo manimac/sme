@@ -33,7 +33,7 @@
     src: url('./assets/fonts/pfhandbookpro-bold.eot?#iefix') format('embedded-opentype'),
          url('./assets/fonts/pfhandbookpro-bold.woff2') format('woff2'),
          url('./assets/fonts/pfhandbookpro-bold.woff2') format('woff');
-    font-weight: 600;
+    font-weight: bold;
     font-style: normal;
 }
 body, html {
@@ -177,6 +177,7 @@ background: #869791;
 }
 
 /*Common CSS*/
+
 .btn:focus, input:focus {
     outline: none !important;
     box-shadow: none !important;
@@ -243,7 +244,7 @@ input.form-control:focus {
     /* font-family: PF Handbook Pro; */
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;    
     text-align: center;    
     color: #6A7C55;
@@ -741,7 +742,10 @@ input.form-control:focus {
     width: calc(77.5% / 2);
     padding-right: 10px;
 }
-
+.form-control::-webkit-input-placeholder, .form-control::-moz-placeholder {
+    color: #6C7174;
+    font-weight: 200 !important;
+}
 @media only screen and (max-width: 1200px) {    
     .radio-wrapper > div {
         flex: 1 0 auto;
