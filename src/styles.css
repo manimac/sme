@@ -412,7 +412,9 @@ input.form-control:focus {
     font-size: 18px;
     line-height: 22px;
     letter-spacing: 0.018em;
-    color: #6C7174;
+    color: #6C7174;    
+    max-width: calc(100% - 25px);
+    flex: 1 0 calc(100% - 25px);
 }
 .radio-item label {
     padding-left: 7px;
@@ -423,7 +425,9 @@ input.form-control:focus {
     font-size: 18px;
     line-height: 22px;
     letter-spacing: 0.018em;
-    color: #3E593C;
+    color: #3E593C;    
+    max-width: calc(100% - 25px);
+    flex: 1 0 calc(100% - 25px);
 }
 .checkbox-wrapper > div.disabled {
     opacity: 0.5;
@@ -730,14 +734,19 @@ input.form-control:focus {
     height: 100%;
     margin: 0;
 }
+.details-list li.pan {
+    width: 22.5%;
+}
+.details-list li.pan ~ li {
+    width: calc(77.5% / 2);
+    padding-right: 10px;
+}
 
 @media only screen and (max-width: 1200px) {    
     .radio-wrapper > div {
         flex: 1 0 auto;
         max-width: 100%;
     }
-}
-@media only screen and (max-width: 1100px) {
     .details-list li * {
         display: block;
         padding: 0 !important;
@@ -749,7 +758,7 @@ input.form-control:focus {
 }
 @media only screen and (max-width: 991px) {
     .details-list li, .details-list.readonly.bg-green li {
-        width: 50%;
+        width: 50% !important;
         margin-bottom: 15px;
         padding-right: 15px;
     }
@@ -763,6 +772,7 @@ input.form-control:focus {
         margin-bottom: 10px !important;
     }
     .list-company .radio-wrapper {
+        width: 100%;
         max-width: 100%;
     }
     .list-company.max > label {
@@ -782,6 +792,11 @@ input.form-control:focus {
     }
     .edit, .custom-card-div {
         max-width: 100%;
+        width: 100%;
+    }
+    
+    .list-company .radio-item {
+        margin: 0 0 10px;
     }
 }
 
@@ -793,7 +808,7 @@ input.form-control:focus {
         margin-top: 15px;
     }
     .details-list li, .details-list.readonly.bg-green li {
-        width: 100%;
+        width: 100% !important;
         padding-left: 0;
     }
     .list-company.max > label {
@@ -802,5 +817,13 @@ input.form-control:focus {
     }
     .input-wrapper {
         margin-left: 0 !important;
+    }
+    .details-list.user, .details-list.user.readonly, .details-list.user.green.readonly {
+        padding: 75px 20px 20px;
+    }
+    
+    .details-list.user:before {
+        width: 100%;
+        height: 55px;
     }
 }

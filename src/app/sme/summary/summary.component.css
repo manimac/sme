@@ -182,3 +182,22 @@
     width: 92%;
     margin: 0 auto;
 }
+
+@media only screen and (max-width: 991px) {
+    
+    .edit .form-field label, .field-value {
+        flex: 1 0  100%;
+        max-width: 100%;
+        margin: 0;
+    }
+    .edit .form-field label {
+        margin: 10px 0 0;
+    }
+    ul.value-list {
+        padding: 0;
+    }
+    
+    .edit .form-field label {
+        margin-bottom: 10px !important;
+    }
+}
