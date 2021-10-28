@@ -182,6 +182,13 @@
     width: 92%;
     margin: 0 auto;
 }
+.edit .acknowledge-block .card-pannel {
+    background-color: #fff !important;
+}
+
+.edit .acknowledge-block .card-pannel h4 {
+    color: #6C7174 !important;
+}
 
 @media only screen and (max-width: 991px) {
     
@@ -200,4 +207,7 @@
     .edit .form-field label {
         margin-bottom: 10px !important;
     }
+}
+.custom-card-title{
+    cursor: pointer;
 }

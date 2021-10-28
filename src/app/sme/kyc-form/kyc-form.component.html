@@ -1,3 +1,17 @@
+<ul class="m-0 mx-auto mb-3 details-list user green-white readonly">
+    <li class="pan">
+        <label>PAN:</label>
+        <span>ENQC77693A</span>
+    </li>
+    <li>
+        <label>Name:</label>
+        <span>Aditya Birla Sun Life AMC Ltd</span>
+    </li>
+    <li>
+        <label>Date of Incorporation:</label>
+        <span>26-Jan-1999</span>
+    </li>
+</ul>
 <div class="card-div custom-card-div mb-5">
     <div class="row">
         <div class="col-md-12">
@@ -58,7 +72,7 @@
                             <label>PAN</label>
                             <input type="text" id="pan" autocomplete="off" placeholder="Enter PAN"
                                 class="form-control w-100" formControlName="pan"
-                                [ngClass]="{ 'is-invalid': kycForm1Controls.pan.touched && kycForm1Controls.pan.errors }">
+                                [ngClass]="{ 'is-invalid': kycForm1Controls.pan.touched && kycForm1Controls.pan.errors }" disabled>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Date of Incorporation</label>
@@ -66,7 +80,7 @@
                             <input type="text" placeholder="Select date" class="form-control w-100 date"
                                 formControlName="dateOfIncorporation"
                                 [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }"
-                                #dp="bsDatepicker" bsDatepicker>
+                                #dp="bsDatepicker" bsDatepicker [maxDate]="today">
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
@@ -189,7 +203,7 @@
 
             <div class="card-value" *ngIf="showVerifyOTP">
                 <div class="custom-card-body" [formGroup]="kycForm3">
-                    <ul class="m-0 mb-5 details-list user green-white readonly">
+                    <!-- <ul class="m-0 mb-5 details-list user green-white readonly">
                         <li class="pan">
                             <label>PAN:</label>
                             <span>ENQC77693A</span>
@@ -202,7 +216,7 @@
                             <label>Date of Incorporation:</label>
                             <span>26-Jan-1999</span>
                         </li>
-                    </ul>
+                    </ul> -->
                     <div class="row m-0 mb-3">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Mobile Number</label>

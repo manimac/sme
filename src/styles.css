@@ -153,7 +153,7 @@ button[aria-expanded="true"]{
 
 *:focus {
     outline: none !important;
-    border: 0 !important;
+    border-color: transparent !important;
     box-shadow: none;
 }
 .swiper-pagination-bullet-active{
@@ -248,6 +248,7 @@ input.form-control:focus {
     line-height: 24px;    
     text-align: center;    
     color: #6A7C55;
+    border: 1px solid #6A7C55;
 }
 .custom-btn-block .btn-link {
     border: 1.5px solid #969F6E;
@@ -262,7 +263,7 @@ input.form-control:focus {
     border-color: #6A7C55;
     color: #fff;
 }
-.custom-btn-block .btn-primary:hover, .custom-btn-block .btn-link:focus {
+.custom-btn-block .btn-primary:hover, .custom-btn-block .btn-link:focus, .custom-btn-block .btn-primary:not(:disabled):not(.disabled):active {
     background-color: #fff;
     border-color: #6A7C55;
     color: #6A7C55;
@@ -339,6 +340,7 @@ input.form-control:focus {
 .custom-card-body .row:first-child .list-company.max > label {
     max-width: 30%;
     flex: 1 0 30%;
+    margin: 0 !important;
 }
 .or-seperator {
     padding: 10px 0;
@@ -495,10 +497,10 @@ input.form-control:focus {
     /* font-family: PF Handbook Pro; */
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 16px !important;
+    line-height: 20px;
     letter-spacing: 0.018em;
-    color: #000000;
+    color: #000000 !important;
     padding: 0;
     margin-bottom: 10px;
 }
@@ -506,7 +508,7 @@ input.form-control:focus {
 .checkbox-content h6,.checkbox-content p {
     /* font-family: PF Handbook Pro; */
     font-style: normal;
-    font-weight: normal;
+    font-weight: 200;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.018em;
@@ -520,7 +522,10 @@ input.form-control:focus {
 }
 
 .terms .checkbox-item span.custom-checkbox {
-    margin-top: 7px;
+    margin-top: 5px;
+}
+.terms .checkbox-item .checkbox-content label {
+    margin-top: 0 !important;
 }
 .seperator.sm {
     margin: 15px 0;
@@ -588,6 +593,10 @@ input.form-control:focus {
 
 .details-list {
     padding-left: 50px;
+    width: 85%;
+}
+.edit .details-list {
+    width: 100%;
 }
 .details-list.user {    
     padding: 20px 20px 20px 100px;
@@ -746,6 +755,10 @@ input.form-control:focus {
     color: #6C7174;
     font-weight: 200 !important;
 }
+.radio-inline .radio-item label {
+    max-width: 100%;
+}
+
 @media only screen and (max-width: 1200px) {    
     .radio-wrapper > div {
         flex: 1 0 auto;
@@ -794,7 +807,7 @@ input.form-control:focus {
     .custom-card-body .custom-btn-block.bank-btn {
         margin-top: 0 !important;
     }
-    .edit, .custom-card-div {
+    .edit, .custom-card-div, .details-list {
         max-width: 100%;
         width: 100%;
     }

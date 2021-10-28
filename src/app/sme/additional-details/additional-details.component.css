@@ -54,6 +54,25 @@
     position: relative;
     width: 65%;
 }
+.upload-wrapper input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+}
+.file-close {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../../../assets/img/additional/close.svg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: 10px;
+}
 
 .upload-wrapper span {
     /* font-family: PF Handbook Pro; */
@@ -117,6 +136,40 @@
     line-height: 20px;
     letter-spacing: 0.018em;
     color: #000000;
+}
+.file-add {
+    position: absolute;
+    top: 50%;
+    right: 85px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff !important;
+    border-radius: 50%;
+    transform: translate(0, -50%);
+    background: url(../../../assets/img/additional/add.svg) no-repeat;
+    background-size: 18px;
+    background-position: left 15px center;
+}
+
+.file-note {
+    position: relative;
+}
+.file-note img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    margin: 0 !important;
+}
+.file-note ul {
+    padding-left: 65px;
+    margin: 0;
+}
+.file-note ul li {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    margin: 0;
+    list-style: disc;
 }
 
 @media only screen and (max-width: 991px) {

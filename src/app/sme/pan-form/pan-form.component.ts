@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -35,7 +35,7 @@ export class PanFormComponent implements OnInit {
   }
 
   proceedKYC(){
-    this.showKYC.emit();
+    this.showKYC.emit(this.panForm.value.pan);
   }
 
 }
