@@ -9,7 +9,7 @@ export class FilterArrayPipe implements PipeTransform {
     if (!items || !filter) {
         return items;
     }
-    return items.filter(item => item.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
+    return items.filter(item => item.toLowerCase().startsWith(filter.toLowerCase()));
 }
 
 }

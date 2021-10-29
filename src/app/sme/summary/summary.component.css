@@ -65,6 +65,22 @@
     color: #6C7174;
     flex: 1 0 48%;
     max-width: 48%;
+    margin: 0;
+}
+.edit .list-company.inline {
+    display: block !important;
+}
+
+.edit .list-company.inline > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.edit .list-company.inline > p {
+    margin-left: 20px;
+}
+.edit .form-field.split {
+    display: block !important;
 }
 
 .field-value {
@@ -151,6 +167,7 @@
 
 .preview span {
     padding-right: 8px;
+    color: #6A7C55;
 }
 
 .preview img {
@@ -210,4 +227,8 @@
 }
 .custom-card-title{
     cursor: pointer;
+}
+.summary-text label{
+    color: #000;
+    font-size: 16px;
 }

@@ -48,7 +48,7 @@
                     </div>
                     <div class="row m-0 mb-4" [formGroup]="step1Form">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Net worth</label>
+                            <label>Net worth*</label>
                             <input type="text" id="net_worth" placeholder="Enter Amount" class="form-control w-100"
                                 formControlName="networth"
                                 [ngClass]="{ 'is-invalid': step1FormControls.networth.touched && step1FormControls.networth.errors }"
@@ -434,6 +434,8 @@
                                 <select class="form-control w-100" name="stockExchange" formControlName="stockExchange">
                                     <option value="Bombay Stock Exchange (BSE)">Bombay Stock Exchange (BSE)</option>
                                     <option value="National Stock Exchange (NSE)">National Stock Exchange (NSE)</option>
+                                    <option value="National Stock Exchange (NSE) & Bombay Stock Exchange (BSE)">National Stock Exchange (NSE) & Bombay Stock Exchange (BSE)</option>
+                                    <option value="Other(s)">Other(s)</option>
                                 </select>
                             </div>
                         </div>
@@ -454,6 +456,8 @@
                                     formControlName="natureOfRelation">
                                     <option value="Bombay Stock Exchange (BSE)">Bombay Stock Exchange (BSE)</option>
                                     <option value="National Stock Exchange (NSE)">National Stock Exchange (NSE)</option>
+                                    <option value="National Stock Exchange (NSE) & Bombay Stock Exchange (BSE)">National Stock Exchange (NSE) & Bombay Stock Exchange (BSE)</option>
+                                    <option value="Other(s)">Other(s)</option>
                                 </select>
                             </div>
                         </div>

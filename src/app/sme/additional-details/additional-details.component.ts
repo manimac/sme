@@ -138,7 +138,7 @@ export class AdditionalDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.step1Form = new FormGroup({
       isListedCompany: new FormControl('Yes', Validators.required),
-      networth: new FormControl(''),
+      networth: new FormControl('', Validators.required),
       networthDate: new FormControl(this.today, Validators.required),
       pep: new FormControl('Not Applicable', Validators.required)
     });
