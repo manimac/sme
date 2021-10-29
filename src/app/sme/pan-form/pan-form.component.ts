@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,8 @@ import { Validators, FormGroup, FormControl } from '@angular/forms';
 export class PanFormComponent implements OnInit {
 
   @Output() showKYC = new EventEmitter<number>();
+  @ViewChild('path', { static: false }) path:any;
+  
   panForm: FormGroup;
   submitted: boolean = false;
   showPanForm: boolean = true;

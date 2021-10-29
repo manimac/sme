@@ -32,7 +32,8 @@
     height: 50px;
     align-items: center;
     justify-content: center;
-    border: 2px solid #CDCECE;
+    /* border: 2px solid #CDCECE; */
+    border: 0;
     border-radius: 50%;
     margin: 0 auto 10px;
     position: relative;
@@ -70,6 +71,14 @@
     line-height: 14px;
     letter-spacing: 0.01em;
     color: #000000;
+}
+
+.progress-img svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 @media only screen and (max-width: 991px) {
