@@ -71,7 +71,7 @@ export class AdditionalDetailsComponent implements OnInit {
     },
     {
       name: 'None of these',
-      isChecked: false
+      isChecked: true
     }
   ]
   countries: any = [
@@ -137,7 +137,7 @@ export class AdditionalDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.step1Form = new FormGroup({
-      isListedCompany: new FormControl('Yes', Validators.required),
+      isListedCompany: new FormControl('No', Validators.required),
       networth: new FormControl('', Validators.required),
       networthDate: new FormControl(this.today, Validators.required),
       pep: new FormControl('Not Applicable', Validators.required)
@@ -419,6 +419,23 @@ export class AdditionalDetailsComponent implements OnInit {
         element.fileName = '';
       }
     });
+   }
+
+   disableService(service){
+     let resultData = false;
+     this.services.forEach(element => {
+       if((element.name == 'Foreign Exchange / Money Changer Services / Money Lending' || element.name == 'Gaming / Gambling / Lottery Services / Casino Service' || element.name == 'Money Laundering / Pawning') && (element.isChecked)){
+          if(service.name == 'None of these'){
+            resultData = true;
+          }
+       }
+       if((element.name == 'None of these') && (element.isChecked)){
+        if(service.name == 'Foreign Exchange / Money Changer Services / Money Lending' || service.name == 'Gaming / Gambling / Lottery Services / Casino Service' || service.name == 'Money Laundering / Pawning'){
+          resultData = true;
+        }
+       }
+     });
+     return resultData;
    }
 
 }
