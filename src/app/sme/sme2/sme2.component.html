@@ -32,9 +32,9 @@
             <p class="m-0 text-center">Payment</p>
           </div>
         </div>
-        <app-pan-form *ngIf="showPanForm" (showKYC)="showKYC($event)"></app-pan-form>
-        <app-kyc-form *ngIf="showKYCForm" (showPan)="showPan()" (showAdditional)="showAdditional()" [currentPan]="currentPan"></app-kyc-form>
-  
+        <!-- <app-pan-form *ngIf="showPanForm" (showKYC)="showKYC($event)"></app-pan-form> -->
+        <!-- <app-kyc-form *ngIf="showKYCForm" (showPan)="showPan()" (showAdditional)="showAdditional()" [currentPan]="currentPan"></app-kyc-form> -->
+        <app-verified-kyc></app-verified-kyc>
         <app-additional-details *ngIf="showAdditionalForm" (showKYC)="showKYC()" (showSummary)="showSummary()" [currentForm]="currentForm"></app-additional-details>
   
         <app-summary *ngIf="showSummaryForm" (showAdditional)="showAdditionalNavigation($event)"></app-summary>
