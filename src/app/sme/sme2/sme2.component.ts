@@ -23,7 +23,7 @@ export class Sme2Component implements OnInit {
     this.showKYCForm = false;
   }
 
-  showKYC(ev){
+  showKYC(ev: any = ''){
     this.showPanForm = false;
     this.showKYCForm = true;
     this.showAdditionalForm = false;
