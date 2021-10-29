@@ -8,8 +8,8 @@
                 <div class="custom-card-body" [formGroup]="panForm">
                     <div class="row m-0" [ngClass]="{'mb-3': showProceedKYC}">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>PAN</label>
-                            <input type="text" id="pan" formControlName="pan" autocomplete="off" placeholder="Enter PAN"
+                            <label>PAN*</label>
+                            <input type="text" maxlength="10" id="pan" formControlName="pan" autocomplete="off" placeholder="Enter PAN"
                                 class="form-control w-100" [ngClass]="{ 'is-invalid': panFormControl.pan.touched && panFormControl.pan.errors }">
                         </div>
                     </div>

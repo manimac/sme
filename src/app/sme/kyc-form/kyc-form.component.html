@@ -31,14 +31,15 @@
                         </li>
                         <li>
                             <div class="img-wrapper">
-                                <img src="../../../assets/img/kyc/Provide_Additional_kYC_Details.svg" alt="Additional eKYC Icon"
-                                    class="w-100">
+                                <img src="../../../assets/img/kyc/Provide_Additional_kYC_Details.svg"
+                                    alt="Additional eKYC Icon" class="w-100">
                             </div>
                             <p class="m-0 text-center">Provide Additional <br /> KYC Details</p>
                         </li>
                         <li>
                             <div class="img-wrapper">
-                                <img src="../../../assets/img/kyc/Authorised_Sigatories.svg" alt="FingerPrint Icon" class="w-100">
+                                <img src="../../../assets/img/kyc/Authorised_Sigatories.svg" alt="FingerPrint Icon"
+                                    class="w-100">
                             </div>
                             <p class="m-0 text-center">Upload PAN & Aadhaar of <br /> Director/Authorised Sigatories</p>
                         </li>
@@ -68,15 +69,15 @@
             <div class="card-value" *ngIf="showDateOfIncorporation">
                 <div class="custom-card-body" [formGroup]="kycForm1">
                     <div class="row m-0 mb-3">
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>PAN</label>
                             <input type="text" id="pan" autocomplete="off" placeholder="Enter PAN"
                                 class="form-control w-100" formControlName="pan"
-                                [ngClass]="{ 'is-invalid': kycForm1Controls.pan.touched && kycForm1Controls.pan.errors }" disabled>
+                                [ngClass]="{ 'is-invalid': kycForm1Controls.pan.touched && kycForm1Controls.pan.errors }"
+                                disabled>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Date of Incorporation</label>
-                            <!-- <input type="date" id="date-of-incorporation" placeholder="Select date" class="form-control w-100 date" formControlName="dateOfIncorporation" [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }"> -->
+                            <label>Date of Incorporation*</label>
                             <input type="text" placeholder="Select date" class="form-control w-100 date"
                                 formControlName="dateOfIncorporation"
                                 [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }"
@@ -112,19 +113,20 @@
                     </ul>
                     <div class="row m-0 mb-3">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Mobile Number</label>
+                            <label>Mobile Number*</label>
                             <input type="text" id="mobilenum" placeholder="Enter Mobile Number" autocomplete="off"
                                 class="form-control w-100" formControlName="mobile"
-                                [ngClass]="{ 'is-invalid': kycForm2Controls.mobile.touched && kycForm2Controls.mobile.errors }">
+                                [ngClass]="{ 'is-invalid': kycForm2Controls.mobile.touched && kycForm2Controls.mobile.errors }"
+                                appAcceptOnlyNumber>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Email ID</label>
+                            <label>Email ID*</label>
                             <input type="text" id="emailId" placeholder="Enter Email ID" class="form-control w-100"
                                 autocomplete="off" formControlName="email"
                                 [ngClass]="{ 'is-invalid': kycForm2Controls.email.touched && kycForm2Controls.email.errors }">
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Tax Status</label>
+                            <label>Tax Status*</label>
                             <div class="select-wrapper">
                                 <select class="form-control w-100" formControlName="taxStatus"
                                     [ngClass]="{ 'is-invalid': kycForm2Controls.taxStatus.touched && kycForm2Controls.taxStatus.errors }">
@@ -218,17 +220,17 @@
                         </li>
                     </ul> -->
                     <div class="row m-0 mb-3">
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>Mobile Number</label>
                             <input type="text" id="mobilenum" placeholder="Enter Mobile Number" value="9042216985"
-                                class="form-control w-100" readonly>
+                                class="form-control w-100" disabled>
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>Email ID</label>
                             <input type="text" id="emailId" placeholder="Enter Email ID" value="janedoe@gmail.com"
-                                class="form-control w-100" readonly>
+                                class="form-control w-100" disabled>
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>Tax Status</label>
                             <div class="select-wrapper readonly">
                                 <select class="form-control w-100" disabled>
@@ -241,10 +243,11 @@
                         </div>
                         <div class="col-12 seperator"></div>
                         <div class="col-12 col-md-10 col-lg-8 p-0 pr-md-3 pr-lg-4 form-field">
-                            <label>Please enter the OTP sent on the registered mobile number and Email ID.</label>
+                            <label>Please enter the OTP sent on the registered mobile number and Email ID*</label>
                             <input type="text" id="otp" placeholder="Enter OTP" class="form-control w-100"
                                 formControlName="otp" autocomplete="off"
-                                [ngClass]="{ 'is-invalid': kycForm3Controls.otp.touched && kycForm3Controls.otp.errors }">
+                                [ngClass]="{ 'is-invalid': kycForm3Controls.otp.touched && kycForm3Controls.otp.errors }"
+                                appAcceptOnlyNumber>
                         </div>
                         <div class="col-12 p-0 m-0 mt-2 note-text">
                             <span>OTP will expire in 8m 50s</span>
@@ -263,7 +266,7 @@
                 </div>
             </div>
             <div class="card-value" *ngIf="showSubmitOTP">
-                <div class="custom-card-body">
+                <div class="custom-card-body" [formGroup]="kycForm4">
                     <ul class="m-0 mb-5 details-list user green readonly">
                         <li class="pan">
                             <label>PAN:</label>
@@ -291,15 +294,18 @@
                         </li>
                     </ul>
                     <div class="row m-0 mb-3">
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>City of Incorporation</label>
+                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field wrap-drop">
+                            <label>City of Incorporation*</label>
                             <input type="text" id="mobilenum" placeholder="Enter City" class="form-control w-100"
-                                autocomplete="off">
+                                autocomplete="off" formControlName="city">
+                            <ul class="drop" *ngIf="kycForm4.value.city">
+                                <li *ngFor="let city of citites | filterArray:kycForm4.value.city"><a>{{city}}</a></li>
+                            </ul>
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>Country of Incorporation</label>
-                            <input type="text" id="emailId" placeholder="Enter Country" value="India"
-                                class="form-control w-100" readonly>
+                            <input type="text" id="emailId" placeholder="Enter Country" formControlName="country"
+                                class="form-control w-100" disabled>
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
@@ -317,6 +323,7 @@
 </div>
 <div class="row mx-0 custom-btn-block proceed-bbtn" *ngIf="showSubmitOTP">
     <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-        <button class="btn btn-primary" (click)="showAdditionalForm()">Proceed</button>
+        <button class="btn btn-primary" [ngClass]="{'disabled': kycForm4.invalid}"
+        [disabled]="kycForm4.invalid" (click)="showAdditionalForm()">Proceed</button>
     </div>
 </div>

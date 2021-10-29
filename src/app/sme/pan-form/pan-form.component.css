@@ -3,14 +3,17 @@
     padding: 20px;
     border-radius: 6px;
 }
+
 .notes-msg p {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
+
 .notes-msg p img {
     max-width: 22px;
 }
+
 .notes-msg p span {
     padding-left: 10px;
     /* font-family: PF Handbook Pro; */
@@ -23,3 +26,4 @@
     flex: 1 0 calc(100% - 22px);
     max-width: calc(100% - 22px);
 }
+

@@ -20,8 +20,10 @@ export class KycFormComponent implements OnInit {
   kycForm1: FormGroup;
   kycForm2: FormGroup;
   kycForm3: FormGroup;
+  kycForm4: FormGroup;
   submitted: boolean = false;
   today: any = new Date();
+  citites: any = ['Ahmadnagar', 'Amravati', 'Aurangabad', 'Bhandara', 'Buldana', 'Delhi', 'Karnataka', 'Tamilnadu', 'Kerala'];
   constructor(private bsLocaleService: BsLocaleService) {
    }
 
@@ -32,13 +34,17 @@ export class KycFormComponent implements OnInit {
     });
     this.kycForm2 = new FormGroup({
       mobile: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
       taxStatus: new FormControl('Partnership', Validators.required)
     });
     this.kycForm3 = new FormGroup({
       otp: new FormControl('', Validators.required)
     });
-
+    this.kycForm4 = new FormGroup({
+      city: new FormControl('', Validators.required),
+      country: new FormControl('India', Validators.required)
+    });
+    this.currentPan = localStorage.getItem('pan') ? localStorage.getItem('pan') : this.currentPan;
     this.kycForm1.patchValue({pan: this.currentPan});
   }
 
@@ -52,6 +58,10 @@ export class KycFormComponent implements OnInit {
 
   get kycForm3Controls() {
     return this.kycForm3.controls;
+  }
+
+  get kycForm4Controls() {
+    return this.kycForm4.controls;
   }
 
   showPanForm(){

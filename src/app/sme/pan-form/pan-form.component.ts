@@ -35,6 +35,7 @@ export class PanFormComponent implements OnInit {
   }
 
   proceedKYC(){
+    localStorage.setItem('pan', this.panForm.value.pan);
     this.showKYC.emit(this.panForm.value.pan);
   }
 

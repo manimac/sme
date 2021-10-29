@@ -21,11 +21,11 @@
             </div>
 
             <div class="card-value">
-                <div class="custom-card-body" [formGroup]="step1Form">
-                    <div class="row m-0 mb-4 pb-2">
+                <div class="custom-card-body">
+                    <div class="row m-0 mb-4 pb-2" [formGroup]="step1Form">
                         <div class="col-12 p-0 form-field list-company">
                             <label class="m-0">Is the entity a listed company? / Subsidiary of listed company? /
-                                Controlled by a listed company? <img src="../../../assets/img/additional/info.svg"
+                                Controlled by a listed company?* <img src="../../../assets/img/additional/info.svg"
                                     alt="Info Icon"></label>
                             <div class="radio-wrapper">
                                 <div class="radio-item">
@@ -45,33 +45,31 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row m-0 mb-4">
+                    <div class="row m-0 mb-4" [formGroup]="step1Form">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Net worth</label>
                             <input type="text" id="net_worth" placeholder="Enter Amount" class="form-control w-100"
                                 formControlName="networth"
-                                [ngClass]="{ 'is-invalid': step1FormControls.networth.touched && step1FormControls.networth.errors }">
+                                [ngClass]="{ 'is-invalid': step1FormControls.networth.touched && step1FormControls.networth.errors }" appAcceptOnlyNumber>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Net worth date (as on date)</label>
+                            <label>Net worth date (as on date)*</label>
                             <input type="text" class="form-control w-100 date" placeholder="Select date"
                                 formControlName="networthDate"
                                 [ngClass]="{ 'is-invalid': step1FormControls.networthDate.touched && step1FormControls.networthDate.errors }"
-                                #dp="bsDatepicker" bsDatepicker>
+                                #dp="bsDatepicker" bsDatepicker [maxDate]="today">
                         </div>
                     </div>
-                    <div class="row m-0 mb-4">
+                    <div class="row m-0 mb-4" [formGroup]="step1Form">
                         <div class="col-sm-12 col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>PEP: Politically Exposed Person <img src="../../../assets/img/additional/info.svg"
+                            <label>PEP: Politically Exposed Person* <img src="../../../assets/img/additional/info.svg"
                                     alt="Info Icon"></label>
 
                             <div class="select-wrapper">
                                 <select class="form-control w-100" formControlName="pep"
                                     [ngClass]="{ 'is-invalid': step1FormControls.pep.touched && step1FormControls.pep.errors }">
-                                    <option value="I am a politically exposed person">I am a politically exposed person
-                                    </option>
-                                    <option value="PEP 2">PEP 2</option>
-                                    <option value="PEP 3">PEP 3</option>
+                                    <option value="I am PEP">I am PEP</option>
+                                    <option value="I am Related">I am Related</option>
                                     <option value="Not Applicable">Not Applicable</option>
                                 </select>
                             </div>
@@ -80,24 +78,24 @@
 
                     <div class="row m-0">
                         <div class="col-12 p-0 form-field">
-                            <label>Is the investor involved in providing any of the below mentioned services?</label>
+                            <label>Is the investor involved in providing any of the below mentioned services?*</label>
 
                             <div class="checkbox-wrapper w-item-100">
                                 <div class="checkbox-item" *ngFor="let service of services; let i = index">
-                                    <input type="checkbox" id="i" name="service" value="{{service.name}}">
+                                    <input type="checkbox" id="i" name="service" value="{{service.name}}" [(ngModel)]="service.isChecked">
                                     <span class="custom-checkbox"></span>
                                     <label for="i">{{service.name}}</label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row mx-0 custom-btn-block">
+                    <div class="row mx-0 custom-btn-block" [formGroup]="step1Form">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
                             <button class="btn btn-link" (click)="showKycForm()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-                            <button class="btn btn-primary" [ngClass]="{'disabled': step1Form.invalid}"
-                                [disabled]="step1Form.invalid" (click)="showStep2Form()">Next</button>
+                            <button class="btn btn-primary" [ngClass]="{'disabled': step1Form.invalid||isServiceNotSelected()}"
+                                [disabled]="step1Form.invalid||isServiceNotSelected()" (click)="showStep2Form()">Next</button>
                         </div>
                     </div>
                 </div>
@@ -117,7 +115,7 @@
                 <div class="custom-card-body">
                     <div class="row m-0" [formGroup]="step2Form">
                         <div class="col-12 p-0 form-field list-company">
-                            <label class="m-0">Is the entity a tax resident of any country other than India? <img
+                            <label class="m-0">Is the entity a tax resident of any country other than India?* <img
                                     src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
                             <div class="radio-wrapper">
                                 <div class="radio-item">
@@ -144,24 +142,22 @@
                                     (click)="deleteCountry(i)"></h4>
                             <div class="row m-0 mb-4">
                                 <div class="col-12 col-md-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                                    <label>Country of Tax Residency</label>
+                                    <label>Country of Tax Residency*</label>
                                     <div class="select-wrapper">
                                         <select class="form-control w-100" [(ngModel)]="data.country">
                                             <option value="" disabled>Select Country</option>
-                                            <option value="India">India</option>
-                                            <option value="Country 2">Country 2</option>
-                                            <option value="Country 3">Country 3</option>
+                                            <option value="{{country.name}}" *ngFor="let country of countries">{{country.name}}</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                                    <label>Tax Identification Number <img src="../../../assets/img/additional/info.svg"
+                                    <label>Tax Identification Number* <img src="../../../assets/img/additional/info.svg"
                                             alt="Info Icon"></label>
                                     <input type="text" [(ngModel)]="data.taxIdentificationNUmber" id="tax_id_no"
                                         placeholder="Enter ID Number" class="form-control w-100">
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                                    <label>Identification type <img src="../../../assets/img/additional/info.svg"
+                                    <label>Identification type* <img src="../../../assets/img/additional/info.svg"
                                             alt="Info Icon"></label>
                                     <input type="text" [(ngModel)]="data.identificationType" id="net_worth"
                                         placeholder="Enter identification type" class="form-control w-100">
@@ -170,7 +166,7 @@
                             <div class="row mx-0 seperator"></div>
                         </div>
                         <div class="col-12 p-0 mt-3">
-                            <button class="btn btn-primary grey" [disabled]="step2FormData.length>=5"
+                            <button class="btn btn-primary grey" [ngClass]="{'disabled': (step2FormData.length>=5) || isCountryNotAdded()}" [disabled]="(step2FormData.length>=5) || isCountryNotAdded()"
                                 (click)="addCountry()">+ Another Country</button>
                         </div>
                     </div>
@@ -235,7 +231,7 @@
                         *ngIf="((step3FormControls.entityType.value=='Financial Institution')||(step3FormControls.entityType.value=='Direct Reporting NFE'))">
                         <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field m-0">
                             <label>GIIN (Global Intermediary Identification Number)</label>
-                            <input type="text" id="net_worth" placeholder="Enter GIIN" class="form-control w-100">
+                            <input type="text" maxlength="19" id="net_worth" placeholder="Enter GIIN" class="form-control w-100">
                         </div>
                     </div>
                     <div class="row m-0 or-seperator"
@@ -252,7 +248,7 @@
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Sponsor’s GIIN</label>
-                            <input type="text" id="net_worth" placeholder="Enter Sponsor’s GIIN"
+                            <input type="text" maxlength="60" id="net_worth" placeholder="Enter Sponsor’s GIIN"
                                 class="form-control w-100">
                         </div>
                     </div>
@@ -375,7 +371,7 @@
                         <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field"
                             *ngIf="step4FormControls.entityType.value=='Entity is related entity of a Public Traded Company'">
                             <label>Name of the listed company</label>
-                            <input type="text" id="net_worth" name="nameOfListedCompany"
+                            <input type="text" maxlength="50" id="net_worth" name="nameOfListedCompany"
                                 formControlName="nameOfListedCompany" placeholder="Enter name here"
                                 class="form-control w-100">
                         </div>
@@ -466,7 +462,7 @@
                     <div class="row m-0 mb-4" *ngIf="step4FormExtraControls.entityTypeExtra.value=='Active NFE'">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Nature of Business</label>
-                            <input type="text" id="net_worth" name="" placeholder="Enter nature here"
+                            <input type="text" maxlength="30" id="net_worth" name="" placeholder="Enter nature here"
                                 class="form-control w-100">
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
@@ -475,11 +471,11 @@
                             <div class="m-0 input-wrapper">
                                 <div class="input-item">
                                     <input type="text" name="twoDigits1" formControlName="twoDigits1"
-                                        class="form-control w-100">
+                                        class="form-control w-100" appAcceptOnlyNumber>
                                 </div>
                                 <div class="input-item">
                                     <input type="text" name="twoDigits2" formControlName="twoDigits2"
-                                        class="form-control w-100">
+                                        class="form-control w-100" appAcceptOnlyNumber>
                                 </div>
                             </div>
                         </div>
@@ -487,7 +483,7 @@
                     <div class="row m-0 mb-4" *ngIf="step4FormExtraControls.entityTypeExtra.value=='Passive NFE'">
                         <div class="col-12 col-sm-8 col-lg-8 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Nature of Business</label>
-                            <input type="text" id="net_worth" name="" placeholder="Enter nature here"
+                            <input type="text" maxlength="30" id="net_worth" name="" placeholder="Enter nature here"
                                 class="form-control w-100">
                         </div>
                     </div>
@@ -518,12 +514,10 @@
                 <div class="custom-card-body">
                     <div class="row m-0 mb-4" [formGroup]="step5Form">
                         <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Category</label>
+                            <label>Category*</label>
                             <div class="select-wrapper">
                                 <select class="form-control w-100" formControlName="category">
-                                    <option value="Unlisted Company">Unlisted Company</option>
-                                    <option value="Unlisted Company 2">Unlisted Company 2</option>
-                                    <option value="Unlisted Company 3">Unlisted Company 3</option>
+                                    <option value="{{category.name}}" *ngFor="let category of categories">{{category.name}}</option>
                                 </select>
                             </div>
                         </div>
@@ -539,40 +533,39 @@
                                 <label>Address type</label>
                                 <div class="select-wrapper">
                                     <select class="form-control w-100" [(ngModel)]="data.addressType">
-                                        <option value="Residential">Residential</option>
-                                        <option value="Residential 2">Residential 2</option>
-                                        <option value="Residential 3">Residential 3</option>
+                                        <option value="">Select Address type</option>
+                                        <option value="Residence">Residence</option>
+                                        <option value="Business">Business</option>
+                                        <option value="Registered office">Registered office</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                                <label>Name of UBO</label>
-                                <input type="text" id="net_worth" placeholder="Enter UBO name"
+                                <label>Name of UBO*</label>
+                                <input type="text" maxlength="30" id="net_worth" placeholder="Enter UBO name"
                                     class="form-control w-100" [(ngModel)]="data.nameOfUBO">
                             </div>
                         </div>
                         <div class="row m-0 mb-4">
                             <div class="col-sm-6 col-md-8 p-0 pr-sm-3 pr-lg-4 form-field">
-                                <label>Address</label>
+                                <label>Address*</label>
                                 <input type="text" id="net_worth" placeholder="Enter Address" class="form-control w-100"
                                     [(ngModel)]="data.address">
                             </div>
                         </div>
                         <div class="row m-0 mb-4">
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                                <label>Country</label>
+                                <label>Country*</label>
                                 <div class="select-wrapper">
                                     <select class="form-control w-100" placeholder="Select country here"
                                         [(ngModel)]="data.country">
                                         <option value="">Select country here</option>
-                                        <option value="India">India</option>
-                                        <option value="Country 2">Country 2</option>
-                                        <option value="Country 3">Country 3</option>
+                                        <option value="{{country.name}}" *ngFor="let country of countries">{{country.name}}</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                                <label>State</label>
+                                <label>State*</label>
                                 <div class="select-wrapper">
                                     <select class="form-control w-100" placeholder="Select State here"
                                         [(ngModel)]="data.state">
@@ -584,24 +577,24 @@
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                                <label>PIN Code</label>
+                                <label>PIN Code*</label>
                                 <input type="text" id="net_worth" placeholder="Enter pin-code"
                                     class="form-control w-100" [(ngModel)]="data.pinCode">
                             </div>
                         </div>
                         <div class="row m-0 mb-4">
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                                <label>Tax ID</label>
-                                <input type="text" id="net_worth" placeholder="Enter number here"
+                                <label>Tax ID*</label>
+                                <input type="text" maxlength="50" id="net_worth" placeholder="Enter number here"
                                     class="form-control w-100" [(ngModel)]="data.taxId">
                             </div>
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                                <label>Tax ID type</label>
-                                <input type="text" id="net_worth" placeholder="Enter type here"
+                                <label>Tax ID type*</label>
+                                <input type="text" maxlength="50" id="net_worth" placeholder="Enter type here"
                                     class="form-control w-100" [(ngModel)]="data.taxIdType">
                             </div>
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                                <label>Type Code</label>
+                                <label>Type Code*</label>
                                 <input type="text" id="net_worth" placeholder="Enter code here"
                                     class="form-control w-100" [(ngModel)]="data.typeCode">
                             </div>
@@ -617,7 +610,7 @@
                                 <label>Date of Birth</label>
                                 <input type="text" id="net_worth" placeholder="Select Date"
                                     class="form-control w-100 date" #dp="bsDatepicker" bsDatepicker
-                                    [(ngModel)]="data.dob">
+                                    [(ngModel)]="data.dob" [maxDate]="today">
                             </div>
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                 <label>Gender</label>
@@ -633,15 +626,8 @@
                         <div class="row m-0 mb-4" *ngIf="step4FormExtraControls.entityTypeExtra.value=='Passive NFE'">
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                 <label>City of Birth</label>
-                                <div class="select-wrapper">
-                                    <select class="form-control w-100" placeholder="Select City here"
-                                        [(ngModel)]="data.cityOfBirth">
-                                        <option value="" disabled>Select City here</option>
-                                        <option value="Delhi">Delhi</option>
-                                        <option value="City 2">City 2</option>
-                                        <option value="City 3">City 3</option>
-                                    </select>
-                                </div>
+                                <input type="text" maxlength="50" id="net_worth" placeholder="Enter City of Birth"
+                                    class="form-control w-100" [(ngModel)]="data.cityOfBirth">
                             </div>
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                 <label>Country of Birth</label>
@@ -649,15 +635,13 @@
                                     <select class="form-control w-100" placeholder="Select country here"
                                         [(ngModel)]="data.countryOfBirth">
                                         <option value="" disabled>Select country here</option>
-                                        <option value="India">India</option>
-                                        <option value="Country 2">Country 2</option>
-                                        <option value="Country 3">Country 3</option>
+                                        <option value="{{country.name}}" *ngFor="let country of countries">{{country.name}}</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                 <label>Nationality</label>
-                                <input type="text" id="net_worth" placeholder="Enter ID type" class="form-control w-100"
+                                <input type="text" maxlength="30" id="net_worth" placeholder="Enter ID type" class="form-control w-100"
                                     [(ngModel)]="data.nationality">
                             </div>
                         </div>
@@ -667,9 +651,9 @@
                                 <div class="select-wrapper" [(ngModel)]="data.occupationType">
                                     <select class="form-control w-100">
                                         <option value="" disabled>Select Occupation type here</option>
+                                        <option value="Service">Service</option>
                                         <option value="Business">Business</option>
-                                        <option value="Business 2">Business 2</option>
-                                        <option value="Business 3">Business 3</option>
+                                        <option value="Others">Others</option>
                                     </select>
                                 </div>
                             </div>
@@ -681,7 +665,7 @@
                         </div>
                     </div>
                     <div class="col-12 p-0 mt-3">
-                        <button class="btn btn-primary grey" [disabled]="step5FormData.length>=2" (click)="addUBO()">+
+                        <button class="btn btn-primary grey" [ngClass]="{'disabled': (step5FormData.length>=5) || isUBONotAdded()}" [disabled]="(step5FormData.length>=2) || isUBONotAdded()" (click)="addUBO()">+
                             Another UBO Details</button>
                     </div>
                     <div class="row mx-0 seperator"></div>
@@ -690,8 +674,8 @@
                             <button class="btn btn-link" (click)="showStep4ExtraForm()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-                            <button class="btn btn-primary" [ngClass]="{'disabled': step5Form.invalid}"
-                                [disabled]="step5Form.invalid" (click)="showStep6Form()">Next</button>
+                            <button class="btn btn-primary" [ngClass]="{'disabled': step5Form.invalid || isUBONotAdded()}"
+                                [disabled]="step5Form.invalid || isUBONotAdded()" (click)="showStep6Form()">Next</button>
                         </div>
                     </div>
                 </div>
@@ -714,7 +698,7 @@
                         <label><b>Bank account holder name:</b> Aditya Birla Sun Life AMC Ltd</label>
                     </div>
                     <div class="row m-0 mb-4">
-                        <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>IFSC</label>
                             <input type="text" id="net_worth" placeholder="Enter IFSC" class="form-control w-100"
                                 formControlName="ifsc" disabled>
@@ -729,22 +713,22 @@
                         </div>
                     </div>
                     <div class="row m-0 mb-4">
-                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>Name of Bank*</label>
                             <input type="text" id="net_worth" placeholder="Enter name of bank"
                                 class="form-control w-100" formControlName="nameOfBank" disabled>
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>Branch Name*</label>
                             <input type="text" id="net_worth" placeholder="Enter branch name" class="form-control w-100"
                                 formControlName="branchName" disabled>
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>Branch Address*</label>
                             <input type="text" id="net_worth" placeholder="Enter branch address"
                                 class="form-control w-100" formControlName="branchAddress" disabled>
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>City*</label>
                             <input type="text" id="net_worth" placeholder="Enter City" class="form-control w-100"
                                 formControlName="city" disabled>
@@ -753,32 +737,21 @@
                     <div class="row m-0 mb-4">
                         <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Account Number*</label>
-                            <div class="select-wrapper">
-                                <select class="form-control w-100" formControlName="accountNumber">
-                                    <option value="">xxxxxxxxxxxx</option>
-                                    <option value="Account Number 1">Account Number 1</option>
-                                    <option value="Account Number 2">Account Number 2</option>
-                                    <option value="Account Number 3">Account Number 3</option>
-                                </select>
-                            </div>
+                            <input type="text" id="net_worth" placeholder="Enter Account Number" class="form-control w-100"
+                                formControlName="accountNumber" appAcceptOnlyNumber>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Confirm Account Number*</label>
-                            <div class="select-wrapper">
-                                <select class="form-control w-100" formControlName="confirmAccountNumber">
-                                    <option value="">xxxxxxxxxxxx</option>
-                                    <option value="Account Number 1">Account Number 1</option>
-                                    <option value="Account Number 2">Account Number 2</option>
-                                    <option value="Account Number 3">Account Number 3</option>
-                                </select>
-                            </div>
+                            <input type="text" id="net_worth" placeholder="Enter Confirm Account Number" class="form-control w-100" formControlName="confirmAccountNumber" appAcceptOnlyNumber>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Account Type*</label>
                             <div class="select-wrapper">
                                 <select class="form-control w-100" formControlName="accountType">
-                                    <option value="Current Account">Current Account</option>
-                                    <option value="Savings Account">Savings Account</option>
+                                    <option value="">Select Account Type</option>
+                                    <option value="Current">Current</option>
+                                    <option value="FCNR">FCNR</option>
+                                    <option value="Overdraft">Overdraft</option>
                                 </select>
                             </div>
                         </div>
@@ -817,8 +790,8 @@
                             </div>
 
                             <div class="position-relative input-group file-wrapper mb-3">
-                                <input type="file" placeholder="Browse files here" class="form-control">
-                                <label>Browse files here</label>
+                                <input type="file" placeholder="Browse files here" class="form-control" (change)="onFileSelected($event)">
+                                <label [innerHtml]="uploadedFileName">Browse files here</label>
                                 <div class="input-group-append">
                                     <span class="input-group-text">Upload</span>
                                 </div>
@@ -829,7 +802,7 @@
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
-                        <button class="btn btn-primary" *ngIf="!validate" (click)="validate=true;">Validate</button>
+                        <button class="btn btn-primary" [ngClass]="{'disabled': (step6Form.value.validate!='Yes')}" [disabled]="step6Form.value.validate!='Yes'" *ngIf="!validate" (click)="validate=true;">Validate</button>
                         <button class="btn btn-primary btn-link pl-0" *ngIf="validate">
                             <span>Validated Successfully!</span>
                         </button>
@@ -861,49 +834,18 @@
                 <div class="custom-card-body">
                     <div class="upload-list">
                         <ul class="m-0 p-0">
-                            <li>
-                                <div class="upload-wrapper">
-                                    <input type="file" name="" id="">
-                                    <span>Board Resolution</span>
+                            <li *ngFor="let documents of uploadDocuments" [ngClass]="{'with-doc': documents.fileName}">
+                                <div class="upload-wrapper" *ngIf="!documents.fileName">
+                                    <input type="file" name="" id="" (change)="onDocumentsSelected($event, documents.name)">
+                                    <span>{{documents.name}}</span>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="upload-wrapper">
-                                    <input type="file" name="" id="">
-                                    <span>Memorandum & Article of Association</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="upload-wrapper">
-                                    <input type="file" name="" id="">
-                                    <span>List of Authorised Signatories</span>
+                                <div class="upload-wrapper" *ngIf="documents.fileName">
+                                    <span>{{documents.name}}</span>
+                                    <p>{{documents.fileName}} <span class="file-close" (click)="removeDocuments(documents.name)"></span></p>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                    <div class="seperator sm"></div>
-                    <div class="upload-list with-doc">
-                        <ul class="m-0 p-0">
-                            <li>
-                                <div class="upload-wrapper">
-                                    <span>Board Resolution</span>
-                                    <p>address/docs-br.jpeg <span class="file-close"></span></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="upload-wrapper">
-                                    <span>Memorandum & Article of Association</span>
-                                    <p>address/docs-br.jpeg<span class="file-close"></span></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="upload-wrapper">
-                                    <span>List of Authorised Signatories</span>
-                                    <p>address/docs-br.jpeg<span class="file-close"></span></p>
-                                    <span class="file-add"></span>
-                                </div>
-                            </li>
-                        </ul>
                     <div class="seperator"></div>
                     <div class="p-0 checkbox-content bank-name">
                         <label class="sm file-note">
@@ -923,7 +865,6 @@
                                 [disabled]="step7Form.invalid" (click)="showSummaryForm()">Next</button>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>

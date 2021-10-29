@@ -38,7 +38,7 @@ export class AdditionalDetailsComponent implements OnInit {
       taxId: '',
       taxIdType: '',
       typeCode: '',
-      addressType: 'Residential',
+      addressType: '',
       pinCode: '',
       country: '',
       state: '',
@@ -49,7 +49,7 @@ export class AdditionalDetailsComponent implements OnInit {
       occupationType: 'Business',
       nationality: '',
       dob: this.today,
-      gender: 'Male',
+      gender: '',
       holding: '30%'
     }
   ];
@@ -74,14 +74,72 @@ export class AdditionalDetailsComponent implements OnInit {
       isChecked: false
     }
   ]
+  countries: any = [
+    {
+      name: 'India'
+    },
+    {
+      name: 'Australia'
+    },
+    {
+      name: 'United States'
+    },
+    {
+      name: 'China'
+    }
+  ]
+  categories: any = [
+    {
+      name: 'Unlisted Company'
+    },
+    {
+      name: 'Partnership Firm'
+    },
+    {
+      name: 'LLP'
+    },
+    {
+      name: 'Unincorporated association'
+    },
+    {
+      name: 'body of individuals'
+    },
+    {
+      name: 'Public Charitable Trust'
+    },
+    {
+      name: 'Religious Trust'
+    },
+    {
+      name: 'Private Trust'
+    },
+    {
+      name: 'Others'
+    }
+  ]
   validate: boolean = false;
+  uploadedFileName: any = 'Browse files here';
+  uploadDocuments: any = [
+    {
+      name: 'Board Resolution',
+      fileName: ''
+    },
+    {
+      name: 'Memorandum & Article of Association',
+      fileName: ''
+    },
+    {
+      name: 'List of Authorised Signatories',
+      fileName: ''
+    }
+  ]
   constructor(private bsLocaleService: BsLocaleService) { }
 
   ngOnInit(): void {
     this.step1Form = new FormGroup({
       isListedCompany: new FormControl('Yes', Validators.required),
-      networth: new FormControl('', Validators.required),
-      networthDate: new FormControl('', Validators.required),
+      networth: new FormControl(''),
+      networthDate: new FormControl(this.today, Validators.required),
       pep: new FormControl('Not Applicable', Validators.required)
     });
     this.step2Form = new FormGroup({
@@ -121,7 +179,7 @@ export class AdditionalDetailsComponent implements OnInit {
       city: new FormControl('Delhi', Validators.required),
       accountNumber: new FormControl('', Validators.required),
       confirmAccountNumber: new FormControl('', Validators.required),
-      accountType: new FormControl('Current Account', Validators.required),
+      accountType: new FormControl('', Validators.required),
       validate: new FormControl('', Validators.required),
       uploadedFile: new FormControl(''),
     });
@@ -272,6 +330,16 @@ export class AdditionalDetailsComponent implements OnInit {
     this.showSummary.emit();
   }
 
+  isServiceNotSelected(){
+    let selectedService = this.services.find(element=>(element.isChecked));
+    return (selectedService) ? false : true;
+  }
+
+  isCountryNotAdded(){
+    let isNotValid: boolean = this.step2FormData.find(element => (!element.country || !element.taxIdentificationNUmber || !element.identificationType));
+    return (!isNotValid) ? false : true;
+  }
+
   addCountry() {
     let isNotValid: boolean = this.step2FormData.find(element => (!element.country || !element.taxIdentificationNUmber || !element.identificationType));
     if(!isNotValid){
@@ -288,13 +356,18 @@ export class AdditionalDetailsComponent implements OnInit {
     this.step2FormData.splice(index, 1);
   }
 
+  isUBONotAdded(){
+    let isNotValid: boolean = this.step5FormData.find(element => (!element.nameOfUBO || !element.country || !element.taxId || !element.taxIdType || !element.typeCode || !element.addressType));
+    return (!isNotValid) ? false : true;
+  }
+
   addUBO() {
     let obj = {
       nameOfUBO: '',
       taxId: '',
       taxIdType: '',
       typeCode: '',
-      addressType: 'Residential',
+      addressType: '',
       country: '',
       state: '',
       address: '',
@@ -304,7 +377,7 @@ export class AdditionalDetailsComponent implements OnInit {
       occupationType: 'Business',
       nationality: '',
       dob: '',
-      gender: 'Male',
+      gender: '',
       holding: '30%'
     };
     this.step5FormData.push(obj);
@@ -321,5 +394,31 @@ export class AdditionalDetailsComponent implements OnInit {
     if (n % 10 === 0) return deca[Math.floor(n / 10) - 2] + 'ieth';
     return deca[Math.floor(n / 10) - 2] + 'y-' + special[n % 10];
   }
+
+  onFileSelected(event) {
+    if(event.target.files.length > 0) 
+     {
+       this.uploadedFileName = event.target.files[0].name;
+     }
+   }
+
+  onDocumentsSelected(event, name) {
+    if(event.target.files.length > 0) 
+     {
+       this.uploadDocuments.forEach(element => {
+         if(element.name == name){
+           element.fileName = event.target.files[0].name;
+         }
+       });
+     }
+   }
+
+   removeDocuments(name){
+    this.uploadDocuments.forEach(element => {
+      if(element.name == name){
+        element.fileName = '';
+      }
+    });
+   }
 
 }

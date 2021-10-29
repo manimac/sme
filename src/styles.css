@@ -844,3 +844,6 @@ input.form-control:focus {
         height: 55px;
     }
 }
+.custom-form-field .form-control {
+    background-color: #e9ecef !important;
+}
