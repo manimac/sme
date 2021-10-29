@@ -32,6 +32,15 @@
             <p class="m-0 text-center">Payment</p>
           </div>
         </div>
+        <!-- <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+        <div class="buttons">
+          <button (click)="clearSignature()">Clear signature pad</button>
+          <button (click)="savePad()">Save signature</button>
+        </div>
+        
+        <div class="signature-image" *ngIf="signatureImg">
+          <img src='{{ signatureImg }}' />
+        </div> -->
         <!-- <app-pan-form *ngIf="showPanForm" (showKYC)="showKYC($event)"></app-pan-form> -->
         <!-- <app-kyc-form *ngIf="showKYCForm" (showPan)="showPan()" (showAdditional)="showAdditional()" [currentPan]="currentPan"></app-kyc-form> -->
         <app-verified-kyc></app-verified-kyc>

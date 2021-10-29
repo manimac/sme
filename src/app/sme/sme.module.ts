@@ -23,6 +23,7 @@ import { FilterArrayPipe } from './pipes/filter-array.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Sme2Component } from './sme2/sme2.component';
 import { VerifiedKycComponent } from './sme2/verified-kyc/verified-kyc.component';
+import { SignaturePadModule } from 'angular2-signaturepad';
 registerLocaleData(localeDECH);
 @NgModule({
   declarations: [PanFormComponent, KycFormComponent, SmeComponent, CityCountryComponent, AdditionalDetailsComponent, FactaCrsDetailsComponent, PartAComponent, PartBComponent, UltimateBeneficiaryOwnerComponent, BankDetailsComponent, UploadDocumentsComponent, SummaryComponent, AcceptOnlyNumberDirective, FilterArrayPipe, Sme2Component, VerifiedKycComponent],
@@ -34,7 +35,8 @@ registerLocaleData(localeDECH);
     BsDatepickerModule.forRoot(),
     DatepickerModule.forRoot(),
     BrowserAnimationsModule,
-    NgbModule 
+    NgbModule,
+    SignaturePadModule
   ],
   providers: [
     {
