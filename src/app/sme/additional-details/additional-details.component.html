@@ -26,7 +26,8 @@
                         <div class="col-12 p-0 form-field list-company">
                             <label class="m-0">Is the entity a listed company? / Subsidiary of listed company? /
                                 Controlled by a listed company?* <img src="../../../assets/img/additional/info.svg"
-                                    alt="Info Icon"></label>
+                                    alt="Info Icon" ngbTooltip="Is the entity a listed company? / Subsidiary of listed company? /
+                                    Controlled by a listed company?"></label>
                             <div class="radio-wrapper">
                                 <div class="radio-item">
                                     <input type="radio" value="Yes" name="isListedCompany"
@@ -50,7 +51,8 @@
                             <label>Net worth</label>
                             <input type="text" id="net_worth" placeholder="Enter Amount" class="form-control w-100"
                                 formControlName="networth"
-                                [ngClass]="{ 'is-invalid': step1FormControls.networth.touched && step1FormControls.networth.errors }" appAcceptOnlyNumber>
+                                [ngClass]="{ 'is-invalid': step1FormControls.networth.touched && step1FormControls.networth.errors }"
+                                appAcceptOnlyNumber>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Net worth date (as on date)*</label>
@@ -63,7 +65,7 @@
                     <div class="row m-0 mb-4" [formGroup]="step1Form">
                         <div class="col-sm-12 col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>PEP: Politically Exposed Person* <img src="../../../assets/img/additional/info.svg"
-                                    alt="Info Icon"></label>
+                                    alt="Info Icon" ngbTooltip="PEP: Politically Exposed Person"></label>
 
                             <div class="select-wrapper">
                                 <select class="form-control w-100" formControlName="pep"
@@ -82,7 +84,8 @@
 
                             <div class="checkbox-wrapper w-item-100">
                                 <div class="checkbox-item" *ngFor="let service of services; let i = index">
-                                    <input type="checkbox" id="i" name="service" value="{{service.name}}" [(ngModel)]="service.isChecked">
+                                    <input type="checkbox" id="i" name="service" value="{{service.name}}"
+                                        [(ngModel)]="service.isChecked">
                                     <span class="custom-checkbox"></span>
                                     <label for="i">{{service.name}}</label>
                                 </div>
@@ -94,8 +97,10 @@
                             <button class="btn btn-link" (click)="showKycForm()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-                            <button class="btn btn-primary" [ngClass]="{'disabled': step1Form.invalid||isServiceNotSelected()}"
-                                [disabled]="step1Form.invalid||isServiceNotSelected()" (click)="showStep2Form()">Next</button>
+                            <button class="btn btn-primary"
+                                [ngClass]="{'disabled': step1Form.invalid||isServiceNotSelected()}"
+                                [disabled]="step1Form.invalid||isServiceNotSelected()"
+                                (click)="showStep2Form()">Next</button>
                         </div>
                     </div>
                 </div>
@@ -116,7 +121,8 @@
                     <div class="row m-0" [formGroup]="step2Form">
                         <div class="col-12 p-0 form-field list-company">
                             <label class="m-0">Is the entity a tax resident of any country other than India?* <img
-                                    src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
+                                    src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                                    ngbTooltip="Is the entity a tax resident of any country other than India?"></label>
                             <div class="radio-wrapper">
                                 <div class="radio-item">
                                     <input type="radio" value="Yes" name="taxResidant" formControlName="taxResidant"
@@ -146,19 +152,22 @@
                                     <div class="select-wrapper">
                                         <select class="form-control w-100" [(ngModel)]="data.country">
                                             <option value="" disabled>Select Country</option>
-                                            <option value="{{country.name}}" *ngFor="let country of countries">{{country.name}}</option>
+                                            <option value="{{country.name}}" *ngFor="let country of countries">
+                                                {{country.name}}</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                     <label>Tax Identification Number* <img src="../../../assets/img/additional/info.svg"
-                                            alt="Info Icon"></label>
+                                            alt="Info Icon"
+                                            ngbTooltip="TIN or Other, please specify; In case TIN or its functional equivalent is not available, please provide Company Identification number or Global Entity Identification Number or GIIN, etc."></label>
                                     <input type="text" [(ngModel)]="data.taxIdentificationNUmber" id="tax_id_no"
                                         placeholder="Enter ID Number" class="form-control w-100">
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                     <label>Identification type* <img src="../../../assets/img/additional/info.svg"
-                                            alt="Info Icon"></label>
+                                            alt="Info Icon"
+                                            ngbTooltip="In case Tax Identification Number is not available, kindly provide its functional equivalent."></label>
                                     <input type="text" [(ngModel)]="data.identificationType" id="net_worth"
                                         placeholder="Enter identification type" class="form-control w-100">
                                 </div>
@@ -166,8 +175,10 @@
                             <div class="row mx-0 seperator"></div>
                         </div>
                         <div class="col-12 p-0 mt-3">
-                            <button class="btn btn-primary grey" [ngClass]="{'disabled': (step2FormData.length>=5) || isCountryNotAdded()}" [disabled]="(step2FormData.length>=5) || isCountryNotAdded()"
-                                (click)="addCountry()">+ Another Country</button>
+                            <button class="btn btn-primary grey"
+                                [ngClass]="{'disabled': (step2FormData.length>=5) || isCountryNotAdded()}"
+                                [disabled]="(step2FormData.length>=5) || isCountryNotAdded()" (click)="addCountry()">+
+                                Another Country</button>
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block" [formGroup]="step2Form">
@@ -197,8 +208,8 @@
                 <div class="custom-card-body" [formGroup]="step3Form">
                     <div class="row m-0">
                         <div class="col-12 p-0 m-0 form-field list-company max">
-                            <label>Entity type <img src="../../../assets/img/additional/info.svg"
-                                    alt="Info Icon"></label>
+                            <label>Entity type <img src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                                    ngbTooltip="Entity type"></label>
 
                             <div class="radio-wrapper">
                                 <div class="radio-item">
@@ -230,8 +241,11 @@
                     <div class="row m-0"
                         *ngIf="((step3FormControls.entityType.value=='Financial Institution')||(step3FormControls.entityType.value=='Direct Reporting NFE'))">
                         <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field m-0">
-                            <label>GIIN (Global Intermediary Identification Number)</label>
-                            <input type="text" maxlength="19" id="net_worth" placeholder="Enter GIIN" class="form-control w-100">
+                            <label>GIIN (Global Intermediary Identification Number) <img
+                                    src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                                    ngbTooltip="GIIN (Global Intermediary Identification Number)"></label>
+                            <input type="text" maxlength="19" id="net_worth" placeholder="Enter GIIN"
+                                class="form-control w-100">
                         </div>
                     </div>
                     <div class="row m-0 or-seperator"
@@ -289,8 +303,63 @@
                     <div class="row m-0"
                         *ngIf="(step3FormControls.ginNotApplicable.value=='Not required to apply for')&&(step3FormControls.entityType.value=='Financial Institution')">
                         <div class="col-12 p-0 form-field list-company max">
+                            <ng-template #tipContent>
+                                <h3>Sub-Categories for NFE:</h3>
+                                <ul>
+                                    <li>Less than 50 percent of the NFE's gross income for the preceding financial years
+                                        passive income and less than 50 percent of the assets held by the NFE
+                                        during the preceding financial year are assets that produce or are held for the
+                                        production of passive income;
+                                    </li>
+                                    <li>
+                                        The NFE is a Governmental Entity, an International Organization, a Central Bank,
+                                        or an entity wholly owned by one or more of the foregoing;
+                                    </li>
+                                    <li>
+                                        Substantially all of the activities of the NFE consist of holding (in whole or
+                                        in part) the outstanding stock of, or providing financing and services to, one
+                                        or more subsidiaries that engage in trades or businesses other than the business
+                                        of a Financial Institution, except that an entity shall not qualify for this
+                                        status if the entity functions as an investment fund, such as a private equity
+                                        fund, venture capital fund, leveraged buyout fund, or any investment
+                                        vehicle whose purpose is to acquire or fund companies and then hold interests in
+                                        those companies as capital assets for investment purposes;
+                                    </li>
+                                    <li>
+                                        The NFE is not yet operating a business and has no prior operating history, but
+                                        is investing capital into assets with the intent to operate a business other
+                                        than that of a Financial Institution, provided that the NFE shall not qualify
+                                        for this exception after the date that is 24 months after the date of the
+                                        initial
+                                        organization of the NFE;
+                                    </li>
+                                    <li>
+                                        The NFE was not a Financial Institution in the past five years, and is in the
+                                        process of liquidating its assets or is reorganizing with the intent to continue
+                                        or recommence operations in a business other than that of a Financial
+                                        Institution;
+                                    </li>
+                                    <li>
+                                        The NFE primarily engages in financing and hedging transactions with, or for,
+                                        Related Entities that are not Financial Institutions, and does not provide
+                                        financing or hedging services to any Entity that is not a Related Entity,
+                                        provided that the group of any such Related Entities is primarily engaged in a
+                                        business other than that of a Financial Institution;
+                                    </li>
+                                    <li>
+                                        It is established and operated in India exclusively for religious, charitable,
+                                        scientific, artistic, cultural, athletic, or educational purposes; or it is
+                                        established and operated in India and it is a professional organization,
+                                        business league, chamber of commerce, labor organization, agricultural or
+                                        horticultural organization, civic league or an organization operated exclusively
+                                        for the promotion of social welfare;
+                                        It is exempt from income tax in India;
+                                    </li>
+                                </ul>
+                            </ng-template>
                             <label class="m-0">Please specify the two-digits sub-category <img
-                                    src="../../../assets/img/additional/info.svg" alt="Info Icon"></label>
+                                    src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                                    [ngbTooltip]="tipContent"></label>
 
                             <div class="ml-4 input-wrapper">
                                 <div class="input-item">
@@ -428,8 +497,8 @@
                 <div class="custom-card-body" [formGroup]="step4FormExtra">
                     <div class="row m-0 mb-4">
                         <div class="col-12 p-0 m-0 form-field list-company max">
-                            <label>Entity type <img src="../../../assets/img/additional/info.svg"
-                                alt="Info Icon"></label>
+                            <label>Entity type <img src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                                    ngbTooltip="Entity type"></label>
 
                             <div class="radio-wrapper radio-inline text-lg-right">
                                 <div class="radio-item">
@@ -437,14 +506,16 @@
                                         formControlName="entityTypeExtra"
                                         [ngClass]="{ 'is-invalid': step4FormExtraControls.entityTypeExtra.touched && step4FormExtraControls.entityTypeExtra.errors }">
                                     <span class="custom-radio"></span>
-                                    <label>Active NFE</label>
+                                    <label class="z-9">Active NFE <img src="../../../assets/img/additional/info.svg"
+                                            alt="Info Icon" ngbTooltip="Active NFE"></label>
                                 </div>
                                 <div class="radio-item">
                                     <input type="radio" value="Passive NFE" name="entityTypeExtra"
                                         formControlName="entityTypeExtra"
                                         [ngClass]="{ 'is-invalid': step4FormExtraControls.entityTypeExtra.touched && step4FormExtraControls.entityTypeExtra.errors }">
                                     <span class="custom-radio"></span>
-                                    <label>Passive NFE</label>
+                                    <label class="z-9">Passive NFE <img src="../../../assets/img/additional/info.svg"
+                                            alt="Info Icon" ngbTooltip="Passive NFE"></label>
                                 </div>
                                 <div class="radio-item">
                                     <input type="radio" value="Not Applicable" name="entityTypeExtra"
@@ -466,8 +537,62 @@
                                 class="form-control w-100">
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                            <ng-template #tipContent2>
+                                <h3>Sub-Categories for NFE:</h3>
+                                <ul>
+                                    <li>Less than 50 percent of the NFE's gross income for the preceding financial years
+                                        passive income and less than 50 percent of the assets held by the NFE
+                                        during the preceding financial year are assets that produce or are held for the
+                                        production of passive income;
+                                    </li>
+                                    <li>
+                                        The NFE is a Governmental Entity, an International Organization, a Central Bank,
+                                        or an entity wholly owned by one or more of the foregoing;
+                                    </li>
+                                    <li>
+                                        Substantially all of the activities of the NFE consist of holding (in whole or
+                                        in part) the outstanding stock of, or providing financing and services to, one
+                                        or more subsidiaries that engage in trades or businesses other than the business
+                                        of a Financial Institution, except that an entity shall not qualify for this
+                                        status if the entity functions as an investment fund, such as a private equity
+                                        fund, venture capital fund, leveraged buyout fund, or any investment
+                                        vehicle whose purpose is to acquire or fund companies and then hold interests in
+                                        those companies as capital assets for investment purposes;
+                                    </li>
+                                    <li>
+                                        The NFE is not yet operating a business and has no prior operating history, but
+                                        is investing capital into assets with the intent to operate a business other
+                                        than that of a Financial Institution, provided that the NFE shall not qualify
+                                        for this exception after the date that is 24 months after the date of the
+                                        initial
+                                        organization of the NFE;
+                                    </li>
+                                    <li>
+                                        The NFE was not a Financial Institution in the past five years, and is in the
+                                        process of liquidating its assets or is reorganizing with the intent to continue
+                                        or recommence operations in a business other than that of a Financial
+                                        Institution;
+                                    </li>
+                                    <li>
+                                        The NFE primarily engages in financing and hedging transactions with, or for,
+                                        Related Entities that are not Financial Institutions, and does not provide
+                                        financing or hedging services to any Entity that is not a Related Entity,
+                                        provided that the group of any such Related Entities is primarily engaged in a
+                                        business other than that of a Financial Institution;
+                                    </li>
+                                    <li>
+                                        It is established and operated in India exclusively for religious, charitable,
+                                        scientific, artistic, cultural, athletic, or educational purposes; or it is
+                                        established and operated in India and it is a professional organization,
+                                        business league, chamber of commerce, labor organization, agricultural or
+                                        horticultural organization, civic league or an organization operated exclusively
+                                        for the promotion of social welfare;
+                                        It is exempt from income tax in India;
+                                    </li>
+                                </ul>
+                            </ng-template>
                             <label>Sub-category of Active NFE <img src="../../../assets/img/additional/info.svg"
-                                    alt="Info Icon"></label>
+                                    alt="Info Icon" [ngbTooltip]="tipContent2"></label>
                             <div class="m-0 input-wrapper">
                                 <div class="input-item">
                                     <input type="text" name="twoDigits1" formControlName="twoDigits1"
@@ -517,7 +642,8 @@
                             <label>Category*</label>
                             <div class="select-wrapper">
                                 <select class="form-control w-100" formControlName="category">
-                                    <option value="{{category.name}}" *ngFor="let category of categories">{{category.name}}</option>
+                                    <option value="{{category.name}}" *ngFor="let category of categories">
+                                        {{category.name}}</option>
                                 </select>
                             </div>
                         </div>
@@ -560,7 +686,8 @@
                                     <select class="form-control w-100" placeholder="Select country here"
                                         [(ngModel)]="data.country">
                                         <option value="">Select country here</option>
-                                        <option value="{{country.name}}" *ngFor="let country of countries">{{country.name}}</option>
+                                        <option value="{{country.name}}" *ngFor="let country of countries">
+                                            {{country.name}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -635,14 +762,15 @@
                                     <select class="form-control w-100" placeholder="Select country here"
                                         [(ngModel)]="data.countryOfBirth">
                                         <option value="" disabled>Select country here</option>
-                                        <option value="{{country.name}}" *ngFor="let country of countries">{{country.name}}</option>
+                                        <option value="{{country.name}}" *ngFor="let country of countries">
+                                            {{country.name}}</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                 <label>Nationality</label>
-                                <input type="text" maxlength="30" id="net_worth" placeholder="Enter ID type" class="form-control w-100"
-                                    [(ngModel)]="data.nationality">
+                                <input type="text" maxlength="30" id="net_worth" placeholder="Enter ID type"
+                                    class="form-control w-100" [(ngModel)]="data.nationality">
                             </div>
                         </div>
                         <div class="row m-0 mb-4" *ngIf="step4FormExtraControls.entityTypeExtra.value=='Passive NFE'">
@@ -665,7 +793,9 @@
                         </div>
                     </div>
                     <div class="col-12 p-0 mt-3">
-                        <button class="btn btn-primary grey" [ngClass]="{'disabled': (step5FormData.length>=5) || isUBONotAdded()}" [disabled]="(step5FormData.length>=2) || isUBONotAdded()" (click)="addUBO()">+
+                        <button class="btn btn-primary grey"
+                            [ngClass]="{'disabled': (step5FormData.length>=5) || isUBONotAdded()}"
+                            [disabled]="(step5FormData.length>=2) || isUBONotAdded()" (click)="addUBO()">+
                             Another UBO Details</button>
                     </div>
                     <div class="row mx-0 seperator"></div>
@@ -674,8 +804,10 @@
                             <button class="btn btn-link" (click)="showStep4ExtraForm()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-                            <button class="btn btn-primary" [ngClass]="{'disabled': step5Form.invalid || isUBONotAdded()}"
-                                [disabled]="step5Form.invalid || isUBONotAdded()" (click)="showStep6Form()">Next</button>
+                            <button class="btn btn-primary"
+                                [ngClass]="{'disabled': step5Form.invalid || isUBONotAdded()}"
+                                [disabled]="step5Form.invalid || isUBONotAdded()"
+                                (click)="showStep6Form()">Next</button>
                         </div>
                     </div>
                 </div>
@@ -737,12 +869,13 @@
                     <div class="row m-0 mb-4">
                         <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Account Number*</label>
-                            <input type="text" id="net_worth" placeholder="Enter Account Number" class="form-control w-100"
-                                formControlName="accountNumber" appAcceptOnlyNumber>
+                            <input type="text" id="net_worth" placeholder="Enter Account Number"
+                                class="form-control w-100" formControlName="accountNumber" appAcceptOnlyNumber>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Confirm Account Number*</label>
-                            <input type="text" id="net_worth" placeholder="Enter Confirm Account Number" class="form-control w-100" formControlName="confirmAccountNumber" appAcceptOnlyNumber>
+                            <input type="text" id="net_worth" placeholder="Enter Confirm Account Number"
+                                class="form-control w-100" formControlName="confirmAccountNumber" appAcceptOnlyNumber>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Account Type*</label>
@@ -784,13 +917,15 @@
                                 <div class="radio-item">
                                     <input type="radio" name="validate" id="" value="No" formControlName="validate">
                                     <span class="custom-radio"></span>
-                                    <label>Upload Bank Proof<img src="../../../assets/img/additional/info.svg"
-                                            alt="Info Icon"></label>
+                                    <label class="z-9">Upload Bank Proof<img
+                                            src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                                            ngbTooltip="Upload Bank Proof"></label>
                                 </div>
                             </div>
 
                             <div class="position-relative input-group file-wrapper mb-3">
-                                <input type="file" placeholder="Browse files here" class="form-control" (change)="onFileSelected($event)">
+                                <input type="file" placeholder="Browse files here" class="form-control"
+                                    (change)="onFileSelected($event)">
                                 <label [innerHtml]="uploadedFileName">Browse files here</label>
                                 <div class="input-group-append">
                                     <span class="input-group-text">Upload</span>
@@ -802,7 +937,9 @@
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
-                        <button class="btn btn-primary" [ngClass]="{'disabled': (step6Form.value.validate!='Yes')}" [disabled]="step6Form.value.validate!='Yes'" *ngIf="!validate" (click)="validate=true;">Validate</button>
+                        <button class="btn btn-primary" [ngClass]="{'disabled': (step6Form.value.validate!='Yes')}"
+                            [disabled]="step6Form.value.validate!='Yes'" *ngIf="!validate"
+                            (click)="validate=true;">Validate</button>
                         <button class="btn btn-primary btn-link pl-0" *ngIf="validate">
                             <span>Validated Successfully!</span>
                         </button>
@@ -836,12 +973,17 @@
                         <ul class="m-0 p-0">
                             <li *ngFor="let documents of uploadDocuments" [ngClass]="{'with-doc': documents.fileName}">
                                 <div class="upload-wrapper" *ngIf="!documents.fileName">
-                                    <input type="file" name="" id="" (change)="onDocumentsSelected($event, documents.name)">
-                                    <span>{{documents.name}}</span>
+                                    <input type="file" name="" id=""
+                                        (change)="onDocumentsSelected($event, documents.name)">
+                                    <span class="z-9">{{documents.name}} <img
+                                            src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                                            ngbTooltip="Upload a scanned signature if you have one on a blank white paper and capture a photo to upload. If the image captured is blurred then recapture it and upload"
+                                            *ngIf="documents.name=='List of Authorised Signatories'"></span>
                                 </div>
                                 <div class="upload-wrapper" *ngIf="documents.fileName">
                                     <span>{{documents.name}}</span>
-                                    <p>{{documents.fileName}} <span class="file-close" (click)="removeDocuments(documents.name)"></span></p>
+                                    <p>{{documents.fileName}} <span class="file-close"
+                                            (click)="removeDocuments(documents.name)"></span></p>
                                 </div>
                             </li>
                         </ul>
@@ -865,7 +1007,7 @@
                                 [disabled]="step7Form.invalid" (click)="showSummaryForm()">Next</button>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
-</div>

@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import localeDECH from '@angular/common/locales/de-CH';
 import { AcceptOnlyNumberDirective } from './directives/accept-only-number.directive';
 import { FilterArrayPipe } from './pipes/filter-array.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 registerLocaleData(localeDECH);
 @NgModule({
   declarations: [PanFormComponent, KycFormComponent, SmeComponent, CityCountryComponent, AdditionalDetailsComponent, FactaCrsDetailsComponent, PartAComponent, PartBComponent, UltimateBeneficiaryOwnerComponent, BankDetailsComponent, UploadDocumentsComponent, SummaryComponent, AcceptOnlyNumberDirective, FilterArrayPipe],
@@ -30,7 +31,8 @@ registerLocaleData(localeDECH);
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
     DatepickerModule.forRoot(),
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
+    NgbModule 
   ],
   providers: [
     {
