@@ -1,4 +1,4 @@
-<ul class="m-0 mx-auto mb-3 details-list user green-white readonly">
+<ul class="m-0 mx-auto mb-3 details-list user green-white readonly" *ngIf="!showSteps&&!showDateOfIncorporation">
     <li class="pan">
         <label>PAN:</label>
         <span>ENQC77693A</span>
@@ -97,20 +97,6 @@
             </div>
             <div class="card-value" *ngIf="showTaxStatus">
                 <div class="custom-card-body" [formGroup]="kycForm2">
-                    <ul class="m-0 mb-5 details-list user green">
-                        <li class="pan">
-                            <label>PAN:</label>
-                            <span>ENQC77693A</span>
-                        </li>
-                        <li>
-                            <label>Name:</label>
-                            <span>Aditya Birla Sun Life AMC Ltd</span>
-                        </li>
-                        <li>
-                            <label>Date of Incorporation:</label>
-                            <span>26-Jan-1999</span>
-                        </li>
-                    </ul>
                     <div class="row m-0 mb-3">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Mobile Number*</label>
@@ -267,39 +253,13 @@
             </div>
             <div class="card-value" *ngIf="showSubmitOTP">
                 <div class="custom-card-body" [formGroup]="kycForm4">
-                    <ul class="m-0 mb-5 details-list user green readonly">
-                        <li class="pan">
-                            <label>PAN:</label>
-                            <span>ENQC77693A</span>
-                        </li>
-                        <li>
-                            <label>Mobile No.:</label>
-                            <span>9753108462</span>
-                        </li>
-                        <li>
-                            <label>Date of Incorporation:</label>
-                            <span>26-Jan-1999</span>
-                        </li>
-                        <li>
-                            <label>Name:</label>
-                            <span>Aditya Birla Sun Life AMC Ltd</span>
-                        </li>
-                        <li>
-                            <label>Email ID:</label>
-                            <span>janedoe@gmail.com</span>
-                        </li>
-                        <li>
-                            <label>Tax Status:</label>
-                            <span>Partnership</span>
-                        </li>
-                    </ul>
                     <div class="row m-0 mb-3">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field wrap-drop">
                             <label>City of Incorporation*</label>
-                            <input type="text" id="mobilenum" placeholder="Enter City" class="form-control w-100"
-                                autocomplete="off" formControlName="city">
-                            <ul class="drop" *ngIf="kycForm4.value.city">
-                                <li *ngFor="let city of citites | filterArray:kycForm4.value.city"><a>{{city}}</a></li>
+                            <input type="text" id="city" placeholder="Enter City" class="form-control w-100"
+                                autocomplete="off" formControlName="city" (keypress)="showCityData()">
+                            <ul class="drop" *ngIf="showSelectCity">
+                                <li *ngFor="let city of citites | filterArray:kycForm4.value.city" (click)="selectCity(city)"><a>{{city}}</a></li>
                             </ul>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">

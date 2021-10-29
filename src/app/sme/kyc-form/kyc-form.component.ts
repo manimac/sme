@@ -23,6 +23,7 @@ export class KycFormComponent implements OnInit {
   kycForm4: FormGroup;
   submitted: boolean = false;
   today: any = new Date();
+  showSelectCity: boolean = false;
   citites: any = ['Ahmadnagar', 'Amravati', 'Aurangabad', 'Bhandara', 'Buldana', 'Delhi', 'Karnataka', 'Tamilnadu', 'Kerala'];
   constructor(private bsLocaleService: BsLocaleService) {
    }
@@ -99,6 +100,15 @@ export class KycFormComponent implements OnInit {
   showAdditionalForm(){
     this.showSubmitOTP = false;
     this.showAdditional.emit();
+  }
+
+  showCityData(){
+    this.showSelectCity = true;
+  }
+
+  selectCity(city){
+    this.kycForm4.patchValue({city: city})
+    this.showSelectCity = false;
   }
 
 }

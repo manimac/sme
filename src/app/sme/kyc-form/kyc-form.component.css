@@ -111,9 +111,12 @@ select option:hover {
 }
 
 .drop li:hover {
-    background-color: #969F6E !important;
-    color: #e7ded5;
+    background-color: #3E593C !important;
     cursor: pointer;
+}
+
+.drop li:hover a{
+    color: #ffffff !important;
 }
 
 .wrap-drop.active .drop {
@@ -137,7 +140,6 @@ select option:hover {
     margin-top: 0;
     /* opacity: 0; */
     padding-left: 0;
-    pointer-events: none;
     position: absolute;
     right: 0;
     top: 100%;
@@ -145,4 +147,19 @@ select option:hover {
     border: 1px solid #f3f3f3 !important;
     width: 92%;
     z-index: 99999;
+    max-height: 200px;
+    overflow: auto;
+}
+.drop::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+.drop::-webkit-scrollbar-track {
+    background: #3e593c54;
+}
+.drop::-webkit-scrollbar-thumb {
+    background: #969f6e;
+}
+.drop::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
