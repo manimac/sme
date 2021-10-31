@@ -225,6 +225,22 @@
         margin-bottom: 10px !important;
     }
 }
+@media only screen and (max-width: 768px) {
+    
+    .edit .list-company.inline > * {
+        display: block;
+        margin-bottom: 0 !important;
+    }
+    .docs.split .preview {
+        position: static;
+        transform: none;
+        padding: 0;
+        margin-top: 10px;
+    }
+    .docs .field-value {
+        margin: 0;
+    }
+}
 .custom-card-title{
     cursor: pointer;
 }
