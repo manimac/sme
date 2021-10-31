@@ -27,3 +27,16 @@
     max-width: calc(100% - 22px);
 }
 
+.note-text .btn-link {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.018em;
+    color: #3E593C;
+    text-decoration: underline;
+}
+
+.note-text .btn-link:hover {
+    text-decoration: none;
+}
