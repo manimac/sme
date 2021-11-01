@@ -25,7 +25,7 @@
                     <div class="row m-0 mb-4 pb-2" [formGroup]="step1Form">
                         <div class="col-12 p-0 form-field list-company">
                             <label class="m-0">Is the entity a listed company? / Subsidiary of listed company? /
-                                Controlled by a listed company?* <img src="../../../assets/img/additional/info.svg"
+                                Controlled by a listed company?* <img src="assets/img/additional/info.svg"
                                     alt="Info Icon" ngbTooltip="Is the entity a listed company? / Subsidiary of listed company? /
                                     Controlled by a listed company?"></label>
                             <div class="radio-wrapper">
@@ -64,7 +64,7 @@
                     </div>
                     <div class="row m-0 mb-4" [formGroup]="step1Form">
                         <div class="col-sm-12 col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>PEP: Politically Exposed Person* <img src="../../../assets/img/additional/info.svg"
+                            <label>PEP: Politically Exposed Person* <img src="assets/img/additional/info.svg"
                                     alt="Info Icon" ngbTooltip="PEP: Politically Exposed Person"></label>
 
                             <div class="select-wrapper">
@@ -121,7 +121,7 @@
                     <div class="row m-0" [formGroup]="step2Form">
                         <div class="col-12 p-0 form-field list-company">
                             <label class="m-0">Is the entity a tax resident of any country other than India?* <img
-                                    src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                                    src="assets/img/additional/info.svg" alt="Info Icon"
                                     ngbTooltip="Is the entity a tax resident of any country other than India?"></label>
                             <div class="radio-wrapper">
                                 <div class="radio-item">
@@ -144,7 +144,7 @@
                         <div *ngFor="let data of step2FormData;let i=index;">
                             <h4 class="m-0 mb-3 common-page-title"><span [innerHtml]="loadNumbers(i+1)"
                                     class="text-capitalize"></span> Country<img
-                                    src="../../../assets/img/common/delete.svg" alt="Delete Icon" *ngIf="i!=0"
+                                    src="assets/img/common/delete.svg" alt="Delete Icon" *ngIf="i!=0"
                                     (click)="deleteCountry(i)"></h4>
                             <div class="row m-0 mb-4">
                                 <div class="col-12 col-md-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
@@ -158,14 +158,14 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                                    <label>Tax Identification Number* <img src="../../../assets/img/additional/info.svg"
+                                    <label>Tax Identification Number* <img src="assets/img/additional/info.svg"
                                             alt="Info Icon"
                                             ngbTooltip="TIN or Other, please specify; In case TIN or its functional equivalent is not available, please provide Company Identification number or Global Entity Identification Number or GIIN, etc."></label>
                                     <input type="text" [(ngModel)]="data.taxIdentificationNUmber" id="tax_id_no"
                                         placeholder="Enter ID Number" class="form-control w-100">
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                                    <label>Identification type* <img src="../../../assets/img/additional/info.svg"
+                                    <label>Identification type* <img src="assets/img/additional/info.svg"
                                             alt="Info Icon"
                                             ngbTooltip="In case Tax Identification Number is not available, kindly provide its functional equivalent."></label>
                                     <input type="text" [(ngModel)]="data.identificationType" id="net_worth"
@@ -208,7 +208,7 @@
                 <div class="custom-card-body" [formGroup]="step3Form">
                     <div class="row m-0">
                         <div class="col-12 p-0 m-0 form-field list-company max">
-                            <label>Entity type <img src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                            <label>Entity type <img src="assets/img/additional/info.svg" alt="Info Icon"
                                     ngbTooltip="Entity type"></label>
 
                             <div class="radio-wrapper">
@@ -242,7 +242,7 @@
                         *ngIf="((step3FormControls.entityType.value=='Financial Institution')||(step3FormControls.entityType.value=='Direct Reporting NFE'))">
                         <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field m-0">
                             <label>GIIN (Global Intermediary Identification Number) <img
-                                    src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                                    src="assets/img/additional/info.svg" alt="Info Icon"
                                     ngbTooltip="GIIN (Global Intermediary Identification Number)"></label>
                             <input type="text" maxlength="19" id="net_worth" placeholder="Enter GIIN"
                                 class="form-control w-100">
@@ -358,7 +358,7 @@
                                 </ul>
                             </ng-template>
                             <label class="m-0">Please specify the two-digits sub-category <img
-                                    src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                                    src="assets/img/additional/info.svg" alt="Info Icon"
                                     [ngbTooltip]="tipContent"></label>
 
                             <div class="ml-4 input-wrapper">
@@ -514,7 +514,7 @@
                 <div class="custom-card-body" [formGroup]="step4FormExtra">
                     <div class="row m-0 mb-4">
                         <div class="col-12 p-0 m-0 form-field list-company max">
-                            <label>Entity type <img src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                            <label>Entity type <img src="assets/img/additional/info.svg" alt="Info Icon"
                                     ngbTooltip="Entity type"></label>
 
                             <div class="radio-wrapper radio-inline text-lg-right">
@@ -523,7 +523,7 @@
                                         formControlName="entityTypeExtra"
                                         [ngClass]="{ 'is-invalid': step4FormExtraControls.entityTypeExtra.touched && step4FormExtraControls.entityTypeExtra.errors }">
                                     <span class="custom-radio"></span>
-                                    <label class="z-9">Active NFE <img src="../../../assets/img/additional/info.svg"
+                                    <label class="z-9">Active NFE <img src="assets/img/additional/info.svg"
                                             alt="Info Icon" ngbTooltip="Active NFE"></label>
                                 </div>
                                 <div class="radio-item">
@@ -531,7 +531,7 @@
                                         formControlName="entityTypeExtra"
                                         [ngClass]="{ 'is-invalid': step4FormExtraControls.entityTypeExtra.touched && step4FormExtraControls.entityTypeExtra.errors }">
                                     <span class="custom-radio"></span>
-                                    <label class="z-9">Passive NFE <img src="../../../assets/img/additional/info.svg"
+                                    <label class="z-9">Passive NFE <img src="assets/img/additional/info.svg"
                                             alt="Info Icon" ngbTooltip="Passive NFE"></label>
                                 </div>
                                 <div class="radio-item">
@@ -608,7 +608,7 @@
                                     </li>
                                 </ul>
                             </ng-template>
-                            <label>Sub-category of Active NFE <img src="../../../assets/img/additional/info.svg"
+                            <label>Sub-category of Active NFE <img src="assets/img/additional/info.svg"
                                     alt="Info Icon" [ngbTooltip]="tipContent2"></label>
                             <div class="m-0 input-wrapper">
                                 <div class="input-item">
@@ -669,7 +669,7 @@
                     <div *ngFor="let data of step5FormData;let i=index;">
                         <h4 class="m-0 mb-3 common-page-title"><span [innerHtml]="loadNumbers(i+1)"
                                 class="text-capitalize"></span> UBO Details <img
-                                src="../../../assets/img/common/delete.svg" alt="Delete Icon" *ngIf="i!=0"
+                                src="assets/img/common/delete.svg" alt="Delete Icon" *ngIf="i!=0"
                                 (click)="deleteUBO(i)"></h4>
                         <div class="row m-0 mb-4">
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
@@ -935,7 +935,7 @@
                                     <input type="radio" name="validate" id="" value="No" formControlName="validate">
                                     <span class="custom-radio"></span>
                                     <label class="z-9">Upload Bank Proof<img
-                                            src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                                            src="assets/img/additional/info.svg" alt="Info Icon"
                                             ngbTooltip="Upload Bank Proof"></label>
                                 </div>
                             </div>
@@ -993,7 +993,7 @@
                                     <input type="file" name="" id=""
                                         (change)="onDocumentsSelected($event, documents.name)">
                                     <span class="z-9">{{documents.name}} <img
-                                            src="../../../assets/img/additional/info.svg" alt="Info Icon"
+                                            src="assets/img/additional/info.svg" alt="Info Icon"
                                             ngbTooltip="Upload a scanned signature if you have one on a blank white paper and capture a photo to upload. If the image captured is blurred then recapture it and upload"
                                             *ngIf="documents.name=='List of Authorised Signatories'"></span>
                                             <span class="file-add z-9" *ngIf="documents.name=='List of Authorised Signatories'"></span>
@@ -1025,7 +1025,7 @@
                     </div>
                     <div class="p-0 checkbox-content bank-name">
                         <label class="sm file-note">
-                            <img src="../../../assets/img/common/warning.png" alt="Warning Icon">
+                            <img src="assets/img/common/warning.png" alt="Warning Icon">
                             <ul>
                                 <li>File format should be: jpg, jpeg, png, gif or pdf; </li>
                                 <li>Size limit supported is 1mb;</li>

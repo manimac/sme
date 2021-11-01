@@ -15,15 +15,13 @@
 <div class="card-div custom-card-div mb-5">
     <div class="row">
         <div class="col-md-12">
-
+            <div class="card-pannel">
+                <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
+            </div>
             <div class="card-value">
                 <div class="custom-card-body" [formGroup]="kycForm4">
 
                     <div class="row m-0 mb-3">
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
-                            <label>Country of Incorporation</label>
-                            <input type="text" id="emailId" placeholder="Enter Country" formControlName="country" class="form-control w-100" disabled>
-                        </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field wrap-drop">
                             <label>City of Incorporation*</label>
                             <input type="text" id="city" placeholder="Enter City" class="form-control w-100" autocomplete="off" formControlName="city" (keypress)="showCityData()">
@@ -31,8 +29,11 @@
                                 <li *ngFor="let city of citites | filterArray:kycForm4.value.city" (click)="selectCity(city)"><a>{{city}}</a></li>
                             </ul>
                         </div>
+                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
+                            <label>Country of Incorporation</label>
+                            <input type="text" id="emailId" placeholder="Enter Country" formControlName="country" class="form-control w-100" disabled>
+                        </div>
                     </div>
-
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0">
                             <button class="btn btn-link" (click)="showVerifiedKycForm()">Go Back</button>

@@ -205,9 +205,14 @@ export class AdditionalDetailsComponent implements OnInit {
 
 
   ngAfterViewInit() {
-    // this.signaturePad is now available
-    this.signaturePad.set('minWidth', 2);
-    this.signaturePad.clear();
+    this.loadSignature();
+  }
+
+  loadSignature() {
+    if (this.signaturePad) {
+      this.signaturePad.set('minWidth', 2);
+      this.signaturePad.clear();
+    }
   }
 
   get step1FormControls() {
@@ -333,6 +338,7 @@ export class AdditionalDetailsComponent implements OnInit {
     this.showStep5 = false;
     this.showStep6 = false;
     this.showStep7 = true;
+    this.loadSignature();
   }
 
   showSummaryForm() {
