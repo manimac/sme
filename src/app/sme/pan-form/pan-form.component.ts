@@ -9,6 +9,8 @@ import { Validators, FormGroup, FormControl } from '@angular/forms';
 export class PanFormComponent implements OnInit {
 
   @Output() showKYC = new EventEmitter<number>();
+  @Output() showVerifiedKyc = new EventEmitter<number>();
+  @Output() showFund = new EventEmitter<number>();
   panForm: FormGroup;
   submitted: boolean = false;
   showPanForm: boolean = true;
@@ -37,6 +39,11 @@ export class PanFormComponent implements OnInit {
   proceedKYC(){
     localStorage.setItem('pan', this.panForm.value.pan);
     this.showKYC.emit(this.panForm.value.pan);
+    this.showVerifiedKyc.emit(this.panForm.value.pan);
+  }
+
+  showFundForm() {
+    this.showFund.emit();
   }
 
 }
