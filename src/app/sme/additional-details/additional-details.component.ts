@@ -9,6 +9,7 @@ import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 export class AdditionalDetailsComponent implements OnInit {
 
   @Output() showKYC = new EventEmitter<number>();
+  @Output() showIncorporation = new EventEmitter<number>();
   @Output() showSummary = new EventEmitter<number>();
   @Input() currentForm: any;
   today: any = new Date();
@@ -228,6 +229,7 @@ export class AdditionalDetailsComponent implements OnInit {
 
   showKycForm() {
     this.showKYC.emit();
+    this.showIncorporation.emit();
   }
 
   showStep1Form() {

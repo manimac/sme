@@ -24,9 +24,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Sme2Component } from './sme2/sme2.component';
 import { VerifiedKycComponent } from './sme2/verified-kyc/verified-kyc.component';
 import { SignaturePadModule } from 'angular2-signaturepad';
+import { IncorporationComponent } from './sme2/incorporation/incorporation.component';
+import { FundComponent } from './sme2/fund/fund.component';
 registerLocaleData(localeDECH);
 @NgModule({
-  declarations: [PanFormComponent, KycFormComponent, SmeComponent, CityCountryComponent, AdditionalDetailsComponent, FactaCrsDetailsComponent, PartAComponent, PartBComponent, UltimateBeneficiaryOwnerComponent, BankDetailsComponent, UploadDocumentsComponent, SummaryComponent, AcceptOnlyNumberDirective, FilterArrayPipe, Sme2Component, VerifiedKycComponent],
+  declarations: [PanFormComponent, KycFormComponent, SmeComponent, CityCountryComponent, AdditionalDetailsComponent, FactaCrsDetailsComponent, PartAComponent, PartBComponent, UltimateBeneficiaryOwnerComponent, BankDetailsComponent, UploadDocumentsComponent, SummaryComponent, AcceptOnlyNumberDirective, FilterArrayPipe, Sme2Component, VerifiedKycComponent, IncorporationComponent, FundComponent],
   imports: [
     CommonModule,
     SmeRoutingModule,

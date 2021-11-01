@@ -1,133 +1,92 @@
-    <!-- Content Placeholder Starts Here -->
-    <div class="content-wrapper">
-        <div class="progress-list">
-          <div class="progress-item active">
+<!-- Content Placeholder Starts Here -->
+<div class="content-wrapper">
+    <div class="progress-list">
+        <div class="progress-item active">
             <div class="progress-img">
-              <img src="assets/img/common/fund.svg" alt="Fund Icon" class="w-100">
+                <img src="assets/img/common/fund.svg" alt="Fund Icon" class="w-100">
             </div>
             <p class="m-0 text-center">Fund Details</p>
-          </div>
-          <div class="progress-item">
+        </div>
+        <div class="progress-item">
             <div class="progress-img">
-              <img src="assets/img/common/identify.svg" alt="Identify Yourself Icon" class="w-100">
+                <img src="assets/img/common/identify.svg" alt="Identify Yourself Icon" class="w-100">
             </div>
             <p class="m-0 text-center">Identify Yourself</p>
-          </div>
-          <div class="progress-item">
+        </div>
+        <div class="progress-item">
             <div class="progress-img">
-              <img src="assets/img/common/investor-details.svg" alt="Investor Details Icon" class="w-100">
+                <img src="assets/img/common/investor-details.svg" alt="Investor Details Icon" class="w-100">
             </div>
             <p class="m-0 text-center">Investor Details</p>
-          </div>
-          <div class="progress-item">
+        </div>
+        <div class="progress-item">
             <div class="progress-img">
-              <img src="assets/img/common/investment-details.svg" alt="Investment Details" class="w-100">
+                <img src="assets/img/common/investment-details.svg" alt="Investment Details" class="w-100">
             </div>
             <p class="m-0 text-center">Investment Details</p>
-          </div>
-          <div class="progress-item">
+        </div>
+        <div class="progress-item">
             <div class="progress-img">
-              <img src="assets/img/common/payment.svg" alt="Payment Icon" class="w-100">
+                <img src="assets/img/common/payment.svg" alt="Payment Icon" class="w-100">
             </div>
             <p class="m-0 text-center">Payment</p>
-          </div>
         </div>
-        <!-- <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
-        <div class="buttons">
-          <button (click)="clearSignature()">Clear signature pad</button>
-          <button (click)="savePad()">Save signature</button>
-        </div>
-        
-        <div class="signature-image" *ngIf="signatureImg">
-          <img src='{{ signatureImg }}' />
-        </div> -->
-        <!-- <app-pan-form *ngIf="showPanForm" (showKYC)="showKYC($event)"></app-pan-form> -->
-        <!-- <app-kyc-form *ngIf="showKYCForm" (showPan)="showPan()" (showAdditional)="showAdditional()" [currentPan]="currentPan"></app-kyc-form> -->
-        <app-verified-kyc></app-verified-kyc>
-        <app-additional-details *ngIf="showAdditionalForm" (showKYC)="showKYC()" (showSummary)="showSummary()" [currentForm]="currentForm"></app-additional-details>
-  
-        <app-summary *ngIf="showSummaryForm" (showAdditional)="showAdditionalNavigation($event)"></app-summary>
-        <!-- <div class="row">
-          <div class="col-md-12">
-           <h1 class="page-heading">SME</h1>
+    </div>
+    <app-fund *ngIf="showFundForm" (showPan)="showPan()"></app-fund>
+    <app-pan-form *ngIf="showPanForm" (showVerifiedKyc)="showVerifiedKyc($event)" (showFund)="showFund()"></app-pan-form>
+    <!-- <app-kyc-form *ngIf="showKYCForm" (showPan)="showPan()" (showAdditional)="showAdditional()" [currentPan]="currentPan"></app-kyc-form> -->
+    <app-verified-kyc *ngIf="showVerifiedKycForm" (showPan)="showPan()" (showIncorporation)="showIncorporation()" [currentPan]="currentPan"></app-verified-kyc>
+    <app-incorporation *ngIf="showIncorporationForm" (showVerifiedKyc)="showVerifiedKyc($event)" (showAdditional)="showAdditional()" [currentPan]="currentPan"></app-incorporation>
+    <app-additional-details *ngIf="showAdditionalForm " (showIncorporation)="showIncorporation() " (showSummary)="showSummary() " [currentForm]="currentForm "></app-additional-details>
+
+    <app-summary *ngIf="showSummaryForm " (showAdditional)="showAdditionalNavigation($event) "></app-summary>
+    <!-- <div class="row ">
+          <div class="col-md-12 ">
+           <h1 class="page-heading ">SME</h1>
           </div>
         </div> -->
-          <!-- <div class="row">
-            <div class="col-md-12">
-             <h1 class="page-heading">SME</h1>
+    <!-- <div class="row ">
+            <div class="col-md-12 ">
+             <h1 class="page-heading ">SME</h1>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 ">
               <app-pan-form></app-pan-form>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 ">
               <app-kyc-form></app-kyc-form>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 ">
               <app-city-country></app-city-country>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 ">
               <app-additional-details></app-additional-details>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 ">
               <app-facta-crs-details></app-facta-crs-details>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 ">
               <app-part-a></app-part-a>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 ">
               <app-part-b></app-part-b>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 ">
               <app-ultimate-beneficiary-owner></app-ultimate-beneficiary-owner>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 ">
               <app-bank-details></app-bank-details>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 ">
               <app-upload-documents></app-upload-documents>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 ">
               <app-summary></app-summary>
             </div>
             
           </div> -->
-    
-    
-    
-    
-        </div><!-- Content Placeholder Starts Here -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      
+
+
+
+
+</div>
+<!-- Content Placeholder Starts Here -->

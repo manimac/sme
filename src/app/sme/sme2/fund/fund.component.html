@@ -2,52 +2,15 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
-                <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
-            </div>
-            <div class="card-value">
-                <div class="custom-card-body" [formGroup]="panForm">
-                    <div class="row m-0" [ngClass]="{'mb-3': showProceedKYC}">
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>PAN*</label>
-                            <input type="text" maxlength="10" id="pan" formControlName="pan" autocomplete="off" placeholder="Enter PAN" class="form-control w-100" [ngClass]="{ 'is-invalid': panFormControl.pan.touched && panFormControl.pan.errors }">
-                        </div>
-                    </div>
-                    <div class="notes-msg" *ngIf="showProceedKYC">
-                        <p class="m-0">
-                            <img src="../../../assets/img/common/alert.svg" alt="Alert Icon" class="w-100">
-                            <span>Entered PAN is not KYC compliant. Click to proceed with Online KYC.</span>
-                        </p>
-                    </div>
-                    <div class="row mx-0 custom-btn-block">
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0" *ngIf="showPanForm">
-                            <button class="btn btn-link" (click)="showFundForm()">Go Back</button>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-                            <button class="btn btn-primary" [ngClass]="{'disabled': panForm.invalid}" [disabled]="panForm.invalid" (click)="verifyPan()" *ngIf="showPanForm">Verify</button>
-                            <button class="btn btn-primary" [ngClass]="{'disabled': panForm.invalid}" [disabled]="panForm.invalid" (click)="proceedKYC()" *ngIf="showProceedKYC">Proceed for
-                                KYC</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="card-div custom-card-div mb-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card-pannel">
                 <h4 class="m-0 custom-card-title">Select Fund</h4>
             </div>
             <div class="card-value">
-                <div class="custom-card-body">
+                <div class="custom-card-body" [formGroup]="kycForm1">
                     <div class="row m-0">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Investment Solution</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
+                                <select class="form-control w-100" formControlName="taxstatus1">
                                     <option value="">Select Tax Status</option>
                                     <option value="Partnership">Partnership</option>
                                     <option value="Partnership 2">Partnership 2</option>
@@ -59,7 +22,7 @@
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Category</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
+                                <select class="form-control w-100" formControlName="taxstatus2">
                                     <option value="">Select Tax Status</option>
                                     <option value="Partnership">Partnership</option>
                                     <option value="Partnership 2">Partnership 2</option>
@@ -71,7 +34,7 @@
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Sub - Category</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
+                                <select class="form-control w-100" formControlName="taxstatus3">
                                     <option value="">Select Tax Status</option>
                                     <option value="Partnership">Partnership</option>
                                     <option value="Partnership 2">Partnership 2</option>
@@ -82,7 +45,7 @@
                         </div>
                         <div class="col-12 col-md-8 p-0 pr-sm-3 pr-lg-4 form-field">
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
+                                <select class="form-control w-100" formControlName="taxstatus4">
                                     <option value="">Select Tax Status</option>
                                     <option value="Partnership">Partnership</option>
                                     <option value="Partnership 2">Partnership 2</option>
@@ -91,9 +54,9 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field note-text">                            
+                        <div class="col-12 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field note-text">
                             <button class="btn btn-link">Browse Popular Funds</button>
-                            
+
                             <button class="btn btn-link">Reset Filter</button>
                         </div>
                     </div>
@@ -110,13 +73,13 @@
                 <h4 class="m-0 custom-card-title">Scheme Details</h4>
             </div>
             <div class="card-value">
-                <div class="custom-card-body">
+                <div class="custom-card-body" [formGroup]="kycForm2">
                     <div class="row m-0">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Scheme Option*</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Select Tax Status</option>
+                                <select class="form-control w-100" formControlName="taxstatus">
+                                    <option value=''>Select Tax Status</option>
                                     <option value="Partnership">Partnership</option>
                                     <option value="Partnership 2">Partnership 2</option>
                                     <option value="Partnership 3">Partnership 3</option>
@@ -125,15 +88,15 @@
                             </div>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Investment Type</label>
+                            <label>Investment Type*</label>
                             <div class="mt-sm-2 radio-wrapper">
                                 <div class="m-0 radio-item">
-                                    <input type="radio" value="Yes" name="isListedCompany">
+                                    <input type="radio" value="Yes" formControlName="investmenttype" name="investmenttype">
                                     <span class="custom-radio"></span>
                                     <label>SIP</label>
                                 </div>
                                 <div class="m-0 radio-item">
-                                    <input type="radio" value="No" name="isListedCompany">
+                                    <input type="radio" value="No" formControlName="investmenttype" name="investmenttype">
                                     <span class="custom-radio"></span>
                                     <label>Lumpsum</label>
                                 </div>
@@ -143,5 +106,10 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="row mx-0 custom-btn-block proceed-bbtn">
+    <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
+        <button class="btn btn-primary" [ngClass]="{'disabled': kycForm2.invalid}" [disabled]="kycForm2.invalid" (click)="showPanForm()">Proceed</button>
     </div>
 </div>
