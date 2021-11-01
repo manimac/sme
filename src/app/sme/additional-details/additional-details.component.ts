@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { SignaturePad } from 'angular2-signaturepad';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 @Component({
   selector: 'app-additional-details',
@@ -12,6 +13,13 @@ export class AdditionalDetailsComponent implements OnInit {
   @Output() showIncorporation = new EventEmitter<number>();
   @Output() showSummary = new EventEmitter<number>();
   @Input() currentForm: any;
+  @ViewChild(SignaturePad) signaturePad: SignaturePad;
+  signatureImg: string;
+  signaturePadOptions: Object = {
+    'minWidth': 2,
+    'canvasWidth': 700,
+    'canvasHeight': 300
+  };
   today: any = new Date();
   showStep1: boolean = true;
   showStep2: boolean = false;
@@ -189,10 +197,17 @@ export class AdditionalDetailsComponent implements OnInit {
       // memorandum: new FormControl('', Validators.required),
       // authorisedSignatories: new FormControl('', Validators.required)
     });
-    if(this.currentForm){
+    if (this.currentForm) {
       this[this.currentForm]();
       this.currentForm = '';
     }
+  }
+
+
+  ngAfterViewInit() {
+    // this.signaturePad is now available
+    this.signaturePad.set('minWidth', 2);
+    this.signaturePad.clear();
   }
 
   get step1FormControls() {
@@ -332,33 +347,33 @@ export class AdditionalDetailsComponent implements OnInit {
     this.showSummary.emit();
   }
 
-  isServiceNotSelected(){
-    let selectedService = this.services.find(element=>(element.isChecked));
+  isServiceNotSelected() {
+    let selectedService = this.services.find(element => (element.isChecked));
     return (selectedService) ? false : true;
   }
 
-  isCountryNotAdded(){
+  isCountryNotAdded() {
     let isNotValid: boolean = this.step2FormData.find(element => (!element.country || !element.taxIdentificationNUmber || !element.identificationType));
     return (!isNotValid) ? false : true;
   }
 
   addCountry() {
     let isNotValid: boolean = this.step2FormData.find(element => (!element.country || !element.taxIdentificationNUmber || !element.identificationType));
-    if(!isNotValid){
+    if (!isNotValid) {
       let obj = {
         country: '',
         taxIdentificationNUmber: '',
         identificationType: ''
       };
       this.step2FormData.push(obj);
-    }    
+    }
   }
 
   deleteCountry(index) {
     this.step2FormData.splice(index, 1);
   }
 
-  isUBONotAdded(){
+  isUBONotAdded() {
     let isNotValid: boolean = this.step5FormData.find(element => (!element.nameOfUBO || !element.country || !element.taxId || !element.taxIdType || !element.typeCode || !element.addressType));
     return (!isNotValid) ? false : true;
   }
@@ -398,46 +413,63 @@ export class AdditionalDetailsComponent implements OnInit {
   }
 
   onFileSelected(event) {
-    if(event.target.files.length > 0) 
-     {
-       this.uploadedFileName = event.target.files[0].name;
-     }
-   }
+    if (event.target.files.length > 0) {
+      this.uploadedFileName = event.target.files[0].name;
+    }
+  }
 
   onDocumentsSelected(event, name) {
-    if(event.target.files.length > 0) 
-     {
-       this.uploadDocuments.forEach(element => {
-         if(element.name == name){
-           element.fileName = event.target.files[0].name;
-         }
-       });
-     }
-   }
+    if (event.target.files.length > 0) {
+      this.uploadDocuments.forEach(element => {
+        if (element.name == name) {
+          element.fileName = event.target.files[0].name;
+        }
+      });
+    }
+  }
 
-   removeDocuments(name){
+  removeDocuments(name) {
     this.uploadDocuments.forEach(element => {
-      if(element.name == name){
+      if (element.name == name) {
         element.fileName = '';
       }
     });
-   }
+  }
 
-   disableService(service){
-     let resultData = false;
-     this.services.forEach(element => {
-       if((element.name == 'Foreign Exchange / Money Changer Services / Money Lending' || element.name == 'Gaming / Gambling / Lottery Services / Casino Service' || element.name == 'Money Laundering / Pawning') && (element.isChecked)){
-          if(service.name == 'None of these'){
-            resultData = true;
-          }
-       }
-       if((element.name == 'None of these') && (element.isChecked)){
-        if(service.name == 'Foreign Exchange / Money Changer Services / Money Lending' || service.name == 'Gaming / Gambling / Lottery Services / Casino Service' || service.name == 'Money Laundering / Pawning'){
+  disableService(service) {
+    let resultData = false;
+    this.services.forEach(element => {
+      if ((element.name == 'Foreign Exchange / Money Changer Services / Money Lending' || element.name == 'Gaming / Gambling / Lottery Services / Casino Service' || element.name == 'Money Laundering / Pawning') && (element.isChecked)) {
+        if (service.name == 'None of these') {
           resultData = true;
         }
-       }
-     });
-     return resultData;
-   }
+      }
+      if ((element.name == 'None of these') && (element.isChecked)) {
+        if (service.name == 'Foreign Exchange / Money Changer Services / Money Lending' || service.name == 'Gaming / Gambling / Lottery Services / Casino Service' || service.name == 'Money Laundering / Pawning') {
+          resultData = true;
+        }
+      }
+    });
+    return resultData;
+  }
+
+  drawComplete() {
+    console.log(this.signaturePad.toDataURL());
+  }
+
+  drawStart() {
+    console.log('begin drawing');
+  }
+
+
+
+  clearSignature() {
+    this.signaturePad.clear();
+  }
+
+  savePad() {
+    const base64Data = this.signaturePad.toDataURL();
+    this.signatureImg = base64Data;
+  }
 
 }

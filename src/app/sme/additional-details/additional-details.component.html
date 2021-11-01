@@ -1007,6 +1007,22 @@
                         </ul>
                     </div>
                     <div class="seperator"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card-value signature-pad">
+                              <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+                              <div class="custom-btn-block">
+                                <button class="btn btn-link" (click)="clearSignature()">Clear signature pad</button>
+                                <button class="btn btn-primary ml-2" (click)="savePad()">Save signature</button>
+                              </div>
+                              
+                              <!-- <div class="signature-image" *ngIf="signatureImg">
+                                <img src='{{ signatureImg }}' />
+                              </div> -->
+                          
+                            </div>
+                        </div>
+                    </div>
                     <div class="p-0 checkbox-content bank-name">
                         <label class="sm file-note">
                             <img src="../../../assets/img/common/warning.png" alt="Warning Icon">

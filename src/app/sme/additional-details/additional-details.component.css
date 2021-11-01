@@ -183,3 +183,14 @@
         width: 100%;
     }
 }
+canvas{
+    border: 1px solid #c8c5c5;
+    background-color: coral;
+}
+.signature-container {
+    border: 1px solid #c8c5c5;
+    margin-bottom: 20px;
+}
+.signature-pad{
+    border: 1px solid #c8c5c5;
+}
