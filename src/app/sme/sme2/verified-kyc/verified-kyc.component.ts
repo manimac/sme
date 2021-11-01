@@ -16,6 +16,8 @@ export class VerifiedKycComponent implements OnInit {
   showSubmitOTP: boolean = false;
   kycForm1: FormGroup;
   kycForm2: FormGroup;
+  showMobile: boolean = false;
+  showEmail: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -56,6 +58,14 @@ export class VerifiedKycComponent implements OnInit {
     this.showVerifyOTP = true;
     this.showKRARecords = false;
     this.showSubmitOTP = false;
+  }
+
+  toggleMobile(){
+    this.showMobile = !this.showMobile;
+  }
+
+  toggleEmail(){
+    this.showEmail = !this.showEmail;
   }
 
 }

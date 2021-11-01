@@ -26,12 +26,16 @@
                             <label class="mb-4">Please verify the following contact details as per KRA Records:</label>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field has-edit">
-                            <label>Mobile Number <img class="ml-3" src="assets/img/common/edit.svg" alt="Edit Icon"></label>
-                            <p class="m-0 field-value">9753108462</p>
+                            <label>Mobile Number <img class="ml-3" src="assets/img/common/edit.svg" alt="Edit Icon" (click)="toggleMobile()"></label>
+                            <p class="m-0 field-value" *ngIf="!showMobile">9753108462</p>
+                            <input type="text" id="mobilenum" placeholder="Enter Mobile Number" value="9753108462"
+                                class="form-control w-100" *ngIf="showMobile">
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field has-edit">
-                            <label>Email ID <img class="ml-3" src="assets/img/common/edit.svg" alt="Edit Icon"></label>
-                            <p class="m-0 field-value">janedoe@gmail.com</p>
+                            <label>Email ID <img class="ml-3" src="assets/img/common/edit.svg" alt="Edit Icon" (click)="toggleEmail()"></label>
+                            <p class="m-0 field-value" *ngIf="!showEmail">janedoe@gmail.com</p>
+                            <input type="text" id="emailId" placeholder="Enter Email ID" value="janedoe@gmail.com"
+                                class="form-control w-100" *ngIf="showEmail">
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Tax Status</label>

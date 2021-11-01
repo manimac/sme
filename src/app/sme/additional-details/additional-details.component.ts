@@ -29,6 +29,9 @@ export class AdditionalDetailsComponent implements OnInit {
   showStep5: boolean = false;
   showStep6: boolean = false;
   showStep7: boolean = false;
+  showSelectCountry: boolean = false;
+  showSelectCountryStep6: boolean = false;
+  showSelectCountryOfBirth: boolean = false;
   step1Form: FormGroup;
   step2Form: FormGroup;
   step2FormData: any = [
@@ -83,20 +86,7 @@ export class AdditionalDetailsComponent implements OnInit {
       isChecked: true
     }
   ]
-  countries: any = [
-    {
-      name: 'India'
-    },
-    {
-      name: 'Australia'
-    },
-    {
-      name: 'United States'
-    },
-    {
-      name: 'China'
-    }
-  ]
+  countries: any = ['India', 'Australia', 'United States', 'China'];
   categories: any = [
     {
       name: 'Unlisted Company'
@@ -476,6 +466,45 @@ export class AdditionalDetailsComponent implements OnInit {
   savePad() {
     const base64Data = this.signaturePad.toDataURL();
     this.signatureImg = base64Data;
+  }
+
+  showCountryData(){
+    this.showSelectCountry = true;
+  }
+
+  selectCountry(country, ind){
+    this.showSelectCountry = false;
+    this.step2FormData.forEach((element, index) => {
+      if(index == ind){
+        element.country = country;
+      }
+    });
+  }
+
+  showCountryDataStep6(){
+    this.showSelectCountryStep6 = true;
+  }
+
+  selectCountryStep6(country, ind){
+    this.showSelectCountryStep6 = false;
+    this.step5FormData.forEach((element, index) => {
+      if(index == ind){
+        element.country = country;
+      }
+    });
+  }
+  
+  showCountryDataOfBirth(){
+    this.showSelectCountryOfBirth = true;
+  }
+
+  selectCountryOfBirth(country, ind){
+    this.showSelectCountryOfBirth = false;
+    this.step5FormData.forEach((element, index) => {
+      if(index == ind){
+        element.countryOfBirth = country;
+      }
+    });
   }
 
 }

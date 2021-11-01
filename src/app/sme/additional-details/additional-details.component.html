@@ -83,7 +83,8 @@
                             <label>Is the investor involved in providing any of the below mentioned services?*</label>
 
                             <div class="checkbox-wrapper w-item-100">
-                                <div class="checkbox-item" [ngClass]="{'disabled': disableService(service)}" *ngFor="let service of services; let i = index">
+                                <div class="checkbox-item" [ngClass]="{'disabled': disableService(service)}"
+                                    *ngFor="let service of services; let i = index">
                                     <input type="checkbox" id="i" name="service" value="{{service.name}}"
                                         [(ngModel)]="service.isChecked" [disabled]="disableService(service)">
                                     <span class="custom-checkbox"></span>
@@ -143,19 +144,24 @@
                     <div *ngIf="step2FormControls.taxResidant.value=='Yes'">
                         <div *ngFor="let data of step2FormData;let i=index;">
                             <h4 class="m-0 mb-3 common-page-title"><span [innerHtml]="loadNumbers(i+1)"
-                                    class="text-capitalize"></span> Country<img
-                                    src="assets/img/common/delete.svg" alt="Delete Icon" *ngIf="i!=0"
-                                    (click)="deleteCountry(i)"></h4>
+                                    class="text-capitalize"></span> Country<img src="assets/img/common/delete.svg"
+                                    alt="Delete Icon" *ngIf="i!=0" (click)="deleteCountry(i)"></h4>
                             <div class="row m-0 mb-4">
-                                <div class="col-12 col-md-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <div class="col-12 col-md-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field wrap-drop">
                                     <label>Country of Tax Residency*</label>
-                                    <div class="select-wrapper">
+                                    <input type="text" id="country" placeholder="Enter Country" class="form-control w-100"
+                                        autocomplete="off" [(ngModel)]="data.country" (keypress)="showCountryData()">
+                                    <ul class="drop" *ngIf="showSelectCountry">
+                                        <li *ngFor="let cou of countries | filterArray: data.country"
+                                            (click)="selectCountry(cou, i)"><a>{{cou}}</a></li>
+                                    </ul>
+                                    <!-- <div class="select-wrapper">
                                         <select class="form-control w-100" [(ngModel)]="data.country">
                                             <option value="" disabled>Select Country</option>
                                             <option value="{{country.name}}" *ngFor="let country of countries">
                                                 {{country.name}}</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                     <label>Tax Identification Number* <img src="assets/img/additional/info.svg"
@@ -434,7 +440,8 @@
                                 <select class="form-control w-100" name="stockExchange" formControlName="stockExchange">
                                     <option value="Bombay Stock Exchange (BSE)">Bombay Stock Exchange (BSE)</option>
                                     <option value="National Stock Exchange (NSE)">National Stock Exchange (NSE)</option>
-                                    <option value="National Stock Exchange (NSE) & Bombay Stock Exchange (BSE)">National Stock Exchange (NSE) & Bombay Stock Exchange (BSE)</option>
+                                    <option value="National Stock Exchange (NSE) & Bombay Stock Exchange (BSE)">National
+                                        Stock Exchange (NSE) & Bombay Stock Exchange (BSE)</option>
                                     <option value="Other(s)">Other(s)</option>
                                 </select>
                             </div>
@@ -450,8 +457,8 @@
                         <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field"
                             *ngIf="step4FormControls.stockExchange.value=='Other(s)' && (step4FormControls.entityType.value=='Entity is a Public Traded Company')">
                             <label>Please specify name of the Stock Exchange</label>
-                            <input type="text" maxlength="50" id="net_worth" name="nameOfListedCompany" placeholder="Enter name of the Stock Exchange"
-                                class="form-control w-100">
+                            <input type="text" maxlength="50" id="net_worth" name="nameOfListedCompany"
+                                placeholder="Enter name of the Stock Exchange" class="form-control w-100">
                         </div>
                     </div>
                     <div class="row m-0 mb-4"
@@ -463,7 +470,8 @@
                                     formControlName="natureOfRelation">
                                     <option value="Bombay Stock Exchange (BSE)">Bombay Stock Exchange (BSE)</option>
                                     <option value="National Stock Exchange (NSE)">National Stock Exchange (NSE)</option>
-                                    <option value="National Stock Exchange (NSE) & Bombay Stock Exchange (BSE)">National Stock Exchange (NSE) & Bombay Stock Exchange (BSE)</option>
+                                    <option value="National Stock Exchange (NSE) & Bombay Stock Exchange (BSE)">National
+                                        Stock Exchange (NSE) & Bombay Stock Exchange (BSE)</option>
                                     <option value="Other(s)">Other(s)</option>
                                 </select>
                             </div>
@@ -484,8 +492,8 @@
                         <div class="col-md-8 col-lg-6 p-0 pr-sm-3 pr-lg-4 form-field"
                             *ngIf="step4FormControls.natureOfRelation.value=='Other(s)' && (step4FormControls.entityType.value=='Entity is related entity of a Public Traded Company')">
                             <label>Please specify name of the Stock Exchange</label>
-                            <input type="text" maxlength="50" id="net_worth" name="nameOfListedCompany" placeholder="Enter name of the Stock Exchange"
-                                class="form-control w-100">
+                            <input type="text" maxlength="50" id="net_worth" name="nameOfListedCompany"
+                                placeholder="Enter name of the Stock Exchange" class="form-control w-100">
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
@@ -608,8 +616,8 @@
                                     </li>
                                 </ul>
                             </ng-template>
-                            <label>Sub-category of Active NFE <img src="assets/img/additional/info.svg"
-                                    alt="Info Icon" [ngbTooltip]="tipContent2"></label>
+                            <label>Sub-category of Active NFE <img src="assets/img/additional/info.svg" alt="Info Icon"
+                                    [ngbTooltip]="tipContent2"></label>
                             <div class="m-0 input-wrapper">
                                 <div class="input-item">
                                     <input type="text" name="twoDigits1" formControlName="twoDigits1"
@@ -668,9 +676,8 @@
                     <div class="row mx-0 seperator md"></div>
                     <div *ngFor="let data of step5FormData;let i=index;">
                         <h4 class="m-0 mb-3 common-page-title"><span [innerHtml]="loadNumbers(i+1)"
-                                class="text-capitalize"></span> UBO Details <img
-                                src="assets/img/common/delete.svg" alt="Delete Icon" *ngIf="i!=0"
-                                (click)="deleteUBO(i)"></h4>
+                                class="text-capitalize"></span> UBO Details <img src="assets/img/common/delete.svg"
+                                alt="Delete Icon" *ngIf="i!=0" (click)="deleteUBO(i)"></h4>
                         <div class="row m-0 mb-4">
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                 <label>Address type</label>
@@ -697,16 +704,22 @@
                             </div>
                         </div>
                         <div class="row m-0 mb-4">
-                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field wrap-drop">
                                 <label>Country*</label>
-                                <div class="select-wrapper">
+                                <input type="text" id="country" placeholder="Enter Country" class="form-control w-100"
+                                        autocomplete="off" [(ngModel)]="data.country" (keypress)="showCountryDataStep6()">
+                                    <ul class="drop" *ngIf="showSelectCountryStep6">
+                                        <li *ngFor="let cou of countries | filterArray: data.country"
+                                            (click)="selectCountryStep6(cou, i)"><a>{{cou}}</a></li>
+                                    </ul>
+                                <!-- <div class="select-wrapper">
                                     <select class="form-control w-100" placeholder="Select country here"
                                         [(ngModel)]="data.country">
                                         <option value="">Select country here</option>
                                         <option value="{{country.name}}" *ngFor="let country of countries">
                                             {{country.name}}</option>
                                     </select>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                 <label>State*</label>
@@ -773,16 +786,22 @@
                                 <input type="text" maxlength="50" id="net_worth" placeholder="Enter City of Birth"
                                     class="form-control w-100" [(ngModel)]="data.cityOfBirth">
                             </div>
-                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                            <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field wrap-drop">
                                 <label>Country of Birth</label>
-                                <div class="select-wrapper">
+                                <input type="text" id="country" placeholder="Enter Country" class="form-control w-100"
+                                        autocomplete="off" [(ngModel)]="data.countryOfBirth" (keypress)="showCountryDataOfBirth()">
+                                    <ul class="drop" *ngIf="showSelectCountryOfBirth">
+                                        <li *ngFor="let cou of countries | filterArray: data.countryOfBirth"
+                                            (click)="selectCountryOfBirth(cou, i)"><a>{{cou}}</a></li>
+                                    </ul>
+                                <!-- <div class="select-wrapper">
                                     <select class="form-control w-100" placeholder="Select country here"
                                         [(ngModel)]="data.countryOfBirth">
                                         <option value="" disabled>Select country here</option>
                                         <option value="{{country.name}}" *ngFor="let country of countries">
                                             {{country.name}}</option>
                                     </select>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="col-sm-6 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field">
                                 <label>Nationality</label>
@@ -934,9 +953,8 @@
                                 <div class="radio-item">
                                     <input type="radio" name="validate" id="" value="No" formControlName="validate">
                                     <span class="custom-radio"></span>
-                                    <label class="z-9">Upload Bank Proof<img
-                                            src="assets/img/additional/info.svg" alt="Info Icon"
-                                            ngbTooltip="Upload Bank Proof"></label>
+                                    <label class="z-9">Upload Bank Proof<img src="assets/img/additional/info.svg"
+                                            alt="Info Icon" ngbTooltip="Upload Bank Proof"></label>
                                 </div>
                             </div>
 
@@ -992,11 +1010,12 @@
                                 <div class="upload-wrapper" *ngIf="!documents.fileName">
                                     <input type="file" name="" id=""
                                         (change)="onDocumentsSelected($event, documents.name)">
-                                    <span class="z-9">{{documents.name}} <img
-                                            src="assets/img/additional/info.svg" alt="Info Icon"
+                                    <span class="z-9">{{documents.name}} <img src="assets/img/additional/info.svg"
+                                            alt="Info Icon"
                                             ngbTooltip="Upload a scanned signature if you have one on a blank white paper and capture a photo to upload. If the image captured is blurred then recapture it and upload"
                                             *ngIf="documents.name=='List of Authorised Signatories'"></span>
-                                            <span class="file-add z-9" *ngIf="documents.name=='List of Authorised Signatories'"></span>
+                                    <span class="file-add z-9"
+                                        *ngIf="documents.name=='List of Authorised Signatories'"></span>
                                 </div>
                                 <div class="upload-wrapper" *ngIf="documents.fileName">
                                     <span>{{documents.name}}</span>
@@ -1010,16 +1029,17 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card-value signature-pad">
-                              <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
-                              <div class="custom-btn-block">
-                                <button class="btn btn-link" (click)="clearSignature()">Clear signature pad</button>
-                                <button class="btn btn-primary ml-2" (click)="savePad()">Save signature</button>
-                              </div>
-                              
-                              <!-- <div class="signature-image" *ngIf="signatureImg">
+                                <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()"
+                                    (onEndEvent)="drawComplete()"></signature-pad>
+                                <div class="custom-btn-block">
+                                    <button class="btn btn-link" (click)="clearSignature()">Clear signature pad</button>
+                                    <button class="btn btn-primary ml-2" (click)="savePad()">Save signature</button>
+                                </div>
+
+                                <!-- <div class="signature-image" *ngIf="signatureImg">
                                 <img src='{{ signatureImg }}' />
                               </div> -->
-                          
+
                             </div>
                         </div>
                     </div>
