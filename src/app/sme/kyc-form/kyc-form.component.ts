@@ -12,6 +12,7 @@ export class KycFormComponent implements OnInit {
   @Output() showPan = new EventEmitter<number>();
   @Output() showAdditional = new EventEmitter<number>();
   @Input() currentPan: any;
+  @Input() KYCDataFromAdditional: any;
   showSteps: boolean = true;
   showDateOfIncorporation: boolean = false;
   showTaxStatus: boolean = false;
@@ -47,6 +48,14 @@ export class KycFormComponent implements OnInit {
     });
     this.currentPan = localStorage.getItem('pan') ? localStorage.getItem('pan') : this.currentPan;
     this.kycForm1.patchValue({pan: this.currentPan});
+    if(this.KYCDataFromAdditional){
+      this.showSubmitOTP = true;
+      this.showSteps = false;
+    }
+    else{
+      this.showSubmitOTP = false;
+      this.showSteps = true;
+    }
   }
 
   get kycForm1Controls() {

@@ -11,26 +11,19 @@ export class VerifiedKycComponent implements OnInit {
   @Output() showPan = new EventEmitter<number>();
   @Output() showIncorporation = new EventEmitter<number>();
   @Output() showAdditional = new EventEmitter<number>();
-  showSteps: boolean = true;
-  showDateOfIncorporation: boolean = false;
   showKRARecords: boolean = true;
   showVerifyOTP: boolean = false;
   showSubmitOTP: boolean = false;
   kycForm1: FormGroup;
   kycForm2: FormGroup;
-  kycForm3: FormGroup;
-  kycForm4: FormGroup;
-  showSelectCity: boolean = false;
-  citites: any = ['Ahmadnagar', 'Amravati', 'Aurangabad', 'Bhandara', 'Buldana', 'Delhi', 'Karnataka', 'Tamilnadu', 'Kerala'];
   constructor() { }
 
   ngOnInit(): void {
+    this.kycForm1 = new FormGroup({
+      taxStatus: new FormControl('', Validators.required)
+    });
     this.kycForm2 = new FormGroup({
       otp: new FormControl('', Validators.required)
-    });
-    this.kycForm4 = new FormGroup({
-      city: new FormControl('', Validators.required),
-      country: new FormControl('India', Validators.required)
     });
   }
 
@@ -40,14 +33,6 @@ export class VerifiedKycComponent implements OnInit {
 
   get kycForm2Controls() {
     return this.kycForm2.controls;
-  }
-
-  get kycForm3Controls() {
-    return this.kycForm3.controls;
-  }
-
-  get kycForm4Controls() {
-    return this.kycForm4.controls;
   }
 
   showPanForm(){
@@ -71,15 +56,6 @@ export class VerifiedKycComponent implements OnInit {
     this.showVerifyOTP = true;
     this.showKRARecords = false;
     this.showSubmitOTP = false;
-  }
-
-  showCityData(){
-    this.showSelectCity = true;
-  }
-
-  selectCity(city){
-    this.kycForm4.patchValue({city: city})
-    this.showSelectCity = false;
   }
 
 }

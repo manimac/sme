@@ -12,20 +12,12 @@
                             <input type="text" maxlength="10" id="pan" formControlName="pan" autocomplete="off" placeholder="Enter PAN" class="form-control w-100" [ngClass]="{ 'is-invalid': panFormControl.pan.touched && panFormControl.pan.errors }">
                         </div>
                     </div>
-                    <div class="notes-msg" *ngIf="showProceedKYC">
-                        <p class="m-0">
-                            <img src="../../../assets/img/common/alert.svg" alt="Alert Icon" class="w-100">
-                            <span>Entered PAN is not KYC compliant. Click to proceed with Online KYC.</span>
-                        </p>
-                    </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0" *ngIf="showPanForm">
                             <button class="btn btn-link" (click)="showFundForm()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-                            <button class="btn btn-primary" [ngClass]="{'disabled': panForm.invalid}" [disabled]="panForm.invalid" (click)="verifyPan()" *ngIf="showPanForm">Verify</button>
-                            <button class="btn btn-primary" [ngClass]="{'disabled': panForm.invalid}" [disabled]="panForm.invalid" (click)="proceedKYC()" *ngIf="showProceedKYC">Proceed for
-                                KYC</button>
+                            <button class="btn btn-primary" [ngClass]="{'disabled': panForm.invalid}" [disabled]="panForm.invalid" (click)="proceedKYC()" *ngIf="showPanForm">Verify</button>
                         </div>
                     </div>
                 </div>

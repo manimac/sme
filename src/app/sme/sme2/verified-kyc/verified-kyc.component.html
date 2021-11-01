@@ -36,11 +36,13 @@
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Tax Status</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
+                                <select class="form-control w-100" formControlName="taxStatus"
+                                    [ngClass]="{ 'is-invalid': kycForm1Controls.taxStatus.touched && kycForm1Controls.taxStatus.errors }">
+                                    <option value="">Select Tax Status</option>
+                                    <option value="Partnership">Partnership</option>
+                                    <option value="Partnership 2">Partnership 2</option>
+                                    <option value="Partnership 3">Partnership 3</option>
+                                    <option value="Partnership 4">Partnership 4</option>
                                 </select>
                             </div>
                         </div>
@@ -50,7 +52,7 @@
                             <button class="btn btn-link" (click)="showPanForm()">Go Back</button>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-                            <button class="btn btn-primary" [ngClass]="{'disabled': kycForm2.invalid}" [disabled]="kycForm2.invalid" (click)="showVerifyOTPForm()">Generate OTP</button>
+                            <button class="btn btn-primary" [ngClass]="{'disabled': kycForm1.invalid}" [disabled]="kycForm1.invalid" (click)="showVerifyOTPForm()">Generate OTP</button>
                         </div>
                     </div>
                     <!-- <div class="row mx-0 custom-btn-block">

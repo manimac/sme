@@ -79,36 +79,4 @@ export class Sme2Component implements OnInit {
     this.showAdditional();
     this.currentForm = ev;
   }
-
-  @ViewChild(SignaturePad) signaturePad: SignaturePad;
-  signatureImg: string;
-  signaturePadOptions: Object = { 
-    'minWidth': 2,
-    'canvasWidth': 700,
-    'canvasHeight': 300
-  };
-
-  drawComplete() {
-    console.log(this.signaturePad.toDataURL());
-  }
-
-  drawStart() {
-    console.log('begin drawing');
-  }
-
-  clearSignature() {
-    this.signaturePad.clear();
-  }
-
-  savePad() {
-    const base64Data = this.signaturePad.toDataURL();
-    this.signatureImg = base64Data;
-  }
-
-  ngAfterViewInit() {
-    // this.signaturePad is now available
-    this.signaturePad.set('minWidth', 2); 
-    this.signaturePad.clear(); 
-  }
-
 }

@@ -1,62 +1,61 @@
-<div class="card-div custom-card-div mb-5">
+<div class="card-div custom-card-div mb-5" [formGroup]="fundForm1">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
                 <h4 class="m-0 custom-card-title">Select Fund</h4>
             </div>
             <div class="card-value">
-                <div class="custom-card-body" [formGroup]="kycForm1">
+                <div class="custom-card-body">
                     <div class="row m-0">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Investment Solution</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100" formControlName="taxstatus1">
-                                    <option value="">Select Tax Status</option>
-                                    <option value="Partnership">Partnership</option>
-                                    <option value="Partnership 2">Partnership 2</option>
-                                    <option value="Partnership 3">Partnership 3</option>
-                                    <option value="Partnership 4">Partnership 4</option>
+                                <select class="form-control w-100" formControlName="investmentSolution">
+                                    <option value="">Select Investment Solution</option>
+                                    <option value="Investment Solution">Investment Solution</option>
+                                    <option value="Investment Solution 2">Investment Solution 2</option>
+                                    <option value="Investment Solution 3">Investment Solution 3</option>
+                                    <option value="Investment Solution 4">Investment Solution 4</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Category</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100" formControlName="taxstatus2">
-                                    <option value="">Select Tax Status</option>
-                                    <option value="Partnership">Partnership</option>
-                                    <option value="Partnership 2">Partnership 2</option>
-                                    <option value="Partnership 3">Partnership 3</option>
-                                    <option value="Partnership 4">Partnership 4</option>
+                                <select class="form-control w-100" formControlName="category">
+                                    <option value="">Select Category</option>
+                                    <option value="Category">Category</option>
+                                    <option value="Category 2">Category 2</option>
+                                    <option value="Category 3">Category 3</option>
+                                    <option value="Category 4">Category 4</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Sub - Category</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100" formControlName="taxstatus3">
-                                    <option value="">Select Tax Status</option>
-                                    <option value="Partnership">Partnership</option>
-                                    <option value="Partnership 2">Partnership 2</option>
-                                    <option value="Partnership 3">Partnership 3</option>
-                                    <option value="Partnership 4">Partnership 4</option>
+                                <select class="form-control w-100" formControlName="subCategory">
+                                    <option value="">Select Sub - Category</option>
+                                    <option value="Sub - Category">Sub - Category</option>
+                                    <option value="Sub - Category 2">Sub - Category 2</option>
+                                    <option value="Sub - Category 3">Sub - Category 3</option>
+                                    <option value="Sub - Category 4">Sub - Category 4</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-12 col-md-8 p-0 pr-sm-3 pr-lg-4 form-field">
                             <div class="select-wrapper">
-                                <select class="form-control w-100" formControlName="taxstatus4">
-                                    <option value="">Select Tax Status</option>
-                                    <option value="Partnership">Partnership</option>
-                                    <option value="Partnership 2">Partnership 2</option>
-                                    <option value="Partnership 3">Partnership 3</option>
-                                    <option value="Partnership 4">Partnership 4</option>
+                                <select class="form-control w-100" formControlName="type">
+                                    <option value="">Select Fund Type</option>
+                                    <option value="Fund Type">Fund Type</option>
+                                    <option value="Fund Type 2">Fund Type 2</option>
+                                    <option value="Fund Type 3">Fund Type 3</option>
+                                    <option value="Fund Type 4">Fund Type 4</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-12 col-md-4 p-0 pr-sm-3 pr-lg-4 form-field note-text">
                             <button class="btn btn-link">Browse Popular Funds</button>
-
                             <button class="btn btn-link">Reset Filter</button>
                         </div>
                     </div>
@@ -66,24 +65,24 @@
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5">
+<div class="card-div custom-card-div mb-5" [formGroup]="fundForm1">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
                 <h4 class="m-0 custom-card-title">Scheme Details</h4>
             </div>
             <div class="card-value">
-                <div class="custom-card-body" [formGroup]="kycForm2">
+                <div class="custom-card-body">
                     <div class="row m-0">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Scheme Option*</label>
                             <div class="select-wrapper">
-                                <select class="form-control w-100" formControlName="taxstatus">
-                                    <option value=''>Select Tax Status</option>
-                                    <option value="Partnership">Partnership</option>
-                                    <option value="Partnership 2">Partnership 2</option>
-                                    <option value="Partnership 3">Partnership 3</option>
-                                    <option value="Partnership 4">Partnership 4</option>
+                                <select class="form-control w-100" formControlName="schemeOption">
+                                    <option value=''>Select Scheme Option</option>
+                                    <option value="Scheme Option">Scheme Option</option>
+                                    <option value="Scheme Option 2">Scheme Option 2</option>
+                                    <option value="Scheme Option 3">Scheme Option 3</option>
+                                    <option value="Scheme Option 4">Scheme Option 4</option>
                                 </select>
                             </div>
                         </div>
@@ -91,12 +90,12 @@
                             <label>Investment Type*</label>
                             <div class="mt-sm-2 radio-wrapper">
                                 <div class="m-0 radio-item">
-                                    <input type="radio" value="Yes" formControlName="investmenttype" name="investmenttype">
+                                    <input type="radio" value="SIP" formControlName="investmenttype" name="investmenttype">
                                     <span class="custom-radio"></span>
                                     <label>SIP</label>
                                 </div>
                                 <div class="m-0 radio-item">
-                                    <input type="radio" value="No" formControlName="investmenttype" name="investmenttype">
+                                    <input type="radio" value="Lumpsum" formControlName="investmenttype" name="investmenttype">
                                     <span class="custom-radio"></span>
                                     <label>Lumpsum</label>
                                 </div>
@@ -108,8 +107,8 @@
         </div>
     </div>
 </div>
-<div class="row mx-0 custom-btn-block proceed-bbtn">
+<div class="row mx-0 custom-btn-block proceed-bbtn" [formGroup]="fundForm1">
     <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-        <button class="btn btn-primary" [ngClass]="{'disabled': kycForm2.invalid}" [disabled]="kycForm2.invalid" (click)="showPanForm()">Proceed</button>
+        <button class="btn btn-primary" [ngClass]="{'disabled': fundForm1.invalid}" [disabled]="fundForm1.invalid" (click)="showPanForm()">Proceed</button>
     </div>
 </div>

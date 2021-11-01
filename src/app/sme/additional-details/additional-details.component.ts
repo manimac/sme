@@ -8,7 +8,7 @@ import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 })
 export class AdditionalDetailsComponent implements OnInit {
 
-  @Output() showKYC = new EventEmitter<number>();
+  @Output() KYCFromAdditional = new EventEmitter<number>();
   @Output() showIncorporation = new EventEmitter<number>();
   @Output() showSummary = new EventEmitter<number>();
   @Input() currentForm: any;
@@ -228,7 +228,7 @@ export class AdditionalDetailsComponent implements OnInit {
   }
 
   showKycForm() {
-    this.showKYC.emit();
+    this.KYCFromAdditional.emit();
     this.showIncorporation.emit();
   }
 

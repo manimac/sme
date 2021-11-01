@@ -9,24 +9,25 @@ declare var $: any;
 })
 export class FundComponent implements OnInit {
   @Output() showPan = new EventEmitter<number>();
-  kycForm1: FormGroup;
-  kycForm2: FormGroup;
+  fundForm1: FormGroup;
   constructor() { }
 
   ngOnInit(): void {
-    this.kycForm2 = new FormGroup({
-      taxstatus: new FormControl('', Validators.required),
-      investmenttype: new FormControl('Yes', Validators.required)
+    this.fundForm1 = new FormGroup({
+      investmentSolution: new FormControl(''),
+      category: new FormControl(''),
+      subCategory: new FormControl(''),
+      type: new FormControl(''),
+      schemeOption: new FormControl('', Validators.required),
+      investmenttype: new FormControl('SIP', Validators.required)
     });
   }
-  get kycForm1Controls() {
-    return this.kycForm1.controls;
-  } 
-  get kycForm2Controls() {
-    return this.kycForm2.controls;
+  get fundForm1Controls() {
+    return this.fundForm1.controls;
   } 
 
   showPanForm() {
+    localStorage.setItem('verifiedpan', '');
     this.showPan.emit();
   }
 

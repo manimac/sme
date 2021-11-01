@@ -33,10 +33,10 @@
         </div>
     </div>
     <app-fund *ngIf="showFundForm" (showPan)="showPan()"></app-fund>
-    <app-pan-form *ngIf="showPanForm" (showVerifiedKyc)="showVerifiedKyc($event)" (showFund)="showFund()"></app-pan-form>
+    <app-verified-pan-form *ngIf="showPanForm" (showVerifiedKyc)="showVerifiedKyc($event)" (showFund)="showFund()"></app-verified-pan-form>
     <!-- <app-kyc-form *ngIf="showKYCForm" (showPan)="showPan()" (showAdditional)="showAdditional()" [currentPan]="currentPan"></app-kyc-form> -->
-    <app-verified-kyc *ngIf="showVerifiedKycForm" (showPan)="showPan()" (showIncorporation)="showIncorporation()" [currentPan]="currentPan"></app-verified-kyc>
-    <app-incorporation *ngIf="showIncorporationForm" (showVerifiedKyc)="showVerifiedKyc($event)" (showAdditional)="showAdditional()" [currentPan]="currentPan"></app-incorporation>
+    <app-verified-kyc *ngIf="showVerifiedKycForm" (showPan)="showPan()" (showIncorporation)="showIncorporation()"></app-verified-kyc>
+    <app-incorporation *ngIf="showIncorporationForm" (showVerifiedKyc)="showVerifiedKyc($event)" (showAdditional)="showAdditional()"></app-incorporation>
     <app-additional-details *ngIf="showAdditionalForm " (showIncorporation)="showIncorporation() " (showSummary)="showSummary() " [currentForm]="currentForm "></app-additional-details>
 
     <app-summary *ngIf="showSummaryForm " (showAdditional)="showAdditionalNavigation($event) "></app-summary>

@@ -9,6 +9,7 @@ export class SmeComponent implements OnInit {
 
   showPanForm: boolean = true;
   showKYCForm: boolean = false;
+  KYCDataFromAdditional: boolean = false;
   showAdditionalForm: boolean = false;
   showSummaryForm: boolean = false;
   currentPan: any = '';
@@ -41,12 +42,22 @@ export class SmeComponent implements OnInit {
   showPan(){
     this.showPanForm = true;
     this.showKYCForm = false;
+    this.KYCDataFromAdditional = false;
   }
 
   showKYC(ev: any = ''){
     this.showPanForm = false;
     this.showKYCForm = true;
     this.showAdditionalForm = false;
+    this.KYCDataFromAdditional = false;
+    this.currentPan = ev;
+  }
+
+  KYCFromAdditional(ev: any = ''){
+    this.showPanForm = false;
+    this.showKYCForm = true;
+    this.showAdditionalForm = false;
+    this.KYCDataFromAdditional = true;
     this.currentPan = ev;
   }
 
@@ -54,11 +65,13 @@ export class SmeComponent implements OnInit {
     this.showKYCForm = false;
     this.showAdditionalForm = true;
     this.showSummaryForm = false;
+    this.KYCDataFromAdditional = false;
   }
   
   showSummary(){
     this.showAdditionalForm = false;
     this.showSummaryForm = true;
+    this.KYCDataFromAdditional = false;
   }
 
   showAdditionalNavigation(ev){
