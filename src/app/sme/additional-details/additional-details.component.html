@@ -207,7 +207,7 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">STEP 3/8: PART A </h4>
+                <h4 class="m-0 custom-card-title" [innerHtml]="getPartALabel()">STEP 3/8: PART A </h4>
             </div>
 
             <div class="card-value">
@@ -399,7 +399,7 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">STEP 4/8: PART B</h4>
+                <h4 class="m-0 custom-card-title" [innerHtml]="getPartBLabel()">STEP 4/8: PART B</h4>
             </div>
 
             <div class="card-value">
@@ -515,7 +515,7 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">STEP 5/8: PART B</h4>
+                <h4 class="m-0 custom-card-title" [innerHtml]="getPassiveLabel()">STEP 5/8: PART B</h4>
             </div>
 
             <div class="card-value">
@@ -639,7 +639,7 @@
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link" (click)="showStep4Form()">Go Back</button>
+                            <button class="btn btn-link" (click)="loadstep4Form2()">Go Back</button>
                         </div>
                         <div class="col-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
                             <button class="btn btn-primary" [ngClass]="{'disabled': step4FormExtra.invalid}"
@@ -657,7 +657,7 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p>  -->
-                <h4 class="m-0 custom-card-title">STEP 6/8: Ultimate Beneficiary Owner (UBO)</h4>
+                <h4 class="m-0 custom-card-title" [innerHtml]="getUBOLabel()">STEP 6/8: Ultimate Beneficiary Owner (UBO)</h4>
             </div>
 
             <div class="card-value">
@@ -837,7 +837,7 @@
                     <div class="row mx-0 seperator"></div>
                     <div class="row mx-0 custom-btn-block" [formGroup]="step5Form">
                         <div class="col-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link" (click)="showStep4ExtraForm()">Go Back</button>
+                            <button class="btn btn-link" (click)="showStep4ExtraForm2()">Go Back</button>
                         </div>
                         <div class="col-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
                             <button class="btn btn-primary"
@@ -857,7 +857,7 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">STEP 7/8: BANK DETAILS</h4>
+                <h4 class="m-0 custom-card-title" [innerHtml]="getBankDetailsLabel()">STEP 7/8: BANK DETAILS</h4>
             </div>
 
             <div class="card-value">
@@ -981,7 +981,7 @@
                     </div>
                     <div class="row mx-0 custom-btn-block">
                         <div class="col-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link" (click)="showStep5Form()">Go Back</button>
+                            <button class="btn btn-link" (click)="showStep5Form2()">Go Back</button>
                         </div>
                         <div class="col-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
                             <button class="btn btn-primary" [ngClass]="{'disabled': step6Form.invalid||!validate}"
@@ -999,7 +999,7 @@
         <div class="col-md-12">
             <div class="card-pannel">
                 <!-- <p class="font-weight600"> <i><img src="assets/icons/portfolio-icon.svg"></i> &nbsp; Pan Form</p> -->
-                <h4 class="m-0 custom-card-title">STEP 8/8: UPLOAD DOCUMENTS</h4>
+                <h4 class="m-0 custom-card-title" [innerHtml]="getUploadDocuments()">STEP 8/8: UPLOAD DOCUMENTS</h4>
             </div>
 
             <div class="card-value">

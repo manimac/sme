@@ -196,10 +196,10 @@ export class AdditionalDetailsComponent implements OnInit {
     this.currentPan = localStorage.getItem('pan') ? localStorage.getItem('pan') : this.currentPan;
   }
 
-  enableBasedOn(char){
+  enableBasedOn(char) {
     let result = false;
-    if(this.currentPan.charAt(3)){
-      if(this.currentPan.charAt(3).toLowerCase() == char){
+    if (this.currentPan.charAt(3)) {
+      if (this.currentPan.charAt(3).toLowerCase() == char) {
         result = true;
       }
     }
@@ -289,6 +289,28 @@ export class AdditionalDetailsComponent implements OnInit {
   }
 
   showStep4Form() {
+    if (this.currentPan.charAt(3)) {
+      let fourthLetter = this.currentPan.charAt(3).toLowerCase();
+      if ((fourthLetter == 'h') || (fourthLetter == 'a') || (fourthLetter == 'b') || (fourthLetter == 'g') || (fourthLetter == 'j') || (fourthLetter == 'l') || (fourthLetter == 'f') || (fourthLetter == 't')) {
+        this.showStep1 = false;
+        this.showStep2 = false;
+        this.showStep3 = false;
+        this.showStep4 = false;
+        this.showStep4extra = true;
+        this.showStep5 = false;
+        this.showStep6 = false;
+        this.showStep7 = false;
+      }
+      else {
+        this.loadstep4Form();
+      }
+    }
+    else {
+      this.loadstep4Form();
+    }
+  }
+
+  loadstep4Form() {
     this.showStep1 = false;
     this.showStep2 = false;
     this.showStep3 = false;
@@ -299,7 +321,54 @@ export class AdditionalDetailsComponent implements OnInit {
     this.showStep7 = false;
   }
 
+  loadstep4Form2() {
+    if (this.currentPan.charAt(3)) {
+      let fourthLetter = this.currentPan.charAt(3).toLowerCase();
+      if ((fourthLetter == 'h') || (fourthLetter == 'a') || (fourthLetter == 'b') || (fourthLetter == 'g') || (fourthLetter == 'j') || (fourthLetter == 'l') || (fourthLetter == 'f') || (fourthLetter == 't')) {
+        this.showStep1 = false;
+        this.showStep2 = false;
+        this.showStep3 = true;
+        this.showStep4 = false;
+        this.showStep4extra = false;
+        this.showStep5 = false;
+        this.showStep6 = false;
+        this.showStep7 = false;
+      }
+      else {
+        this.loadstep4Form();
+      }
+    }
+    else {
+      this.loadstep4Form();
+    }
+  }
+
   showStep4ExtraForm() {
+    let val = this.step4Form.value.entityType;
+    if (this.currentPan.charAt(3) && (this.currentPan.charAt(3).toLowerCase() == 'c') && ((val == 'Entity is a Public Traded Company') || (val == 'Entity is related entity of a Public Traded Company'))) {
+      this.showStep1 = false;
+      this.showStep2 = false;
+      this.showStep3 = false;
+      this.showStep4 = false;
+      this.showStep4extra = false;
+      this.showStep5 = false;
+      this.showStep6 = true;
+      this.showStep7 = false;
+    }
+    else {
+      this.showStep1 = false;
+      this.showStep2 = false;
+      this.showStep3 = false;
+      this.showStep4 = false;
+      this.showStep4extra = true;
+      this.showStep5 = false;
+      this.showStep6 = false;
+      this.showStep7 = false;
+    }
+
+  }
+
+  showStep4ExtraForm2() {
     this.showStep1 = false;
     this.showStep2 = false;
     this.showStep3 = false;
@@ -319,6 +388,30 @@ export class AdditionalDetailsComponent implements OnInit {
     this.showStep5 = true;
     this.showStep6 = false;
     this.showStep7 = false;
+  }
+
+  showStep5Form2() {
+    let val = this.step4Form.value.entityType;
+    if (this.currentPan.charAt(3) && (this.currentPan.charAt(3).toLowerCase() == 'c') && ((val == 'Entity is a Public Traded Company') || (val == 'Entity is related entity of a Public Traded Company'))) {
+      this.showStep1 = false;
+      this.showStep2 = false;
+      this.showStep3 = false;
+      this.showStep4 = true;
+      this.showStep4extra = false;
+      this.showStep5 = false;
+      this.showStep6 = false;
+      this.showStep7 = false;
+    }
+    else {
+      this.showStep1 = false;
+      this.showStep2 = false;
+      this.showStep3 = false;
+      this.showStep4 = false;
+      this.showStep4extra = false;
+      this.showStep5 = true;
+      this.showStep6 = false;
+      this.showStep7 = false;
+    }
   }
 
   showStep6Form() {
@@ -481,48 +574,120 @@ export class AdditionalDetailsComponent implements OnInit {
     this.signatureImg = base64Data;
   }
 
-  showCountryData(){
+  showCountryData() {
     this.showSelectCountry = true;
   }
 
-  selectCountry(country, ind){
+  selectCountry(country, ind) {
     this.showSelectCountry = false;
     this.step2FormData.forEach((element, index) => {
-      if(index == ind){
+      if (index == ind) {
         element.country = country;
       }
     });
   }
 
-  showCountryDataStep6(){
+  showCountryDataStep6() {
     this.showSelectCountryStep6 = true;
   }
 
-  selectCountryStep6(country, ind){
+  selectCountryStep6(country, ind) {
     this.showSelectCountryStep6 = false;
     this.step5FormData.forEach((element, index) => {
-      if(index == ind){
+      if (index == ind) {
         element.country = country;
       }
     });
   }
-  
-  showCountryDataOfBirth(){
+
+  showCountryDataOfBirth() {
     this.showSelectCountryOfBirth = true;
   }
 
-  selectCountryOfBirth(country, ind){
+  selectCountryOfBirth(country, ind) {
     this.showSelectCountryOfBirth = false;
     this.step5FormData.forEach((element, index) => {
-      if(index == ind){
+      if (index == ind) {
         element.countryOfBirth = country;
       }
     });
   }
 
-  toggleSignature(){
+  toggleSignature() {
     this.showSignature = !this.showSignature;
     this.loadSignature();
+  }
+
+  getPartBLabel() {
+    let label = 'STEP 4/8: PART B';
+    let val = this.step4Form.value.entityType;
+    if (this.currentPan.charAt(3) && (this.currentPan.charAt(3).toLowerCase() == 'c') && ((val == 'Entity is a Public Traded Company') || (val == 'Entity is related entity of a Public Traded Company'))) {
+      label = 'STEP 4/6: PART B';
+    }
+    return label;
+  }
+
+  getPartALabel() {
+    let label = 'STEP 3/8: PART A';
+    if (this.currentPan.charAt(3)) {
+      let fourthLetter = this.currentPan.charAt(3).toLowerCase();
+      if ((fourthLetter == 'h') || (fourthLetter == 'a') || (fourthLetter == 'b') || (fourthLetter == 'g') || (fourthLetter == 'j') || (fourthLetter == 'l') || (fourthLetter == 'f') || (fourthLetter == 't')) {
+        label = 'STEP 3/7: PART A';
+      }
+    }
+    return label;
+  }
+
+  getPassiveLabel() {
+    let label = 'STEP 5/8: PART B';
+    if (this.currentPan.charAt(3)) {
+      let fourthLetter = this.currentPan.charAt(3).toLowerCase();
+      if ((fourthLetter == 'h') || (fourthLetter == 'a') || (fourthLetter == 'b') || (fourthLetter == 'g') || (fourthLetter == 'j') || (fourthLetter == 'l') || (fourthLetter == 'f') || (fourthLetter == 't')) {
+        label = 'STEP 4/7: PART B';
+      }
+    }
+    return label;
+  }
+
+  getUBOLabel() {
+    let label = 'STEP 6/8: Ultimate Beneficiary Owner (UBO)';
+    if (this.currentPan.charAt(3)) {
+      let fourthLetter = this.currentPan.charAt(3).toLowerCase();
+      if ((fourthLetter == 'h') || (fourthLetter == 'a') || (fourthLetter == 'b') || (fourthLetter == 'g') || (fourthLetter == 'j') || (fourthLetter == 'l') || (fourthLetter == 'f') || (fourthLetter == 't')) {
+        label = 'STEP 5/7: Ultimate Beneficiary Owner (UBO)';
+      }
+    }
+    return label;
+  }
+
+  getBankDetailsLabel() {
+    let label = 'STEP 7/8: BANK DETAILS';
+    let val = this.step4Form.value.entityType;
+    if (this.currentPan.charAt(3) && (this.currentPan.charAt(3).toLowerCase() == 'c') && ((val == 'Entity is a Public Traded Company') || (val == 'Entity is related entity of a Public Traded Company'))) {
+      label = 'STEP 5/6: BANK DETAILS';
+    }
+    if (this.currentPan.charAt(3)) {
+      let fourthLetter = this.currentPan.charAt(3).toLowerCase();
+      if ((fourthLetter == 'h') || (fourthLetter == 'a') || (fourthLetter == 'b') || (fourthLetter == 'g') || (fourthLetter == 'j') || (fourthLetter == 'l') || (fourthLetter == 'f') || (fourthLetter == 't')) {
+        label = 'STEP 6/7: BANK DETAILS';
+      }
+    }
+    return label;
+  }
+
+  getUploadDocuments() {
+    let label = 'STEP 8/8: UPLOAD DOCUMENTS';
+    let val = this.step4Form.value.entityType;
+    if (this.currentPan.charAt(3) && (this.currentPan.charAt(3).toLowerCase() == 'c') && ((val == 'Entity is a Public Traded Company') || (val == 'Entity is related entity of a Public Traded Company'))) {
+      label = 'STEP 6/6: UPLOAD DOCUMENTS';
+    }
+    if (this.currentPan.charAt(3)) {
+      let fourthLetter = this.currentPan.charAt(3).toLowerCase();
+      if ((fourthLetter == 'h') || (fourthLetter == 'a') || (fourthLetter == 'b') || (fourthLetter == 'g') || (fourthLetter == 'j') || (fourthLetter == 'l') || (fourthLetter == 'f') || (fourthLetter == 't')) {
+        label = 'STEP 7/7: UPLOAD DOCUMENTS';
+      }
+    }
+    return label;
   }
 
 }
