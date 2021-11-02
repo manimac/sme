@@ -1,4 +1,4 @@
-<div class="card-div custom-card-div mb-5">
+<div class="card-div custom-card-div mb-4">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -9,7 +9,9 @@
                     <div class="row m-0" [ngClass]="{'mb-3': showProceedKYC}">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>PAN*</label>
-                            <input type="text" maxlength="10" id="pan" formControlName="pan" autocomplete="off" placeholder="Enter PAN" class="form-control w-100" [ngClass]="{ 'is-invalid': panFormControl.pan.touched && panFormControl.pan.errors }">
+                            <input type="text" maxlength="10" id="pan" formControlName="pan" autocomplete="off"
+                                placeholder="Enter PAN" class="form-control w-100"
+                                [ngClass]="{ 'is-invalid': panFormControl.pan.touched && panFormControl.pan.errors }">
                         </div>
                     </div>
                     <div class="notes-msg" *ngIf="showProceedKYC">
@@ -19,18 +21,25 @@
                         </p>
                     </div>
                     <div class="row mx-0 custom-btn-block">
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0" *ngIf="showPanForm">
-                            <button class="btn btn-link" (click)="showFundForm()">Go Back</button>
+                        <div class="col-6 col-md-4 col-lg-3 p-0" *ngIf="showPanForm">
+                            <button class="btn btn-link">Go Back</button>
                         </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-                            <button class="btn btn-primary" [ngClass]="{'disabled': panForm.invalid}" [disabled]="panForm.invalid" (click)="verifyPan()" *ngIf="showPanForm">Verify</button>
-                            <button class="btn btn-primary" [ngClass]="{'disabled': panForm.invalid}" [disabled]="panForm.invalid" (click)="proceedKYC()" *ngIf="showProceedKYC">Proceed for
-                                KYC</button>
-                        </div>
+                        <div class="col-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right"
+                            [ngClass]="{'col-12': showProceedKYC}">
+                        <button class="btn btn-primary" [ngClass]="{'disabled': panForm.invalid}"
+                            [disabled]="panForm.invalid" (click)="verifyPan()" *ngIf="showPanForm">Verify</button>
+                        <button class="btn btn-primary" [ngClass]="{'disabled': panForm.invalid}"
+                            [disabled]="panForm.invalid" (click)="proceedKYC()" *ngIf="showProceedKYC">Proceed for
+                            KYC</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+</div>
+<div class="row mx-0 custom-btn-block proceed-bbtn">
+    <div class="col-12 p-0">
+        <p class="mb-2 text-left mandatory-message">All fields marked with * are mandatory</p>
+    </div>
+</div>

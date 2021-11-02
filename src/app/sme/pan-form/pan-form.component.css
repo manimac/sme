@@ -40,3 +40,6 @@
 .note-text .btn-link:hover {
     text-decoration: none;
 }
+.btn:disabled{
+    pointer-events: none;
+ }

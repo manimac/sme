@@ -12,7 +12,7 @@
         <span>26-Jan-1999</span>
     </li>
 </ul>
-<div class="card-div custom-card-div mb-5">
+<div class="card-div custom-card-div mb-4">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -48,7 +48,10 @@
     </div>
 </div>
 <div class="row mx-0 custom-btn-block proceed-bbtn">
-    <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
+    <div class="col-12 p-0">
+        <p class="mb-2 text-left mandatory-message">All fields marked with * are mandatory</p>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
         <button class="btn btn-primary" [ngClass]="{'disabled': kycForm4.invalid}" [disabled]="kycForm4.invalid" (click)="showAdditionalForm()">Proceed</button>
     </div>
 </div>

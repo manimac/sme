@@ -65,7 +65,7 @@
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5" [formGroup]="fundForm1">
+<div class="card-div custom-card-div mb-4" [formGroup]="fundForm1">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -102,16 +102,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row m-0">
-                        <p class="mandatory-message">All fields marked with * are mandatory</p>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <div class="row mx-0 custom-btn-block proceed-bbtn" [formGroup]="fundForm1">
-    <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
+    <div class="col-12 p-0">
+        <p class="mb-2 text-left mandatory-message">All fields marked with * are mandatory</p>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-right">
         <button class="btn btn-primary" [ngClass]="{'disabled': fundForm1.invalid}" [disabled]="fundForm1.invalid" (click)="showPanForm()">Proceed</button>
     </div>
 </div>

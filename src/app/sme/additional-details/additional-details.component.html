@@ -12,7 +12,7 @@
         <span>26-Jan-1999</span>
     </li>
 </ul>
-<div class="card-div custom-card-div mb-5" *ngIf="showStep1">
+<div class="card-div custom-card-div mb-4" *ngIf="showStep1">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -22,7 +22,7 @@
 
             <div class="card-value">
                 <div class="custom-card-body">
-                    <div class="row m-0 mb-4 pb-2" [formGroup]="step1Form">
+                    <div class="row m-0 mb-4 pb-2" [formGroup]="step1Form" *ngIf="enableBasedOn('c')">
                         <div class="col-12 p-0 form-field list-company">
                             <label class="m-0">Is the entity a listed company? / Subsidiary of listed company? /
                                 Controlled by a listed company?* <img src="assets/img/additional/info.svg"
@@ -109,7 +109,7 @@
         </div>
     </div>
 </div>
-<div class="card-div custom-card-div mb-5" *ngIf="showStep2">
+<div class="card-div custom-card-div mb-4" *ngIf="showStep2">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -202,7 +202,7 @@
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5" *ngIf="showStep3">
+<div class="card-div custom-card-div mb-4" *ngIf="showStep3">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -394,7 +394,7 @@
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5" *ngIf="showStep4">
+<div class="card-div custom-card-div mb-4" *ngIf="showStep4">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -510,7 +510,7 @@
         </div>
     </div>
 </div>
-<div class="card-div custom-card-div mb-5" *ngIf="showStep4extra">
+<div class="card-div custom-card-div mb-4" *ngIf="showStep4extra">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -652,7 +652,7 @@
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5 step-5" *ngIf="showStep5">
+<div class="card-div custom-card-div mb-4 step-5" *ngIf="showStep5">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -852,7 +852,7 @@
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5" *ngIf="showStep6">
+<div class="card-div custom-card-div mb-4" *ngIf="showStep6">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -994,7 +994,7 @@
     </div>
 </div>
 
-<div class="card-div custom-card-div mb-5" *ngIf="showStep7">
+<div class="card-div custom-card-div mb-4" *ngIf="showStep7">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -1016,6 +1016,8 @@
                                             *ngIf="documents.name=='List of Authorised Signatories'"></span>
                                     <span class="file-add z-9"
                                         *ngIf="documents.name=='List of Authorised Signatories'"></span>
+                                    <span class="file-edit z-9"
+                                        *ngIf="documents.name=='List of Authorised Signatories'" (click)="toggleSignature()"></span>
                                 </div>
                                 <div class="upload-wrapper" *ngIf="documents.fileName">
                                     <span>{{documents.name}}</span>
@@ -1025,17 +1027,20 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="seperator"></div>
-                    <div class="row">
+                    <div class="row" *ngIf="showSignature">
                         <div class="col-md-12">
                             <div class="card-value signature-pad">
-                                <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()"
-                                    (onEndEvent)="drawComplete()"></signature-pad>
-                                <div class="custom-btn-block">
-                                    <button class="btn btn-link" (click)="clearSignature()">Clear signature pad</button>
-                                    <button class="btn btn-primary ml-2" (click)="savePad()">Save signature</button>
+                                <label>Draw your signature here</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()"
+                                        (onEndEvent)="drawComplete()"></signature-pad>
+                                    <div class="custom-btn-block">
+                                        <button class="btn btn-link" (click)="clearSignature()">Reset</button>
+                                        <button class="btn btn-primary ml-2" (click)="savePad()">Confirm</button>
+                                    </div>
+                                    </div>
                                 </div>
-
                                 <!-- <div class="signature-image" *ngIf="signatureImg">
                                 <img src='{{ signatureImg }}' />
                               </div> -->
@@ -1043,6 +1048,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="seperator"></div>
                     <div class="p-0 checkbox-content bank-name">
                         <label class="sm file-note">
                             <img src="assets/img/common/warning.png" alt="Warning Icon">
@@ -1063,5 +1069,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    </div>
+    <div class="row mx-0 custom-btn-block proceed-bbtn">
+        <div class="col-12 p-0">
+            <p class="mb-2 text-left mandatory-message">All fields marked with * are mandatory</p>
         </div>
     </div>

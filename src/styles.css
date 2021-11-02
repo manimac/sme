@@ -795,6 +795,12 @@ input.form-control:focus {
     width: 22.5%;
 }
 
+.proceed-bbtn {
+    width: 85%;
+    margin: 0 auto !important;
+}
+
+
 @media only screen and (max-width: 1200px) {    
     .radio-wrapper > div {
         flex: 1 0 auto;
@@ -851,6 +857,10 @@ input.form-control:focus {
     .list-company .radio-item {
         margin: 0 0 10px;
     }
+
+    .proceed-bbtn {
+        width: 100%;
+    }
 }
 
 
@@ -863,6 +873,12 @@ input.form-control:focus {
     .details-list li, .details-list.readonly.bg-green li {
         width: 100% !important;
         padding-left: 0;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+    .details-list li:last-child, .details-list.readonly.bg-green li:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
     }
     .list-company.max > label {
         max-width: 100%;
@@ -900,5 +916,12 @@ input.form-control:focus {
 }
 .mandatory-message{
     font-size: 12px;
-    color: #848383;
+    color: #3e593c;
+}
+
+.signature-pad canvas{
+    border: 1px solid #c8c5c5;
+}
+.signature-pad .custom-btn-block{
+    margin: 20px 0 !important;
 }

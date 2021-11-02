@@ -44,6 +44,7 @@ export class AdditionalDetailsComponent implements OnInit {
   step3Form: FormGroup;
   step4Form: FormGroup;
   step4FormExtra: FormGroup;
+  showSignature: boolean = false;
   step5FormData: any = [
     {
       nameOfUBO: '',
@@ -131,12 +132,13 @@ export class AdditionalDetailsComponent implements OnInit {
       name: 'List of Authorised Signatories',
       fileName: ''
     }
-  ]
+  ];
+  currentPan: any = '';
   constructor(private bsLocaleService: BsLocaleService) { }
 
   ngOnInit(): void {
     this.step1Form = new FormGroup({
-      isListedCompany: new FormControl('No', Validators.required),
+      isListedCompany: new FormControl('No'),
       networth: new FormControl('', Validators.required),
       networthDate: new FormControl(this.today, Validators.required),
       pep: new FormControl('Not Applicable', Validators.required)
@@ -191,6 +193,17 @@ export class AdditionalDetailsComponent implements OnInit {
       this[this.currentForm]();
       this.currentForm = '';
     }
+    this.currentPan = localStorage.getItem('pan') ? localStorage.getItem('pan') : this.currentPan;
+  }
+
+  enableBasedOn(char){
+    let result = false;
+    if(this.currentPan.charAt(3)){
+      if(this.currentPan.charAt(3).toLowerCase() == char){
+        result = true;
+      }
+    }
+    return result;
   }
 
 
@@ -505,6 +518,11 @@ export class AdditionalDetailsComponent implements OnInit {
         element.countryOfBirth = country;
       }
     });
+  }
+
+  toggleSignature(){
+    this.showSignature = !this.showSignature;
+    this.loadSignature();
   }
 
 }

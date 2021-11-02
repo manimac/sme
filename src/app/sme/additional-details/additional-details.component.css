@@ -151,6 +151,20 @@
     background-position: left 15px center;
 }
 
+.file-edit{
+    position: absolute;
+    top: 50%;
+    right: 150px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff !important;
+    border-radius: 50%;
+    transform: translate(0, -50%);
+    background: url(../../../assets/img/additional/edit.svg) no-repeat;
+    background-size: 18px;
+    background-position: left 15px center;
+}
+
 .file-note {
     position: relative;
 }
@@ -183,7 +197,7 @@
         width: 100%;
     }
 }
-canvas{
+/* canvas{
     border: 1px solid #c8c5c5;
     background-color: coral;
 }
@@ -193,7 +207,7 @@ canvas{
 }
 .signature-pad{
     border: 1px solid #c8c5c5;
-}
+} */
 
 .drop li:hover {
     background-color: #3E593C !important;

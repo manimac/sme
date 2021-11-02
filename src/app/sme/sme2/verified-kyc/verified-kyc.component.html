@@ -12,7 +12,7 @@
         <span>26-Jan-1999</span>
     </li>
 </ul>
-<div class="card-div custom-card-div mb-5">
+<div class="card-div custom-card-div mb-4">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -41,12 +41,9 @@
                             <label>Tax Status</label>
                             <div class="select-wrapper">
                                 <select class="form-control w-100" formControlName="taxStatus"
-                                    [ngClass]="{ 'is-invalid': kycForm1Controls.taxStatus.touched && kycForm1Controls.taxStatus.errors }">
+                                    [ngClass]="{ 'is-invalid': kycForm1Controls.taxStatus.touched && kycForm1Controls.taxStatus.errors }" (change)="setTaxstatus($event.target.value)">
                                     <option value="">Select Tax Status</option>
-                                    <option value="Partnership">Partnership</option>
-                                    <option value="Partnership 2">Partnership 2</option>
-                                    <option value="Partnership 3">Partnership 3</option>
-                                    <option value="Partnership 4">Partnership 4</option>
+                                    <option value="{{status}}" *ngFor="let status of taxStatusData">{{status}}</option>
                                 </select>
                             </div>
                         </div>
@@ -83,11 +80,9 @@
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>Tax Status</label>
                             <div class="select-wrapper readonly">
-                                <select class="form-control w-100" disabled>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
+                                <select class="form-control w-100" disabled formControlName="taxStatus">
+                                    <option value="">Select Tax Status</option>
+                                    <option value="{{status}}" *ngFor="let status of taxStatusData">{{status}}</option>
                                 </select>
                             </div>
                         </div>
@@ -113,5 +108,10 @@
             </div>
 
         </div>
+    </div>
+</div>
+<div class="row mx-0 custom-btn-block proceed-bbtn">
+    <div class="col-12 p-0">
+        <p class="mb-2 text-left mandatory-message">All fields marked with * are mandatory</p>
     </div>
 </div>
