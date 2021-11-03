@@ -515,16 +515,26 @@ export class AdditionalDetailsComponent implements OnInit {
   }
 
   onFileSelected(event) {
+    let fileNames = [];
     if (event.target.files.length > 0) {
-      this.uploadedFileName = event.target.files[0].name;
+      for(let i = 0;i< event.target.files.length;i++){
+        fileNames.push(event.target.files[i].name);
+      }
     }
+    fileNames.join(',');
+    this.uploadedFileName = fileNames;
   }
 
   onDocumentsSelected(event, name) {
     if (event.target.files.length > 0) {
       this.uploadDocuments.forEach(element => {
         if (element.name == name) {
-          element.fileName = event.target.files[0].name;
+          let fileNames = [];
+          for(let i = 0;i< event.target.files.length;i++){
+            fileNames.push(event.target.files[i].name);
+          }
+          fileNames.join(',');
+          element.fileName = fileNames;
         }
       });
     }

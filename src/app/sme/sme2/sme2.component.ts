@@ -8,8 +8,8 @@ import { SignaturePad } from 'angular2-signaturepad';
 })
 export class Sme2Component implements OnInit {
 
-  showFundForm: boolean = true;
-  showPanForm: boolean = false;
+  showFundForm: boolean = false;
+  showPanForm: boolean = true;
   showVerifiedKycForm: boolean = false;
   showKYCForm: boolean = false;
   showIncorporationForm: boolean = false;
@@ -40,11 +40,11 @@ export class Sme2Component implements OnInit {
   }
   
   showFund() {
-    this.showFundForm = true;
-    this.showPanForm = false;
-    this.showKYCForm = false;
-    this.showVerifiedKycForm = false;
-    this.showIncorporationForm = false;
+    // this.showFundForm = true;
+    // this.showPanForm = false;
+    // this.showKYCForm = false;
+    // this.showVerifiedKycForm = false;
+    // this.showIncorporationForm = false;
   }
 
   showPan(){

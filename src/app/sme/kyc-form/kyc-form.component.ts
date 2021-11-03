@@ -41,6 +41,7 @@ export class KycFormComponent implements OnInit {
       taxStatus: new FormControl('', Validators.required)
     });
     this.kycForm3 = new FormGroup({
+      taxStatus: new FormControl('', Validators.required),
       otp: new FormControl('', Validators.required)
     });
     this.kycForm4 = new FormGroup({
@@ -131,6 +132,7 @@ export class KycFormComponent implements OnInit {
   }
 
   showVerifyOTPForm(){
+    this.kycForm3.patchValue({taxStatus: this.kycForm2.value.taxStatus});
     this.showTaxStatus = false;
     this.showVerifyOTP = true;
     this.showSubmitOTP = false;

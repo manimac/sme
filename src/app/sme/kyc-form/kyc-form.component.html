@@ -134,74 +134,8 @@
                 </div>
             </div>
 
-            <!-- <div class="card-value">
-                <div class="custom-card-body" [formGroup]="kycForm3">
-                    <ul class="m-0 mb-4 details-list user readonly">
-                        <li>
-                            <label>PAN:</label>
-                            <span>ENQC77693A</span>
-                        </li>
-                        <li>
-                            <label>Name:</label>
-                            <span>Aditya Birla Sun Life AMC Ltd</span>
-                        </li>
-                        <li>
-                            <label>Date of Incorporation:</label>
-                            <span>26-Jan-1999</span>
-                        </li>
-                    </ul>
-                    <div class="row m-0 mb-3">
-                        <div class="col-12 p-0 form-field">
-                            <label class="mb-4">Please verify the following contact details as per KRA Records:</label>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field has-edit">
-                            <label>Mobile Number <img class="ml-3" src="assets/img/common/edit.svg" alt="Edit Icon"></label>
-                            <p class="m-0 field-value">9753108462</p>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field has-edit">
-                            <label>Email ID <img class="ml-3" src="assets/img/common/edit.svg" alt="Edit Icon"></label>
-                            <p class="m-0 field-value">janedoe@gmail.com</p>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
-                            <label>Tax Status</label>
-                            <div class="select-wrapper">
-                                <select class="form-control w-100">
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mx-0 custom-btn-block">
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0">
-                            <button class="btn btn-link" (click)="showTaxStatusForm()">Go Back</button>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-                            <button class="btn btn-primary" [ngClass]="{'disabled': kycForm3.invalid}"
-                            [disabled]="kycForm3.invalid" (click)="showSubmitOTPForm()">Submit OTP</button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
             <div class="card-value" *ngIf="showVerifyOTP">
                 <div class="custom-card-body" [formGroup]="kycForm3">
-                    <!-- <ul class="m-0 mb-5 details-list user green-white readonly">
-                        <li class="pan">
-                            <label>PAN:</label>
-                            <span>ENQC77693A</span>
-                        </li>
-                        <li>
-                            <label>Name:</label>
-                            <span>Aditya Birla Sun Life AMC Ltd</span>
-                        </li>
-                        <li>
-                            <label>Date of Incorporation:</label>
-                            <span>26-Jan-1999</span>
-                        </li>
-                    </ul> -->
                     <div class="row m-0 mb-3">
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>Mobile Number</label>
@@ -215,14 +149,8 @@
                         </div>
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>Tax Status</label>
-                            <div class="select-wrapper readonly">
-                                <select class="form-control w-100" disabled>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                    <option value="">Partnership</option>
-                                </select>
-                            </div>
+                            <input type="text" id="emailId" placeholder="Enter Tax Status" formControlName="taxStatus"
+                                class="form-control w-100" disabled>
                         </div>
                         <div class="col-12 seperator"></div>
                         <div class="col-12 col-md-10 col-lg-8 p-0 pr-md-3 pr-lg-4 form-field">
@@ -269,9 +197,6 @@
                         <div class="col-6 col-md-4 col-lg-3 p-0">
                             <button class="btn btn-link" (click)="showVerifyOTPForm()">Go Back</button>
                         </div>
-                        <!-- <div class="col-sm-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right">
-                            <button class="btn btn-primary" (click)="showAdditionalForm()">Submit OTP</button>
-                        </div> -->
                     </div>
                 </div>
             </div>

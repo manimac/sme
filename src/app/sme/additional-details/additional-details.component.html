@@ -960,7 +960,7 @@
 
                             <div class="position-relative input-group file-wrapper mb-3">
                                 <input type="file" placeholder="Browse files here" class="form-control"
-                                    (change)="onFileSelected($event)">
+                                    (change)="onFileSelected($event)" multiple>
                                 <label [innerHtml]="uploadedFileName">Browse files here</label>
                                 <div class="input-group-append">
                                     <span class="input-group-text">Upload</span>
@@ -1008,8 +1008,7 @@
                         <ul class="m-0 p-0">
                             <li *ngFor="let documents of uploadDocuments" [ngClass]="{'with-doc': documents.fileName}">
                                 <div class="upload-wrapper" *ngIf="!documents.fileName">
-                                    <input type="file" name="" id=""
-                                        (change)="onDocumentsSelected($event, documents.name)">
+                                    <input type="file" multiple (change)="onDocumentsSelected($event, documents.name)">
                                     <span class="z-9">{{documents.name}} <img src="assets/img/additional/info.svg"
                                             alt="Info Icon"
                                             ngbTooltip="Upload a scanned signature if you have one on a blank white paper and capture a photo to upload. If the image captured is blurred then recapture it and upload"
