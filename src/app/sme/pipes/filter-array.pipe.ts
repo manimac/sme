@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterArrayPipe implements PipeTransform {
 
+  //Filter array for ngFor
   transform(items: any[], filter: any): any {
     if (!items || !filter) {
         return items;

@@ -21,14 +21,16 @@ export class VerifiedPanFormComponent implements OnInit {
     this.panForm = new FormGroup({
       pan: new FormControl('', Validators.required)
     });
-    let currentPan = localStorage.getItem('verifiedpan') ? localStorage.getItem('verifiedpan') :'';
-    this.panForm.patchValue({pan: currentPan});
+    // let currentPan = localStorage.getItem('verifiedpan') ? localStorage.getItem('verifiedpan') :'';
+    // this.panForm.patchValue({pan: currentPan});
   }
 
+  //Get form controls value
   get panFormControl() {
     return this.panForm.controls;
   }
 
+  //Show Current form and disable other forms
   verifyPan() {
     this.submitted = true;
     if (this.panForm.valid) {
@@ -38,14 +40,25 @@ export class VerifiedPanFormComponent implements OnInit {
     }
   }
 
+  showFundForm() {
+    this.showFund.emit();
+  }
+
+  //Set pan value
   proceedKYC(){
     localStorage.setItem('verifiedpan', this.panForm.value.pan);
     this.showKYC.emit(this.panForm.value.pan);
     this.showVerifiedKyc.emit(this.panForm.value.pan);
   }
 
-  showFundForm() {
-    this.showFund.emit();
+  keyPressAlphanumeric(event) {
+    var inp = String.fromCharCode(event.keyCode);
+    if (/[a-zA-Z0-9]/.test(inp)) {
+      return true;
+    } else {
+      event.preventDefault();
+      return false;
+    }
   }
 
 }

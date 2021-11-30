@@ -88,6 +88,7 @@ export class AdditionalDetailsComponent implements OnInit {
     }
   ]
   countries: any = ['India', 'Australia', 'United States', 'China'];
+  typeCodes: any = ['CP of legal person-ownership', 'CP of legal person-other means', 'CP of legal person-senior managing official', 'CP of legal arrangement-trust-settlor', 'CP of legal arrangement-trust-trustee', 'CP of legal arrangement-trust-protector', 'CP of legal arrangement-trust-beneficiary', 'CP of legal arrangement-trust-other', 'CP of legal arrangement-Other-settlor equivalent', 'CP of legal arrangement-Other-trustee equivalent', 'CP of legal arrangement-Other-protector equivalent', 'CP of legal arrangement-Other-beneficiary equivalent', 'CP of legal arrangement-Other-other equivalent', 'Unknown'  ];
   categories: any = [
     {
       name: 'Unlisted Company'
@@ -196,6 +197,7 @@ export class AdditionalDetailsComponent implements OnInit {
     this.currentPan = localStorage.getItem('pan') ? localStorage.getItem('pan') : this.currentPan;
   }
 
+  //Questions enabled based on pan card
   enableBasedOn(char) {
     let result = false;
     if (this.currentPan.charAt(3)) {
@@ -211,6 +213,7 @@ export class AdditionalDetailsComponent implements OnInit {
     this.loadSignature();
   }
 
+  //Signature pad
   loadSignature() {
     if (this.signaturePad) {
       this.signaturePad.set('minWidth', 2);
@@ -218,6 +221,7 @@ export class AdditionalDetailsComponent implements OnInit {
     }
   }
 
+  //Get the form controls
   get step1FormControls() {
     return this.step1Form.controls;
   }
@@ -250,6 +254,7 @@ export class AdditionalDetailsComponent implements OnInit {
     return this.step7Form.controls;
   }
 
+  //Show current form and hide other forms
   showKycForm() {
     this.KYCFromAdditional.emit();
     this.showIncorporation.emit();
@@ -449,16 +454,19 @@ export class AdditionalDetailsComponent implements OnInit {
     this.showSummary.emit();
   }
 
+  //Enable checkbox in Step 1
   isServiceNotSelected() {
     let selectedService = this.services.find(element => (element.isChecked));
     return (selectedService) ? false : true;
   }
 
+  //Check country data added or not
   isCountryNotAdded() {
     let isNotValid: boolean = this.step2FormData.find(element => (!element.country || !element.taxIdentificationNUmber || !element.identificationType));
     return (!isNotValid) ? false : true;
   }
 
+  //Add new country
   addCountry() {
     let isNotValid: boolean = this.step2FormData.find(element => (!element.country || !element.taxIdentificationNUmber || !element.identificationType));
     if (!isNotValid) {
@@ -471,15 +479,18 @@ export class AdditionalDetailsComponent implements OnInit {
     }
   }
 
+  //Delete the country
   deleteCountry(index) {
     this.step2FormData.splice(index, 1);
   }
 
+  //Check UBO is added or not
   isUBONotAdded() {
-    let isNotValid: boolean = this.step5FormData.find(element => (!element.nameOfUBO || !element.country || !element.taxId || !element.taxIdType || !element.typeCode || !element.addressType));
+    let isNotValid: boolean = this.step5FormData.find(element => (!element.nameOfUBO || !element.country || !element.typeCode || !element.addressType));
     return (!isNotValid) ? false : true;
   }
 
+  //Add new UBO
   addUBO() {
     let obj = {
       nameOfUBO: '',
@@ -502,10 +513,12 @@ export class AdditionalDetailsComponent implements OnInit {
     this.step5FormData.push(obj);
   }
 
+  //Delete UBO
   deleteUBO(index) {
     this.step5FormData.splice(index, 1);
   }
 
+  //Show numbers in string
   loadNumbers(n) {
     let special = ['zeroth', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth', 'thirteenth', 'fourteenth', 'fifteenth', 'sixteenth', 'seventeenth', 'eighteenth', 'nineteenth'];
     let deca = ['twent', 'thirt', 'fort', 'fift', 'sixt', 'sevent', 'eight', 'ninet'];
@@ -514,6 +527,7 @@ export class AdditionalDetailsComponent implements OnInit {
     return deca[Math.floor(n / 10) - 2] + 'y-' + special[n % 10];
   }
 
+  //Document upload in Bank details
   onFileSelected(event) {
     let fileNames = [];
     if (event.target.files.length > 0) {
@@ -525,6 +539,7 @@ export class AdditionalDetailsComponent implements OnInit {
     this.uploadedFileName = fileNames;
   }
 
+  //Document upload in upload documents
   onDocumentsSelected(event, name) {
     if (event.target.files.length > 0) {
       this.uploadDocuments.forEach(element => {
@@ -540,6 +555,7 @@ export class AdditionalDetailsComponent implements OnInit {
     }
   }
 
+  //Delete documents
   removeDocuments(name) {
     this.uploadDocuments.forEach(element => {
       if (element.name == name) {
@@ -547,7 +563,8 @@ export class AdditionalDetailsComponent implements OnInit {
       }
     });
   }
-
+bo
+  //Disable checkbox in Step 1
   disableService(service) {
     let resultData = false;
     this.services.forEach(element => {
@@ -565,29 +582,34 @@ export class AdditionalDetailsComponent implements OnInit {
     return resultData;
   }
 
+  //Signature Draw event Complete
   drawComplete() {
     console.log(this.signaturePad.toDataURL());
   }
 
+  //Signature Draw event Start
   drawStart() {
     console.log('begin drawing');
   }
 
-
-
+  //Reset Signature
   clearSignature() {
     this.signaturePad.clear();
   }
 
+  //Save Signature into object property
   savePad() {
     const base64Data = this.signaturePad.toDataURL();
     this.signatureImg = base64Data;
+    this.showSignature = false;
   }
 
+  //Country event key press
   showCountryData() {
     this.showSelectCountry = true;
   }
 
+  //Select country from dropdown
   selectCountry(country, ind) {
     this.showSelectCountry = false;
     this.step2FormData.forEach((element, index) => {
@@ -597,10 +619,12 @@ export class AdditionalDetailsComponent implements OnInit {
     });
   }
 
+  //Country event key press
   showCountryDataStep6() {
     this.showSelectCountryStep6 = true;
   }
 
+  //Select country from dropdown
   selectCountryStep6(country, ind) {
     this.showSelectCountryStep6 = false;
     this.step5FormData.forEach((element, index) => {
@@ -610,10 +634,12 @@ export class AdditionalDetailsComponent implements OnInit {
     });
   }
 
+  //Country event key press
   showCountryDataOfBirth() {
     this.showSelectCountryOfBirth = true;
   }
 
+  //Select country from dropdown
   selectCountryOfBirth(country, ind) {
     this.showSelectCountryOfBirth = false;
     this.step5FormData.forEach((element, index) => {
@@ -623,11 +649,13 @@ export class AdditionalDetailsComponent implements OnInit {
     });
   }
 
+  //Show signature pad
   toggleSignature() {
     this.showSignature = !this.showSignature;
     this.loadSignature();
   }
 
+  //Show the label name from addition details steps based on conditions
   getPartBLabel() {
     let label = 'STEP 4/8: PART B';
     let val = this.step4Form.value.entityType;
@@ -698,6 +726,17 @@ export class AdditionalDetailsComponent implements OnInit {
       }
     }
     return label;
+  }
+
+  serviceChecked(index){
+    this.services.forEach((element, ind) => {
+        if(index == ind){
+          element.isChecked = true;
+        }
+        else{
+          element.isChecked = false;
+        }
+    });
   }
 
 }

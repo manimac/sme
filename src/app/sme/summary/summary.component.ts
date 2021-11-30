@@ -21,6 +21,7 @@ export class SummaryComponent implements OnInit {
     });
   }
 
+  //Show Current form and disable other forms
   showSuccessMessage(){
     this.summary = false;
     this.successMessage = true;

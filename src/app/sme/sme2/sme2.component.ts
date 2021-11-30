@@ -27,6 +27,7 @@ export class Sme2Component implements OnInit {
   ngOnInit(): void {
   }
 
+  //Set progress bar value
   ngAfterViewInit(): void {
     this.setProgressBar(this.pathFundDetails.nativeElement, 100);
     this.setProgressBar(this.pathIdentifyYourself.nativeElement, 75);
@@ -47,6 +48,7 @@ export class Sme2Component implements OnInit {
     // this.showIncorporationForm = false;
   }
 
+  //Show Current form and disable other forms
   showPan(){
     this.showPanForm = true;
     this.showKYCForm = false;

@@ -22,10 +22,12 @@ export class FundComponent implements OnInit {
       investmenttype: new FormControl('SIP', Validators.required)
     });
   }
+  //Get form controls value
   get fundForm1Controls() {
     return this.fundForm1.controls;
   } 
 
+  // Set pan value and Show other form
   showPanForm() {
     localStorage.setItem('verifiedpan', '');
     this.showPan.emit();

@@ -11,7 +11,7 @@
                             <label>PAN*</label>
                             <input type="text" maxlength="10" id="pan" formControlName="pan" autocomplete="off"
                                 placeholder="Enter PAN" class="form-control w-100 text-uppercase"
-                                [ngClass]="{ 'is-invalid': panFormControl.pan.touched && panFormControl.pan.errors }">
+                                [ngClass]="{ 'is-invalid': panFormControl.pan.touched && panFormControl.pan.errors }" (keypress)="keyPressAlphanumeric($event)">
                         </div>
                     </div>
                     <div class="notes-msg" *ngIf="showProceedKYC">

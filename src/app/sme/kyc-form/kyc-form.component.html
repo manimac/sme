@@ -1,4 +1,4 @@
-<ul class="m-0 mx-auto mb-3 details-list user green-white readonly" *ngIf="!showSteps&&!showDateOfIncorporation">
+<ul class="m-0 mx-auto mb-3 details-list user bg-green additional-details readonly" *ngIf="!showSteps&&!showDateOfIncorporation">
     <li class="pan">
         <label>PAN:</label>
         <span>ENQC77693A</span>
@@ -12,7 +12,7 @@
         <span>26-Jan-1999</span>
     </li>
 </ul>
-<div class="card-div custom-card-div mb-4">
+<div class="card-div custom-card-div mb-4 position-relative zindex-1">
     <div class="row">
         <div class="col-md-12">
             <div class="card-pannel">
@@ -72,7 +72,7 @@
                         <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field custom-form-field">
                             <label>PAN</label>
                             <input type="text" id="pan" autocomplete="off" placeholder="Enter PAN"
-                                class="form-control w-100" formControlName="pan"
+                                class="form-control w-100 text-uppercase" formControlName="pan"
                                 [ngClass]="{ 'is-invalid': kycForm1Controls.pan.touched && kycForm1Controls.pan.errors }"
                                 disabled>
                         </div>
@@ -81,7 +81,7 @@
                             <input type="text" placeholder="Select date" class="form-control w-100 date"
                                 formControlName="dateOfIncorporation"
                                 [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }"
-                                #dp="bsDatepicker" bsDatepicker [maxDate]="today">
+                                #dp="bsDatepicker" bsDatepicker [maxDate]="today" [bsConfig]="{dateInputFormat: 'DD-MM-YYYY'}" [bsConfig]="{dateInputFormat: 'DD-MM-YYYY'}">
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
@@ -155,7 +155,7 @@
                         <div class="col-12 seperator"></div>
                         <div class="col-12 col-md-10 col-lg-8 p-0 pr-md-3 pr-lg-4 form-field">
                             <label>Please enter the OTP sent on the registered mobile number and Email ID*</label>
-                            <input type="text" id="otp" placeholder="Enter OTP" class="form-control w-100"
+                            <input type="text" minlength="6" maxlength="6" id="otp" placeholder="Enter OTP" class="form-control w-100"
                                 formControlName="otp" autocomplete="off"
                                 [ngClass]="{ 'is-invalid': kycForm3Controls.otp.touched && kycForm3Controls.otp.errors }"
                                 appAcceptOnlyNumber>

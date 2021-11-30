@@ -20,17 +20,19 @@ export class VerifiedKycComponent implements OnInit {
   showEmail: boolean = false;
   currentPan: any = '';
   taxStatusData: any= [];
+  today: any = new Date();
   constructor() { }
 
   ngOnInit(): void {
     this.kycForm1 = new FormGroup({
-      taxStatus: new FormControl('', Validators.required)
+      taxStatus: new FormControl('', Validators.required),
+      dateOfIncorporation: new FormControl(this.today, Validators.required),
     });
     this.kycForm2 = new FormGroup({
       taxStatus: new FormControl(''),
       otp: new FormControl('', Validators.required)
     });
-    this.currentPan = localStorage.getItem('pan') ? localStorage.getItem('pan') : this.currentPan;
+    this.currentPan = localStorage.getItem('verifiedpan') ? localStorage.getItem('verifiedpan') : this.currentPan;
     if(this.currentPan.charAt(3)){
       if(this.currentPan.charAt(3).toLowerCase() == 'c'){
         this.taxStatusData = ['Company', 'Private limited company', 'Public limited company', 'Financial institution', 'Bank/Financial institution', 'Government body', 'Unlisted company', 'Insurance company'];
@@ -67,6 +69,7 @@ export class VerifiedKycComponent implements OnInit {
     }
   }
 
+  //Get form controls value
   get kycForm1Controls() {
     return this.kycForm1.controls;
   }
@@ -75,6 +78,7 @@ export class VerifiedKycComponent implements OnInit {
     return this.kycForm2.controls;
   }
 
+  //Show Current form and disable other forms
   showPanForm(){
     this.showPan.emit();
   }
@@ -98,14 +102,17 @@ export class VerifiedKycComponent implements OnInit {
     this.showSubmitOTP = false;
   }
 
+  //Edit Mobile
   toggleMobile(){
     this.showMobile = !this.showMobile;
   }
 
+  //Edit Email
   toggleEmail(){
     this.showEmail = !this.showEmail;
   }
 
+  //Set tax status value for form 2
   setTaxstatus(value){
     this.kycForm2.patchValue({taxStatus: value})
   }

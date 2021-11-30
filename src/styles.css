@@ -369,6 +369,10 @@ input.form-control:focus {
     flex: 1 0 100%;
     max-width: 100%;
 }
+.radio-wrapper.w-item-100 > div {
+    flex: 1 0 100%;
+    max-width: 100%;
+}
 .radio-wrapper > div {
     flex: 1 0 auto;
     max-width: 100%;
@@ -760,6 +764,14 @@ input.form-control:focus {
     max-width: 100%;
 }
 
+.tooltip{
+    max-width: 80%;
+}
+
+.nfe-tooltip{
+    max-width: 90%;
+}
+
 .tooltip-inner {
     background-color: #fff;
     color: #000;
@@ -769,6 +781,7 @@ input.form-control:focus {
     padding: 10px 15px;
     max-width: 100%;
 }
+
 .tooltip-inner ul {
     padding: 0;
 }
@@ -864,6 +877,11 @@ input.form-control:focus {
 }
 
 
+@media only screen and (max-width: 767px) {    
+    .tooltip {
+        max-width: 90%;
+    }
+}
 @media only screen and (max-width: 575px) {
     .custom-btn-block > div:first-child {
         text-align: center;
@@ -924,4 +942,7 @@ input.form-control:focus {
 }
 .signature-pad .custom-btn-block{
     margin: 20px 0 !important;
+}
+.zindex-1{
+    z-index: 1;
 }

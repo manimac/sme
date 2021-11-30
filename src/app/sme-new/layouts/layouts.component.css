@@ -1,0 +1,85 @@
+
+.progress-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 15px;
+}
+
+.progress-list::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+.progress-list::-webkit-scrollbar-track {
+    background: #3e593c54;
+}
+.progress-list::-webkit-scrollbar-thumb {
+    background: #969f6e;
+}
+.progress-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.progress-img {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid #CDCECE; */
+    border: 0;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    position: relative;
+}
+
+.progress-img img {
+    max-width: 15px;
+}
+.progress-item.active .progress-img {
+    border-color: #969F6E;
+}
+.progress-item {
+    padding: 0 30px;
+    flex: 1 0 150px;
+    max-width: 150px;
+}
+.progress-img:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -90px;
+    width: 75px;
+    transform: translate(0, -50%);
+    border-bottom: 1px dashed #969F6E;
+}
+.progress-item:last-child .progress-img:before {
+    display: none;
+}
+
+.progress-item p {
+    /* font-family: PF Handbook Pro; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
+
+.progress-img svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 991px) {
+    .progress-list {
+         justify-content: flex-start;
+    }
+}

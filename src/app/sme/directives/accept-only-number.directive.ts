@@ -5,6 +5,7 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 })
 export class AcceptOnlyNumberDirective {
 
+  //Allow only number
   private navigationKeys = [
     'Backspace',
     'Delete',

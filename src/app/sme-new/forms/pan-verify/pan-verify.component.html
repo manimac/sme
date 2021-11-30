@@ -1,0 +1,42 @@
+<div class="content-wrapper">
+    <app-layouts></app-layouts>
+    <div class="card-div custom-card-div mb-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-pannel">
+                    <h4 class="m-0 custom-card-title">ENTITY DETAILS</h4>
+                </div>
+                <div class="card-value">
+                    <div class="custom-card-body" [formGroup]="panVerifyForm">
+                        <div class="row m-0 mb-3">
+                            <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                                <label>PAN*</label>
+                                <input type="text" maxlength="10" id="pan" formControlName="pan" autocomplete="off"
+                                    placeholder="Enter PAN" class="form-control w-100 text-uppercase"
+                                    [ngClass]="{ 'is-invalid': panVerifyFormControl.pan.touched && panVerifyFormControl.pan.errors }" (keypress)="panchangeEvent($event)">
+                            </div>
+                        </div>
+                        <div class="notes-msg">
+                            <p class="m-0">
+                                <img src="assets/img/common/alert.svg" alt="Alert Icon" class="w-100">
+                                <span>Entered PAN is not KYC compliant. Click to proceed with Online KYC.</span>
+                            </p>
+                        </div>
+                        <div class="row mx-0 custom-btn-block">
+                            <div class="col-6 col-md-4 col-lg-3 p-0 ml-auto text-center text-sm-right col-12">
+                            <button class="btn btn-primary" [ngClass]="{'disabled': panVerifyForm.invalid}"
+                                [disabled]="panVerifyForm.invalid" (click)="proceedKYC()">Proceed for
+                                KYC</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row mx-0 custom-btn-block proceed-bbtn">
+        <div class="col-12 p-0">
+            <p class="mb-2 text-left mandatory-message">All fields marked with * are mandatory</p>
+        </div>
+    </div>
+</div>

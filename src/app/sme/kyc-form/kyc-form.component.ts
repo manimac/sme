@@ -94,6 +94,7 @@ export class KycFormComponent implements OnInit {
     }
   }
 
+  //Get form controls value
   get kycForm1Controls() {
     return this.kycForm1.controls;
   }
@@ -110,6 +111,7 @@ export class KycFormComponent implements OnInit {
     return this.kycForm4.controls;
   }
 
+  //Show Current form and disable other forms
   showPanForm(){
     this.showPan.emit();
   }
@@ -148,10 +150,12 @@ export class KycFormComponent implements OnInit {
     this.showAdditional.emit();
   }
 
+  //City key press event for dropdown
   showCityData(){
     this.showSelectCity = true;
   }
 
+  //Select city from dropdown
   selectCity(city){
     this.kycForm4.patchValue({city: city})
     this.showSelectCity = false;

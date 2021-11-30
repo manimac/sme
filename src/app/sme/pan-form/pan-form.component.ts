@@ -23,10 +23,12 @@ export class PanFormComponent implements OnInit {
     });
   }
 
+  //Get form controls value
   get panFormControl() {
     return this.panForm.controls;
   }
 
+  //Show Current form and disable other forms
   verifyPan() {
     this.submitted = true;
     if (this.panForm.valid) {
@@ -44,6 +46,16 @@ export class PanFormComponent implements OnInit {
 
   showFundForm() {
     this.showFund.emit();
+  }
+
+  keyPressAlphanumeric(event) {
+    var inp = String.fromCharCode(event.keyCode);
+    if (/[a-zA-Z0-9]/.test(inp)) {
+      return true;
+    } else {
+      event.preventDefault();
+      return false;
+    }
   }
 
 }

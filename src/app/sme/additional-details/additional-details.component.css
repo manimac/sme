@@ -262,3 +262,6 @@
 .drop::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+.disabledInput{
+    background-color: #e9ecef !important;
+}

@@ -1,4 +1,4 @@
-<ul class="m-0 mx-auto mb-3 details-list user green-white readonly" *ngIf="showKRARecords || showVerifyOTP">
+<ul class="m-0 mx-auto mb-3 details-list user bg-green additional-details readonly" *ngIf="showKRARecords || showVerifyOTP">
     <li class="pan">
         <label>PAN:</label>
         <span>ENQC77693A</span>
@@ -7,10 +7,10 @@
         <label>Name:</label>
         <span>Aditya Birla Sun Life AMC Ltd</span>
     </li>
-    <li>
+    <!-- <li>
         <label>Date of Incorporation:</label>
         <span>26-Jan-1999</span>
-    </li>
+    </li> -->
 </ul>
 <div class="card-div custom-card-div mb-4">
     <div class="row">
@@ -25,19 +25,19 @@
                         <div class="col-12 p-0 form-field">
                             <label class="mb-4">Please verify the following contact details as per KRA Records:</label>
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field has-edit">
+                        <div class="col-12 col-sm-6 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field has-edit">
                             <label>Mobile Number <img class="ml-3" src="assets/img/common/edit.svg" alt="Edit Icon" (click)="toggleMobile()"></label>
                             <p class="m-0 field-value" *ngIf="!showMobile">9753108462</p>
                             <input type="text" id="mobilenum" placeholder="Enter Mobile Number" value="9753108462"
-                                class="form-control w-100" *ngIf="showMobile">
+                                class="form-control w-100" *ngIf="showMobile" (blur)="toggleMobile()">
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field has-edit">
+                        <div class="col-12 col-sm-6 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field has-edit">
                             <label>Email ID <img class="ml-3" src="assets/img/common/edit.svg" alt="Edit Icon" (click)="toggleEmail()"></label>
                             <p class="m-0 field-value" *ngIf="!showEmail">janedoe@gmail.com</p>
                             <input type="text" id="emailId" placeholder="Enter Email ID" value="janedoe@gmail.com"
-                                class="form-control w-100" *ngIf="showEmail">
+                                class="form-control w-100" *ngIf="showEmail" (blur)="toggleEmail()">
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-4 p-0 pr-sm-3 pr-lg-4 form-field">
+                        <div class="col-12 col-sm-6 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
                             <label>Tax Status</label>
                             <div class="select-wrapper">
                                 <select class="form-control w-100" formControlName="taxStatus"
@@ -46,6 +46,13 @@
                                     <option value="{{status}}" *ngFor="let status of taxStatusData">{{status}}</option>
                                 </select>
                             </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 p-0 pr-sm-3 pr-lg-4 form-field">
+                            <label>Date of Incorporation*</label>
+                            <input type="text" placeholder="Select date" class="form-control w-100 date"
+                                formControlName="dateOfIncorporation"
+                                [ngClass]="{ 'is-invalid': kycForm1Controls.dateOfIncorporation.touched && kycForm1Controls.dateOfIncorporation.errors }"
+                                #dp="bsDatepicker" bsDatepicker [maxDate]="today" [bsConfig]="{dateInputFormat: 'DD-MM-YYYY'}" [bsConfig]="{dateInputFormat: 'DD-MM-YYYY'}">
                         </div>
                     </div>
                     <div class="row mx-0 custom-btn-block">
@@ -81,7 +88,7 @@
                         <div class="col-12 seperator"></div>
                         <div class="col-12 col-md-10 col-lg-8 p-0 pr-md-3 pr-lg-4 form-field">
                             <label>Please enter the OTP sent on the registered mobile number and Email ID*</label>
-                            <input type="text" id="otp" placeholder="Enter OTP" class="form-control w-100" formControlName="otp" autocomplete="off" [ngClass]="{ 'is-invalid': kycForm2Controls.otp.touched && kycForm2Controls.otp.errors }" appAcceptOnlyNumber>
+                            <input type="text" minlength="6" maxlength="6" id="otp" placeholder="Enter OTP" class="form-control w-100" formControlName="otp" autocomplete="off" [ngClass]="{ 'is-invalid': kycForm2Controls.otp.touched && kycForm2Controls.otp.errors }" appAcceptOnlyNumber>
                         </div>
                         <div class="col-12 p-0 m-0 mt-2 note-text">
                             <span>OTP will expire in 8m 50s</span>

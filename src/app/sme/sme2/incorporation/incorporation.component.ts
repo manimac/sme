@@ -23,19 +23,19 @@ export class IncorporationComponent implements OnInit {
   citites: any = ['Ahmadnagar', 'Amravati', 'Aurangabad', 'Bhandara', 'Buldana', 'Delhi', 'Karnataka', 'Tamilnadu', 'Kerala'];
   constructor() { }
 
-  ngOnInit(): void {
- 
+  ngOnInit(): void { 
     this.kycForm4 = new FormGroup({
       city: new FormControl('', Validators.required),
       country: new FormControl('India', Validators.required)
     });
   }
 
-
+  //Get form controls value
   get kycForm4Controls() {
     return this.kycForm4.controls;
   }
 
+  //Show Current form and disable other forms
   showAdditionalForm() {
     this.showAdditional.emit();
   }
@@ -57,10 +57,12 @@ export class IncorporationComponent implements OnInit {
     this.showSubmitOTP = false;
   }
 
+  //City key press event for dropdown
   showCityData(){
     this.showSelectCity = true;
   }
 
+  //Select city from dropdown
   selectCity(city){
     this.kycForm4.patchValue({city: city})
     this.showSelectCity = false;

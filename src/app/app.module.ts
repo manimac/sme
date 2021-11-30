@@ -20,6 +20,7 @@ import { FolioLinkDelinkComponent } from './folio-link-delink/folio-link-delink.
 import { SwitchComponent } from './switch/switch.component';
 import { SwpComponent } from './swp/swp.component';
 import { SmeModule } from './sme/sme.module';
+import { SmeNewModule } from './sme-new/sme-new.module';
 
 // import { PortfolioComponent } from './portfolio/portfolio.component';
 // import { MyholdingsComponent } from './portfolio/myholdings/myholdings.component';
@@ -35,7 +36,7 @@ import { SmeModule } from './sme/sme.module';
     AccountStatementComponent,
     FolioLinkDelinkComponent,
     SwitchComponent,
-    SwpComponent,
+    SwpComponent
   ],
   imports: [
     BrowserModule,   
@@ -47,7 +48,8 @@ import { SmeModule } from './sme/sme.module';
     TransactionSummaryModule,
     HighchartsChartModule,
     NgbModule,
-    SmeModule
+    SmeModule,
+    SmeNewModule
   ],
   providers: [StyleService],
   bootstrap: [AppComponent]
